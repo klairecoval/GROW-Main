@@ -4,7 +4,16 @@
   "description": "main thought-drop station and data visualization",
   "main": "./server/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "buildAppBundle": "babel ./client/app ./client/helper --presets react --out-file ./hosted/bundle.js",
+    "buildSass": "node-sass --include-path scss ./hosted/css/main.scss ./hosted/main.css",
+    "build": "npm run buildAppBundle && npm run buildSass",
+    "watchAppBundle": "babel --watch ./client/app ./client/helper --presets react --out-file ./hosted/bundle.js",
+    "nodemon": "nodemon --watch ./server ./server/app.js",
+    "watchCSS": "nodemon -e scss -x \"npm run buildSass\"",
+    "changeCSS": "nodemon --watch ./hosted/css",
+    "start": "node ./server/app.js",
+    "pretest": "eslint ./server --fix",
+    "test": "echo \"Tests complete\""
   },
   "repository": {
     "type": "git",
