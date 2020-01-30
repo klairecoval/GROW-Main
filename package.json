@@ -1,0 +1,19 @@
+{
+  "name": "grow-main",
+  "version": "1.0.0",
+  "description": "main thought-drop station and data visualization",
+  "main": "./server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klairecoval/GROW-Main.git"
+  },
+  "author": "Claire Koval, Jason Mayotte",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/klairecoval/GROW-Main/issues"
+  },
+  "homepage": "https://github.com/klairecoval/GROW-Main#readme"
+}
