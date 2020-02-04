@@ -5,7 +5,7 @@
   "main": "./server/app.js",
   "scripts": {
     "buildAppBundle": "babel ./client/app ./client/helper --presets react --out-file ./hosted/bundle.js",
-    "buildSass": "node-sass --include-path scss ./hosted/css/main.scss ./hosted/main.css",
+    "buildSass": "node-sass --include-path scss ./hosted/styles/main.scss ./hosted/main.css",
     "build": "npm run buildAppBundle && npm run buildSass",
     "watchAppBundle": "babel --watch ./client/app ./client/helper --presets react --out-file ./hosted/bundle.js",
     "nodemon": "nodemon --watch ./server ./server/app.js",

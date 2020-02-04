@@ -1,18 +1,14 @@
-const prompts = document.querySelector('#promptSlot');
+const promptTitle = document.querySelector('#promptTitle');
 
 const PromptSetup = (props) =>{
     return(
-        <div classname="promptList">
-            <h1>Prompt:1</h1>
-            <h1>Prompt:2</h1>
-            <h1>Prompt:3</h1>
-            <h1>Prompt:4</h1>
+        <div className="promptList">
         </div>
      );
 };
 
 const setup = () => {
     ReactDOM.render(
-        PromptSetup, document.querySelector("promptSlot");
+        PromptSetup, document.querySelector("promptSlot")
     )
-}
+};

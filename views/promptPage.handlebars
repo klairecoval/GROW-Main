@@ -12,15 +12,20 @@
 </head>
 
 <body>
-  <section id="promptTitle">
-  </section>
-  <section id="logThought">
-  </section>
+  <h2>Select your prompt</h2>
 
-  <div id="errorMessage">
-    <h3><span id="error"></span></h3>
-  </div>
+  <input type="radio" name="prompt" value="thankful">I am thankful for...<br>
+  <input type="radio" name="prompt" value="inspired">I am inspired by...<br>
+  <input type="radio" name="prompt" value="love">I love...<br>
+  <input type="radio" name="prompt" value="excited">I am excited for...<br>
+  <input type="radio" name="prompt" value="happiest">I feel happiest when...<br>
+
+  <button>Next</button>
   
+  <div class="error">
+    <p>Please select a prompt to continue</p>
+  </div>
+
   <script src="/assets/bundle.js"></script>
 </body>
 
