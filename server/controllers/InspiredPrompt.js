@@ -1,6 +1,6 @@
 const models = require('../models');
 
-const excitedPrompt = models.ExcitedPrompt;
+const inspiredPrompt = models.InspiredPrompt;
 
 // 
 const makePage = (req,res) => {
@@ -13,10 +13,31 @@ const answerPrompt = (req,res) => {
     if(!req.body.answer){
         return res.status(400).json({error:'Please fill in your answer'});
     }
+
+    const promptData = {
+        answer: req.body.answer,
+    };
+    
+    const newInspired = new prompt.InspiredPrompt(promptData);
+    const inspirePromise = newInspired.save();
+    
+    /*
+    thankPromise.then(() => {
+        //res.json({});
+    })
+    */
+
+    inspirePromise.catch((err) => {
+        if(err.code === 11000){
+            return res.status(400).json({error:"An error has occured"});
+        }
+        return res.status(400).json({error: 'An error has occured'});
+    });
+    
+    return inspirePromise;
 }
 
-const promptData = {
-    answer: req.body.answer,
+module.exports = {
+    make: makePage,
+    answerPrompt,
 };
-
-const newInspired = new prompt.InspiredPrompt(promptData);

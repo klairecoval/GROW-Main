@@ -13,10 +13,31 @@ const answerPrompt = (req,res) => {
     if(!req.body.answer){
         return res.status(400).json({error:'Please fill in your answer'});
     }
+
+    const promptData = {
+        answer: req.body.answer,
+    };
+    
+    const newHappiest = new prompt.HappiestPrompt(promptData);
+    const happiestPromise = newHappiest.save();
+    
+    /*
+    thankPromise.then(() => {
+        //res.json({});
+    })
+    */
+
+    happiestPromise.catch((err) => {
+        if(err.code === 11000){
+            return res.status(400).json({error:"An error has occured"});
+        }
+        return res.status(400).json({error: 'An error has occured'});
+    });
+    
+    return happiestPromise;
 }
 
-const promptData = {
-    answer: req.body.answer,
+module.exports = {
+    make: makePage,
+    answerPrompt,
 };
-
-const newHappy = new prompt.HappiestPrompt(promptData);

@@ -1,6 +1,6 @@
 const models = require('../models');
 
-const excitedPrompt = models.ExcitedPrompt;
+const lovePrompt = models.LovePrompt;
 
 // 
 const makePage = (req,res) => {
@@ -13,10 +13,31 @@ const answerPrompt = (req,res) => {
     if(!req.body.answer){
         return res.status(400).json({error:'Please fill in your answer'});
     }
+
+    const promptData = {
+        answer: req.body.answer,
+    };
+    
+    const newLove = new prompt.LovePrompt(promptData);
+    const lovePromise = newLove.save();
+    
+    /*
+    thankPromise.then(() => {
+        //res.json({});
+    })
+    */
+
+    lovePromise.catch((err) => {
+        if(err.code === 11000){
+            return res.status(400).json({error:"An error has occured"});
+        }
+        return res.status(400).json({error: 'An error has occured'});
+    });
+    
+    return lovePromise;
 }
 
-const promptData = {
-    answer: req.body.answer,
+module.exports = {
+    make: makePage,
+    answerPrompt,
 };
-
-const newLove = new prompt.LovePrompt(promptData);

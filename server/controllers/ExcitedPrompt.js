@@ -2,21 +2,36 @@ const models = require('../models');
 
 const excitedPrompt = models.ExcitedPrompt;
 
-// 
-const makePage = (req,res) => {
-  return res.render('thoughtDrop');
-}
-
-
 // Create a new response to this prompt
 const answerPrompt = (req,res) => {
     if(!req.body.answer){
         return res.status(400).json({error:'Please fill in your answer'});
     }
+
+    const promptData = {
+        answer: req.body.answer,
+    };
+    
+    const newExcited = new prompt.ExcitedPrompt(promptData);
+    const excitedPromise = newExcited.save();
+    
+    /*
+    excitedPromise.then(() => {
+        //res.json({});
+    })
+    */
+
+    excitedPromise.catch((err) => {
+        if(err.code === 11000){
+            return res.status(400).json({error:"An error has occured"});
+        }
+        return res.status(400).json({error: 'An error has occured'});
+    });
+    
+    return excitedPromise;
 }
 
-const promptData = {
-    answer: req.body.answer,
+module.exports = {
+    make: makePage,
+    answerPrompt,
 };
-
-const newExcite = new prompt.ExcitedPrompt(promptData);
