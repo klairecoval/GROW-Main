@@ -1,5 +1,3 @@
-const promptTitle = document.querySelector('#promptTitle');
-
 const PromptSetup = (props) =>{
     return(
         <div className="promptList">

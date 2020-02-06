@@ -1,34 +1,12 @@
 "use strict";
 "use strict";
 "use strict";
-
-var prompts = document.querySelector('#promptSlot');
+"use strict";
+"use strict";
+"use strict";
 
 var PromptSetup = function PromptSetup(props) {
-    return React.createElement(
-        "div",
-        { classname: "promptList" },
-        React.createElement(
-            "h1",
-            null,
-            "Prompt:1"
-        ),
-        React.createElement(
-            "h1",
-            null,
-            "Prompt:2"
-        ),
-        React.createElement(
-            "h1",
-            null,
-            "Prompt:3"
-        ),
-        React.createElement(
-            "h1",
-            null,
-            "Prompt:4"
-        )
-    );
+    return React.createElement("div", { className: "promptList" });
 };
 
 var setup = function setup() {

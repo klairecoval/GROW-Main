@@ -11,7 +11,12 @@ const promptPage = (req, res) => {
   res.render('promptPage');
 };
 
+const thoughtDropPage = (req, res) => {
+  res.render('thoughDropPage');
+};
+
 module.exports = {
   startPage,
   promptPage,
+  thoughtDropPage,
 };
