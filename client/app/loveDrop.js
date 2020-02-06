@@ -1,36 +1,35 @@
-const handleExcitedDrop = (e) => {
+const handleLoveDrop = (e) => {
     e.preventDefault();
 
     $('#errorMessage').animate({width:'hide'}, 350);
 
-    if($('#logText').val() == '') {
+    if($('#loveText').val() == '') {
         handleError('Input required');
         return false;
     }
 
-    sendAjax('POST', $('#excitedForm').attr('action'), $('#excitedForm').serialize(), function() {
-        loadExcitedThoughts();
+    sendAjax('POST', $('#loveForm').attr('action'), $('#loveForm').serialize(), function() {
     });
 
     return false;
 };
 
-const ExcitedTitle = (props) => {
+const LoveTitle = (props) => {
     return (
-        <h2 id="excitedTitle">I am excited for...</h2>
+        <h2 id="loveTitle">I love...</h2>
     );
 };
 
-const ExcitedForm = (props) => {
+const LoveForm = (props) => {
     return (
-        <form id='excitedForm'
-        onSubmit={handleExcitedDrop}
-        name='excitedForm'
+        <form id='loveForm'
+        onSubmit={handleLoveDrop}
+        name='loveForm'
         // action='/maker'
         method='POST'
-        className='excitedForm' >
+        className='loveForm' >
             <label htmlFor='text'>Text: </label>
-            <input id='excitedText' type='text' name='text' placeholder='...' />
+            <input id='loveText' type='text' name='text' placeholder='...' />
             <input className='logThoughtSubmit' type='submit' value='Log' />
         </form>
     );
@@ -38,10 +37,10 @@ const ExcitedForm = (props) => {
 
 const setup = function() {
     ReactDOM.render(
-        <ExcitedForm />, document.querySelector('#logThought')
+        <LoveForm />, document.querySelector('#logThought')
     );
 
     ReactDOM.render(
-        <DomoList />, document.querySelector('#domos')
+        <LoveTitle />, document.querySelector('#promptTitle')
     );
 };

@@ -3,13 +3,12 @@ const handleExcitedDrop = (e) => {
 
     $('#errorMessage').animate({width:'hide'}, 350);
 
-    if($('#logText').val() == '') {
+    if($('#excitedText').val() == '') {
         handleError('Input required');
         return false;
     }
 
     sendAjax('POST', $('#excitedForm').attr('action'), $('#excitedForm').serialize(), function() {
-        loadExcitedThoughts();
     });
 
     return false;
@@ -42,6 +41,6 @@ const setup = function() {
     );
 
     ReactDOM.render(
-        <DomoList />, document.querySelector('#domos')
+        <ExcitedTitle />, document.querySelector('#promptTitle')
     );
 };
