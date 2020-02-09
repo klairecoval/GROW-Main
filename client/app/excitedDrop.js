@@ -3,13 +3,12 @@ const handleExcitedDrop = (e) => {
 
     $('#errorMessage').animate({width:'hide'}, 350);
 
-    if($('#logText').val() == '') {
+    if($('#excitedText').val() == '') {
         handleError('Input required');
         return false;
     }
 
     sendAjax('POST', $('#excitedForm').attr('action'), $('#excitedForm').serialize(), function() {
-        loadExcitedThoughts();
     });
 
     return false;
@@ -36,12 +35,21 @@ const ExcitedForm = (props) => {
     );
 };
 
-const setup = function() {
+const createExcitedView = function() {
+    ReactDOM.render(
+        <ExcitedTitle />, document.querySelector('#promptTitle')
+    );
+    
     ReactDOM.render(
         <ExcitedForm />, document.querySelector('#logThought')
     );
+};
 
-    ReactDOM.render(
-        <DomoList />, document.querySelector('#domos')
-    );
+const handleExcitedType = () => {
+	const excitedType = document.querySelector('#excitedType');
+	
+	excitedType.addEventListener('click', e => {
+		e.preventDefault();
+		createExcitedView();
+	});
 };
