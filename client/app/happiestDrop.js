@@ -25,7 +25,7 @@ const HappiestForm = (props) => {
         <form id='happiestForm'
         onSubmit={handleHappiestDrop}
         name='happiestForm'
-        // action='/maker'
+        action='/thankYou'
         method='POST'
         className='happiestForm' >
             <label htmlFor='text'>Text: </label>

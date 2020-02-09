@@ -8,20 +8,20 @@ const convertId = mongoose.Types.ObjectId;
 const setAnswer = (answer) => _.escape(answer).trim();
 
 const LoveSchema = new mongoose.Schema({
-    answer: {
-        type: String,
-        required: true,
-        trim:  true,
-    },
+  answer: {
+    type: String,
+    required: true,
+    trim: true,
+  },
 });
 
 LoveSchema.statics.toAPI = (doc) => ({
-    answer: doc.answer,
+  answer: doc.answer,
 });
 
 LovePrompt = mongoose.model('LovePrompt', LoveSchema);
 
 module.exports = {
-    LovePrompt,
-    LoveSchema,
+  LovePrompt,
+  LoveSchema,
 };

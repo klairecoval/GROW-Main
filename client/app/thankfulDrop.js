@@ -25,7 +25,7 @@ const ThankfulForm = (props) => {
         <form id='thankfulForm'
         onSubmit={handleThankfulDrop}
         name='thankfulForm'
-        // action='/maker'
+        action='/thankYou'
         method='POST'
         className='thankfulForm' >
             <label htmlFor='text'>Text: </label>

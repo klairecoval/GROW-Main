@@ -4,7 +4,7 @@ const controllers = require('./controllers');
 const router = (app) => {
   app.get('/startPage', controllers.Session.startPage);
   app.get('/promptPage', controllers.Session.promptPage);
-  app.get('thankYouPage', controllers.Session.thankYouPage);
+  app.get('thankYou', controllers.Session.thankYouPage);
   app.get('/', controllers.Session.startPage);
 };
 

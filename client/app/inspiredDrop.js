@@ -25,7 +25,7 @@ const InspiredForm = (props) => {
         <form id='inspiredForm'
         onSubmit={handleInspiredDrop}
         name='inspiredForm'
-        // action='/maker'
+        action='/thankYou'
         method='POST'
         className='inspiredForm' >
             <label htmlFor='text'>Text: </label>

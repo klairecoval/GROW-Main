@@ -25,7 +25,7 @@ const ExcitedForm = (props) => {
         <form id='excitedForm'
         onSubmit={handleExcitedDrop}
         name='excitedForm'
-        // action='/maker'
+        action='/thankYou'
         method='POST'
         className='excitedForm' >
             <label htmlFor='text'>Text: </label>
