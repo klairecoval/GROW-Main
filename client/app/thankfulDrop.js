@@ -35,12 +35,21 @@ const ThankfulForm = (props) => {
     );
 };
 
-const setup = function() {
+const createThankfulView = function() {
     ReactDOM.render(
-        <ThankfulForm />, document.querySelector('#logThought')
+        <ThankfulTitle />, document.querySelector('#promptTitle')
     );
 
     ReactDOM.render(
-        <InspiredForm />, document.querySelector('#promptTitle')
+        <ThankfulForm />, document.querySelector('#logThought')
     );
+};
+
+const handleThankfulType = () => {
+	const thankfulType = document.querySelector('#thankfulType');
+	
+	thankfulType.addEventListener('click', e => {
+		e.preventDefault();
+		createThankfulView();
+	});
 };

@@ -35,12 +35,21 @@ const ExcitedForm = (props) => {
     );
 };
 
-const setup = function() {
-    ReactDOM.render(
-        <ExcitedForm />, document.querySelector('#logThought')
-    );
-
+const createExcitedView = function() {
     ReactDOM.render(
         <ExcitedTitle />, document.querySelector('#promptTitle')
     );
+    
+    ReactDOM.render(
+        <ExcitedForm />, document.querySelector('#logThought')
+    );
+};
+
+const handleExcitedType = () => {
+	const excitedType = document.querySelector('#excitedType');
+	
+	excitedType.addEventListener('click', e => {
+		e.preventDefault();
+		createExcitedView();
+	});
 };

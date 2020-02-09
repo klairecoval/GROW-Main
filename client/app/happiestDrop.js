@@ -35,12 +35,21 @@ const HappiestForm = (props) => {
     );
 };
 
-const setup = function() {
-    ReactDOM.render(
-        <HappiestForm />, document.querySelector('#logThought')
-    );
-
+const createHappiestView = function() {
     ReactDOM.render(
         <HappiestForm />, document.querySelector('#promptTitle')
     );
+
+    ReactDOM.render(
+        <HappiestForm />, document.querySelector('#logThought')
+    );
+};
+
+const handleHappiestType = () => {
+	const happiestType = document.querySelector('#happiestType');
+	
+	happiestType.addEventListener('click', e => {
+		e.preventDefault();
+		createHappiestView();
+	});
 };

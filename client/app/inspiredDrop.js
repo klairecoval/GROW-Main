@@ -35,12 +35,21 @@ const InspiredForm = (props) => {
     );
 };
 
-const setup = function() {
-    ReactDOM.render(
-        <InspiredForm />, document.querySelector('#logThought')
-    );
-
+const createInspiredView = function() {
     ReactDOM.render(
         <InspiredForm />, document.querySelector('#promptTitle')
     );
+
+    ReactDOM.render(
+        <InspiredForm />, document.querySelector('#logThought')
+    );
+};
+
+const handleInspiredType = () => {
+	const inspiredType = document.querySelector('#inspiredType');
+	
+	inspiredType.addEventListener('click', e => {
+		e.preventDefault();
+		createInspiredView();
+	});
 };

@@ -35,12 +35,21 @@ const LoveForm = (props) => {
     );
 };
 
-const setup = function() {
-    ReactDOM.render(
-        <LoveForm />, document.querySelector('#logThought')
-    );
-
+const createLoveView = function() {
     ReactDOM.render(
         <LoveTitle />, document.querySelector('#promptTitle')
     );
+    
+    ReactDOM.render(
+        <LoveForm />, document.querySelector('#logThought')
+    );
+};
+
+const handleLoveType = () => {
+	const loveType = document.querySelector('#loveType');
+	
+	loveType.addEventListener('click', e => {
+		e.preventDefault();
+		createLoveView();
+	});
 };
