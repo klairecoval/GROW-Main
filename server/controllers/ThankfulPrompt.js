@@ -1,20 +1,20 @@
 const models = require('../models');
 
-const thankfulPrompt = models.ThankfulPrompt;
+const Thankful = models.Thankful;
 
 const logThankful = (req, res) => res.render('thankYou');
 
 // Create a new response to this prompt
-const answerPrompt = (req, res) => {
+const answerThankful = (req, res) => {
   if (!req.body.answer) {
     return res.status(400).json({ error: 'Please fill in your answer' });
   }
 
-  const promptData = {
+  const thankfulData = {
     answer: req.body.answer,
   };
 
-  const newThankful = new prompt.ThankfulPrompt(promptData);
+  const newThankful = new Thankful.ThankfulModel(thankfulData);
   const thankPromise = newThankful.save();
 
     /*
@@ -36,5 +36,5 @@ const answerPrompt = (req, res) => {
 
 module.exports = {
   makeThankful: logThankful,
-  answerPrompt,
+  answerThankful,
 };

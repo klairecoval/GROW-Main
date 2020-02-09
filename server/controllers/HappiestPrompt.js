@@ -1,20 +1,20 @@
 const models = require('../models');
 
-const happiestPrompt = models.HappiestPrompt;
+const Happiest = models.Happiest;
 
 const logHappiest = (req, res) => res.render('thankYou');
 
-// Create a new response to this prompt
-const answerPrompt = (req, res) => {
+// Create a new response to this Model
+const answerHappiest = (req, res) => {
   if (!req.body.answer) {
     return res.status(400).json({ error: 'Please fill in your answer' });
   }
 
-  const promptData = {
+  const happiestData = {
     answer: req.body.answer,
   };
 
-  const newHappiest = new prompt.HappiestPrompt(promptData);
+  const newHappiest = new Happiest.HappiestModel(happiestData);
   const happiestPromise = newHappiest.save();
 
     /*
@@ -35,5 +35,5 @@ const answerPrompt = (req, res) => {
 
 module.exports = {
   makeHappiest: logHappiest,
-  answerPrompt,
+  answerHappiest,
 };

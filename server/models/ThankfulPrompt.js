@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const _ = require('underscore');
 
-let ThankfulPrompt = {};
+let ThankfulModel = {};
 
-const convertId = mongoose.Types.ObjectId;
-const setAnswer = (answer) => _.escape(answer).trim();
+// const convertId = mongoose.Types.ObjectId;
+// const setAnswer = (answer) => _.escape(answer).trim();
 
 const ThankfulSchema = new mongoose.Schema({
   answer: {
@@ -19,9 +19,9 @@ ThankfulSchema.statics.toAPI = (doc) => ({
   answer: doc.answer,
 });
 
-ThankfulPrompt = mongoose.model('ThankfulPrompt', ThankfulSchema);
+ThankfulModel = mongoose.model('ThankfulModel', ThankfulSchema);
 
 module.exports = {
-  ThnakfulPrompt,
+  ThankfulModel,
   ThankfulSchema,
 };

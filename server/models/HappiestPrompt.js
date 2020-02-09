@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const _ = require('underscore');
 
-let HappiestPrompt = {};
+let HappiestModel = {};
 
-const convertId = mongoose.Types.ObjectId;
-const setAnswer = (answer) => _.escape(answer).trim();
+// const convertId = mongoose.Types.ObjectId;
+// const setAnswer = (answer) => _.escape(answer).trim();
 
 const HappiestSchema = new mongoose.Schema({
   answer: {
@@ -19,9 +19,9 @@ HappiestSchema.statics.toAPI = (doc) => ({
   answer: doc.answer,
 });
 
-HappiestPrompt = mongoose.model('HappiestPrompt', HappiestSchema);
+HappiestModel = mongoose.model('HappiestModel', HappiestSchema);
 
 module.exports = {
-  HappiestPrompt,
+  HappiestModel,
   HappiestSchema,
 };

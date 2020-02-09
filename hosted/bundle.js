@@ -29,9 +29,9 @@ var ExcitedForm = function ExcitedForm(props) {
         'form',
         { id: 'excitedForm',
             onSubmit: handleExcitedDrop,
-            name: 'excitedForm'
-            // action='/maker'
-            , method: 'POST',
+            name: 'excitedForm',
+            action: '/thankYou',
+            method: 'POST',
             className: 'excitedForm' },
         React.createElement(
             'label',
@@ -87,9 +87,9 @@ var HappiestForm = function HappiestForm(props) {
         'form',
         { id: 'happiestForm',
             onSubmit: handleHappiestDrop,
-            name: 'happiestForm'
-            // action='/maker'
-            , method: 'POST',
+            name: 'happiestForm',
+            action: '/thankYou',
+            method: 'POST',
             className: 'happiestForm' },
         React.createElement(
             'label',
@@ -145,9 +145,9 @@ var InspiredForm = function InspiredForm(props) {
         'form',
         { id: 'inspiredForm',
             onSubmit: handleInspiredDrop,
-            name: 'inspiredForm'
-            // action='/maker'
-            , method: 'POST',
+            name: 'inspiredForm',
+            action: '/thankYou',
+            method: 'POST',
             className: 'inspiredForm' },
         React.createElement(
             'label',
@@ -203,9 +203,9 @@ var LoveForm = function LoveForm(props) {
         'form',
         { id: 'loveForm',
             onSubmit: handleLoveDrop,
-            name: 'loveForm'
-            // action='/maker'
-            , method: 'POST',
+            name: 'loveForm',
+            action: '/thankYou',
+            method: 'POST',
             className: 'loveForm' },
         React.createElement(
             'label',
@@ -457,9 +457,9 @@ var ThankfulForm = function ThankfulForm(props) {
         'form',
         { id: 'thankfulForm',
             onSubmit: handleThankfulDrop,
-            name: 'thankfulForm'
-            // action='/maker'
-            , method: 'POST',
+            name: 'thankfulForm',
+            action: '/thankYou',
+            method: 'POST',
             className: 'thankfulForm' },
         React.createElement(
             'label',

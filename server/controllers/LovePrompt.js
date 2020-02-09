@@ -1,20 +1,20 @@
 const models = require('../models');
 
-const lovePrompt = models.LovePrompt;
+const Love = models.Love;
 
 const logLove = (req, res) => res.render('thankYou');
 
 // Create a new response to this prompt
-const answerPrompt = (req, res) => {
+const answerLove = (req, res) => {
   if (!req.body.answer) {
     return res.status(400).json({ error: 'Please fill in your answer' });
   }
 
-  const promptData = {
+  const loveData = {
     answer: req.body.answer,
   };
 
-  const newLove = new prompt.LovePrompt(promptData);
+  const newLove = new Love.LoveModel(loveData);
   const lovePromise = newLove.save();
 
     /*
@@ -35,5 +35,5 @@ const answerPrompt = (req, res) => {
 
 module.exports = {
   makeLove: logLove, // lol
-  answerPrompt,
+  answerLove,
 };

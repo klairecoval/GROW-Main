@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const _ = require('underscore');
 
-let ExcitedPrompt = {};
+let ExcitedModel = {};
 
-const convertId = mongoose.Types.ObjectId;
-const setAnswer = (answer) => _.escape(answer).trim();
+// const convertId = mongoose.Types.ObjectId;
+// const setAnswer = (answer) => _.escape(answer).trim();
 
 const ExciteSchema = new mongoose.Schema({
   answer: {
@@ -19,9 +19,9 @@ ExciteSchema.statics.toAPI = (doc) => ({
   answer: doc.answer,
 });
 
-ExcitedPrompt = mongoose.model('ExcitedPrompt', ExciteSchema);
+ExcitedModel = mongoose.model('ExcitedModel', ExciteSchema);
 
 module.exports = {
-  ExcitedPrompt,
+  ExcitedModel,
   ExciteSchema,
 };

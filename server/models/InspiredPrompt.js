@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const _ = require('underscore');
 
-let InspiredPrompt = {};
+let InspiredModel = {};
 
-const convertId = mongoose.Types.ObjectId;
-const setAnswer = (answer) => _.escape(answer).trim();
+// const convertId = mongoose.Types.ObjectId;
+// const setAnswer = (answer) => _.escape(answer).trim();
 
 const InspiredSchema = new mongoose.Schema({
   answer: {
@@ -19,9 +19,9 @@ InspiredSchema.statics.toAPI = (doc) => ({
   answer: doc.answer,
 });
 
-InspiredPrompt = mongoose.model('InspiredPrompt', InspiredSchema);
+InspiredModel = mongoose.model('InspiredModel', InspiredSchema);
 
 module.exports = {
-  InspiredPrompt,
+  InspiredModel,
   InspiredSchema,
 };

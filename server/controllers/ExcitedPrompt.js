@@ -1,20 +1,20 @@
 const models = require('../models');
 
-const excitedPrompt = models.ExcitedPrompt;
+const Excited = models.Excited;
 
 const logExcited = (req, res) => res.render('thankYou');
 
 // Create a new response to this prompt
-const answerPrompt = (req, res) => {
+const answerExcited = (req, res) => {
   if (!req.body.answer) {
     return res.status(400).json({ error: 'Please fill in your answer' });
   }
 
-  const promptData = {
+  const excitedData = {
     answer: req.body.answer,
   };
 
-  const newExcited = new prompt.ExcitedPrompt(promptData);
+  const newExcited = new Excited.ExcitedModel(excitedData);
   const excitedPromise = newExcited.save();
 
     /*
@@ -35,5 +35,5 @@ const answerPrompt = (req, res) => {
 
 module.exports = {
   makeExcited: logExcited,
-  answerPrompt,
+  answerExcited,
 };

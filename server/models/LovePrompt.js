@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const _ = require('underscore');
 
-let LovePrompt = {};
+let LoveModel = {};
 
-const convertId = mongoose.Types.ObjectId;
-const setAnswer = (answer) => _.escape(answer).trim();
+// const convertId = mongoose.Types.ObjectId;
+// const setAnswer = (answer) => _.escape(answer).trim();
 
 const LoveSchema = new mongoose.Schema({
   answer: {
@@ -19,9 +19,9 @@ LoveSchema.statics.toAPI = (doc) => ({
   answer: doc.answer,
 });
 
-LovePrompt = mongoose.model('LovePrompt', LoveSchema);
+LoveModel = mongoose.model('LoveModel', LoveSchema);
 
 module.exports = {
-  LovePrompt,
+  LoveModel,
   LoveSchema,
 };

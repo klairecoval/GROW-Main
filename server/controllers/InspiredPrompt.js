@@ -1,20 +1,20 @@
 const models = require('../models');
 
-const inspiredPrompt = models.InspiredPrompt;
+const Inspired = models.Inspired;
 
 const logInspired = (req, res) => res.render('thankYou');
 
-// Create a new response to this prompt
-const answerPrompt = (req, res) => {
+// Create a new response to this Model
+const answerInspired = (req, res) => {
   if (!req.body.answer) {
     return res.status(400).json({ error: 'Please fill in your answer' });
   }
 
-  const promptData = {
+  const inspiredData = {
     answer: req.body.answer,
   };
 
-  const newInspired = new prompt.InspiredPrompt(promptData);
+  const newInspired = new Inspired.InspiredModel(inspiredData);
   const inspirePromise = newInspired.save();
 
     /*
@@ -35,5 +35,5 @@ const answerPrompt = (req, res) => {
 
 module.exports = {
   makeInspired: logInspired,
-  answerPrompt,
+  answerInspired,
 };
