@@ -45,8 +45,8 @@ const createThankfulView = function() {
     );
 };
 
-const handleThankfulType = () => {
-	const thankfulType = document.querySelector('#thankfulType');
+const handleThankfulClick = () => {
+	const thankfulType = document.querySelector('#thankfulPrompt');
 	
 	thankfulType.addEventListener('click', e => {
 		e.preventDefault();

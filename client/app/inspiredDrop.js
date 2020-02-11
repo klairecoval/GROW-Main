@@ -45,8 +45,8 @@ const createInspiredView = function() {
     );
 };
 
-const handleInspiredType = () => {
-	const inspiredType = document.querySelector('#inspiredType');
+const handleInspiredClick = () => {
+	const inspiredType = document.querySelector('#inspiredPrompt');
 	
 	inspiredType.addEventListener('click', e => {
 		e.preventDefault();

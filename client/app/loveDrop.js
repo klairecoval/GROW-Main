@@ -45,8 +45,8 @@ const createLoveView = function() {
     );
 };
 
-const handleLoveType = () => {
-	const loveType = document.querySelector('#loveType');
+const handleLoveClick = () => {
+	const loveType = document.querySelector('#lovePrompt');
 	
 	loveType.addEventListener('click', e => {
 		e.preventDefault();

@@ -45,8 +45,8 @@ const createHappiestView = function() {
     );
 };
 
-const handleHappiestType = () => {
-	const happiestType = document.querySelector('#happiestType');
+const handleHappiestClick = () => {
+	const happiestType = document.querySelector('#happiestPrompt');
 	
 	happiestType.addEventListener('click', e => {
 		e.preventDefault();
