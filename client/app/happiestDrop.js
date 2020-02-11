@@ -37,7 +37,7 @@ const HappiestForm = (props) => {
 
 const createHappiestView = function() {
     ReactDOM.render(
-        <HappiestForm />, document.querySelector('#promptTitle')
+        <HappiestTitle />, document.querySelector('#promptTitle')
     );
 
     ReactDOM.render(

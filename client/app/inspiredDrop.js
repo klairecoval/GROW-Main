@@ -37,7 +37,7 @@ const InspiredForm = (props) => {
 
 const createInspiredView = function() {
     ReactDOM.render(
-        <InspiredForm />, document.querySelector('#promptTitle')
+        <InspiredTitle />, document.querySelector('#promptTitle')
     );
 
     ReactDOM.render(
