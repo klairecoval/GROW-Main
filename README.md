@@ -13,7 +13,7 @@ Grow is both a digital and physical interactive experience that encourages parti
 ### Contributing to Code
 - Contact Claire to be approved for repo
 - **Do not merge PR before review**
-- `npm test` before committing
+- `npm test` and `npm start`before pushing to compile and make sure it runs
 - Do not work on master unless otherwise approved
 - Use a spell checker if needed
 
@@ -22,9 +22,10 @@ Grow is both a digital and physical interactive experience that encourages parti
 - `git pull`
 - `git checkout -b [new branch name]`
 - (make changes to code)
+- `npm start`
 - `npm test`
 - (resolve issues)
 - `git add .`
-- `git commit -m "[commit message here]`
+- `git commit -m "[commit message here]"`
 - `git push` to submit a PR
 - `git checkout master` to get back to master branch. *Do not forget this step to avoid nesting branches and messing everything up*
