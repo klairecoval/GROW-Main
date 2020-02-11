@@ -13,7 +13,7 @@ Grow is both a digital and physical interactive experience that encourages parti
 ### Contributing to Code
 - Contact Claire to be approved for repo
 - **Do not merge PR before review**
-- `npm test` before committing
+- `npm test` and `npm start`before pushing to compile and make sure it runs
 - Do not work on master unless otherwise approved
 - Use a spell checker if needed
 
