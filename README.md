@@ -22,6 +22,7 @@ Grow is both a digital and physical interactive experience that encourages parti
 - `git pull`
 - `git checkout -b [new branch name]`
 - (make changes to code)
+- `npm start`
 - `npm test`
 - (resolve issues)
 - `git add .`
