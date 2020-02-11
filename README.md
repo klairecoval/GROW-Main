@@ -25,6 +25,6 @@ Grow is both a digital and physical interactive experience that encourages parti
 - `npm test`
 - (resolve issues)
 - `git add .`
-- `git commit -m "[commit message here]`
+- `git commit -m "[commit message here]"`
 - `git push` to submit a PR
 - `git checkout master` to get back to master branch. *Do not forget this step to avoid nesting branches and messing everything up*
