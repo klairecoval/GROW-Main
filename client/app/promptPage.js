@@ -49,12 +49,14 @@ const HappiestModal = () => {
         </div>
     );
 };
-const idkModal = () => {
-    <div id="idkModal">
-        <button id="idkType">TYPE</button>
-        <h2>OR</h2>
-        <button>DRAW</button>
-    </div>
+const ProudModal = () => {
+    return (
+        <div id="proudModal">
+            <button id="proudType">TYPE</button>
+            <h2>OR</h2>
+            <button>DRAW</button>
+        </div>
+    );
 };
 
 const PromptButtons = () => {
@@ -65,12 +67,13 @@ const PromptButtons = () => {
             <button id="lovePrompt">I love...</button>
             <button id="excitedPrompt">I am excited for...</button>
             <button id="happiestPrompt">I feel happiest when...</button>
-            <button id="idkPrompt">IDK...</button>
+            <button id="proudPrompt">I am proud of...</button>
             <ThankfulModal />
             <InspiredModal />
             <LoveModal />
             <ExcitedModal />
             <HappiestModal />
+            <ProudModal />
         </div>
     );
 };
@@ -89,6 +92,7 @@ const setup = function() {
     handleInspiredType();
     handleHappiestType();
     handleExcitedType();
+    handleProudType();
 };
 
 // instantiate above

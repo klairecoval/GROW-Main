@@ -102,7 +102,7 @@ var HappiestForm = function HappiestForm(props) {
 };
 
 var createHappiestView = function createHappiestView() {
-    ReactDOM.render(React.createElement(HappiestForm, null), document.querySelector('#promptTitle'));
+    ReactDOM.render(React.createElement(HappiestTitle, null), document.querySelector('#promptTitle'));
 
     ReactDOM.render(React.createElement(HappiestForm, null), document.querySelector('#logThought'));
 };
@@ -160,7 +160,7 @@ var InspiredForm = function InspiredForm(props) {
 };
 
 var createInspiredView = function createInspiredView() {
-    ReactDOM.render(React.createElement(InspiredForm, null), document.querySelector('#promptTitle'));
+    ReactDOM.render(React.createElement(InspiredTitle, null), document.querySelector('#promptTitle'));
 
     ReactDOM.render(React.createElement(InspiredForm, null), document.querySelector('#logThought'));
 };
@@ -231,7 +231,6 @@ var handleLoveType = function handleLoveType() {
         createLoveView();
     });
 };
-"use strict";
 "use strict";
 
 var PromptTitle = function PromptTitle(props) {
@@ -347,13 +346,13 @@ var HappiestModal = function HappiestModal() {
         )
     );
 };
-var idkModal = function idkModal() {
-    React.createElement(
+var ProudModal = function ProudModal() {
+    return React.createElement(
         "div",
-        { id: "idkModal" },
+        { id: "proudModal" },
         React.createElement(
             "button",
-            { id: "idkType" },
+            { id: "proudType" },
             "TYPE"
         ),
         React.createElement(
@@ -400,14 +399,15 @@ var PromptButtons = function PromptButtons() {
         ),
         React.createElement(
             "button",
-            { id: "idkPrompt" },
-            "IDK..."
+            { id: "proudPrompt" },
+            "I am proud of..."
         ),
         React.createElement(ThankfulModal, null),
         React.createElement(InspiredModal, null),
         React.createElement(LoveModal, null),
         React.createElement(ExcitedModal, null),
-        React.createElement(HappiestModal, null)
+        React.createElement(HappiestModal, null),
+        React.createElement(ProudModal, null)
     );
 };
 
@@ -421,12 +421,71 @@ var setup = function setup() {
     handleInspiredType();
     handleHappiestType();
     handleExcitedType();
+    handleProudType();
 };
 
 // instantiate above
 $(document).ready(function () {
     setup();
 });
+'use strict';
+
+var handleProudDrop = function handleProudDrop(e) {
+    e.preventDefault();
+
+    $('#errorMessage').animate({ width: 'hide' }, 350);
+
+    if ($('#proudText').val() == '') {
+        handleError('Input required');
+        return false;
+    }
+
+    sendAjax('POST', $('#proudForm').attr('action'), $('#proudForm').serialize(), function () {});
+
+    return false;
+};
+
+var ProudTitle = function ProudTitle(props) {
+    return React.createElement(
+        'h2',
+        { id: 'proudTitle' },
+        'Im proud of...'
+    );
+};
+
+var ProudForm = function ProudForm(props) {
+    return React.createElement(
+        'form',
+        { id: 'proudForm',
+            onSubmit: handleProudDrop,
+            name: 'proudForm',
+            action: '/thankYou',
+            method: 'POST',
+            className: 'proudForm' },
+        React.createElement(
+            'label',
+            { htmlFor: 'text' },
+            'Text: '
+        ),
+        React.createElement('input', { id: 'proudText', type: 'text', name: 'text', placeholder: '...' }),
+        React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+    );
+};
+
+var createProudView = function createProudView() {
+    ReactDOM.render(React.createElement(ProudTitle, null), document.querySelector('#promptTitle'));
+
+    ReactDOM.render(React.createElement(ProudForm, null), document.querySelector('#logThought'));
+};
+
+var handleProudType = function handleProudType() {
+    var proudType = document.querySelector('#proudType');
+
+    proudType.addEventListener('click', function (e) {
+        e.preventDefault();
+        createProudView();
+    });
+};
 'use strict';
 
 var handleThankfulDrop = function handleThankfulDrop(e) {
