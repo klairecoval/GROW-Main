@@ -49,8 +49,8 @@ var createExcitedView = function createExcitedView() {
     ReactDOM.render(React.createElement(ExcitedForm, null), document.querySelector('#logThought'));
 };
 
-var handleExcitedType = function handleExcitedType() {
-    var excitedType = document.querySelector('#excitedType');
+var handleExcitedClick = function handleExcitedClick() {
+    var excitedType = document.querySelector('#excitedPrompt');
 
     excitedType.addEventListener('click', function (e) {
         e.preventDefault();
@@ -102,13 +102,13 @@ var HappiestForm = function HappiestForm(props) {
 };
 
 var createHappiestView = function createHappiestView() {
-    ReactDOM.render(React.createElement(HappiestForm, null), document.querySelector('#promptTitle'));
+    ReactDOM.render(React.createElement(HappiestTitle, null), document.querySelector('#promptTitle'));
 
     ReactDOM.render(React.createElement(HappiestForm, null), document.querySelector('#logThought'));
 };
 
-var handleHappiestType = function handleHappiestType() {
-    var happiestType = document.querySelector('#happiestType');
+var handleHappiestClick = function handleHappiestClick() {
+    var happiestType = document.querySelector('#happiestPrompt');
 
     happiestType.addEventListener('click', function (e) {
         e.preventDefault();
@@ -160,13 +160,13 @@ var InspiredForm = function InspiredForm(props) {
 };
 
 var createInspiredView = function createInspiredView() {
-    ReactDOM.render(React.createElement(InspiredForm, null), document.querySelector('#promptTitle'));
+    ReactDOM.render(React.createElement(InspiredTitle, null), document.querySelector('#promptTitle'));
 
     ReactDOM.render(React.createElement(InspiredForm, null), document.querySelector('#logThought'));
 };
 
-var handleInspiredType = function handleInspiredType() {
-    var inspiredType = document.querySelector('#inspiredType');
+var handleInspiredClick = function handleInspiredClick() {
+    var inspiredType = document.querySelector('#inspiredPrompt');
 
     inspiredType.addEventListener('click', function (e) {
         e.preventDefault();
@@ -223,15 +223,14 @@ var createLoveView = function createLoveView() {
     ReactDOM.render(React.createElement(LoveForm, null), document.querySelector('#logThought'));
 };
 
-var handleLoveType = function handleLoveType() {
-    var loveType = document.querySelector('#loveType');
+var handleLoveClick = function handleLoveClick() {
+    var loveType = document.querySelector('#lovePrompt');
 
     loveType.addEventListener('click', function (e) {
         e.preventDefault();
         createLoveView();
     });
 };
-"use strict";
 "use strict";
 
 var PromptTitle = function PromptTitle(props) {
@@ -242,141 +241,19 @@ var PromptTitle = function PromptTitle(props) {
     );
 };
 
-var LoveModal = function LoveModal() {
-    return React.createElement(
-        "div",
-        { id: "loveModal" },
-        React.createElement(
-            "button",
-            { id: "loveType" },
-            "TYPE"
-        ),
-        React.createElement(
-            "h2",
-            null,
-            "OR"
-        ),
-        React.createElement(
-            "button",
-            null,
-            "DRAW"
-        )
-    );
-};
-var ThankfulModal = function ThankfulModal() {
-    return React.createElement(
-        "div",
-        { id: "thankfulModal" },
-        React.createElement(
-            "button",
-            { id: "thankfulType" },
-            "TYPE"
-        ),
-        React.createElement(
-            "h2",
-            null,
-            "OR"
-        ),
-        React.createElement(
-            "button",
-            null,
-            "DRAW"
-        )
-    );
-};
-var InspiredModal = function InspiredModal() {
-    return React.createElement(
-        "div",
-        { id: "inspiredModal" },
-        React.createElement(
-            "button",
-            { id: "inspiredType" },
-            "TYPE"
-        ),
-        React.createElement(
-            "h2",
-            null,
-            "OR"
-        ),
-        React.createElement(
-            "button",
-            null,
-            "DRAW"
-        )
-    );
-};
-var ExcitedModal = function ExcitedModal() {
-    return React.createElement(
-        "div",
-        { id: "excitedModal" },
-        React.createElement(
-            "button",
-            { id: "excitedType" },
-            "TYPE"
-        ),
-        React.createElement(
-            "h2",
-            null,
-            "OR"
-        ),
-        React.createElement(
-            "button",
-            null,
-            "DRAW"
-        )
-    );
-};
-var HappiestModal = function HappiestModal() {
-    return React.createElement(
-        "div",
-        { id: "happiestModal" },
-        React.createElement(
-            "button",
-            { id: "happiestType" },
-            "TYPE"
-        ),
-        React.createElement(
-            "h2",
-            null,
-            "OR"
-        ),
-        React.createElement(
-            "button",
-            null,
-            "DRAW"
-        )
-    );
-};
-var idkModal = function idkModal() {
-    React.createElement(
-        "div",
-        { id: "idkModal" },
-        React.createElement(
-            "button",
-            { id: "idkType" },
-            "TYPE"
-        ),
-        React.createElement(
-            "h2",
-            null,
-            "OR"
-        ),
-        React.createElement(
-            "button",
-            null,
-            "DRAW"
-        )
-    );
-};
-
 var PromptButtons = function PromptButtons() {
     return React.createElement(
         "div",
         null,
         React.createElement(
             "button",
-            { id: "thankfulPrompt" },
-            "I am thankful for..."
+            { id: "excitedPrompt" },
+            "I am excited for..."
+        ),
+        React.createElement(
+            "button",
+            { id: "happiestPrompt" },
+            "I feel happiest when..."
         ),
         React.createElement(
             "button",
@@ -390,24 +267,14 @@ var PromptButtons = function PromptButtons() {
         ),
         React.createElement(
             "button",
-            { id: "excitedPrompt" },
-            "I am excited for..."
+            { id: "proudPrompt" },
+            "I am proud of..."
         ),
         React.createElement(
             "button",
-            { id: "happiestPrompt" },
-            "I feel happiest when..."
-        ),
-        React.createElement(
-            "button",
-            { id: "idkPrompt" },
-            "IDK..."
-        ),
-        React.createElement(ThankfulModal, null),
-        React.createElement(InspiredModal, null),
-        React.createElement(LoveModal, null),
-        React.createElement(ExcitedModal, null),
-        React.createElement(HappiestModal, null)
+            { id: "thankfulPrompt" },
+            "I am thankful for..."
+        )
     );
 };
 
@@ -416,17 +283,76 @@ var setup = function setup() {
 
     ReactDOM.render(React.createElement(PromptButtons, null), document.querySelector('#logThought'));
 
-    handleThankfulType();
-    handleLoveType();
-    handleInspiredType();
-    handleHappiestType();
-    handleExcitedType();
+    handleExcitedClick();
+    handleHappiestClick();
+    handleInspiredClick();
+    handleLoveClick();
+    handleProudClick();
+    handleThankfulClick();
 };
 
 // instantiate above
 $(document).ready(function () {
     setup();
 });
+'use strict';
+
+var handleProudDrop = function handleProudDrop(e) {
+    e.preventDefault();
+
+    $('#errorMessage').animate({ width: 'hide' }, 350);
+
+    if ($('#proudText').val() == '') {
+        handleError('Input required');
+        return false;
+    }
+
+    sendAjax('POST', $('#proudForm').attr('action'), $('#proudForm').serialize(), function () {});
+
+    return false;
+};
+
+var ProudTitle = function ProudTitle(props) {
+    return React.createElement(
+        'h2',
+        { id: 'proudTitle' },
+        'I am proud of...'
+    );
+};
+
+var ProudForm = function ProudForm(props) {
+    return React.createElement(
+        'form',
+        { id: 'proudForm',
+            onSubmit: handleProudDrop,
+            name: 'proudForm',
+            action: '/thankYou',
+            method: 'POST',
+            className: 'proudForm' },
+        React.createElement(
+            'label',
+            { htmlFor: 'text' },
+            'Text: '
+        ),
+        React.createElement('input', { id: 'proudText', type: 'text', name: 'text', placeholder: '...' }),
+        React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+    );
+};
+
+var createProudView = function createProudView() {
+    ReactDOM.render(React.createElement(ProudTitle, null), document.querySelector('#promptTitle'));
+
+    ReactDOM.render(React.createElement(ProudForm, null), document.querySelector('#logThought'));
+};
+
+var handleProudClick = function handleProudClick() {
+    var proudType = document.querySelector('#proudPrompt');
+
+    proudType.addEventListener('click', function (e) {
+        e.preventDefault();
+        createProudView();
+    });
+};
 'use strict';
 
 var handleThankfulDrop = function handleThankfulDrop(e) {
@@ -477,8 +403,8 @@ var createThankfulView = function createThankfulView() {
     ReactDOM.render(React.createElement(ThankfulForm, null), document.querySelector('#logThought'));
 };
 
-var handleThankfulType = function handleThankfulType() {
-    var thankfulType = document.querySelector('#thankfulType');
+var handleThankfulClick = function handleThankfulClick() {
+    var thankfulType = document.querySelector('#thankfulPrompt');
 
     thankfulType.addEventListener('click', function (e) {
         e.preventDefault();

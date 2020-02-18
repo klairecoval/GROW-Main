@@ -4,73 +4,15 @@ const PromptTitle = (props) => {
     );
 };
 
-const LoveModal = () => {
-    return (
-        <div id="loveModal">
-            <button id="loveType">TYPE</button>
-            <h2>OR</h2>
-            <button>DRAW</button>
-        </div>
-    );
-};
-const ThankfulModal = () => {
-    return (
-        <div id="thankfulModal">
-            <button id="thankfulType">TYPE</button>
-            <h2>OR</h2>
-            <button>DRAW</button>
-        </div>
-    );
-};
-const InspiredModal = () => {
-    return (
-        <div id="inspiredModal">
-            <button id="inspiredType">TYPE</button>
-            <h2>OR</h2>
-            <button>DRAW</button>
-        </div>
-    );
-};
-const ExcitedModal = () => {
-    return (
-        <div id="excitedModal">
-            <button id="excitedType">TYPE</button>
-            <h2>OR</h2>
-            <button>DRAW</button>
-        </div>
-    );
-};
-const HappiestModal = () => {
-    return (
-        <div id="happiestModal">
-            <button id="happiestType">TYPE</button>
-            <h2>OR</h2>
-            <button>DRAW</button>
-        </div>
-    );
-};
-const idkModal = () => {
-    <div id="idkModal">
-        <button id="idkType">TYPE</button>
-        <h2>OR</h2>
-        <button>DRAW</button>
-    </div>
-};
-
 const PromptButtons = () => {
     return (
         <div>
-            <button id="thankfulPrompt">I am thankful for...</button>
-            <button id="inspiredPrompt">I am inspired by..</button>
-            <button id="lovePrompt">I love...</button>
             <button id="excitedPrompt">I am excited for...</button>
             <button id="happiestPrompt">I feel happiest when...</button>
-            <button id="idkPrompt">IDK...</button>
-            <ThankfulModal />
-            <InspiredModal />
-            <LoveModal />
-            <ExcitedModal />
-            <HappiestModal />
+            <button id="inspiredPrompt">I am inspired by..</button>
+            <button id="lovePrompt">I love...</button>
+            <button id="proudPrompt">I am proud of...</button>
+            <button id="thankfulPrompt">I am thankful for...</button>
         </div>
     );
 };
@@ -84,11 +26,12 @@ const setup = function() {
         <PromptButtons />, document.querySelector('#logThought')
     );
 
-    handleThankfulType();
-    handleLoveType();
-    handleInspiredType();
-    handleHappiestType();
-    handleExcitedType();
+    handleExcitedClick();
+    handleHappiestClick();
+    handleInspiredClick();
+    handleLoveClick();
+    handleProudClick();
+    handleThankfulClick();
 };
 
 // instantiate above
