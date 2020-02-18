@@ -13,11 +13,30 @@ const LoveSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+
+  owner: {
+    type: mongoose.Schema.ObjectId,
+    required: true,
+    ref: 'Account',
+  },
+
+  createdData: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 LoveSchema.statics.toAPI = (doc) => ({
   answer: doc.answer,
 });
+
+LoveSchema.statics.findByOwner = (ownerId, callback) => {
+  const search = {
+    owner: convertId(ownerId),
+  };
+
+  return LoveModel.find(search).select('answer').exec(callback);
+};
 
 LoveModel = mongoose.model('LoveModel', LoveSchema);
 

@@ -2,38 +2,31 @@ const models = require('../models');
 
 const Inspired = models.Inspired;
 
-const logInspired = (req, res) => res.render('thankYou');
-
-// Create a new response to this Model
-const answerInspired = (req, res) => {
+const logInspired = (req, res) => {
   if (!req.body.answer) {
-    return res.status(400).json({ error: 'Please fill in your answer' });
+    return res.status(400).json({ error: 'Thought required' });
   }
 
   const inspiredData = {
-    answer: req.body.answer,
+    name: req.body.answer,
+    owner: req.session.account._id,
   };
 
   const newInspired = new Inspired.InspiredModel(inspiredData);
-  const inspirePromise = newInspired.save();
+  const inspiredPromise = newInspired.save();
 
-    /*
-    thankPromise.then(() => {
-        //res.json({});
-    })
-    */
-
-  inspirePromise.catch((err) => {
-    if (err.code === 11000) {
-      return res.status(400).json({ error: 'An error has occurred' });
-    }
-    return res.status(400).json({ error: 'An error has occurred' });
+  inspiredPromise.then(() => {
+    res.json({ redirect: '/thankYou' });
   });
 
-  return inspirePromise;
+  inspiredPromise.catch((err) => {
+    console.log(err);
+    return res.status(400).json({ error: 'An error occurred' });
+  });
+
+  return inspiredPromise;
 };
 
 module.exports = {
-  makeInspired: logInspired,
-  answerInspired,
+  logInspired,
 };

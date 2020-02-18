@@ -2,38 +2,31 @@ const models = require('../models');
 
 const Happiest = models.Happiest;
 
-const logHappiest = (req, res) => res.render('thankYou');
-
-// Create a new response to this Model
-const answerHappiest = (req, res) => {
+const logHappiest = (req, res) => {
   if (!req.body.answer) {
-    return res.status(400).json({ error: 'Please fill in your answer' });
+    return res.status(400).json({ error: 'Thought required' });
   }
 
   const happiestData = {
-    answer: req.body.answer,
+    name: req.body.answer,
+    owner: req.session.account._id,
   };
 
   const newHappiest = new Happiest.HappiestModel(happiestData);
   const happiestPromise = newHappiest.save();
 
-    /*
-    thankPromise.then(() => {
-        //res.json({});
-    })
-    */
+  happiestPromise.then(() => {
+    res.json({ redirect: '/thankYou' });
+  });
 
   happiestPromise.catch((err) => {
-    if (err.code === 11000) {
-      return res.status(400).json({ error: 'An error has occured' });
-    }
-    return res.status(400).json({ error: 'An error has occured' });
+    console.log(err);
+    return res.status(400).json({ error: 'An error occurred' });
   });
 
   return happiestPromise;
 };
 
 module.exports = {
-  makeHappiest: logHappiest,
-  answerHappiest,
+  logHappiest,
 };
