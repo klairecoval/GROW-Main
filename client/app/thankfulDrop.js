@@ -9,6 +9,7 @@ const handleThankfulDrop = (e) => {
     }
 
     sendAjax('POST', $('#thankfulForm').attr('action'), $('#thankfulForm').serialize(), function() {
+        return null;
     });
 
     return false;
@@ -28,8 +29,8 @@ const ThankfulForm = (props) => {
         action='/thankYou'
         method='POST'
         className='thankfulForm' >
-            <label htmlFor='text'>Text: </label>
-            <input id='thankfulText' type='text' name='text' placeholder='...' />
+            <label htmlFor='answer'>Text: </label>
+            <input id='thankfulText' type='text' name='answer' placeholder='...' />
             <input className='logThoughtSubmit' type='submit' value='Log' />
         </form>
     );

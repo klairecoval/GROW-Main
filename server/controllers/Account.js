@@ -37,7 +37,7 @@ const login = (request, response) => {
     return res.status(400).json({ error: 'ID code required.' });
   }
 
-  return Account.AccountModel.authenticate(username, (err, account) => {
+  return Account.AccountModel.findByUsername(username, (err, account) => {
     if(!account) {
       console.log('no account');
     }
@@ -89,25 +89,11 @@ const signup = (request, response) => {
   });
 };
 
-// // get CSRF token
-// const getToken = (request, response) => {
-//   const req = request;
-//   const res = response;
-
-//   const csrfJSON = {
-//     csrfToken: req.csrfToken(),
-//   };
-
-//   res.json(csrfJSON);
-// };
-
 module.exports = {
   loginPage,
-//   notFoundPage,
   login,
   promptPage,
   thankYouPage,
   logout,
   signup,
-//   getToken,
 };

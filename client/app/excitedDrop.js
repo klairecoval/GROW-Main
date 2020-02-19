@@ -28,8 +28,8 @@ const ExcitedForm = (props) => {
         action='/thankYou'
         method='POST'
         className='excitedForm' >
-            <label htmlFor='text'>Text: </label>
-            <input id='excitedText' type='text' name='text' placeholder='...' />
+            <label htmlFor='answer'>Text: </label>
+            <input id='excitedText' type='text' name='answer' placeholder='...' />
             <input className='logThoughtSubmit' type='submit' value='Log' />
         </form>
     );

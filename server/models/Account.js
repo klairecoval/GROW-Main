@@ -36,20 +36,6 @@ AccountSchema.statics.findByUsername = (name, callback) => {
   return AccountModel.findOne(search, callback);
 };
 
-// check for valid username, pass
-AccountSchema.statics.authenticate = (username, callback) =>
-AccountModel.findByUsername(username, (err, doc) => {
-  if (err) {
-    return callback(err);
-  }
-
-  if (!doc) {
-    return callback();
-  }
-  return callback();
-
-});
-
 AccountModel = mongoose.model('Account', AccountSchema);
 
 module.exports = {
