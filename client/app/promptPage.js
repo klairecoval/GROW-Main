@@ -36,5 +36,7 @@ const setup = function() {
 
 // instantiate above
 $(document).ready(function() {
-    setup();
+    if(document.querySelector('#promptTitle') && document.querySelector('#logThought')) {
+        setup();
+    }
 });

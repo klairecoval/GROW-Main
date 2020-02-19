@@ -293,7 +293,9 @@ var setup = function setup() {
 
 // instantiate above
 $(document).ready(function () {
-    setup();
+    if (document.querySelector('#promptTitle') && document.querySelector('#logThought')) {
+        setup();
+    }
 });
 'use strict';
 

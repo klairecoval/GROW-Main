@@ -16,11 +16,6 @@ const thankYouPage = (req, res) => {
   res.render('thankYou');
 };
 
-// render custom 404 page
-// const notFoundPage = (req, res) => {
-//   res.render('notFound', { csrfToken: req.csrfToken() });
-// };
-
 // logout, delete session, redirect to login page
 const logout = (req, res) => {
   req.session.destroy();
@@ -43,6 +38,9 @@ const login = (request, response) => {
   }
 
   return Account.AccountModel.authenticate(username, (err, account) => {
+    if(!account) {
+      console.log('no account');
+    }
     if (err || !account) {
       return res.status(401).json({ error: 'Invalid ID code' });
     }
