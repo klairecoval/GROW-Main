@@ -5,7 +5,7 @@ const mid = require('./middleware');
 const router = (app) => {
   // app.get('/startPage', controllers.Session.startPage);
   app.get('/promptPage', mid.requiresLogin, controllers.Account.promptPage);
-  app.get('/thankYou', mid.requiresLogin, controllers.Account.thankYouPage);
+  app.get('/thankYouPage', mid.requiresLogin, controllers.Account.thankYouPage);
 
   app.get('/login', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
   app.get('/logout', mid.requiresLogin, controllers.Account.logout);
@@ -13,7 +13,14 @@ const router = (app) => {
   app.post('/signup', mid.requiresSecure, mid.requiresLogout, controllers.Account.signup);
   app.post('/login', mid.requiresSecure, mid.requiresLogout, controllers.Account.login);
   app.post('/promptPage', mid.requiresLogin, controllers.Account.promptPage);
-  app.post('/thankYou', mid.requiresLogin, controllers.Account.thankYouPage);
+
+  // app.post('/thankYouPage', mid.requiresLogin, controllers.Account.thankYouPage);
+  app.post('/excitedThankYou', mid.requiresLogin, controllers.Excited.logExcited);
+  app.post('/happiestThankYou', mid.requiresLogin, controllers.Happiest.logHappiest);
+  app.post('/inspiredThankYou', mid.requiresLogin, controllers.Inspired.logInspired);
+  app.post('/loveThankYou', mid.requiresLogin, controllers.Love.logLove);
+  app.post('/proudThankYou', mid.requiresLogin, controllers.Proud.logProud);
+  app.post('/thankfulThankYou', mid.requiresLogin, controllers.Thankful.logThankful);
 
   app.get('/', controllers.Account.loginPage);
 };

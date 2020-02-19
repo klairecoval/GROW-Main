@@ -25,7 +25,7 @@ const LoveForm = (props) => {
         <form id='loveForm'
         onSubmit={handleLoveDrop}
         name='loveForm'
-        action='/thankYou'
+        action='/loveThankYou'
         method='POST'
         className='loveForm' >
             <label htmlFor='answer'>Text: </label>

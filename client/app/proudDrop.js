@@ -25,7 +25,7 @@ const ProudForm = (props) => {
         <form id='proudForm'
         onSubmit={handleProudDrop}
         name='proudForm'
-        action='/thankYou'
+        action='/proudThankYou'
         method='POST'
         className='proudForm' >
             <label htmlFor='answer'>Text: </label>

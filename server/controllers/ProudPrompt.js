@@ -8,7 +8,7 @@ const logProud = (req, res) => {
   }
 
   const proudData = {
-    name: req.body.answer,
+    answer: req.body.answer,
     owner: req.session.account._id,
   };
 
@@ -21,6 +21,10 @@ const logProud = (req, res) => {
 
   proudPromise.catch((err) => {
     console.log(err);
+    if (err.code === 11000) {
+      return res.status(400).json({ error: 'You have already logged this thought' });
+    }
+    
     return res.status(400).json({ error: 'An error occurred' });
   });
 

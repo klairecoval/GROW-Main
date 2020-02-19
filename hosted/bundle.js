@@ -30,7 +30,7 @@ var ExcitedForm = function ExcitedForm(props) {
         { id: 'excitedForm',
             onSubmit: handleExcitedDrop,
             name: 'excitedForm',
-            action: '/thankYou',
+            action: '/excitedThankYou',
             method: 'POST',
             className: 'excitedForm' },
         React.createElement(
@@ -88,7 +88,7 @@ var HappiestForm = function HappiestForm(props) {
         { id: 'happiestForm',
             onSubmit: handleHappiestDrop,
             name: 'happiestForm',
-            action: '/thankYou',
+            action: '/happiestThankYou',
             method: 'POST',
             className: 'happiestForm' },
         React.createElement(
@@ -146,7 +146,7 @@ var InspiredForm = function InspiredForm(props) {
         { id: 'inspiredForm',
             onSubmit: handleInspiredDrop,
             name: 'inspiredForm',
-            action: '/thankYou',
+            action: '/inspiredThankYou',
             method: 'POST',
             className: 'inspiredForm' },
         React.createElement(
@@ -204,7 +204,7 @@ var LoveForm = function LoveForm(props) {
         { id: 'loveForm',
             onSubmit: handleLoveDrop,
             name: 'loveForm',
-            action: '/thankYou',
+            action: '/loveThankYou',
             method: 'POST',
             className: 'loveForm' },
         React.createElement(
@@ -328,7 +328,7 @@ var ProudForm = function ProudForm(props) {
         { id: 'proudForm',
             onSubmit: handleProudDrop,
             name: 'proudForm',
-            action: '/thankYou',
+            action: '/proudThankYou',
             method: 'POST',
             className: 'proudForm' },
         React.createElement(
@@ -388,7 +388,7 @@ var ThankfulForm = function ThankfulForm(props) {
         { id: 'thankfulForm',
             onSubmit: handleThankfulDrop,
             name: 'thankfulForm',
-            action: '/thankYou',
+            action: '/thankfulThankYou',
             method: 'POST',
             className: 'thankfulForm' },
         React.createElement(
