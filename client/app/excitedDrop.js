@@ -9,6 +9,7 @@ const handleExcitedDrop = (e) => {
     }
 
     sendAjax('POST', $('#excitedForm').attr('action'), $('#excitedForm').serialize(), function() {
+        loadExcitedFromServer();
     });
 
     return false;
@@ -33,6 +34,41 @@ const ExcitedForm = (props) => {
             <input className='logThoughtSubmit' type='submit' value='Log' />
         </form>
     );
+};
+
+const ExcitedList = function(props) {
+    if(props.excitedResponses.length === 0) {
+        return (
+            <h3>No Excited Thoughts</h3>
+        );
+    }
+
+    const excitedNodes = props.excitedResponses.sort(function(a,b){
+        return a.name.localeCompare(b.name);
+    })
+    .map(function(excitedThought) {
+        return (
+            <div key={excitedThought._id}>
+                <h3> {excitedThought.answer} </h3>
+                <span>{excitedThought._id}</span>
+            </div>
+        );
+    });
+
+    return (
+        <div>
+            {excitedNodes}
+            <p>{props.excitedResponses.length} thoughts</p>
+        </div>
+    );
+};
+
+const loadExcitedFromServer = () => {
+    sendAjax('GET', '/getExcited', null, (data) => {
+        ReactDOM.render(
+            <ExcitedList excitedResponses={data.excitedResponses} />, document.querySelector('#error')
+        );
+    });
 };
 
 const createExcitedView = function() {

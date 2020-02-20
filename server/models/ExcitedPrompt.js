@@ -4,7 +4,7 @@ const _ = require('underscore');
 
 let ExcitedModel = {};
 
-// const convertId = mongoose.Types.ObjectId;
+const convertId = mongoose.Types.ObjectId;
 // const setAnswer = (answer) => _.escape(answer).trim();
 
 const ExcitedSchema = new mongoose.Schema({

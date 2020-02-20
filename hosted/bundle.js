@@ -11,7 +11,9 @@ var handleExcitedDrop = function handleExcitedDrop(e) {
         return false;
     }
 
-    sendAjax('POST', $('#excitedForm').attr('action'), $('#excitedForm').serialize(), function () {});
+    sendAjax('POST', $('#excitedForm').attr('action'), $('#excitedForm').serialize(), function () {
+        loadExcitedFromServer();
+    });
 
     return false;
 };
@@ -43,6 +45,55 @@ var ExcitedForm = function ExcitedForm(props) {
     );
 };
 
+var ExcitedList = function ExcitedList(props) {
+    if (props.excitedResponses.length === 0) {
+        return React.createElement(
+            'h3',
+            null,
+            'No Excited Thoughts'
+        );
+    }
+
+    var excitedNodes = props.excitedResponses.sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+    }).map(function (excitedThought) {
+        return React.createElement(
+            'div',
+            { key: excitedThought._id },
+            React.createElement(
+                'h3',
+                null,
+                ' ',
+                excitedThought.answer,
+                ' '
+            ),
+            React.createElement(
+                'span',
+                null,
+                excitedThought._id
+            )
+        );
+    });
+
+    return React.createElement(
+        'div',
+        null,
+        excitedNodes,
+        React.createElement(
+            'p',
+            null,
+            props.excitedResponses.length,
+            ' thoughts'
+        )
+    );
+};
+
+var loadExcitedFromServer = function loadExcitedFromServer() {
+    sendAjax('GET', '/getExcited', null, function (data) {
+        ReactDOM.render(React.createElement(ExcitedList, { excitedResponses: data.excitedResponses }), document.querySelector('#error'));
+    });
+};
+
 var createExcitedView = function createExcitedView() {
     ReactDOM.render(React.createElement(ExcitedTitle, null), document.querySelector('#promptTitle'));
 
@@ -69,7 +120,9 @@ var handleHappiestDrop = function handleHappiestDrop(e) {
         return false;
     }
 
-    sendAjax('POST', $('#happiestForm').attr('action'), $('#happiestForm').serialize(), function () {});
+    sendAjax('POST', $('#happiestForm').attr('action'), $('#happiestForm').serialize(), function () {
+        loadHappiestFromServer();
+    });
 
     return false;
 };
@@ -99,6 +152,55 @@ var HappiestForm = function HappiestForm(props) {
         React.createElement('input', { id: 'happiestText', type: 'text', name: 'answer', placeholder: '...' }),
         React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
     );
+};
+
+var HappiestList = function HappiestList(props) {
+    if (props.happiestResponses.length === 0) {
+        return React.createElement(
+            'h3',
+            null,
+            'No Happy Thoughts'
+        );
+    }
+
+    var happiestNodes = props.happiestResponses.sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+    }).map(function (happiestThought) {
+        return React.createElement(
+            'div',
+            { key: happiestThought._id },
+            React.createElement(
+                'h3',
+                null,
+                ' ',
+                happiestThought.answer,
+                ' '
+            ),
+            React.createElement(
+                'span',
+                null,
+                happiestThought._id
+            )
+        );
+    });
+
+    return React.createElement(
+        'div',
+        null,
+        happiestNodes,
+        React.createElement(
+            'p',
+            null,
+            props.happiestResponses.length,
+            ' thoughts'
+        )
+    );
+};
+
+var loadHappiestFromServer = function loadHappiestFromServer() {
+    sendAjax('GET', '/getHappiest', null, function (data) {
+        ReactDOM.render(React.createElement(HappiestList, { happiestResponses: data.happiestResponses }), document.querySelector('#error'));
+    });
 };
 
 var createHappiestView = function createHappiestView() {
@@ -159,6 +261,55 @@ var InspiredForm = function InspiredForm(props) {
     );
 };
 
+var InspiredList = function InspiredList(props) {
+    if (props.inspiredResponses.length === 0) {
+        return React.createElement(
+            'h3',
+            null,
+            'No Inspired Thoughts'
+        );
+    }
+
+    var inspiredNodes = props.inspiredResponses.sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+    }).map(function (inspiredThought) {
+        return React.createElement(
+            'div',
+            { key: inspiredThought._id },
+            React.createElement(
+                'h3',
+                null,
+                ' ',
+                inspiredThought.answer,
+                ' '
+            ),
+            React.createElement(
+                'span',
+                null,
+                inspiredThought._id
+            )
+        );
+    });
+
+    return React.createElement(
+        'div',
+        null,
+        inspiredNodes,
+        React.createElement(
+            'p',
+            null,
+            props.inspiredResponses.length,
+            ' thoughts'
+        )
+    );
+};
+
+var loadInspiredFromServer = function loadInspiredFromServer() {
+    sendAjax('GET', '/getInspired', null, function (data) {
+        ReactDOM.render(React.createElement(InspiredList, { inspiredResponses: data.inspiredResponses }), document.querySelector('#error'));
+    });
+};
+
 var createInspiredView = function createInspiredView() {
     ReactDOM.render(React.createElement(InspiredTitle, null), document.querySelector('#promptTitle'));
 
@@ -215,6 +366,55 @@ var LoveForm = function LoveForm(props) {
         React.createElement('input', { id: 'loveText', type: 'text', name: 'answer', placeholder: '...' }),
         React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
     );
+};
+
+var LoveList = function LoveList(props) {
+    if (props.loveResponses.length === 0) {
+        return React.createElement(
+            'h3',
+            null,
+            'No Happy Thoughts'
+        );
+    }
+
+    var loveNodes = props.loveResponses.sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+    }).map(function (loveThought) {
+        return React.createElement(
+            'div',
+            { key: loveThought._id },
+            React.createElement(
+                'h3',
+                null,
+                ' ',
+                loveThought.answer,
+                ' '
+            ),
+            React.createElement(
+                'span',
+                null,
+                loveThought._id
+            )
+        );
+    });
+
+    return React.createElement(
+        'div',
+        null,
+        loveNodes,
+        React.createElement(
+            'p',
+            null,
+            props.loveResponses.length,
+            ' thoughts'
+        )
+    );
+};
+
+var loadLoveFromServer = function loadLoveFromServer() {
+    sendAjax('GET', '/getLove', null, function (data) {
+        ReactDOM.render(React.createElement(LoveList, { loveResponses: data.loveResponses }), document.querySelector('#error'));
+    });
 };
 
 var createLoveView = function createLoveView() {
@@ -283,6 +483,11 @@ var setup = function setup() {
 
     ReactDOM.render(React.createElement(PromptButtons, null), document.querySelector('#logThought'));
 
+    // load thoughts for testing
+    loadExcitedFromServer();
+    loadHappiestFromServer();
+
+    // handle button prompt clicks
     handleExcitedClick();
     handleHappiestClick();
     handleInspiredClick();
@@ -339,6 +544,55 @@ var ProudForm = function ProudForm(props) {
         React.createElement('input', { id: 'proudText', type: 'text', name: 'answer', placeholder: '...' }),
         React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
     );
+};
+
+var ProudList = function ProudList(props) {
+    if (props.proudResponses.length === 0) {
+        return React.createElement(
+            'h3',
+            null,
+            'No Happy Thoughts'
+        );
+    }
+
+    var proudNodes = props.proudResponses.sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+    }).map(function (proudThought) {
+        return React.createElement(
+            'div',
+            { key: proudThought._id },
+            React.createElement(
+                'h3',
+                null,
+                ' ',
+                proudThought.answer,
+                ' '
+            ),
+            React.createElement(
+                'span',
+                null,
+                proudThought._id
+            )
+        );
+    });
+
+    return React.createElement(
+        'div',
+        null,
+        proudNodes,
+        React.createElement(
+            'p',
+            null,
+            props.proudResponses.length,
+            ' thoughts'
+        )
+    );
+};
+
+var loadProudFromServer = function loadProudFromServer() {
+    sendAjax('GET', '/getProud', null, function (data) {
+        ReactDOM.render(React.createElement(ProudList, { proudResponses: data.proudResponses }), document.querySelector('#error'));
+    });
 };
 
 var createProudView = function createProudView() {
@@ -399,6 +653,55 @@ var ThankfulForm = function ThankfulForm(props) {
         React.createElement('input', { id: 'thankfulText', type: 'text', name: 'answer', placeholder: '...' }),
         React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
     );
+};
+
+var ThankfulList = function ThankfulList(props) {
+    if (props.thankfulResponses.length === 0) {
+        return React.createElement(
+            'h3',
+            null,
+            'No Happy Thoughts'
+        );
+    }
+
+    var thankfulNodes = props.thankfulResponses.sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+    }).map(function (thankfulThought) {
+        return React.createElement(
+            'div',
+            { key: thankfulThought._id },
+            React.createElement(
+                'h3',
+                null,
+                ' ',
+                thankfulThought.answer,
+                ' '
+            ),
+            React.createElement(
+                'span',
+                null,
+                thankfulThought._id
+            )
+        );
+    });
+
+    return React.createElement(
+        'div',
+        null,
+        thankfulNodes,
+        React.createElement(
+            'p',
+            null,
+            props.thankfulResponses.length,
+            ' thoughts'
+        )
+    );
+};
+
+var loadThankfulFromServer = function loadThankfulFromServer() {
+    sendAjax('GET', '/getThankful', null, function (data) {
+        ReactDOM.render(React.createElement(ThankfulList, { thankfulResponses: data.thankfulResponses }), document.querySelector('#error'));
+    });
 };
 
 var createThankfulView = function createThankfulView() {

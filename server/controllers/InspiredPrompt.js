@@ -24,13 +24,28 @@ const logInspired = (req, res) => {
     if (err.code === 11000) {
       return res.status(400).json({ error: 'You have already logged this thought' });
     }
-    
+
     return res.status(400).json({ error: 'An error occurred' });
   });
 
   return inspiredPromise;
 };
 
+const getInspired = (request, response) => {
+  const req = request;
+  const res = response;
+
+  return Inspired.InspiredModel.findByOwner(req.session.account._id, (err, docs) => {
+    if (err) {
+      console.log(err);
+      return res.status(400).json({ error: 'An error occurred.' });
+    }
+
+    return res.json({ inspiredResponses: docs });
+  });
+};
+
 module.exports = {
   logInspired,
+  getInspired,
 };

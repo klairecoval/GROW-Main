@@ -35,6 +35,41 @@ const InspiredForm = (props) => {
     );
 };
 
+const InspiredList = function(props) {
+    if(props.inspiredResponses.length === 0) {
+        return (
+            <h3>No Inspired Thoughts</h3>
+        );
+    }
+
+    const inspiredNodes = props.inspiredResponses.sort(function(a,b){
+        return a.name.localeCompare(b.name);
+    })
+    .map(function(inspiredThought) {
+        return (
+            <div key={inspiredThought._id}>
+                <h3> {inspiredThought.answer} </h3>
+                <span>{inspiredThought._id}</span>
+            </div>
+        );
+    });
+
+    return (
+        <div>
+            {inspiredNodes}
+            <p>{props.inspiredResponses.length} thoughts</p>
+        </div>
+    );
+};
+
+const loadInspiredFromServer = () => {
+    sendAjax('GET', '/getInspired', null, (data) => {
+        ReactDOM.render(
+            <InspiredList inspiredResponses={data.inspiredResponses} />, document.querySelector('#error')
+        );
+    });
+};
+
 const createInspiredView = function() {
     ReactDOM.render(
         <InspiredTitle />, document.querySelector('#promptTitle')

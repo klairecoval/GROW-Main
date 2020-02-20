@@ -38,7 +38,7 @@ const login = (request, response) => {
   }
 
   return Account.AccountModel.findByUsername(username, (err, account) => {
-    if(!account) {
+    if (!account) {
       console.log('no account');
     }
     if (err || !account) {

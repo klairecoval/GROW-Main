@@ -36,6 +36,41 @@ const ThankfulForm = (props) => {
     );
 };
 
+const ThankfulList = function(props) {
+    if(props.thankfulResponses.length === 0) {
+        return (
+            <h3>No Happy Thoughts</h3>
+        );
+    }
+
+    const thankfulNodes = props.thankfulResponses.sort(function(a,b){
+        return a.name.localeCompare(b.name);
+    })
+    .map(function(thankfulThought) {
+        return (
+            <div key={thankfulThought._id}>
+                <h3> {thankfulThought.answer} </h3>
+                <span>{thankfulThought._id}</span>
+            </div>
+        );
+    });
+
+    return (
+        <div>
+            {thankfulNodes}
+            <p>{props.thankfulResponses.length} thoughts</p>
+        </div>
+    );
+};
+
+const loadThankfulFromServer = () => {
+    sendAjax('GET', '/getThankful', null, (data) => {
+        ReactDOM.render(
+            <ThankfulList thankfulResponses={data.thankfulResponses} />, document.querySelector('#error')
+        );
+    });
+};
+
 const createThankfulView = function() {
     ReactDOM.render(
         <ThankfulTitle />, document.querySelector('#promptTitle')

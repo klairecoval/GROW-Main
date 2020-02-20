@@ -35,6 +35,41 @@ const ProudForm = (props) => {
     );
 };
 
+const ProudList = function(props) {
+    if(props.proudResponses.length === 0) {
+        return (
+            <h3>No Happy Thoughts</h3>
+        );
+    }
+
+    const proudNodes = props.proudResponses.sort(function(a,b){
+        return a.name.localeCompare(b.name);
+    })
+    .map(function(proudThought) {
+        return (
+            <div key={proudThought._id}>
+                <h3> {proudThought.answer} </h3>
+                <span>{proudThought._id}</span>
+            </div>
+        );
+    });
+
+    return (
+        <div>
+            {proudNodes}
+            <p>{props.proudResponses.length} thoughts</p>
+        </div>
+    );
+};
+
+const loadProudFromServer = () => {
+    sendAjax('GET', '/getProud', null, (data) => {
+        ReactDOM.render(
+            <ProudList proudResponses={data.proudResponses} />, document.querySelector('#error')
+        );
+    });
+};
+
 const createProudView = function() {
     ReactDOM.render(
         <ProudTitle />, document.querySelector('#promptTitle')

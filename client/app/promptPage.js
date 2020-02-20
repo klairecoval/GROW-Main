@@ -26,6 +26,11 @@ const setup = function() {
         <PromptButtons />, document.querySelector('#logThought')
     );
 
+    // load thoughts for testing
+    loadExcitedFromServer();
+    loadHappiestFromServer();
+
+    // handle button prompt clicks
     handleExcitedClick();
     handleHappiestClick();
     handleInspiredClick();

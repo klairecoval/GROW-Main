@@ -31,6 +31,21 @@ const logThankful = (req, res) => {
   return thankfulPromise;
 };
 
+const getThankful = (request, response) => {
+  const req = request;
+  const res = response;
+
+  return Thankful.ThankfulModel.findByOwner(req.session.account._id, (err, docs) => {
+    if (err) {
+      console.log(err);
+      return res.status(400).json({ error: 'An error occurred.' });
+    }
+
+    return res.json({ thankfulResponses: docs });
+  });
+};
+
 module.exports = {
   logThankful,
+  getThankful,
 };
