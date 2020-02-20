@@ -229,7 +229,9 @@ var handleInspiredDrop = function handleInspiredDrop(e) {
         return false;
     }
 
-    sendAjax('POST', $('#inspiredForm').attr('action'), $('#inspiredForm').serialize(), function () {});
+    sendAjax('POST', $('#inspiredForm').attr('action'), $('#inspiredForm').serialize(), function () {
+        loadInspiredFromServer();
+    });
 
     return false;
 };
@@ -336,7 +338,9 @@ var handleLoveDrop = function handleLoveDrop(e) {
         return false;
     }
 
-    sendAjax('POST', $('#loveForm').attr('action'), $('#loveForm').serialize(), function () {});
+    sendAjax('POST', $('#loveForm').attr('action'), $('#loveForm').serialize(), function () {
+        loadLoveFromServer();
+    });
 
     return false;
 };
@@ -486,6 +490,10 @@ var setup = function setup() {
     // load thoughts for testing
     loadExcitedFromServer();
     loadHappiestFromServer();
+    loadInspiredFromServer();
+    loadLoveFromServer();
+    loadProudFromServer();
+    loadThankfulFromServer();
 
     // handle button prompt clicks
     handleExcitedClick();
@@ -514,7 +522,9 @@ var handleProudDrop = function handleProudDrop(e) {
         return false;
     }
 
-    sendAjax('POST', $('#proudForm').attr('action'), $('#proudForm').serialize(), function () {});
+    sendAjax('POST', $('#proudForm').attr('action'), $('#proudForm').serialize(), function () {
+        loadProudFromServer();
+    });
 
     return false;
 };
@@ -622,6 +632,7 @@ var handleThankfulDrop = function handleThankfulDrop(e) {
     }
 
     sendAjax('POST', $('#thankfulForm').attr('action'), $('#thankfulForm').serialize(), function () {
+        loadThankfulFromServer();
         return null;
     });
 

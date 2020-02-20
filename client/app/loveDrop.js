@@ -9,6 +9,7 @@ const handleLoveDrop = (e) => {
     }
 
     sendAjax('POST', $('#loveForm').attr('action'), $('#loveForm').serialize(), function() {
+        loadLoveFromServer();
     });
 
     return false;

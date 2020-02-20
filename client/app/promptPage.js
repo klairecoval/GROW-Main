@@ -29,6 +29,10 @@ const setup = function() {
     // load thoughts for testing
     loadExcitedFromServer();
     loadHappiestFromServer();
+    loadInspiredFromServer();
+    loadLoveFromServer();
+    loadProudFromServer();
+    loadThankfulFromServer();
 
     // handle button prompt clicks
     handleExcitedClick();
