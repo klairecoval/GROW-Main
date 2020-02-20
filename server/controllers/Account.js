@@ -13,7 +13,7 @@ const promptPage = (req, res) => {
 
 // render thankyou page
 const thankYouPage = (req, res) => {
-  res.render('thankYou');
+  res.render('thankYouPage');
 };
 
 // logout, delete session, redirect to login page

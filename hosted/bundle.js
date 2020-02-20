@@ -11,9 +11,7 @@ var handleExcitedDrop = function handleExcitedDrop(e) {
         return false;
     }
 
-    sendAjax('POST', $('#excitedForm').attr('action'), $('#excitedForm').serialize(), function () {
-        loadExcitedFromServer();
-    });
+    sendAjax('POST', $('#excitedForm').attr('action'), $('#excitedForm').serialize(), redirect);
 
     return false;
 };
@@ -142,15 +140,25 @@ var HappiestTitle = function HappiestTitle(props) {
 
 var HappiestForm = function HappiestForm(props) {
     return React.createElement(
-        'form',
-        { id: 'happiestForm',
-            onSubmit: handleHappiestDrop,
-            name: 'happiestForm',
-            action: '/happiestThankYou',
-            method: 'POST',
-            className: 'happiestForm' },
-        React.createElement('input', { id: 'happiestText', type: 'text', name: 'answer', placeholder: '...' }),
-        React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+        'div',
+        null,
+        React.createElement(
+            'form',
+            { id: 'happiestForm',
+                onSubmit: handleHappiestDrop,
+                name: 'happiestForm',
+                action: '/happiestThankYou',
+                method: 'POST',
+                className: 'happiestForm' },
+            React.createElement('input', { id: 'happiestText', type: 'text', name: 'answer', placeholder: '...' }),
+            React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+        ),
+        React.createElement(
+            'button',
+            null,
+            'Go back'
+        ),
+        React.createElement(BackModal, null)
     );
 };
 
@@ -246,15 +254,25 @@ var InspiredTitle = function InspiredTitle(props) {
 
 var InspiredForm = function InspiredForm(props) {
     return React.createElement(
-        'form',
-        { id: 'inspiredForm',
-            onSubmit: handleInspiredDrop,
-            name: 'inspiredForm',
-            action: '/inspiredThankYou',
-            method: 'POST',
-            className: 'inspiredForm' },
-        React.createElement('input', { id: 'inspiredText', type: 'text', name: 'answer', placeholder: '...' }),
-        React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+        'div',
+        null,
+        React.createElement(
+            'form',
+            { id: 'inspiredForm',
+                onSubmit: handleInspiredDrop,
+                name: 'inspiredForm',
+                action: '/inspiredThankYou',
+                method: 'POST',
+                className: 'inspiredForm' },
+            React.createElement('input', { id: 'inspiredText', type: 'text', name: 'answer', placeholder: '...' }),
+            React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+        ),
+        React.createElement(
+            'button',
+            null,
+            'Go back'
+        ),
+        React.createElement(BackModal, null)
     );
 };
 
@@ -350,15 +368,25 @@ var LoveTitle = function LoveTitle(props) {
 
 var LoveForm = function LoveForm(props) {
     return React.createElement(
-        'form',
-        { id: 'loveForm',
-            onSubmit: handleLoveDrop,
-            name: 'loveForm',
-            action: '/loveThankYou',
-            method: 'POST',
-            className: 'loveForm' },
-        React.createElement('input', { id: 'loveText', type: 'text', name: 'answer', placeholder: '...' }),
-        React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+        'div',
+        null,
+        React.createElement(
+            'form',
+            { id: 'loveForm',
+                onSubmit: handleLoveDrop,
+                name: 'loveForm',
+                action: '/loveThankYou',
+                method: 'POST',
+                className: 'loveForm' },
+            React.createElement('input', { id: 'loveText', type: 'text', name: 'answer', placeholder: '...' }),
+            React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+        ),
+        React.createElement(
+            'button',
+            null,
+            'Go back'
+        ),
+        React.createElement(BackModal, null)
     );
 };
 
@@ -685,15 +713,25 @@ var ProudTitle = function ProudTitle(props) {
 
 var ProudForm = function ProudForm(props) {
     return React.createElement(
-        'form',
-        { id: 'proudForm',
-            onSubmit: handleProudDrop,
-            name: 'proudForm',
-            action: '/proudThankYou',
-            method: 'POST',
-            className: 'proudForm' },
-        React.createElement('input', { id: 'proudText', type: 'text', name: 'answer', placeholder: '...' }),
-        React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+        'div',
+        null,
+        React.createElement(
+            'form',
+            { id: 'proudForm',
+                onSubmit: handleProudDrop,
+                name: 'proudForm',
+                action: '/proudThankYou',
+                method: 'POST',
+                className: 'proudForm' },
+            React.createElement('input', { id: 'proudText', type: 'text', name: 'answer', placeholder: '...' }),
+            React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+        ),
+        React.createElement(
+            'button',
+            null,
+            'Go back'
+        ),
+        React.createElement(BackModal, null)
     );
 };
 
@@ -790,15 +828,25 @@ var ThankfulTitle = function ThankfulTitle(props) {
 
 var ThankfulForm = function ThankfulForm(props) {
     return React.createElement(
-        'form',
-        { id: 'thankfulForm',
-            onSubmit: handleThankfulDrop,
-            name: 'thankfulForm',
-            action: '/thankfulThankYou',
-            method: 'POST',
-            className: 'thankfulForm' },
-        React.createElement('input', { id: 'thankfulText', type: 'text', name: 'answer', placeholder: '...' }),
-        React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+        'div',
+        null,
+        React.createElement(
+            'form',
+            { id: 'thankfulForm',
+                onSubmit: handleThankfulDrop,
+                name: 'thankfulForm',
+                action: '/thankfulThankYou',
+                method: 'POST',
+                className: 'thankfulForm' },
+            React.createElement('input', { id: 'thankfulText', type: 'text', name: 'answer', placeholder: '...' }),
+            React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+        ),
+        React.createElement(
+            'button',
+            null,
+            'Go back'
+        ),
+        React.createElement(BackModal, null)
     );
 };
 

@@ -28,7 +28,7 @@ const router = (app) => {
   app.post('/proudThankYou', mid.requiresLogin, controllers.Proud.logProud);
   app.post('/thankfulThankYou', mid.requiresLogin, controllers.Thankful.logThankful);
 
-  app.get('/', controllers.Account.loginPage);
+  app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
 };
 
 module.exports = router;
