@@ -23,16 +23,19 @@ const ExcitedTitle = (props) => {
 
 const ExcitedForm = (props) => {
     return (
-        <form id='excitedForm'
-        onSubmit={handleExcitedDrop}
-        name='excitedForm'
-        action='/excitedThankYou'
-        method='POST'
-        className='excitedForm' >
-            <label htmlFor='answer'>Text: </label>
-            <input id='excitedText' type='text' name='answer' placeholder='...' />
-            <input className='logThoughtSubmit' type='submit' value='Log' />
-        </form>
+        <div>
+            <form id='excitedForm'
+            onSubmit={handleExcitedDrop}
+            name='excitedForm'
+            action='/excitedThankYou'
+            method='POST'
+            className='excitedForm' >
+                <input id='excitedText' type='text' name='answer' placeholder='...' />
+                <input className='logThoughtSubmit' type='submit' value='Log' />
+            </form>
+            <button>Go back</button>
+            <BackModal/>
+        </div>
     );
 };
 

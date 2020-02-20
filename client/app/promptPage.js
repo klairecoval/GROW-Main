@@ -1,6 +1,7 @@
 const PromptTitle = (props) => {
     return (
         <div>
+            <a href="/logout" target="_parent" id="startBtn"><button>Back</button></a>
             <h1 id="promptPageTitle">Select a prompt:</h1>
             <p>Which one of these speaks to you? Choose one <br/>
                 that you want to write about.</p>
@@ -53,6 +54,17 @@ const ProudModal = () => {
         <div id="proudModal">
             <button id="proudWrite">Write response</button>
             <button id="proudDismiss">Select different prompt</button>
+        </div>
+    );
+};
+
+const BackModal = () => {
+    return (
+        <div id="backModal">
+            <h1>Are you sure you <br/>want to go back?</h1>
+            <p>Going back now will lose your progress.</p>
+            <button id="stayBtn">Stay</button>
+            <a href="/promptPage" target="_parent" id="continueBtn"><button>Continue</button></a>
         </div>
     );
 };

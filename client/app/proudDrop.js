@@ -23,16 +23,19 @@ const ProudTitle = (props) => {
 
 const ProudForm = (props) => {
     return (
-        <form id='proudForm'
-        onSubmit={handleProudDrop}
-        name='proudForm'
-        action='/proudThankYou'
-        method='POST'
-        className='proudForm' >
-            <label htmlFor='answer'>Text: </label>
-            <input id='proudText' type='text' name='answer' placeholder='...' />
-            <input className='logThoughtSubmit' type='submit' value='Log' />
-        </form>
+        <div>
+            <form id='proudForm'
+            onSubmit={handleProudDrop}
+            name='proudForm'
+            action='/proudThankYou'
+            method='POST'
+            className='proudForm' >
+                <input id='proudText' type='text' name='answer' placeholder='...' />
+                <input className='logThoughtSubmit' type='submit' value='Log' />
+            </form>
+            <button>Go back</button>
+            <BackModal/>
+        </div>
     );
 };
 

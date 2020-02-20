@@ -24,16 +24,19 @@ const ThankfulTitle = (props) => {
 
 const ThankfulForm = (props) => {
     return (
-        <form id='thankfulForm'
-        onSubmit={handleThankfulDrop}
-        name='thankfulForm'
-        action='/thankfulThankYou'
-        method='POST'
-        className='thankfulForm' >
-            <label htmlFor='answer'>Text: </label>
-            <input id='thankfulText' type='text' name='answer' placeholder='...' />
-            <input className='logThoughtSubmit' type='submit' value='Log' />
-        </form>
+        <div>
+            <form id='thankfulForm'
+            onSubmit={handleThankfulDrop}
+            name='thankfulForm'
+            action='/thankfulThankYou'
+            method='POST'
+            className='thankfulForm' >
+                <input id='thankfulText' type='text' name='answer' placeholder='...' />
+                <input className='logThoughtSubmit' type='submit' value='Log' />
+            </form>
+            <button>Go back</button>
+            <BackModal/>
+        </div>
     );
 };
 

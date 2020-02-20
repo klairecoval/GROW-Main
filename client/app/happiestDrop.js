@@ -23,16 +23,19 @@ const HappiestTitle = (props) => {
 
 const HappiestForm = (props) => {
     return (
-        <form id='happiestForm'
-        onSubmit={handleHappiestDrop}
-        name='happiestForm'
-        action='/happiestThankYou'
-        method='POST'
-        className='happiestForm' >
-            <label htmlFor='answer'>Text: </label>
-            <input id='happiestText' type='text' name='answer' placeholder='...' />
-            <input className='logThoughtSubmit' type='submit' value='Log' />
-        </form>
+        <div>
+            <form id='happiestForm'
+            onSubmit={handleHappiestDrop}
+            name='happiestForm'
+            action='/happiestThankYou'
+            method='POST'
+            className='happiestForm' >
+                <input id='happiestText' type='text' name='answer' placeholder='...' />
+                <input className='logThoughtSubmit' type='submit' value='Log' />
+            </form>
+            <button>Go back</button>
+            <BackModal/>
+        </div>
     );
 };
 

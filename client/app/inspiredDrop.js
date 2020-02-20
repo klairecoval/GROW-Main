@@ -23,16 +23,19 @@ const InspiredTitle = (props) => {
 
 const InspiredForm = (props) => {
     return (
-        <form id='inspiredForm'
-        onSubmit={handleInspiredDrop}
-        name='inspiredForm'
-        action='/inspiredThankYou'
-        method='POST'
-        className='inspiredForm' >
-            <label htmlFor='answer'>Text: </label>
-            <input id='inspiredText' type='text' name='answer' placeholder='...' />
-            <input className='logThoughtSubmit' type='submit' value='Log' />
-        </form>
+        <div>
+            <form id='inspiredForm'
+            onSubmit={handleInspiredDrop}
+            name='inspiredForm'
+            action='/inspiredThankYou'
+            method='POST'
+            className='inspiredForm' >
+                <input id='inspiredText' type='text' name='answer' placeholder='...' />
+                <input className='logThoughtSubmit' type='submit' value='Log' />
+            </form>
+            <button>Go back</button>
+            <BackModal/>
+        </div>
     );
 };
 

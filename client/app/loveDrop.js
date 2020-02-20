@@ -23,16 +23,19 @@ const LoveTitle = (props) => {
 
 const LoveForm = (props) => {
     return (
-        <form id='loveForm'
-        onSubmit={handleLoveDrop}
-        name='loveForm'
-        action='/loveThankYou'
-        method='POST'
-        className='loveForm' >
-            <label htmlFor='answer'>Text: </label>
-            <input id='loveText' type='text' name='answer' placeholder='...' />
-            <input className='logThoughtSubmit' type='submit' value='Log' />
-        </form>
+        <div>
+            <form id='loveForm'
+            onSubmit={handleLoveDrop}
+            name='loveForm'
+            action='/loveThankYou'
+            method='POST'
+            className='loveForm' >
+                <input id='loveText' type='text' name='answer' placeholder='...' />
+                <input className='logThoughtSubmit' type='submit' value='Log' />
+            </form>
+            <button>Go back</button>
+            <BackModal/>
+        </div>
     );
 };
 
