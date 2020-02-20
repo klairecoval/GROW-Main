@@ -82,7 +82,7 @@ const createProudView = function() {
 };
 
 const handleProudClick = () => {
-	const proudType = document.querySelector('#proudPrompt');
+	const proudType = document.querySelector('#proudWrite');
 	
 	proudType.addEventListener('click', e => {
 		e.preventDefault();

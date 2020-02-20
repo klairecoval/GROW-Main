@@ -82,7 +82,7 @@ const createHappiestView = function() {
 };
 
 const handleHappiestClick = () => {
-	const happiestType = document.querySelector('#happiestPrompt');
+	const happiestType = document.querySelector('#happiestWrite');
 	
 	happiestType.addEventListener('click', e => {
 		e.preventDefault();

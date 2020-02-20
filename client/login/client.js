@@ -43,6 +43,7 @@ const LoginWindow = (props) => {
             className='mainForm'>
             <label htmlFor='username'>User ID Code: </label>
             <input id='user' type='text' name='username' placeholder='username' />
+            <p>Enter the 4 digit code on your card.</p>
             <input className='formSubmit' type='submit' value='Sign in' />
         </form>
     );
@@ -98,13 +99,6 @@ const setup = () => {
 
     createLoginWindow();
 };
-
-// // get csrf token
-// const getToken = () => {
-//     sendAjax('GET', '/getToken', null, (result) => {
-//         setup(result.csrfToken);
-//     });
-// };
 
 // load in csrf token
 $(document).ready(function() {

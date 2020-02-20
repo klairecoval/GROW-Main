@@ -1,18 +1,77 @@
 const PromptTitle = (props) => {
     return (
-        <h2 id="promptPageTitle">Choose a Prompt</h2>
+        <div>
+            <h1 id="promptPageTitle">Select a prompt:</h1>
+            <p>Which one of these speaks to you? Choose one <br/>
+                that you want to write about.</p>
+        </div>
+    );
+};
+
+const LoveModal = () => {
+    return (
+        <div id="loveModal">
+            <button id="loveWrite">Write response</button>
+            <button id="loveDismiss">Select different prompt</button>
+        </div>
+    );
+};
+const ThankfulModal = () => {
+    return (
+        <div id="thankfulModal">
+            <button id="thankfulWrite">Write response</button>
+            <button id="thankfulDismiss">Select different prompt</button>
+        </div>
+    );
+};
+const InspiredModal = () => {
+    return (
+        <div id="inspiredModal">
+            <button id="inspiredWrite">Write response</button>
+            <button id="inspiredDismiss">Select different prompt</button>
+        </div>
+    );
+};
+const ExcitedModal = () => {
+    return (
+        <div id="excitedModal">
+            <button id="excitedWrite">Write response</button>
+            <button id="excitedDismiss">Select different prompt</button>
+        </div>
+    );
+};
+const HappiestModal = () => {
+    return (
+        <div id="happiestModal">
+            <button id="happiestWrite">Write response</button>
+            <button id="happiestDismiss">Select different prompt</button>
+        </div>
+    );
+};
+const ProudModal = () => {
+    return (
+        <div id="proudModal">
+            <button id="proudWrite">Write response</button>
+            <button id="proudDismiss">Select different prompt</button>
+        </div>
     );
 };
 
 const PromptButtons = () => {
     return (
         <div>
-            <button id="excitedPrompt">I am excited for...</button>
-            <button id="happiestPrompt">I feel happiest when...</button>
-            <button id="inspiredPrompt">I am inspired by..</button>
+            <button id="inspiredPrompt">I'm inspired by...</button>
+            <button id="excitedPrompt">I'm excited for...</button>
+            <button id="happiestPrompt">I'm happiest when...</button>
+            <button id="proudPrompt">I'm proud of...</button>
             <button id="lovePrompt">I love...</button>
-            <button id="proudPrompt">I am proud of...</button>
-            <button id="thankfulPrompt">I am thankful for...</button>
+            <button id="thankfulPrompt">I'm thankful for...</button>
+            <ThankfulModal />
+            <InspiredModal />
+            <LoveModal />
+            <ExcitedModal />
+            <HappiestModal />
+            <ProudModal />
         </div>
     );
 };

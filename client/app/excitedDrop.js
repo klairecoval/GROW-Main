@@ -82,7 +82,7 @@ const createExcitedView = function() {
 };
 
 const handleExcitedClick = () => {
-	const excitedType = document.querySelector('#excitedPrompt');
+	const excitedType = document.querySelector('#excitedWrite');
 	
 	excitedType.addEventListener('click', e => {
 		e.preventDefault();

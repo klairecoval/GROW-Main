@@ -82,7 +82,7 @@ const createLoveView = function() {
 };
 
 const handleLoveClick = () => {
-	const loveType = document.querySelector('#lovePrompt');
+	const loveType = document.querySelector('#loveWrite');
 	
 	loveType.addEventListener('click', e => {
 		e.preventDefault();

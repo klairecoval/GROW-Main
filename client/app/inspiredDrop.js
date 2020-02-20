@@ -82,7 +82,7 @@ const createInspiredView = function() {
 };
 
 const handleInspiredClick = () => {
-	const inspiredType = document.querySelector('#inspiredPrompt');
+	const inspiredType = document.querySelector('#inspiredWrite');
 	
 	inspiredType.addEventListener('click', e => {
 		e.preventDefault();
