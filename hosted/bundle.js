@@ -30,15 +30,15 @@ var ExcitedForm = function ExcitedForm(props) {
         { id: 'excitedForm',
             onSubmit: handleExcitedDrop,
             name: 'excitedForm',
-            action: '/thankYou',
+            action: '/excitedThankYou',
             method: 'POST',
             className: 'excitedForm' },
         React.createElement(
             'label',
-            { htmlFor: 'text' },
+            { htmlFor: 'answer' },
             'Text: '
         ),
-        React.createElement('input', { id: 'excitedText', type: 'text', name: 'text', placeholder: '...' }),
+        React.createElement('input', { id: 'excitedText', type: 'text', name: 'answer', placeholder: '...' }),
         React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
     );
 };
@@ -88,15 +88,15 @@ var HappiestForm = function HappiestForm(props) {
         { id: 'happiestForm',
             onSubmit: handleHappiestDrop,
             name: 'happiestForm',
-            action: '/thankYou',
+            action: '/happiestThankYou',
             method: 'POST',
             className: 'happiestForm' },
         React.createElement(
             'label',
-            { htmlFor: 'text' },
+            { htmlFor: 'answer' },
             'Text: '
         ),
-        React.createElement('input', { id: 'happiestText', type: 'text', name: 'text', placeholder: '...' }),
+        React.createElement('input', { id: 'happiestText', type: 'text', name: 'answer', placeholder: '...' }),
         React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
     );
 };
@@ -146,15 +146,15 @@ var InspiredForm = function InspiredForm(props) {
         { id: 'inspiredForm',
             onSubmit: handleInspiredDrop,
             name: 'inspiredForm',
-            action: '/thankYou',
+            action: '/inspiredThankYou',
             method: 'POST',
             className: 'inspiredForm' },
         React.createElement(
             'label',
-            { htmlFor: 'text' },
+            { htmlFor: 'answer' },
             'Text: '
         ),
-        React.createElement('input', { id: 'inspiredText', type: 'text', name: 'text', placeholder: '...' }),
+        React.createElement('input', { id: 'inspiredText', type: 'text', name: 'answer', placeholder: '...' }),
         React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
     );
 };
@@ -204,15 +204,15 @@ var LoveForm = function LoveForm(props) {
         { id: 'loveForm',
             onSubmit: handleLoveDrop,
             name: 'loveForm',
-            action: '/thankYou',
+            action: '/loveThankYou',
             method: 'POST',
             className: 'loveForm' },
         React.createElement(
             'label',
-            { htmlFor: 'text' },
+            { htmlFor: 'answer' },
             'Text: '
         ),
-        React.createElement('input', { id: 'loveText', type: 'text', name: 'text', placeholder: '...' }),
+        React.createElement('input', { id: 'loveText', type: 'text', name: 'answer', placeholder: '...' }),
         React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
     );
 };
@@ -293,7 +293,9 @@ var setup = function setup() {
 
 // instantiate above
 $(document).ready(function () {
-    setup();
+    if (document.querySelector('#promptTitle') && document.querySelector('#logThought')) {
+        setup();
+    }
 });
 'use strict';
 
@@ -326,15 +328,15 @@ var ProudForm = function ProudForm(props) {
         { id: 'proudForm',
             onSubmit: handleProudDrop,
             name: 'proudForm',
-            action: '/thankYou',
+            action: '/proudThankYou',
             method: 'POST',
             className: 'proudForm' },
         React.createElement(
             'label',
-            { htmlFor: 'text' },
+            { htmlFor: 'answer' },
             'Text: '
         ),
-        React.createElement('input', { id: 'proudText', type: 'text', name: 'text', placeholder: '...' }),
+        React.createElement('input', { id: 'proudText', type: 'text', name: 'answer', placeholder: '...' }),
         React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
     );
 };
@@ -365,7 +367,9 @@ var handleThankfulDrop = function handleThankfulDrop(e) {
         return false;
     }
 
-    sendAjax('POST', $('#thankfulForm').attr('action'), $('#thankfulForm').serialize(), function () {});
+    sendAjax('POST', $('#thankfulForm').attr('action'), $('#thankfulForm').serialize(), function () {
+        return null;
+    });
 
     return false;
 };
@@ -384,15 +388,15 @@ var ThankfulForm = function ThankfulForm(props) {
         { id: 'thankfulForm',
             onSubmit: handleThankfulDrop,
             name: 'thankfulForm',
-            action: '/thankYou',
+            action: '/thankfulThankYou',
             method: 'POST',
             className: 'thankfulForm' },
         React.createElement(
             'label',
-            { htmlFor: 'text' },
+            { htmlFor: 'answer' },
             'Text: '
         ),
-        React.createElement('input', { id: 'thankfulText', type: 'text', name: 'text', placeholder: '...' }),
+        React.createElement('input', { id: 'thankfulText', type: 'text', name: 'answer', placeholder: '...' }),
         React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
     );
 };

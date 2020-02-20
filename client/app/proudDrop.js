@@ -25,11 +25,11 @@ const ProudForm = (props) => {
         <form id='proudForm'
         onSubmit={handleProudDrop}
         name='proudForm'
-        action='/thankYou'
+        action='/proudThankYou'
         method='POST'
         className='proudForm' >
-            <label htmlFor='text'>Text: </label>
-            <input id='proudText' type='text' name='text' placeholder='...' />
+            <label htmlFor='answer'>Text: </label>
+            <input id='proudText' type='text' name='answer' placeholder='...' />
             <input className='logThoughtSubmit' type='submit' value='Log' />
         </form>
     );

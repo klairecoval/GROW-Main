@@ -2,38 +2,35 @@ const models = require('../models');
 
 const Love = models.Love;
 
-const logLove = (req, res) => res.render('thankYou');
-
-// Create a new response to this prompt
-const answerLove = (req, res) => {
+const logLove = (req, res) => {
   if (!req.body.answer) {
-    return res.status(400).json({ error: 'Please fill in your answer' });
+    return res.status(400).json({ error: 'Thought required' });
   }
 
   const loveData = {
     answer: req.body.answer,
+    owner: req.session.account._id,
   };
 
   const newLove = new Love.LoveModel(loveData);
   const lovePromise = newLove.save();
 
-    /*
-    thankPromise.then(() => {
-        //res.json({});
-    })
-    */
+  lovePromise.then(() => {
+    res.json({ redirect: '/thankYou' });
+  });
 
   lovePromise.catch((err) => {
+    console.log(err);
     if (err.code === 11000) {
-      return res.status(400).json({ error: 'An error has occurred' });
+      return res.status(400).json({ error: 'You have already logged this thought' });
     }
-    return res.status(400).json({ error: 'An error has occurred' });
+    
+    return res.status(400).json({ error: 'An error occurred' });
   });
 
   return lovePromise;
 };
 
 module.exports = {
-  makeLove: logLove, // lol
-  answerLove,
+  logLove,
 };

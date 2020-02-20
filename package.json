@@ -4,9 +4,10 @@
   "description": "main thought-drop station and data visualization",
   "main": "./server/app.js",
   "scripts": {
+    "buildLoginBundle": "babel ./client/login ./client/helper --presets react --out-file ./hosted/loginBundle.js",
     "buildAppBundle": "babel ./client/app ./client/helper --presets react --out-file ./hosted/bundle.js",
     "buildSass": "node-sass --include-path scss ./hosted/styles/main.scss ./hosted/main.css",
-    "build": "npm run buildAppBundle && npm run buildSass",
+    "build": "npm run buildLoginBundle && npm run buildAppBundle && npm run buildSass",
     "watchAppBundle": "babel --watch ./client/app ./client/helper --presets react --out-file ./hosted/bundle.js",
     "nodemon": "nodemon --watch ./server ./server/app.js",
     "watchCSS": "nodemon -e scss -x \"npm run buildSass\"",

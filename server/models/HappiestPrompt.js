@@ -13,11 +13,30 @@ const HappiestSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+
+  owner: {
+    type: mongoose.Schema.ObjectId,
+    required: true,
+    ref: 'Account',
+  },
+
+  createdData: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 HappiestSchema.statics.toAPI = (doc) => ({
   answer: doc.answer,
 });
+
+HappiestSchema.statics.findByOwner = (ownerId, callback) => {
+  const search = {
+    owner: convertId(ownerId),
+  };
+
+  return HappiestModel.find(search).select('answer').exec(callback);
+};
 
 HappiestModel = mongoose.model('HappiestModel', HappiestSchema);
 

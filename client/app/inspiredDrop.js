@@ -25,11 +25,11 @@ const InspiredForm = (props) => {
         <form id='inspiredForm'
         onSubmit={handleInspiredDrop}
         name='inspiredForm'
-        action='/thankYou'
+        action='/inspiredThankYou'
         method='POST'
         className='inspiredForm' >
-            <label htmlFor='text'>Text: </label>
-            <input id='inspiredText' type='text' name='text' placeholder='...' />
+            <label htmlFor='answer'>Text: </label>
+            <input id='inspiredText' type='text' name='answer' placeholder='...' />
             <input className='logThoughtSubmit' type='submit' value='Log' />
         </form>
     );
