@@ -490,98 +490,229 @@ var PromptTitle = function PromptTitle(props) {
 var LoveModal = function LoveModal() {
     return React.createElement(
         "div",
-        { id: "loveModal" },
+        { className: "loveModal", id: "loveModal" },
         React.createElement(
-            "button",
-            { id: "loveWrite" },
-            "Write response"
-        ),
-        React.createElement(
-            "button",
-            { id: "loveDismiss" },
-            "Select different prompt"
+            "div",
+            { className: "loveModalContent" },
+            React.createElement(
+                "h1",
+                null,
+                "I love..."
+            ),
+            React.createElement(
+                "button",
+                { id: "loveWrite" },
+                "Write response"
+            ),
+            React.createElement(
+                "button",
+                { id: "dismissLove" },
+                "Select different prompt"
+            )
         )
     );
 };
 var ThankfulModal = function ThankfulModal() {
     return React.createElement(
         "div",
-        { id: "thankfulModal" },
+        { className: "thankfulModal", id: "thankfulModal" },
         React.createElement(
-            "button",
-            { id: "thankfulWrite" },
-            "Write response"
-        ),
-        React.createElement(
-            "button",
-            { id: "thankfulDismiss" },
-            "Select different prompt"
+            "div",
+            { className: "thankfulModalContent" },
+            React.createElement(
+                "h1",
+                null,
+                "I'm thankful for..."
+            ),
+            React.createElement(
+                "button",
+                { id: "thankfulWrite" },
+                "Write response"
+            ),
+            React.createElement(
+                "button",
+                { id: "dismissThankful" },
+                "Select different prompt"
+            )
         )
     );
 };
 var InspiredModal = function InspiredModal() {
     return React.createElement(
         "div",
-        { id: "inspiredModal" },
+        { className: "inspiredModal", id: "inspiredModal" },
         React.createElement(
-            "button",
-            { id: "inspiredWrite" },
-            "Write response"
-        ),
-        React.createElement(
-            "button",
-            { id: "inspiredDismiss" },
-            "Select different prompt"
+            "div",
+            { className: "inspiredModalContent" },
+            React.createElement(
+                "h1",
+                null,
+                "I'm inspired by..."
+            ),
+            React.createElement(
+                "button",
+                { id: "inspiredWrite" },
+                "Write response"
+            ),
+            React.createElement(
+                "button",
+                { id: "dismissInspired" },
+                "Select different prompt"
+            )
         )
     );
 };
 var ExcitedModal = function ExcitedModal() {
     return React.createElement(
         "div",
-        { id: "excitedModal" },
+        { className: "excitedModal", id: "excitedModal" },
         React.createElement(
-            "button",
-            { id: "excitedWrite" },
-            "Write response"
-        ),
-        React.createElement(
-            "button",
-            { id: "excitedDismiss" },
-            "Select different prompt"
+            "div",
+            { className: "excitedModalContent" },
+            React.createElement(
+                "h1",
+                null,
+                "I'm excited for..."
+            ),
+            React.createElement(
+                "button",
+                { id: "excitedWrite" },
+                "Write response"
+            ),
+            React.createElement(
+                "button",
+                { id: "dismissExcited" },
+                "Select different prompt"
+            )
         )
     );
 };
 var HappiestModal = function HappiestModal() {
     return React.createElement(
         "div",
-        { id: "happiestModal" },
+        { className: "happiestModal", id: "happiestModal" },
         React.createElement(
-            "button",
-            { id: "happiestWrite" },
-            "Write response"
-        ),
-        React.createElement(
-            "button",
-            { id: "happiestDismiss" },
-            "Select different prompt"
+            "div",
+            { className: "happiestModalContent" },
+            React.createElement(
+                "h1",
+                null,
+                "I'm happiest when..."
+            ),
+            React.createElement(
+                "button",
+                { id: "happiestWrite" },
+                "Write response"
+            ),
+            React.createElement(
+                "button",
+                { id: "dismissHappiest" },
+                "Select different prompt"
+            )
         )
     );
 };
 var ProudModal = function ProudModal() {
     return React.createElement(
         "div",
-        { id: "proudModal" },
+        { className: "proudModal", id: "proudModal" },
         React.createElement(
-            "button",
-            { id: "proudWrite" },
-            "Write response"
-        ),
-        React.createElement(
-            "button",
-            { id: "proudDismiss" },
-            "Select different prompt"
+            "div",
+            { className: "proudModalContent" },
+            React.createElement(
+                "h1",
+                null,
+                "I'm proud of..."
+            ),
+            React.createElement(
+                "button",
+                { id: "proudWrite" },
+                "Write response"
+            ),
+            React.createElement(
+                "button",
+                { id: "dismissProud" },
+                "Select different prompt"
+            )
         )
     );
+};
+
+var triggerPromptModals = function triggerPromptModals() {
+    var loveModal = document.getElementById("loveModal");
+    var happiestModal = document.getElementById("happiestModal");
+    var proudModal = document.getElementById("proudModal");
+    var excitedModal = document.getElementById("excitedModal");
+    var thankfulModal = document.getElementById("thankfulModal");
+    var inspiredModal = document.getElementById("inspiredModal");
+
+    var excitedPromptBtn = document.getElementById("excitedPrompt");
+    var happiestPromptBtn = document.getElementById("happiestPrompt");
+    var inspiredPromptBtn = document.getElementById("inspiredPrompt");
+    var proudPromptBtn = document.getElementById("proudPrompt");
+    var lovePromptBtn = document.getElementById("lovePrompt");
+    var thankfulPromptBtn = document.getElementById("thankfulPrompt");
+
+    var dismissLove = document.getElementById("dismissLove");
+    var dismissThankful = document.getElementById("dismissThankful");
+    var dismissInspired = document.getElementById("dismissInspired");
+    var dismissExcited = document.getElementById("dismissExcited");
+    var dismissProud = document.getElementById("dismissProud");
+    var dismissHappiest = document.getElementById("dismissHappiest");
+
+    excitedPromptBtn.onclick = function () {
+        excitedModal.style.display = "block";
+    };
+    happiestPromptBtn.onclick = function () {
+        happiestModal.style.display = "block";
+    };
+    inspiredPromptBtn.onclick = function () {
+        inspiredModal.style.display = "block";
+    };
+    proudPromptBtn.onclick = function () {
+        proudModal.style.display = "block";
+    };
+    lovePromptBtn.onclick = function () {
+        loveModal.style.display = "block";
+    };
+    thankfulPromptBtn.onclick = function () {
+        thankfulModal.style.display = "block";
+    };
+
+    dismissLove.onclick = function () {
+        loveModal.style.display = "none";
+    };
+    dismissExcited.onclick = function () {
+        excitedModal.style.display = "none";
+    };
+    dismissHappiest.onclick = function () {
+        happiestModal.style.display = "none";
+    };
+    dismissInspired.onclick = function () {
+        inspiredModal.style.display = "none";
+    };
+    dismissProud.onclick = function () {
+        proudModal.style.display = "none";
+    };
+    dismissThankful.onclick = function () {
+        thankfulModal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        if (event.target === loveModal) {
+            loveModal.style.display = "none";
+        } else if (event.target === excitedModal) {
+            excitedModal.style.display = "none";
+        } else if (event.target === happiestModal) {
+            happiestModal.style.display = "none";
+        } else if (event.target === inspiredModal) {
+            inspiredModal.style.display = "none";
+        } else if (event.target === proudModal) {
+            proudModal.style.display = "none";
+        } else if (event.target === thankfulModal) {
+            thankfulModal.style.display = "none";
+        }
+    };
 };
 
 var BackModal = function BackModal() {
@@ -645,7 +776,6 @@ var triggerBackModal = function triggerBackModal() {
     }
     if (inspiredBtn) {
         inspiredBtn.onclick = function () {
-            console.log('getinspired');
             backModal.style.display = "block";
         };
     } else if (proudBtn) {
@@ -727,6 +857,7 @@ var setup = function setup() {
 
     ReactDOM.render(React.createElement(PromptButtons, null), document.querySelector('#logThought'));
 
+    triggerPromptModals();
     idTimeout();
 
     // load thoughts for testing

@@ -3,7 +3,7 @@
     text-align: center;
 }
 
-.backModal {
+.backModal, .loveModal, .proudModal, .happiestModal, .excitedModal, .thankfulModal, .inspiredModal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -18,7 +18,7 @@
 }
   
 /* Modal Content */
-.backModalContent {
+.backModalContent, .loveModalContent, .proudModalContent, .happiestModalContent, .excitedModalContent, .thankfulModalContent, .inspiredModalContent {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
