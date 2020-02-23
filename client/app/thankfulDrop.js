@@ -31,7 +31,7 @@ const ThankfulForm = (props) => {
                 <input id='thankfulText' type='text' name='answer' placeholder='...' />
                 <input className='logThoughtSubmit' type='submit' value='Log' />
             </form>
-            <button>Go back</button>
+            <button id="thankfulBackBtn">Go back</button>
             <BackModal/>
         </div>
     );
@@ -82,11 +82,13 @@ const createThankfulView = function() {
     );
 };
 
-const handleThankfulClick = () => {
+const handleThankfulClick = (thankfulID) => {
 	const thankfulType = document.querySelector('#thankfulWrite');
 	
 	thankfulType.addEventListener('click', e => {
-		e.preventDefault();
-		createThankfulView();
+        e.preventDefault();
+        clearTimeout(thankfulID);
+        createThankfulView();
+        triggerBackModal();
 	});
 };

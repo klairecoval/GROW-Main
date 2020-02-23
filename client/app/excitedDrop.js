@@ -31,7 +31,7 @@ const ExcitedForm = (props) => {
                 <input id='excitedText' type='text' name='answer' placeholder='...' />
                 <input className='logThoughtSubmit' type='submit' value='Log' />
             </form>
-            <button>Go back</button>
+            <button id="excitedBackBtn">Go back</button>
             <BackModal/>
         </div>
     );
@@ -82,12 +82,13 @@ const createExcitedView = function() {
     );
 };
 
-const handleExcitedClick = (idPrompt) => {
+const handleExcitedClick = (excitedID) => {
     const excitedType = document.querySelector('#excitedWrite');
 	
 	excitedType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(idPrompt);
+        clearTimeout(excitedID);
         createExcitedView();
+        triggerBackModal();
 	});
 };

@@ -31,7 +31,7 @@ const ProudForm = (props) => {
                 <input id='proudText' type='text' name='answer' placeholder='...' />
                 <input className='logThoughtSubmit' type='submit' value='Log' />
             </form>
-            <button>Go back</button>
+            <button id="proudBackBtn">Go back</button>
             <BackModal/>
         </div>
     );
@@ -82,11 +82,13 @@ const createProudView = function() {
     );
 };
 
-const handleProudClick = () => {
+const handleProudClick = (proudID) => {
 	const proudType = document.querySelector('#proudWrite');
 	
 	proudType.addEventListener('click', e => {
-		e.preventDefault();
-		createProudView();
+        e.preventDefault();
+        clearTimeout(proudID);
+        createProudView();
+        triggerBackModal();
 	});
 };

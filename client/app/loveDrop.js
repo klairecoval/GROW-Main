@@ -31,7 +31,7 @@ const LoveForm = (props) => {
                 <input id='loveText' type='text' name='answer' placeholder='...' />
                 <input className='logThoughtSubmit' type='submit' value='Log' />
             </form>
-            <button>Go back</button>
+            <button id="loveBackBtn">Go back</button>
             <BackModal/>
         </div>
     );
@@ -82,11 +82,13 @@ const createLoveView = function() {
     );
 };
 
-const handleLoveClick = () => {
+const handleLoveClick = (loveID) => {
 	const loveType = document.querySelector('#loveWrite');
 	
 	loveType.addEventListener('click', e => {
-		e.preventDefault();
-		createLoveView();
+        e.preventDefault();
+        clearTimeout(loveID);
+        createLoveView();
+        triggerBackModal();
 	});
 };

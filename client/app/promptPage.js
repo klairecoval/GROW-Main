@@ -62,13 +62,67 @@ const ProudModal = () => {
 
 const BackModal = () => {
     return (
-        <div id="backModal">
-            <h1>Are you sure you <br/>want to go back?</h1>
-            <p>Going back now will lose your progress.</p>
-            <button id="stayBtn">Stay</button>
-            <a href="/promptPage" target="_parent" id="continueBtn"><button>Continue</button></a>
+        <div id="backModal" className="backModal">
+            <div className="backModalContent">
+                <h1>Are you sure you <br/>want to go back?</h1>
+                <p>Going back now will lose your progress.</p>
+                <button id="stayBtn">Stay</button>
+                <a href="/promptPage" target="_parent" id="continueBtn"><button>Continue</button></a>
+            </div>
         </div>
     );
+};
+
+const triggerBackModal = () => {
+    const backModal = document.getElementById("backModal");
+
+    const excitedBtn = document.getElementById("excitedBackBtn");
+    const happiestBtn = document.getElementById("happiestBackBtn");
+    const inspiredBtn = document.getElementById("inspiredBackBtn");
+    const proudBtn = document.getElementById("proudBackBtn");
+    const loveBtn = document.getElementById("loveBackBtn");
+    const thankfulBtn = document.getElementById("thankfulBackBtn");
+    
+    const stay = document.getElementById("stayBtn");
+    
+    if(excitedBtn) {
+        excitedBtn.onclick = () => {
+            backModal.style.display = "block";
+        };
+    }
+    if (happiestBtn) {
+        happiestBtn.onclick = () => {
+            backModal.style.display = "block";
+        };
+    }
+    if(inspiredBtn) {
+        inspiredBtn.onclick = () => {
+            console.log('getinspired');
+            backModal.style.display = "block";
+        };
+    } else if (proudBtn) {
+        proudBtn.onclick = () => {
+            backModal.style.display = "block";
+        };
+    } else if(loveBtn) {
+        loveBtn.onclick = () => {
+            backModal.style.display = "block";
+        };
+    } else if (thankfulBtn) {
+        thankfulBtn.onclick = () => {
+            backModal.style.display = "block";
+        };
+    }
+    
+    stay.onclick = () => {
+        backModal.style.display = "none";
+    }
+    
+    window.onclick = (event) => {
+      if (event.target === backModal) {
+        backModal.style.display = "none";
+      }
+    }
 };
 
 const PromptButtons = () => {
@@ -108,20 +162,24 @@ const setup = function() {
     idTimeout();
 
     // load thoughts for testing
-    loadExcitedFromServer();
-    loadHappiestFromServer();
-    loadInspiredFromServer();
-    loadLoveFromServer();
-    loadProudFromServer();
-    loadThankfulFromServer();
+    // loadExcitedFromServer();
+    // loadHappiestFromServer();
+    // loadInspiredFromServer();
+    // loadLoveFromServer();
+    // loadProudFromServer();
+    // loadThankfulFromServer();
 
     // handle button prompt clicks
-    handleExcitedClick(id);
-    handleHappiestClick(id);
-    handleInspiredClick(id);
-    handleLoveClick(id);
-    handleProudClick(id);
-    handleThankfulClick(id);
+    if(document.getElementById('inspiredPrompt') && document.getElementById('excitedPrompt') &&
+    document.getElementById('happiestPrompt') && document.getElementById('lovePrompt') &&
+    document.getElementById('proudPrompt') && document.getElementById('thankfulPrompt')) {
+        handleExcitedClick(id);
+        handleHappiestClick(id);
+        handleInspiredClick(id);
+        handleLoveClick(id);
+        handleProudClick(id);
+        handleThankfulClick(id);
+    }
 };
 
 // instantiate above

@@ -31,7 +31,7 @@ const InspiredForm = (props) => {
                 <input id='inspiredText' type='text' name='answer' placeholder='...' />
                 <input className='logThoughtSubmit' type='submit' value='Log' />
             </form>
-            <button>Go back</button>
+            <button id="inspiredBackBtn">Go back</button>
             <BackModal/>
         </div>
     );
@@ -82,11 +82,13 @@ const createInspiredView = function() {
     );
 };
 
-const handleInspiredClick = () => {
+const handleInspiredClick = (inspiredID) => {
 	const inspiredType = document.querySelector('#inspiredWrite');
 	
 	inspiredType.addEventListener('click', e => {
-		e.preventDefault();
-		createInspiredView();
+        e.preventDefault();
+        clearTimeout(inspiredID);
+        createInspiredView();
+        triggerBackModal();
 	});
 };

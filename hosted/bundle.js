@@ -41,7 +41,7 @@ var ExcitedForm = function ExcitedForm(props) {
         ),
         React.createElement(
             'button',
-            null,
+            { id: 'excitedBackBtn' },
             'Go back'
         ),
         React.createElement(BackModal, null)
@@ -103,13 +103,14 @@ var createExcitedView = function createExcitedView() {
     ReactDOM.render(React.createElement(ExcitedForm, null), document.querySelector('#logThought'));
 };
 
-var handleExcitedClick = function handleExcitedClick(idPrompt) {
+var handleExcitedClick = function handleExcitedClick(excitedID) {
     var excitedType = document.querySelector('#excitedWrite');
 
     excitedType.addEventListener('click', function (e) {
         e.preventDefault();
-        clearTimeout(idPrompt);
+        clearTimeout(excitedID);
         createExcitedView();
+        triggerBackModal();
     });
 };
 'use strict';
@@ -154,7 +155,7 @@ var HappiestForm = function HappiestForm(props) {
         ),
         React.createElement(
             'button',
-            null,
+            { id: 'happiestBackBtn' },
             'Go back'
         ),
         React.createElement(BackModal, null)
@@ -216,12 +217,14 @@ var createHappiestView = function createHappiestView() {
     ReactDOM.render(React.createElement(HappiestForm, null), document.querySelector('#logThought'));
 };
 
-var handleHappiestClick = function handleHappiestClick() {
+var handleHappiestClick = function handleHappiestClick(happiestID) {
     var happiestType = document.querySelector('#happiestWrite');
 
     happiestType.addEventListener('click', function (e) {
         e.preventDefault();
+        clearTimeout(happiestID);
         createHappiestView();
+        triggerBackModal();
     });
 };
 'use strict';
@@ -266,7 +269,7 @@ var InspiredForm = function InspiredForm(props) {
         ),
         React.createElement(
             'button',
-            null,
+            { id: 'inspiredBackBtn' },
             'Go back'
         ),
         React.createElement(BackModal, null)
@@ -328,12 +331,14 @@ var createInspiredView = function createInspiredView() {
     ReactDOM.render(React.createElement(InspiredForm, null), document.querySelector('#logThought'));
 };
 
-var handleInspiredClick = function handleInspiredClick() {
+var handleInspiredClick = function handleInspiredClick(inspiredID) {
     var inspiredType = document.querySelector('#inspiredWrite');
 
     inspiredType.addEventListener('click', function (e) {
         e.preventDefault();
+        clearTimeout(inspiredID);
         createInspiredView();
+        triggerBackModal();
     });
 };
 'use strict';
@@ -378,7 +383,7 @@ var LoveForm = function LoveForm(props) {
         ),
         React.createElement(
             'button',
-            null,
+            { id: 'loveBackBtn' },
             'Go back'
         ),
         React.createElement(BackModal, null)
@@ -440,12 +445,14 @@ var createLoveView = function createLoveView() {
     ReactDOM.render(React.createElement(LoveForm, null), document.querySelector('#logThought'));
 };
 
-var handleLoveClick = function handleLoveClick() {
+var handleLoveClick = function handleLoveClick(loveID) {
     var loveType = document.querySelector('#loveWrite');
 
     loveType.addEventListener('click', function (e) {
         e.preventDefault();
+        clearTimeout(loveID);
         createLoveView();
+        triggerBackModal();
     });
 };
 "use strict";
@@ -580,34 +587,90 @@ var ProudModal = function ProudModal() {
 var BackModal = function BackModal() {
     return React.createElement(
         "div",
-        { id: "backModal" },
+        { id: "backModal", className: "backModal" },
         React.createElement(
-            "h1",
-            null,
-            "Are you sure you ",
-            React.createElement("br", null),
-            "want to go back?"
-        ),
-        React.createElement(
-            "p",
-            null,
-            "Going back now will lose your progress."
-        ),
-        React.createElement(
-            "button",
-            { id: "stayBtn" },
-            "Stay"
-        ),
-        React.createElement(
-            "a",
-            { href: "/promptPage", target: "_parent", id: "continueBtn" },
+            "div",
+            { className: "backModalContent" },
+            React.createElement(
+                "h1",
+                null,
+                "Are you sure you ",
+                React.createElement("br", null),
+                "want to go back?"
+            ),
+            React.createElement(
+                "p",
+                null,
+                "Going back now will lose your progress."
+            ),
             React.createElement(
                 "button",
-                null,
-                "Continue"
+                { id: "stayBtn" },
+                "Stay"
+            ),
+            React.createElement(
+                "a",
+                { href: "/promptPage", target: "_parent", id: "continueBtn" },
+                React.createElement(
+                    "button",
+                    null,
+                    "Continue"
+                )
             )
         )
     );
+};
+
+var triggerBackModal = function triggerBackModal() {
+    var backModal = document.getElementById("backModal");
+
+    var excitedBtn = document.getElementById("excitedBackBtn");
+    var happiestBtn = document.getElementById("happiestBackBtn");
+    var inspiredBtn = document.getElementById("inspiredBackBtn");
+    var proudBtn = document.getElementById("proudBackBtn");
+    var loveBtn = document.getElementById("loveBackBtn");
+    var thankfulBtn = document.getElementById("thankfulBackBtn");
+
+    var stay = document.getElementById("stayBtn");
+
+    if (excitedBtn) {
+        excitedBtn.onclick = function () {
+            backModal.style.display = "block";
+        };
+    }
+    if (happiestBtn) {
+        happiestBtn.onclick = function () {
+            backModal.style.display = "block";
+        };
+    }
+    if (inspiredBtn) {
+        inspiredBtn.onclick = function () {
+            console.log('getinspired');
+            backModal.style.display = "block";
+        };
+    } else if (proudBtn) {
+        proudBtn.onclick = function () {
+            backModal.style.display = "block";
+        };
+    } else if (loveBtn) {
+        loveBtn.onclick = function () {
+            backModal.style.display = "block";
+        };
+    } else if (thankfulBtn) {
+        thankfulBtn.onclick = function () {
+            backModal.style.display = "block";
+        };
+    }
+
+    stay.onclick = function () {
+        backModal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        if (event.target === backModal) {
+            backModal.style.display = "none";
+        }
+    };
 };
 
 var PromptButtons = function PromptButtons() {
@@ -667,20 +730,22 @@ var setup = function setup() {
     idTimeout();
 
     // load thoughts for testing
-    loadExcitedFromServer();
-    loadHappiestFromServer();
-    loadInspiredFromServer();
-    loadLoveFromServer();
-    loadProudFromServer();
-    loadThankfulFromServer();
+    // loadExcitedFromServer();
+    // loadHappiestFromServer();
+    // loadInspiredFromServer();
+    // loadLoveFromServer();
+    // loadProudFromServer();
+    // loadThankfulFromServer();
 
     // handle button prompt clicks
-    handleExcitedClick(id);
-    handleHappiestClick(id);
-    handleInspiredClick(id);
-    handleLoveClick(id);
-    handleProudClick(id);
-    handleThankfulClick(id);
+    if (document.getElementById('inspiredPrompt') && document.getElementById('excitedPrompt') && document.getElementById('happiestPrompt') && document.getElementById('lovePrompt') && document.getElementById('proudPrompt') && document.getElementById('thankfulPrompt')) {
+        handleExcitedClick(id);
+        handleHappiestClick(id);
+        handleInspiredClick(id);
+        handleLoveClick(id);
+        handleProudClick(id);
+        handleThankfulClick(id);
+    }
 };
 
 // instantiate above
@@ -731,7 +796,7 @@ var ProudForm = function ProudForm(props) {
         ),
         React.createElement(
             'button',
-            null,
+            { id: 'proudBackBtn' },
             'Go back'
         ),
         React.createElement(BackModal, null)
@@ -793,12 +858,14 @@ var createProudView = function createProudView() {
     ReactDOM.render(React.createElement(ProudForm, null), document.querySelector('#logThought'));
 };
 
-var handleProudClick = function handleProudClick() {
+var handleProudClick = function handleProudClick(proudID) {
     var proudType = document.querySelector('#proudWrite');
 
     proudType.addEventListener('click', function (e) {
         e.preventDefault();
+        clearTimeout(proudID);
         createProudView();
+        triggerBackModal();
     });
 };
 'use strict';
@@ -843,7 +910,7 @@ var ThankfulForm = function ThankfulForm(props) {
         ),
         React.createElement(
             'button',
-            null,
+            { id: 'thankfulBackBtn' },
             'Go back'
         ),
         React.createElement(BackModal, null)
@@ -905,12 +972,14 @@ var createThankfulView = function createThankfulView() {
     ReactDOM.render(React.createElement(ThankfulForm, null), document.querySelector('#logThought'));
 };
 
-var handleThankfulClick = function handleThankfulClick() {
+var handleThankfulClick = function handleThankfulClick(thankfulID) {
     var thankfulType = document.querySelector('#thankfulWrite');
 
     thankfulType.addEventListener('click', function (e) {
         e.preventDefault();
+        clearTimeout(thankfulID);
         createThankfulView();
+        triggerBackModal();
     });
 };
 'use strict';

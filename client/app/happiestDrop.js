@@ -31,7 +31,7 @@ const HappiestForm = (props) => {
                 <input id='happiestText' type='text' name='answer' placeholder='...' />
                 <input className='logThoughtSubmit' type='submit' value='Log' />
             </form>
-            <button>Go back</button>
+            <button id="happiestBackBtn">Go back</button>
             <BackModal/>
         </div>
     );
@@ -82,11 +82,13 @@ const createHappiestView = function() {
     );
 };
 
-const handleHappiestClick = () => {
+const handleHappiestClick = (happiestID) => {
 	const happiestType = document.querySelector('#happiestWrite');
 	
 	happiestType.addEventListener('click', e => {
-		e.preventDefault();
-		createHappiestView();
+        e.preventDefault();
+        clearTimeout(happiestID);
+        createHappiestView();
+        triggerBackModal();
 	});
 };
