@@ -1,3 +1,5 @@
+let id;
+
 const PromptTitle = (props) => {
     return (
         <div>
@@ -88,6 +90,12 @@ const PromptButtons = () => {
     );
 };
 
+const idTimeout = () => {
+    id = setTimeout(function(){
+            location.replace("/logout");
+        }, 90000);
+};
+
 const setup = function() {
     ReactDOM.render(
         <PromptTitle />, document.querySelector('#promptTitle')
@@ -96,6 +104,8 @@ const setup = function() {
     ReactDOM.render(
         <PromptButtons />, document.querySelector('#logThought')
     );
+
+    idTimeout();
 
     // load thoughts for testing
     loadExcitedFromServer();
@@ -106,12 +116,12 @@ const setup = function() {
     loadThankfulFromServer();
 
     // handle button prompt clicks
-    handleExcitedClick();
-    handleHappiestClick();
-    handleInspiredClick();
-    handleLoveClick();
-    handleProudClick();
-    handleThankfulClick();
+    handleExcitedClick(id);
+    handleHappiestClick(id);
+    handleInspiredClick(id);
+    handleLoveClick(id);
+    handleProudClick(id);
+    handleThankfulClick(id);
 };
 
 // instantiate above

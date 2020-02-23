@@ -103,11 +103,12 @@ var createExcitedView = function createExcitedView() {
     ReactDOM.render(React.createElement(ExcitedForm, null), document.querySelector('#logThought'));
 };
 
-var handleExcitedClick = function handleExcitedClick() {
+var handleExcitedClick = function handleExcitedClick(idPrompt) {
     var excitedType = document.querySelector('#excitedWrite');
 
     excitedType.addEventListener('click', function (e) {
         e.preventDefault();
+        clearTimeout(idPrompt);
         createExcitedView();
     });
 };
@@ -449,6 +450,8 @@ var handleLoveClick = function handleLoveClick() {
 };
 "use strict";
 
+var id = void 0;
+
 var PromptTitle = function PromptTitle(props) {
     return React.createElement(
         "div",
@@ -650,10 +653,18 @@ var PromptButtons = function PromptButtons() {
     );
 };
 
+var idTimeout = function idTimeout() {
+    id = setTimeout(function () {
+        location.replace("/logout");
+    }, 90000);
+};
+
 var setup = function setup() {
     ReactDOM.render(React.createElement(PromptTitle, null), document.querySelector('#promptTitle'));
 
     ReactDOM.render(React.createElement(PromptButtons, null), document.querySelector('#logThought'));
+
+    idTimeout();
 
     // load thoughts for testing
     loadExcitedFromServer();
@@ -664,12 +675,12 @@ var setup = function setup() {
     loadThankfulFromServer();
 
     // handle button prompt clicks
-    handleExcitedClick();
-    handleHappiestClick();
-    handleInspiredClick();
-    handleLoveClick();
-    handleProudClick();
-    handleThankfulClick();
+    handleExcitedClick(id);
+    handleHappiestClick(id);
+    handleInspiredClick(id);
+    handleLoveClick(id);
+    handleProudClick(id);
+    handleThankfulClick(id);
 };
 
 // instantiate above

@@ -82,11 +82,12 @@ const createExcitedView = function() {
     );
 };
 
-const handleExcitedClick = () => {
-	const excitedType = document.querySelector('#excitedWrite');
+const handleExcitedClick = (idPrompt) => {
+    const excitedType = document.querySelector('#excitedWrite');
 	
 	excitedType.addEventListener('click', e => {
-		e.preventDefault();
-		createExcitedView();
+        e.preventDefault();
+        clearTimeout(idPrompt);
+        createExcitedView();
 	});
 };
