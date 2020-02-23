@@ -8,9 +8,7 @@ const handleProudDrop = (e) => {
         return false;
     }
 
-    sendAjax('POST', $('#proudForm').attr('action'), $('#proudForm').serialize(), function() {
-        loadProudFromServer();
-    });
+    sendAjax('POST', $('#proudForm').attr('action'), $('#proudForm').serialize(), redirect);
 
     return false;
 };

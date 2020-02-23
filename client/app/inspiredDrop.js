@@ -8,9 +8,7 @@ const handleInspiredDrop = (e) => {
         return false;
     }
 
-    sendAjax('POST', $('#inspiredForm').attr('action'), $('#inspiredForm').serialize(), function() {
-        loadInspiredFromServer();
-    });
+    sendAjax('POST', $('#inspiredForm').attr('action'), $('#inspiredForm').serialize(), redirect);
 
     return false;
 };

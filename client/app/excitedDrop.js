@@ -8,7 +8,7 @@ const handleExcitedDrop = (e) => {
         return false;
     }
 
-    sendAjax('POST', $('#excitedForm').attr('action'), $('#excitedForm').serialize(),redirect);
+    sendAjax('POST', $('#excitedForm').attr('action'), $('#excitedForm').serialize(), redirect);
 
     return false;
 };

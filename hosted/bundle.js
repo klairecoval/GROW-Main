@@ -123,9 +123,7 @@ var handleHappiestDrop = function handleHappiestDrop(e) {
         return false;
     }
 
-    sendAjax('POST', $('#happiestForm').attr('action'), $('#happiestForm').serialize(), function () {
-        loadHappiestFromServer();
-    });
+    sendAjax('POST', $('#happiestForm').attr('action'), $('#happiestForm').serialize(), redirect);
 
     return false;
 };
@@ -237,9 +235,7 @@ var handleInspiredDrop = function handleInspiredDrop(e) {
         return false;
     }
 
-    sendAjax('POST', $('#inspiredForm').attr('action'), $('#inspiredForm').serialize(), function () {
-        loadInspiredFromServer();
-    });
+    sendAjax('POST', $('#inspiredForm').attr('action'), $('#inspiredForm').serialize(), redirect);
 
     return false;
 };
@@ -351,9 +347,7 @@ var handleLoveDrop = function handleLoveDrop(e) {
         return false;
     }
 
-    sendAjax('POST', $('#loveForm').attr('action'), $('#loveForm').serialize(), function () {
-        loadLoveFromServer();
-    });
+    sendAjax('POST', $('#loveForm').attr('action'), $('#loveForm').serialize(), redirect);
 
     return false;
 };
@@ -696,9 +690,7 @@ var handleProudDrop = function handleProudDrop(e) {
         return false;
     }
 
-    sendAjax('POST', $('#proudForm').attr('action'), $('#proudForm').serialize(), function () {
-        loadProudFromServer();
-    });
+    sendAjax('POST', $('#proudForm').attr('action'), $('#proudForm').serialize(), redirect);
 
     return false;
 };
@@ -810,10 +802,7 @@ var handleThankfulDrop = function handleThankfulDrop(e) {
         return false;
     }
 
-    sendAjax('POST', $('#thankfulForm').attr('action'), $('#thankfulForm').serialize(), function () {
-        loadThankfulFromServer();
-        return null;
-    });
+    sendAjax('POST', $('#thankfulForm').attr('action'), $('#thankfulForm').serialize(), redirect);
 
     return false;
 };

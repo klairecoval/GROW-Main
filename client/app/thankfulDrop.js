@@ -8,10 +8,7 @@ const handleThankfulDrop = (e) => {
         return false;
     }
 
-    sendAjax('POST', $('#thankfulForm').attr('action'), $('#thankfulForm').serialize(), function() {
-        loadThankfulFromServer();
-        return null;
-    });
+    sendAjax('POST', $('#thankfulForm').attr('action'), $('#thankfulForm').serialize(), redirect);
 
     return false;
 };

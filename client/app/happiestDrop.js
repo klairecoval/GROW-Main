@@ -8,9 +8,7 @@ const handleHappiestDrop = (e) => {
         return false;
     }
 
-    sendAjax('POST', $('#happiestForm').attr('action'), $('#happiestForm').serialize(), function() {
-        loadHappiestFromServer();
-    });
+    sendAjax('POST', $('#happiestForm').attr('action'), $('#happiestForm').serialize(), redirect);
 
     return false;
 };

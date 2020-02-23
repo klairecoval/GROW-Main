@@ -8,9 +8,7 @@ const handleLoveDrop = (e) => {
         return false;
     }
 
-    sendAjax('POST', $('#loveForm').attr('action'), $('#loveForm').serialize(), function() {
-        loadLoveFromServer();
-    });
+    sendAjax('POST', $('#loveForm').attr('action'), $('#loveForm').serialize(), redirect);
 
     return false;
 };
