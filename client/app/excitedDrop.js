@@ -1,14 +1,29 @@
 const handleExcitedDrop = (e) => {
     e.preventDefault();
 
-    $('#errorMessage').animate({width:'hide'}, 350);
+    const excitedSubmitModal = document.getElementById("excitedSubmitModal");
+    const submitExcitedBtn = document.getElementById("submitExcitedBtn");
+    const dismissExcitedModal = document.getElementById("dismissExcitedSubmit");
 
+    dismissExcitedModal.onclick = () => {
+        excitedSubmitModal.style.display = "none";
+    };
+    
+    window.onclick = (event) => {
+      if (event.target === excitedSubmitModal) {
+        excitedSubmitModal.style.display = "none";
+      }
+    };
+
+    $('#errorMessage').animate({width:'hide'}, 350);
     if($('#excitedText').val() == '') {
         handleError('Input required');
         return false;
     }
 
-    sendAjax('POST', $('#excitedForm').attr('action'), $('#excitedForm').serialize(), redirect);
+    submitExcitedBtn.onclick = () => {
+        sendAjax('POST', $('#excitedForm').attr('action'), $('#excitedForm').serialize(), redirect);
+    };
 
     return false;
 };
@@ -29,47 +44,27 @@ const ExcitedForm = (props) => {
             method='POST'
             className='excitedForm' >
                 <input id='excitedText' type='text' name='answer' placeholder='...' />
-                <input className='logThoughtSubmit' type='submit' value='Log' />
+                <input className='logThoughtSubmit' id="logExcitedSubmit" type='submit' value='Submit' />
             </form>
             <button id="excitedBackBtn">Go back</button>
             <BackModal/>
+            <ExcitedSubmitModal />
         </div>
     );
 };
 
-const ExcitedList = function(props) {
-    if(props.excitedResponses.length === 0) {
-        return (
-            <h3>No Excited Thoughts</h3>
-        );
-    }
-
-    const excitedNodes = props.excitedResponses.sort(function(a,b){
-        return a.name.localeCompare(b.name);
-    })
-    .map(function(excitedThought) {
-        return (
-            <div key={excitedThought._id}>
-                <h3> {excitedThought.answer} </h3>
-                <span>{excitedThought._id}</span>
-            </div>
-        );
-    });
-
+const ExcitedSubmitModal = () => {
     return (
-        <div>
-            {excitedNodes}
-            <p>{props.excitedResponses.length} thoughts</p>
+        <div className="excitedSubmitModal" id="excitedSubmitModal">
+            <div className="excitedSubmitContent">
+                <h1>All finished?</h1>
+                <p>This will submit your response to your card.<br/>
+                    Don’t worry, they’re all anonymous.</p>
+                <button id="dismissExcitedSubmit">Go back</button>
+                <button id="submitExcitedBtn">Finish</button>
+            </div>
         </div>
     );
-};
-
-const loadExcitedFromServer = () => {
-    sendAjax('GET', '/getExcited', null, (data) => {
-        ReactDOM.render(
-            <ExcitedList excitedResponses={data.excitedResponses} />, document.querySelector('#error')
-        );
-    });
 };
 
 const createExcitedView = function() {
@@ -80,6 +75,13 @@ const createExcitedView = function() {
     ReactDOM.render(
         <ExcitedForm />, document.querySelector('#logThought')
     );
+
+    const logExcitedSubmit = document.getElementById("logExcitedSubmit");
+    const dismissExcitedModal = document.getElementById("dismissExcitedSubmit");
+
+    logExcitedSubmit.onclick = () => {
+        excitedSubmitModal.style.display = "block";
+    };
 };
 
 const handleExcitedClick = (excitedID) => {

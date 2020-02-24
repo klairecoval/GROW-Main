@@ -1,6 +1,20 @@
 const handleProudDrop = (e) => {
     e.preventDefault();
 
+    const proudSubmitModal = document.getElementById("proudSubmitModal");
+    const submitProudBtn = document.getElementById("submitProudBtn");
+    const dismissProudModal = document.getElementById("dismissProudSubmit");
+
+    dismissProudModal.onclick = () => {
+        proudSubmitModal.style.display = "none";
+    };
+    
+    window.onclick = (event) => {
+      if (event.target === proudSubmitModal) {
+        proudSubmitModal.style.display = "none";
+      }
+    };
+
     $('#errorMessage').animate({width:'hide'}, 350);
 
     if($('#proudText').val() == '') {
@@ -8,7 +22,9 @@ const handleProudDrop = (e) => {
         return false;
     }
 
-    sendAjax('POST', $('#proudForm').attr('action'), $('#proudForm').serialize(), redirect);
+    submitProudBtn.onclick = () => {
+        sendAjax('POST', $('#proudForm').attr('action'), $('#proudForm').serialize(), redirect);
+    };
 
     return false;
 };
@@ -29,47 +45,27 @@ const ProudForm = (props) => {
             method='POST'
             className='proudForm' >
                 <input id='proudText' type='text' name='answer' placeholder='...' />
-                <input className='logThoughtSubmit' type='submit' value='Log' />
+                <input className='logThoughtSubmit' id="logProudSubmit" type='submit' value='Log' />
             </form>
             <button id="proudBackBtn">Go back</button>
             <BackModal/>
+            <ProudSubmitModal/>
         </div>
     );
 };
 
-const ProudList = function(props) {
-    if(props.proudResponses.length === 0) {
-        return (
-            <h3>No Happy Thoughts</h3>
-        );
-    }
-
-    const proudNodes = props.proudResponses.sort(function(a,b){
-        return a.name.localeCompare(b.name);
-    })
-    .map(function(proudThought) {
-        return (
-            <div key={proudThought._id}>
-                <h3> {proudThought.answer} </h3>
-                <span>{proudThought._id}</span>
-            </div>
-        );
-    });
-
+const ProudSubmitModal = () => {
     return (
-        <div>
-            {proudNodes}
-            <p>{props.proudResponses.length} thoughts</p>
+        <div className="proudSubmitModal" id="proudSubmitModal">
+            <div className="proudSubmitContent">
+                <h1>All finished?</h1>
+                <p>This will submit your response to your card.<br/>
+                    Don’t worry, they’re all anonymous.</p>
+                <button id="dismissProudSubmit">Go back</button>
+                <button id="submitProudBtn">Finish</button>
+            </div>
         </div>
     );
-};
-
-const loadProudFromServer = () => {
-    sendAjax('GET', '/getProud', null, (data) => {
-        ReactDOM.render(
-            <ProudList proudResponses={data.proudResponses} />, document.querySelector('#error')
-        );
-    });
 };
 
 const createProudView = function() {
@@ -80,6 +76,13 @@ const createProudView = function() {
     ReactDOM.render(
         <ProudForm />, document.querySelector('#logThought')
     );
+
+    const logProudSubmit = document.getElementById("logProudSubmit");
+    const dismissProudModal = document.getElementById("dismissProudSubmit");
+
+    logProudSubmit.onclick = () => {
+        proudSubmitModal.style.display = "block";
+    };
 };
 
 const handleProudClick = (proudID) => {

@@ -1,6 +1,20 @@
 const handleThankfulDrop = (e) => {
     e.preventDefault();
 
+    const thankfulSubmitModal = document.getElementById("thankfulSubmitModal");
+    const submitThankfulBtn = document.getElementById("submitThankfulBtn");
+    const dismissThankfulModal = document.getElementById("dismissThankfulSubmit");
+
+    dismissThankfulModal.onclick = () => {
+        thankfulSubmitModal.style.display = "none";
+    };
+    
+    window.onclick = (event) => {
+      if (event.target === thankfulSubmitModal) {
+        thankfulSubmitModal.style.display = "none";
+      }
+    };
+
     $('#errorMessage').animate({width:'hide'}, 350);
 
     if($('#thankfulText').val() == '') {
@@ -8,7 +22,9 @@ const handleThankfulDrop = (e) => {
         return false;
     }
 
-    sendAjax('POST', $('#thankfulForm').attr('action'), $('#thankfulForm').serialize(), redirect);
+    submitThankfulBtn.onclick = () => {
+        sendAjax('POST', $('#thankfulForm').attr('action'), $('#thankfulForm').serialize(), redirect);
+    };
 
     return false;
 };
@@ -29,47 +45,27 @@ const ThankfulForm = (props) => {
             method='POST'
             className='thankfulForm' >
                 <input id='thankfulText' type='text' name='answer' placeholder='...' />
-                <input className='logThoughtSubmit' type='submit' value='Log' />
+                <input className='logThoughtSubmit' id="logThankfulSubmit" type='submit' value='Log' />
             </form>
             <button id="thankfulBackBtn">Go back</button>
             <BackModal/>
+            <ThankfulSubmitModal />
         </div>
     );
 };
 
-const ThankfulList = function(props) {
-    if(props.thankfulResponses.length === 0) {
-        return (
-            <h3>No Happy Thoughts</h3>
-        );
-    }
-
-    const thankfulNodes = props.thankfulResponses.sort(function(a,b){
-        return a.name.localeCompare(b.name);
-    })
-    .map(function(thankfulThought) {
-        return (
-            <div key={thankfulThought._id}>
-                <h3> {thankfulThought.answer} </h3>
-                <span>{thankfulThought._id}</span>
-            </div>
-        );
-    });
-
+const ThankfulSubmitModal = () => {
     return (
-        <div>
-            {thankfulNodes}
-            <p>{props.thankfulResponses.length} thoughts</p>
+        <div className="thankfulSubmitModal" id="thankfulSubmitModal">
+            <div className="thankfulSubmitContent">
+                <h1>All finished?</h1>
+                <p>This will submit your response to your card.<br/>
+                    Don’t worry, they’re all anonymous.</p>
+                <button id="dismissThankfulSubmit">Go back</button>
+                <button id="submitThankfulBtn">Finish</button>
+            </div>
         </div>
     );
-};
-
-const loadThankfulFromServer = () => {
-    sendAjax('GET', '/getThankful', null, (data) => {
-        ReactDOM.render(
-            <ThankfulList thankfulResponses={data.thankfulResponses} />, document.querySelector('#error')
-        );
-    });
 };
 
 const createThankfulView = function() {
@@ -80,6 +76,13 @@ const createThankfulView = function() {
     ReactDOM.render(
         <ThankfulForm />, document.querySelector('#logThought')
     );
+
+    const logThankfulSubmit = document.getElementById("logThankfulSubmit");
+    const dismissThankfulModal = document.getElementById("dismissThankfulSubmit");
+
+    logThankfulSubmit.onclick = () => {
+        thankfulSubmitModal.style.display = "block";
+    };
 };
 
 const handleThankfulClick = (thankfulID) => {

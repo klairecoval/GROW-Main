@@ -1,6 +1,21 @@
 const handleHappiestDrop = (e) => {
     e.preventDefault();
 
+    const happiestSubmitModal = document.getElementById("happiestSubmitModal");
+
+    const submitHappiestBtn = document.getElementById("submitHappiestBtn");
+    const dismissHappiestModal = document.getElementById("dismissHappiestSubmit");
+
+    dismissHappiestModal.onclick = () => {
+        happiestSubmitModal.style.display = "none";
+    }
+    
+    window.onclick = (event) => {
+      if (event.target === happiestSubmitModal) {
+        happiestSubmitModal.style.display = "none";
+      }
+    }
+
     $('#errorMessage').animate({width:'hide'}, 350);
 
     if($('#happiestText').val() == '') {
@@ -8,7 +23,9 @@ const handleHappiestDrop = (e) => {
         return false;
     }
 
-    sendAjax('POST', $('#happiestForm').attr('action'), $('#happiestForm').serialize(), redirect);
+    submitHappiestBtn.onclick = () => {
+        sendAjax('POST', $('#happiestForm').attr('action'), $('#happiestForm').serialize(), redirect);
+    };
 
     return false;
 };
@@ -29,47 +46,27 @@ const HappiestForm = (props) => {
             method='POST'
             className='happiestForm' >
                 <input id='happiestText' type='text' name='answer' placeholder='...' />
-                <input className='logThoughtSubmit' type='submit' value='Log' />
+                <input className='logThoughtSubmit' id="logHappiestSubmit" type='submit' value='Log' />
             </form>
             <button id="happiestBackBtn">Go back</button>
             <BackModal/>
+            <HappiestSubmitModal />
         </div>
     );
 };
 
-const HappiestList = function(props) {
-    if(props.happiestResponses.length === 0) {
-        return (
-            <h3>No Happy Thoughts</h3>
-        );
-    }
-
-    const happiestNodes = props.happiestResponses.sort(function(a,b){
-        return a.name.localeCompare(b.name);
-    })
-    .map(function(happiestThought) {
-        return (
-            <div key={happiestThought._id}>
-                <h3> {happiestThought.answer} </h3>
-                <span>{happiestThought._id}</span>
-            </div>
-        );
-    });
-
+const HappiestSubmitModal = () => {
     return (
-        <div>
-            {happiestNodes}
-            <p>{props.happiestResponses.length} thoughts</p>
+        <div className="happiestSubmitModal" id="happiestSubmitModal">
+            <div className="happiestSubmitContent">
+                <h1>All finished?</h1>
+                <p>This will submit your response to your card.<br/>
+                    Don’t worry, they’re all anonymous.</p>
+                <button id="dismissHappiestSubmit">Go back</button>
+                <button id="submitHappiestBtn">Finish</button>
+            </div>
         </div>
     );
-};
-
-const loadHappiestFromServer = () => {
-    sendAjax('GET', '/getHappiest', null, (data) => {
-        ReactDOM.render(
-            <HappiestList happiestResponses={data.happiestResponses} />, document.querySelector('#error')
-        );
-    });
 };
 
 const createHappiestView = function() {
@@ -80,6 +77,13 @@ const createHappiestView = function() {
     ReactDOM.render(
         <HappiestForm />, document.querySelector('#logThought')
     );
+
+    const logHappiestSubmit = document.getElementById("logHappiestSubmit");
+    const dismissHappiestModal = document.getElementById("dismissHappiestSubmit");
+
+    logHappiestSubmit.onclick = () => {
+        happiestSubmitModal.style.display = "block";
+    };
 };
 
 const handleHappiestClick = (happiestID) => {

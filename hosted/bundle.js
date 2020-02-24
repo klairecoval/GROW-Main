@@ -1,106 +1,113 @@
 "use strict";
-'use strict';
+"use strict";
 
 var handleExcitedDrop = function handleExcitedDrop(e) {
     e.preventDefault();
 
-    $('#errorMessage').animate({ width: 'hide' }, 350);
+    var excitedSubmitModal = document.getElementById("excitedSubmitModal");
+    var submitExcitedBtn = document.getElementById("submitExcitedBtn");
+    var dismissExcitedModal = document.getElementById("dismissExcitedSubmit");
 
+    dismissExcitedModal.onclick = function () {
+        excitedSubmitModal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        if (event.target === excitedSubmitModal) {
+            excitedSubmitModal.style.display = "none";
+        }
+    };
+
+    $('#errorMessage').animate({ width: 'hide' }, 350);
     if ($('#excitedText').val() == '') {
         handleError('Input required');
         return false;
     }
 
-    sendAjax('POST', $('#excitedForm').attr('action'), $('#excitedForm').serialize(), redirect);
+    submitExcitedBtn.onclick = function () {
+        sendAjax('POST', $('#excitedForm').attr('action'), $('#excitedForm').serialize(), redirect);
+    };
 
     return false;
 };
 
 var ExcitedTitle = function ExcitedTitle(props) {
     return React.createElement(
-        'h2',
-        { id: 'excitedTitle' },
-        'I am excited for...'
+        "h2",
+        { id: "excitedTitle" },
+        "I am excited for..."
     );
 };
 
 var ExcitedForm = function ExcitedForm(props) {
     return React.createElement(
-        'div',
+        "div",
         null,
         React.createElement(
-            'form',
-            { id: 'excitedForm',
+            "form",
+            { id: "excitedForm",
                 onSubmit: handleExcitedDrop,
-                name: 'excitedForm',
-                action: '/excitedThankYou',
-                method: 'POST',
-                className: 'excitedForm' },
-            React.createElement('input', { id: 'excitedText', type: 'text', name: 'answer', placeholder: '...' }),
-            React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+                name: "excitedForm",
+                action: "/excitedThankYou",
+                method: "POST",
+                className: "excitedForm" },
+            React.createElement("input", { id: "excitedText", type: "text", name: "answer", placeholder: "..." }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logExcitedSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
-            'button',
-            { id: 'excitedBackBtn' },
-            'Go back'
+            "button",
+            { id: "excitedBackBtn" },
+            "Go back"
         ),
-        React.createElement(BackModal, null)
+        React.createElement(BackModal, null),
+        React.createElement(ExcitedSubmitModal, null)
     );
 };
 
-var ExcitedList = function ExcitedList(props) {
-    if (props.excitedResponses.length === 0) {
-        return React.createElement(
-            'h3',
-            null,
-            'No Excited Thoughts'
-        );
-    }
-
-    var excitedNodes = props.excitedResponses.sort(function (a, b) {
-        return a.name.localeCompare(b.name);
-    }).map(function (excitedThought) {
-        return React.createElement(
-            'div',
-            { key: excitedThought._id },
+var ExcitedSubmitModal = function ExcitedSubmitModal() {
+    return React.createElement(
+        "div",
+        { className: "excitedSubmitModal", id: "excitedSubmitModal" },
+        React.createElement(
+            "div",
+            { className: "excitedSubmitContent" },
             React.createElement(
-                'h3',
+                "h1",
                 null,
-                ' ',
-                excitedThought.answer,
-                ' '
+                "All finished?"
             ),
             React.createElement(
-                'span',
+                "p",
                 null,
-                excitedThought._id
+                "This will submit your response to your card.",
+                React.createElement("br", null),
+                "Don\u2019t worry, they\u2019re all anonymous."
+            ),
+            React.createElement(
+                "button",
+                { id: "dismissExcitedSubmit" },
+                "Go back"
+            ),
+            React.createElement(
+                "button",
+                { id: "submitExcitedBtn" },
+                "Finish"
             )
-        );
-    });
-
-    return React.createElement(
-        'div',
-        null,
-        excitedNodes,
-        React.createElement(
-            'p',
-            null,
-            props.excitedResponses.length,
-            ' thoughts'
         )
     );
-};
-
-var loadExcitedFromServer = function loadExcitedFromServer() {
-    sendAjax('GET', '/getExcited', null, function (data) {
-        ReactDOM.render(React.createElement(ExcitedList, { excitedResponses: data.excitedResponses }), document.querySelector('#error'));
-    });
 };
 
 var createExcitedView = function createExcitedView() {
     ReactDOM.render(React.createElement(ExcitedTitle, null), document.querySelector('#promptTitle'));
 
     ReactDOM.render(React.createElement(ExcitedForm, null), document.querySelector('#logThought'));
+
+    var logExcitedSubmit = document.getElementById("logExcitedSubmit");
+    var dismissExcitedModal = document.getElementById("dismissExcitedSubmit");
+
+    logExcitedSubmit.onclick = function () {
+        excitedSubmitModal.style.display = "block";
+    };
 };
 
 var handleExcitedClick = function handleExcitedClick(excitedID) {
@@ -113,10 +120,25 @@ var handleExcitedClick = function handleExcitedClick(excitedID) {
         triggerBackModal();
     });
 };
-'use strict';
+"use strict";
 
 var handleHappiestDrop = function handleHappiestDrop(e) {
     e.preventDefault();
+
+    var happiestSubmitModal = document.getElementById("happiestSubmitModal");
+
+    var submitHappiestBtn = document.getElementById("submitHappiestBtn");
+    var dismissHappiestModal = document.getElementById("dismissHappiestSubmit");
+
+    dismissHappiestModal.onclick = function () {
+        happiestSubmitModal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        if (event.target === happiestSubmitModal) {
+            happiestSubmitModal.style.display = "none";
+        }
+    };
 
     $('#errorMessage').animate({ width: 'hide' }, 350);
 
@@ -125,96 +147,90 @@ var handleHappiestDrop = function handleHappiestDrop(e) {
         return false;
     }
 
-    sendAjax('POST', $('#happiestForm').attr('action'), $('#happiestForm').serialize(), redirect);
+    submitHappiestBtn.onclick = function () {
+        sendAjax('POST', $('#happiestForm').attr('action'), $('#happiestForm').serialize(), redirect);
+    };
 
     return false;
 };
 
 var HappiestTitle = function HappiestTitle(props) {
     return React.createElement(
-        'h2',
-        { id: 'happiestTitle' },
-        'I feel happiest when...'
+        "h2",
+        { id: "happiestTitle" },
+        "I feel happiest when..."
     );
 };
 
 var HappiestForm = function HappiestForm(props) {
     return React.createElement(
-        'div',
+        "div",
         null,
         React.createElement(
-            'form',
-            { id: 'happiestForm',
+            "form",
+            { id: "happiestForm",
                 onSubmit: handleHappiestDrop,
-                name: 'happiestForm',
-                action: '/happiestThankYou',
-                method: 'POST',
-                className: 'happiestForm' },
-            React.createElement('input', { id: 'happiestText', type: 'text', name: 'answer', placeholder: '...' }),
-            React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+                name: "happiestForm",
+                action: "/happiestThankYou",
+                method: "POST",
+                className: "happiestForm" },
+            React.createElement("input", { id: "happiestText", type: "text", name: "answer", placeholder: "..." }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logHappiestSubmit", type: "submit", value: "Log" })
         ),
         React.createElement(
-            'button',
-            { id: 'happiestBackBtn' },
-            'Go back'
+            "button",
+            { id: "happiestBackBtn" },
+            "Go back"
         ),
-        React.createElement(BackModal, null)
+        React.createElement(BackModal, null),
+        React.createElement(HappiestSubmitModal, null)
     );
 };
 
-var HappiestList = function HappiestList(props) {
-    if (props.happiestResponses.length === 0) {
-        return React.createElement(
-            'h3',
-            null,
-            'No Happy Thoughts'
-        );
-    }
-
-    var happiestNodes = props.happiestResponses.sort(function (a, b) {
-        return a.name.localeCompare(b.name);
-    }).map(function (happiestThought) {
-        return React.createElement(
-            'div',
-            { key: happiestThought._id },
+var HappiestSubmitModal = function HappiestSubmitModal() {
+    return React.createElement(
+        "div",
+        { className: "happiestSubmitModal", id: "happiestSubmitModal" },
+        React.createElement(
+            "div",
+            { className: "happiestSubmitContent" },
             React.createElement(
-                'h3',
+                "h1",
                 null,
-                ' ',
-                happiestThought.answer,
-                ' '
+                "All finished?"
             ),
             React.createElement(
-                'span',
+                "p",
                 null,
-                happiestThought._id
+                "This will submit your response to your card.",
+                React.createElement("br", null),
+                "Don\u2019t worry, they\u2019re all anonymous."
+            ),
+            React.createElement(
+                "button",
+                { id: "dismissHappiestSubmit" },
+                "Go back"
+            ),
+            React.createElement(
+                "button",
+                { id: "submitHappiestBtn" },
+                "Finish"
             )
-        );
-    });
-
-    return React.createElement(
-        'div',
-        null,
-        happiestNodes,
-        React.createElement(
-            'p',
-            null,
-            props.happiestResponses.length,
-            ' thoughts'
         )
     );
-};
-
-var loadHappiestFromServer = function loadHappiestFromServer() {
-    sendAjax('GET', '/getHappiest', null, function (data) {
-        ReactDOM.render(React.createElement(HappiestList, { happiestResponses: data.happiestResponses }), document.querySelector('#error'));
-    });
 };
 
 var createHappiestView = function createHappiestView() {
     ReactDOM.render(React.createElement(HappiestTitle, null), document.querySelector('#promptTitle'));
 
     ReactDOM.render(React.createElement(HappiestForm, null), document.querySelector('#logThought'));
+
+    var logHappiestSubmit = document.getElementById("logHappiestSubmit");
+    var dismissHappiestModal = document.getElementById("dismissHappiestSubmit");
+
+    logHappiestSubmit.onclick = function () {
+        happiestSubmitModal.style.display = "block";
+    };
 };
 
 var handleHappiestClick = function handleHappiestClick(happiestID) {
@@ -227,10 +243,25 @@ var handleHappiestClick = function handleHappiestClick(happiestID) {
         triggerBackModal();
     });
 };
-'use strict';
+"use strict";
 
 var handleInspiredDrop = function handleInspiredDrop(e) {
     e.preventDefault();
+
+    var inspiredSubmitModal = document.getElementById("inspiredSubmitModal");
+
+    var submitInspiredBtn = document.getElementById("submitInspiredBtn");
+    var dismissInspiredModal = document.getElementById("dismissInspiredSubmit");
+
+    dismissInspiredModal.onclick = function () {
+        inspiredSubmitModal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        if (event.target === inspiredSubmitModal) {
+            inspiredSubmitModal.style.display = "none";
+        }
+    };
 
     $('#errorMessage').animate({ width: 'hide' }, 350);
 
@@ -239,96 +270,90 @@ var handleInspiredDrop = function handleInspiredDrop(e) {
         return false;
     }
 
-    sendAjax('POST', $('#inspiredForm').attr('action'), $('#inspiredForm').serialize(), redirect);
+    submitInspiredBtn.onclick = function () {
+        sendAjax('POST', $('#inspiredForm').attr('action'), $('#inspiredForm').serialize(), redirect);
+    };
 
     return false;
 };
 
 var InspiredTitle = function InspiredTitle(props) {
     return React.createElement(
-        'h2',
-        { id: 'inspiredTitle' },
-        'I am inspired by...'
+        "h2",
+        { id: "inspiredTitle" },
+        "I am inspired by..."
     );
 };
 
 var InspiredForm = function InspiredForm(props) {
     return React.createElement(
-        'div',
+        "div",
         null,
         React.createElement(
-            'form',
-            { id: 'inspiredForm',
+            "form",
+            { id: "inspiredForm",
                 onSubmit: handleInspiredDrop,
-                name: 'inspiredForm',
-                action: '/inspiredThankYou',
-                method: 'POST',
-                className: 'inspiredForm' },
-            React.createElement('input', { id: 'inspiredText', type: 'text', name: 'answer', placeholder: '...' }),
-            React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+                name: "inspiredForm",
+                action: "/inspiredThankYou",
+                method: "POST",
+                className: "inspiredForm" },
+            React.createElement("input", { id: "inspiredText", type: "text", name: "answer", placeholder: "..." }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logInspiredSubmit", type: "submit", value: "Log" })
         ),
         React.createElement(
-            'button',
-            { id: 'inspiredBackBtn' },
-            'Go back'
+            "button",
+            { id: "inspiredBackBtn" },
+            "Go back"
         ),
-        React.createElement(BackModal, null)
+        React.createElement(BackModal, null),
+        React.createElement(InspiredSubmitModal, null)
     );
 };
 
-var InspiredList = function InspiredList(props) {
-    if (props.inspiredResponses.length === 0) {
-        return React.createElement(
-            'h3',
-            null,
-            'No Inspired Thoughts'
-        );
-    }
-
-    var inspiredNodes = props.inspiredResponses.sort(function (a, b) {
-        return a.name.localeCompare(b.name);
-    }).map(function (inspiredThought) {
-        return React.createElement(
-            'div',
-            { key: inspiredThought._id },
+var InspiredSubmitModal = function InspiredSubmitModal() {
+    return React.createElement(
+        "div",
+        { className: "inspiredSubmitModal", id: "inspiredSubmitModal" },
+        React.createElement(
+            "div",
+            { className: "inspiredSubmitContent" },
             React.createElement(
-                'h3',
+                "h1",
                 null,
-                ' ',
-                inspiredThought.answer,
-                ' '
+                "All finished?"
             ),
             React.createElement(
-                'span',
+                "p",
                 null,
-                inspiredThought._id
+                "This will submit your response to your card.",
+                React.createElement("br", null),
+                "Don\u2019t worry, they\u2019re all anonymous."
+            ),
+            React.createElement(
+                "button",
+                { id: "dismissInspiredSubmit" },
+                "Go back"
+            ),
+            React.createElement(
+                "button",
+                { id: "submitInspiredBtn" },
+                "Finish"
             )
-        );
-    });
-
-    return React.createElement(
-        'div',
-        null,
-        inspiredNodes,
-        React.createElement(
-            'p',
-            null,
-            props.inspiredResponses.length,
-            ' thoughts'
         )
     );
-};
-
-var loadInspiredFromServer = function loadInspiredFromServer() {
-    sendAjax('GET', '/getInspired', null, function (data) {
-        ReactDOM.render(React.createElement(InspiredList, { inspiredResponses: data.inspiredResponses }), document.querySelector('#error'));
-    });
 };
 
 var createInspiredView = function createInspiredView() {
     ReactDOM.render(React.createElement(InspiredTitle, null), document.querySelector('#promptTitle'));
 
     ReactDOM.render(React.createElement(InspiredForm, null), document.querySelector('#logThought'));
+
+    var logInspiredSubmit = document.getElementById("logInspiredSubmit");
+    var dismissInspiredModal = document.getElementById("dismissInspiredSubmit");
+
+    logInspiredSubmit.onclick = function () {
+        inspiredSubmitModal.style.display = "block";
+    };
 };
 
 var handleInspiredClick = function handleInspiredClick(inspiredID) {
@@ -341,10 +366,24 @@ var handleInspiredClick = function handleInspiredClick(inspiredID) {
         triggerBackModal();
     });
 };
-'use strict';
+"use strict";
 
 var handleLoveDrop = function handleLoveDrop(e) {
     e.preventDefault();
+
+    var loveSubmitModal = document.getElementById("loveSubmitModal");
+    var submitLoveBtn = document.getElementById("submitLoveBtn");
+    var dismissLoveModal = document.getElementById("dismissLoveSubmit");
+
+    dismissLoveModal.onclick = function () {
+        loveSubmitModal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        if (event.target === loveSubmitModal) {
+            loveSubmitModal.style.display = "none";
+        }
+    };
 
     $('#errorMessage').animate({ width: 'hide' }, 350);
 
@@ -353,96 +392,90 @@ var handleLoveDrop = function handleLoveDrop(e) {
         return false;
     }
 
-    sendAjax('POST', $('#loveForm').attr('action'), $('#loveForm').serialize(), redirect);
+    submitLoveBtn.onclick = function () {
+        sendAjax('POST', $('#loveForm').attr('action'), $('#loveForm').serialize(), redirect);
+    };
 
     return false;
 };
 
 var LoveTitle = function LoveTitle(props) {
     return React.createElement(
-        'h2',
-        { id: 'loveTitle' },
-        'I love...'
+        "h2",
+        { id: "loveTitle" },
+        "I love..."
     );
 };
 
 var LoveForm = function LoveForm(props) {
     return React.createElement(
-        'div',
+        "div",
         null,
         React.createElement(
-            'form',
-            { id: 'loveForm',
+            "form",
+            { id: "loveForm",
                 onSubmit: handleLoveDrop,
-                name: 'loveForm',
-                action: '/loveThankYou',
-                method: 'POST',
-                className: 'loveForm' },
-            React.createElement('input', { id: 'loveText', type: 'text', name: 'answer', placeholder: '...' }),
-            React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+                name: "loveForm",
+                action: "/loveThankYou",
+                method: "POST",
+                className: "loveForm" },
+            React.createElement("input", { id: "loveText", type: "text", name: "answer", placeholder: "..." }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logLoveSubmit", type: "submit", value: "Log" })
         ),
         React.createElement(
-            'button',
-            { id: 'loveBackBtn' },
-            'Go back'
+            "button",
+            { id: "loveBackBtn" },
+            "Go back"
         ),
-        React.createElement(BackModal, null)
+        React.createElement(BackModal, null),
+        React.createElement(LoveSubmitModal, null)
     );
 };
 
-var LoveList = function LoveList(props) {
-    if (props.loveResponses.length === 0) {
-        return React.createElement(
-            'h3',
-            null,
-            'No Happy Thoughts'
-        );
-    }
-
-    var loveNodes = props.loveResponses.sort(function (a, b) {
-        return a.name.localeCompare(b.name);
-    }).map(function (loveThought) {
-        return React.createElement(
-            'div',
-            { key: loveThought._id },
+var LoveSubmitModal = function LoveSubmitModal() {
+    return React.createElement(
+        "div",
+        { className: "loveSubmitModal", id: "loveSubmitModal" },
+        React.createElement(
+            "div",
+            { className: "loveSubmitContent" },
             React.createElement(
-                'h3',
+                "h1",
                 null,
-                ' ',
-                loveThought.answer,
-                ' '
+                "All finished?"
             ),
             React.createElement(
-                'span',
+                "p",
                 null,
-                loveThought._id
+                "This will submit your response to your card.",
+                React.createElement("br", null),
+                "Don\u2019t worry, they\u2019re all anonymous."
+            ),
+            React.createElement(
+                "button",
+                { id: "dismissLoveSubmit" },
+                "Go back"
+            ),
+            React.createElement(
+                "button",
+                { id: "submitLoveBtn" },
+                "Finish"
             )
-        );
-    });
-
-    return React.createElement(
-        'div',
-        null,
-        loveNodes,
-        React.createElement(
-            'p',
-            null,
-            props.loveResponses.length,
-            ' thoughts'
         )
     );
-};
-
-var loadLoveFromServer = function loadLoveFromServer() {
-    sendAjax('GET', '/getLove', null, function (data) {
-        ReactDOM.render(React.createElement(LoveList, { loveResponses: data.loveResponses }), document.querySelector('#error'));
-    });
 };
 
 var createLoveView = function createLoveView() {
     ReactDOM.render(React.createElement(LoveTitle, null), document.querySelector('#promptTitle'));
 
     ReactDOM.render(React.createElement(LoveForm, null), document.querySelector('#logThought'));
+
+    var logLoveSubmit = document.getElementById("logLoveSubmit");
+    var dismissLoveModal = document.getElementById("dismissLoveSubmit");
+
+    logLoveSubmit.onclick = function () {
+        loveSubmitModal.style.display = "block";
+    };
 };
 
 var handleLoveClick = function handleLoveClick(loveID) {
@@ -885,10 +918,24 @@ $(document).ready(function () {
         setup();
     }
 });
-'use strict';
+"use strict";
 
 var handleProudDrop = function handleProudDrop(e) {
     e.preventDefault();
+
+    var proudSubmitModal = document.getElementById("proudSubmitModal");
+    var submitProudBtn = document.getElementById("submitProudBtn");
+    var dismissProudModal = document.getElementById("dismissProudSubmit");
+
+    dismissProudModal.onclick = function () {
+        proudSubmitModal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        if (event.target === proudSubmitModal) {
+            proudSubmitModal.style.display = "none";
+        }
+    };
 
     $('#errorMessage').animate({ width: 'hide' }, 350);
 
@@ -897,96 +944,90 @@ var handleProudDrop = function handleProudDrop(e) {
         return false;
     }
 
-    sendAjax('POST', $('#proudForm').attr('action'), $('#proudForm').serialize(), redirect);
+    submitProudBtn.onclick = function () {
+        sendAjax('POST', $('#proudForm').attr('action'), $('#proudForm').serialize(), redirect);
+    };
 
     return false;
 };
 
 var ProudTitle = function ProudTitle(props) {
     return React.createElement(
-        'h2',
-        { id: 'proudTitle' },
-        'I am proud of...'
+        "h2",
+        { id: "proudTitle" },
+        "I am proud of..."
     );
 };
 
 var ProudForm = function ProudForm(props) {
     return React.createElement(
-        'div',
+        "div",
         null,
         React.createElement(
-            'form',
-            { id: 'proudForm',
+            "form",
+            { id: "proudForm",
                 onSubmit: handleProudDrop,
-                name: 'proudForm',
-                action: '/proudThankYou',
-                method: 'POST',
-                className: 'proudForm' },
-            React.createElement('input', { id: 'proudText', type: 'text', name: 'answer', placeholder: '...' }),
-            React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+                name: "proudForm",
+                action: "/proudThankYou",
+                method: "POST",
+                className: "proudForm" },
+            React.createElement("input", { id: "proudText", type: "text", name: "answer", placeholder: "..." }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logProudSubmit", type: "submit", value: "Log" })
         ),
         React.createElement(
-            'button',
-            { id: 'proudBackBtn' },
-            'Go back'
+            "button",
+            { id: "proudBackBtn" },
+            "Go back"
         ),
-        React.createElement(BackModal, null)
+        React.createElement(BackModal, null),
+        React.createElement(ProudSubmitModal, null)
     );
 };
 
-var ProudList = function ProudList(props) {
-    if (props.proudResponses.length === 0) {
-        return React.createElement(
-            'h3',
-            null,
-            'No Happy Thoughts'
-        );
-    }
-
-    var proudNodes = props.proudResponses.sort(function (a, b) {
-        return a.name.localeCompare(b.name);
-    }).map(function (proudThought) {
-        return React.createElement(
-            'div',
-            { key: proudThought._id },
+var ProudSubmitModal = function ProudSubmitModal() {
+    return React.createElement(
+        "div",
+        { className: "proudSubmitModal", id: "proudSubmitModal" },
+        React.createElement(
+            "div",
+            { className: "proudSubmitContent" },
             React.createElement(
-                'h3',
+                "h1",
                 null,
-                ' ',
-                proudThought.answer,
-                ' '
+                "All finished?"
             ),
             React.createElement(
-                'span',
+                "p",
                 null,
-                proudThought._id
+                "This will submit your response to your card.",
+                React.createElement("br", null),
+                "Don\u2019t worry, they\u2019re all anonymous."
+            ),
+            React.createElement(
+                "button",
+                { id: "dismissProudSubmit" },
+                "Go back"
+            ),
+            React.createElement(
+                "button",
+                { id: "submitProudBtn" },
+                "Finish"
             )
-        );
-    });
-
-    return React.createElement(
-        'div',
-        null,
-        proudNodes,
-        React.createElement(
-            'p',
-            null,
-            props.proudResponses.length,
-            ' thoughts'
         )
     );
-};
-
-var loadProudFromServer = function loadProudFromServer() {
-    sendAjax('GET', '/getProud', null, function (data) {
-        ReactDOM.render(React.createElement(ProudList, { proudResponses: data.proudResponses }), document.querySelector('#error'));
-    });
 };
 
 var createProudView = function createProudView() {
     ReactDOM.render(React.createElement(ProudTitle, null), document.querySelector('#promptTitle'));
 
     ReactDOM.render(React.createElement(ProudForm, null), document.querySelector('#logThought'));
+
+    var logProudSubmit = document.getElementById("logProudSubmit");
+    var dismissProudModal = document.getElementById("dismissProudSubmit");
+
+    logProudSubmit.onclick = function () {
+        proudSubmitModal.style.display = "block";
+    };
 };
 
 var handleProudClick = function handleProudClick(proudID) {
@@ -999,10 +1040,24 @@ var handleProudClick = function handleProudClick(proudID) {
         triggerBackModal();
     });
 };
-'use strict';
+"use strict";
 
 var handleThankfulDrop = function handleThankfulDrop(e) {
     e.preventDefault();
+
+    var thankfulSubmitModal = document.getElementById("thankfulSubmitModal");
+    var submitThankfulBtn = document.getElementById("submitThankfulBtn");
+    var dismissThankfulModal = document.getElementById("dismissThankfulSubmit");
+
+    dismissThankfulModal.onclick = function () {
+        thankfulSubmitModal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        if (event.target === thankfulSubmitModal) {
+            thankfulSubmitModal.style.display = "none";
+        }
+    };
 
     $('#errorMessage').animate({ width: 'hide' }, 350);
 
@@ -1011,96 +1066,90 @@ var handleThankfulDrop = function handleThankfulDrop(e) {
         return false;
     }
 
-    sendAjax('POST', $('#thankfulForm').attr('action'), $('#thankfulForm').serialize(), redirect);
+    submitThankfulBtn.onclick = function () {
+        sendAjax('POST', $('#thankfulForm').attr('action'), $('#thankfulForm').serialize(), redirect);
+    };
 
     return false;
 };
 
 var ThankfulTitle = function ThankfulTitle(props) {
     return React.createElement(
-        'h2',
-        { id: 'thankfulTitle' },
-        'I am thankful for...'
+        "h2",
+        { id: "thankfulTitle" },
+        "I am thankful for..."
     );
 };
 
 var ThankfulForm = function ThankfulForm(props) {
     return React.createElement(
-        'div',
+        "div",
         null,
         React.createElement(
-            'form',
-            { id: 'thankfulForm',
+            "form",
+            { id: "thankfulForm",
                 onSubmit: handleThankfulDrop,
-                name: 'thankfulForm',
-                action: '/thankfulThankYou',
-                method: 'POST',
-                className: 'thankfulForm' },
-            React.createElement('input', { id: 'thankfulText', type: 'text', name: 'answer', placeholder: '...' }),
-            React.createElement('input', { className: 'logThoughtSubmit', type: 'submit', value: 'Log' })
+                name: "thankfulForm",
+                action: "/thankfulThankYou",
+                method: "POST",
+                className: "thankfulForm" },
+            React.createElement("input", { id: "thankfulText", type: "text", name: "answer", placeholder: "..." }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logThankfulSubmit", type: "submit", value: "Log" })
         ),
         React.createElement(
-            'button',
-            { id: 'thankfulBackBtn' },
-            'Go back'
+            "button",
+            { id: "thankfulBackBtn" },
+            "Go back"
         ),
-        React.createElement(BackModal, null)
+        React.createElement(BackModal, null),
+        React.createElement(ThankfulSubmitModal, null)
     );
 };
 
-var ThankfulList = function ThankfulList(props) {
-    if (props.thankfulResponses.length === 0) {
-        return React.createElement(
-            'h3',
-            null,
-            'No Happy Thoughts'
-        );
-    }
-
-    var thankfulNodes = props.thankfulResponses.sort(function (a, b) {
-        return a.name.localeCompare(b.name);
-    }).map(function (thankfulThought) {
-        return React.createElement(
-            'div',
-            { key: thankfulThought._id },
+var ThankfulSubmitModal = function ThankfulSubmitModal() {
+    return React.createElement(
+        "div",
+        { className: "thankfulSubmitModal", id: "thankfulSubmitModal" },
+        React.createElement(
+            "div",
+            { className: "thankfulSubmitContent" },
             React.createElement(
-                'h3',
+                "h1",
                 null,
-                ' ',
-                thankfulThought.answer,
-                ' '
+                "All finished?"
             ),
             React.createElement(
-                'span',
+                "p",
                 null,
-                thankfulThought._id
+                "This will submit your response to your card.",
+                React.createElement("br", null),
+                "Don\u2019t worry, they\u2019re all anonymous."
+            ),
+            React.createElement(
+                "button",
+                { id: "dismissThankfulSubmit" },
+                "Go back"
+            ),
+            React.createElement(
+                "button",
+                { id: "submitThankfulBtn" },
+                "Finish"
             )
-        );
-    });
-
-    return React.createElement(
-        'div',
-        null,
-        thankfulNodes,
-        React.createElement(
-            'p',
-            null,
-            props.thankfulResponses.length,
-            ' thoughts'
         )
     );
-};
-
-var loadThankfulFromServer = function loadThankfulFromServer() {
-    sendAjax('GET', '/getThankful', null, function (data) {
-        ReactDOM.render(React.createElement(ThankfulList, { thankfulResponses: data.thankfulResponses }), document.querySelector('#error'));
-    });
 };
 
 var createThankfulView = function createThankfulView() {
     ReactDOM.render(React.createElement(ThankfulTitle, null), document.querySelector('#promptTitle'));
 
     ReactDOM.render(React.createElement(ThankfulForm, null), document.querySelector('#logThought'));
+
+    var logThankfulSubmit = document.getElementById("logThankfulSubmit");
+    var dismissThankfulModal = document.getElementById("dismissThankfulSubmit");
+
+    logThankfulSubmit.onclick = function () {
+        thankfulSubmitModal.style.display = "block";
+    };
 };
 
 var handleThankfulClick = function handleThankfulClick(thankfulID) {

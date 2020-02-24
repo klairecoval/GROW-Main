@@ -1,6 +1,21 @@
 const handleInspiredDrop = (e) => {
     e.preventDefault();
 
+    const inspiredSubmitModal = document.getElementById("inspiredSubmitModal");
+
+    const submitInspiredBtn = document.getElementById("submitInspiredBtn");
+    const dismissInspiredModal = document.getElementById("dismissInspiredSubmit");
+
+    dismissInspiredModal.onclick = () => {
+        inspiredSubmitModal.style.display = "none";
+    };
+    
+    window.onclick = (event) => {
+      if (event.target === inspiredSubmitModal) {
+        inspiredSubmitModal.style.display = "none";
+      }
+    };
+
     $('#errorMessage').animate({width:'hide'}, 350);
 
     if($('#inspiredText').val() == '') {
@@ -8,7 +23,9 @@ const handleInspiredDrop = (e) => {
         return false;
     }
 
-    sendAjax('POST', $('#inspiredForm').attr('action'), $('#inspiredForm').serialize(), redirect);
+    submitInspiredBtn.onclick = () => {
+        sendAjax('POST', $('#inspiredForm').attr('action'), $('#inspiredForm').serialize(), redirect);
+    };
 
     return false;
 };
@@ -29,47 +46,27 @@ const InspiredForm = (props) => {
             method='POST'
             className='inspiredForm' >
                 <input id='inspiredText' type='text' name='answer' placeholder='...' />
-                <input className='logThoughtSubmit' type='submit' value='Log' />
+                <input className='logThoughtSubmit' id="logInspiredSubmit" type='submit' value='Log' />
             </form>
             <button id="inspiredBackBtn">Go back</button>
             <BackModal/>
+            <InspiredSubmitModal/>
         </div>
     );
 };
 
-const InspiredList = function(props) {
-    if(props.inspiredResponses.length === 0) {
-        return (
-            <h3>No Inspired Thoughts</h3>
-        );
-    }
-
-    const inspiredNodes = props.inspiredResponses.sort(function(a,b){
-        return a.name.localeCompare(b.name);
-    })
-    .map(function(inspiredThought) {
-        return (
-            <div key={inspiredThought._id}>
-                <h3> {inspiredThought.answer} </h3>
-                <span>{inspiredThought._id}</span>
-            </div>
-        );
-    });
-
+const InspiredSubmitModal = () => {
     return (
-        <div>
-            {inspiredNodes}
-            <p>{props.inspiredResponses.length} thoughts</p>
+        <div className="inspiredSubmitModal" id="inspiredSubmitModal">
+            <div className="inspiredSubmitContent">
+                <h1>All finished?</h1>
+                <p>This will submit your response to your card.<br/>
+                    Don’t worry, they’re all anonymous.</p>
+                <button id="dismissInspiredSubmit">Go back</button>
+                <button id="submitInspiredBtn">Finish</button>
+            </div>
         </div>
     );
-};
-
-const loadInspiredFromServer = () => {
-    sendAjax('GET', '/getInspired', null, (data) => {
-        ReactDOM.render(
-            <InspiredList inspiredResponses={data.inspiredResponses} />, document.querySelector('#error')
-        );
-    });
 };
 
 const createInspiredView = function() {
@@ -80,6 +77,13 @@ const createInspiredView = function() {
     ReactDOM.render(
         <InspiredForm />, document.querySelector('#logThought')
     );
+
+    const logInspiredSubmit = document.getElementById("logInspiredSubmit");
+    const dismissInspiredModal = document.getElementById("dismissInspiredSubmit");
+
+    logInspiredSubmit.onclick = () => {
+        inspiredSubmitModal.style.display = "block";
+    };
 };
 
 const handleInspiredClick = (inspiredID) => {
