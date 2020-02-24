@@ -45,7 +45,7 @@ const InspiredForm = (props) => {
             action='/inspiredThankYou'
             method='POST'
             className='inspiredForm' >
-                <input id='inspiredText' type='text' name='answer' placeholder='...' />
+                <input id='inspiredText' type='text' name='answer' maxLength="60" placeholder='...' />
                 <input className='logThoughtSubmit' id="logInspiredSubmit" type='submit' value='Log' />
             </form>
             <button id="inspiredBackBtn">Go back</button>

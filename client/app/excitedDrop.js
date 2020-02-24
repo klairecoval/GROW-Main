@@ -43,7 +43,7 @@ const ExcitedForm = (props) => {
             action='/excitedThankYou'
             method='POST'
             className='excitedForm' >
-                <input id='excitedText' type='text' name='answer' placeholder='...' />
+                <input id='excitedText' type='text' name='answer' maxLength="60" placeholder='...' />
                 <input className='logThoughtSubmit' id="logExcitedSubmit" type='submit' value='Submit' />
             </form>
             <button id="excitedBackBtn">Go back</button>

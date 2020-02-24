@@ -44,7 +44,7 @@ const ProudForm = (props) => {
             action='/proudThankYou'
             method='POST'
             className='proudForm' >
-                <input id='proudText' type='text' name='answer' placeholder='...' />
+                <input id='proudText' type='text' name='answer' maxLength="60" placeholder='...' />
                 <input className='logThoughtSubmit' id="logProudSubmit" type='submit' value='Log' />
             </form>
             <button id="proudBackBtn">Go back</button>

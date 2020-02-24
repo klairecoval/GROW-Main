@@ -44,7 +44,7 @@ const LoveForm = (props) => {
             action='/loveThankYou'
             method='POST'
             className='loveForm' >
-                <input id='loveText' type='text' name='answer' placeholder='...' />
+                <input id='loveText' type='text' name='answer' maxLength="60" placeholder='...' />
                 <input className='logThoughtSubmit' id="logLoveSubmit" type='submit' value='Log' />
             </form>
             <button id="loveBackBtn">Go back</button>

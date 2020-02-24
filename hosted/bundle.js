@@ -51,7 +51,8 @@ var ExcitedForm = function ExcitedForm(props) {
                 action: "/excitedThankYou",
                 method: "POST",
                 className: "excitedForm" },
-            React.createElement("input", { id: "excitedText", type: "text", name: "answer", placeholder: "..." }),
+            React.createElement("input", { id: "excitedText", type: "text", name: "answer", maxLength: "60", placeholder: "..." }),
+            React.createElement("p", { id: "excitedCharacters" }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logExcitedSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
@@ -96,6 +97,14 @@ var ExcitedSubmitModal = function ExcitedSubmitModal() {
         )
     );
 };
+
+var updateCount = function updateCount() {
+    var cs = $('#excitedText').val().length;
+    $('#characters').text(cs + '/60');
+};
+
+$('#excitedText').keyup(updateCount);
+$('#excitedText').keydown(updateCount);
 
 var createExcitedView = function createExcitedView() {
     ReactDOM.render(React.createElement(ExcitedTitle, null), document.querySelector('#promptTitle'));
@@ -174,7 +183,7 @@ var HappiestForm = function HappiestForm(props) {
                 action: "/happiestThankYou",
                 method: "POST",
                 className: "happiestForm" },
-            React.createElement("input", { id: "happiestText", type: "text", name: "answer", placeholder: "..." }),
+            React.createElement("input", { id: "happiestText", type: "text", name: "answer", maxLength: "60", placeholder: "..." }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logHappiestSubmit", type: "submit", value: "Log" })
         ),
         React.createElement(
@@ -297,7 +306,7 @@ var InspiredForm = function InspiredForm(props) {
                 action: "/inspiredThankYou",
                 method: "POST",
                 className: "inspiredForm" },
-            React.createElement("input", { id: "inspiredText", type: "text", name: "answer", placeholder: "..." }),
+            React.createElement("input", { id: "inspiredText", type: "text", name: "answer", maxLength: "60", placeholder: "..." }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logInspiredSubmit", type: "submit", value: "Log" })
         ),
         React.createElement(
@@ -419,7 +428,7 @@ var LoveForm = function LoveForm(props) {
                 action: "/loveThankYou",
                 method: "POST",
                 className: "loveForm" },
-            React.createElement("input", { id: "loveText", type: "text", name: "answer", placeholder: "..." }),
+            React.createElement("input", { id: "loveText", type: "text", name: "answer", maxLength: "60", placeholder: "..." }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logLoveSubmit", type: "submit", value: "Log" })
         ),
         React.createElement(
@@ -971,7 +980,7 @@ var ProudForm = function ProudForm(props) {
                 action: "/proudThankYou",
                 method: "POST",
                 className: "proudForm" },
-            React.createElement("input", { id: "proudText", type: "text", name: "answer", placeholder: "..." }),
+            React.createElement("input", { id: "proudText", type: "text", name: "answer", maxLength: "60", placeholder: "..." }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logProudSubmit", type: "submit", value: "Log" })
         ),
         React.createElement(
@@ -1093,7 +1102,7 @@ var ThankfulForm = function ThankfulForm(props) {
                 action: "/thankfulThankYou",
                 method: "POST",
                 className: "thankfulForm" },
-            React.createElement("input", { id: "thankfulText", type: "text", name: "answer", placeholder: "..." }),
+            React.createElement("input", { id: "thankfulText", type: "text", name: "answer", maxLength: "60", placeholder: "..." }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logThankfulSubmit", type: "submit", value: "Log" })
         ),
         React.createElement(

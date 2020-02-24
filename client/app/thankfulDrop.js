@@ -44,7 +44,7 @@ const ThankfulForm = (props) => {
             action='/thankfulThankYou'
             method='POST'
             className='thankfulForm' >
-                <input id='thankfulText' type='text' name='answer' placeholder='...' />
+                <input id='thankfulText' type='text' name='answer' maxLength="60" placeholder='...' />
                 <input className='logThoughtSubmit' id="logThankfulSubmit" type='submit' value='Log' />
             </form>
             <button id="thankfulBackBtn">Go back</button>

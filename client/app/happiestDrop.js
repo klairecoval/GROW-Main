@@ -45,7 +45,7 @@ const HappiestForm = (props) => {
             action='/happiestThankYou'
             method='POST'
             className='happiestForm' >
-                <input id='happiestText' type='text' name='answer' placeholder='...' />
+                <input id='happiestText' type='text' name='answer' maxLength="60" placeholder='...' />
                 <input className='logThoughtSubmit' id="logHappiestSubmit" type='submit' value='Log' />
             </form>
             <button id="happiestBackBtn">Go back</button>
