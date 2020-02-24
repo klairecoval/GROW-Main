@@ -52,7 +52,6 @@ var ExcitedForm = function ExcitedForm(props) {
                 method: "POST",
                 className: "excitedForm" },
             React.createElement("input", { id: "excitedText", type: "text", name: "answer", maxLength: "60", placeholder: "..." }),
-            React.createElement("p", { id: "excitedCharacters" }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logExcitedSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
@@ -97,14 +96,6 @@ var ExcitedSubmitModal = function ExcitedSubmitModal() {
         )
     );
 };
-
-var updateCount = function updateCount() {
-    var cs = $('#excitedText').val().length;
-    $('#characters').text(cs + '/60');
-};
-
-$('#excitedText').keyup(updateCount);
-$('#excitedText').keydown(updateCount);
 
 var createExcitedView = function createExcitedView() {
     ReactDOM.render(React.createElement(ExcitedTitle, null), document.querySelector('#promptTitle'));
