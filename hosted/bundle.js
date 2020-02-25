@@ -31,6 +31,10 @@ var handleExcitedDrop = function handleExcitedDrop(e) {
     return false;
 };
 
+var handleExcitedCount = function handleExcitedCount(e) {
+    ReactDOM.render(React.createElement(ExcitedForm, { excitedCount: e.target.value.length }), document.querySelector('#logThought'));
+};
+
 var ExcitedTitle = function ExcitedTitle(props) {
     return React.createElement(
         "h2",
@@ -51,8 +55,14 @@ var ExcitedForm = function ExcitedForm(props) {
                 action: "/excitedThankYou",
                 method: "POST",
                 className: "excitedForm" },
-            React.createElement("input", { id: "excitedText", type: "text", name: "answer", maxLength: "60", placeholder: "..." }),
+            React.createElement("input", { id: "excitedText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleExcitedCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logExcitedSubmit", type: "submit", value: "Submit" })
+        ),
+        React.createElement(
+            "p",
+            { id: "excitedCount" },
+            props.excitedCount,
+            "/60"
         ),
         React.createElement(
             "button",
@@ -154,6 +164,10 @@ var handleHappiestDrop = function handleHappiestDrop(e) {
     return false;
 };
 
+var handleHappiestCount = function handleHappiestCount(e) {
+    ReactDOM.render(React.createElement(HappiestForm, { happiestCount: e.target.value.length }), document.querySelector('#logThought'));
+};
+
 var HappiestTitle = function HappiestTitle(props) {
     return React.createElement(
         "h2",
@@ -174,8 +188,14 @@ var HappiestForm = function HappiestForm(props) {
                 action: "/happiestThankYou",
                 method: "POST",
                 className: "happiestForm" },
-            React.createElement("input", { id: "happiestText", type: "text", name: "answer", maxLength: "60", placeholder: "..." }),
+            React.createElement("input", { id: "happiestText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleHappiestCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logHappiestSubmit", type: "submit", value: "Log" })
+        ),
+        React.createElement(
+            "p",
+            { id: "happiestCount" },
+            props.happiestCount,
+            "/60"
         ),
         React.createElement(
             "button",
@@ -277,6 +297,10 @@ var handleInspiredDrop = function handleInspiredDrop(e) {
     return false;
 };
 
+var handleInspiredCount = function handleInspiredCount(e) {
+    ReactDOM.render(React.createElement(InspiredForm, { inspiredCount: e.target.value.length }), document.querySelector('#logThought'));
+};
+
 var InspiredTitle = function InspiredTitle(props) {
     return React.createElement(
         "h2",
@@ -297,8 +321,14 @@ var InspiredForm = function InspiredForm(props) {
                 action: "/inspiredThankYou",
                 method: "POST",
                 className: "inspiredForm" },
-            React.createElement("input", { id: "inspiredText", type: "text", name: "answer", maxLength: "60", placeholder: "..." }),
+            React.createElement("input", { id: "inspiredText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleInspiredCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logInspiredSubmit", type: "submit", value: "Log" })
+        ),
+        React.createElement(
+            "p",
+            { id: "inspiredCount" },
+            props.inspiredCount,
+            "/60"
         ),
         React.createElement(
             "button",
@@ -399,6 +429,10 @@ var handleLoveDrop = function handleLoveDrop(e) {
     return false;
 };
 
+var handleLoveCount = function handleLoveCount(e) {
+    ReactDOM.render(React.createElement(LoveForm, { loveCount: e.target.value.length }), document.querySelector('#logThought'));
+};
+
 var LoveTitle = function LoveTitle(props) {
     return React.createElement(
         "h2",
@@ -419,8 +453,14 @@ var LoveForm = function LoveForm(props) {
                 action: "/loveThankYou",
                 method: "POST",
                 className: "loveForm" },
-            React.createElement("input", { id: "loveText", type: "text", name: "answer", maxLength: "60", placeholder: "..." }),
+            React.createElement("input", { id: "loveText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleLoveCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logLoveSubmit", type: "submit", value: "Log" })
+        ),
+        React.createElement(
+            "p",
+            { id: "loveCount" },
+            props.loveCount,
+            "/60"
         ),
         React.createElement(
             "button",
@@ -951,6 +991,10 @@ var handleProudDrop = function handleProudDrop(e) {
     return false;
 };
 
+var handleProudCount = function handleProudCount(e) {
+    ReactDOM.render(React.createElement(ProudForm, { proudCount: e.target.value.length }), document.querySelector('#logThought'));
+};
+
 var ProudTitle = function ProudTitle(props) {
     return React.createElement(
         "h2",
@@ -971,8 +1015,14 @@ var ProudForm = function ProudForm(props) {
                 action: "/proudThankYou",
                 method: "POST",
                 className: "proudForm" },
-            React.createElement("input", { id: "proudText", type: "text", name: "answer", maxLength: "60", placeholder: "..." }),
+            React.createElement("input", { id: "proudText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleProudCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logProudSubmit", type: "submit", value: "Log" })
+        ),
+        React.createElement(
+            "p",
+            { id: "proudCount" },
+            props.proudCount,
+            "/60"
         ),
         React.createElement(
             "button",
@@ -1073,6 +1123,10 @@ var handleThankfulDrop = function handleThankfulDrop(e) {
     return false;
 };
 
+var handleThankfulCount = function handleThankfulCount(e) {
+    ReactDOM.render(React.createElement(ThankfulForm, { thankfulCount: e.target.value.length }), document.querySelector('#logThought'));
+};
+
 var ThankfulTitle = function ThankfulTitle(props) {
     return React.createElement(
         "h2",
@@ -1093,8 +1147,14 @@ var ThankfulForm = function ThankfulForm(props) {
                 action: "/thankfulThankYou",
                 method: "POST",
                 className: "thankfulForm" },
-            React.createElement("input", { id: "thankfulText", type: "text", name: "answer", maxLength: "60", placeholder: "..." }),
+            React.createElement("input", { id: "thankfulText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleThankfulCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logThankfulSubmit", type: "submit", value: "Log" })
+        ),
+        React.createElement(
+            "p",
+            { id: "thankfulCount" },
+            props.thankfulCount,
+            "/60"
         ),
         React.createElement(
             "button",

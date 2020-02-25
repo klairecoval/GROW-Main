@@ -27,6 +27,12 @@ const handleExcitedDrop = (e) => {
 
     return false;
 };
+  
+const handleExcitedCount = (e) => {
+    ReactDOM.render(
+    <ExcitedForm excitedCount={e.target.value.length}/>, document.querySelector('#logThought')
+    );
+};
 
 const ExcitedTitle = (props) => {
     return (
@@ -43,9 +49,10 @@ const ExcitedForm = (props) => {
             action='/excitedThankYou'
             method='POST'
             className='excitedForm' >
-                <input id='excitedText' type='text' name='answer' maxLength="60" placeholder='...' />
+                <input id='excitedText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleExcitedCount}/>
                 <input className='logThoughtSubmit' id="logExcitedSubmit" type='submit' value='Submit' />
             </form>
+            <p id="excitedCount">{props.excitedCount}/60</p>
             <button id="excitedBackBtn">Go back</button>
             <BackModal/>
             <ExcitedSubmitModal />

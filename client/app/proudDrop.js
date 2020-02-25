@@ -29,6 +29,12 @@ const handleProudDrop = (e) => {
     return false;
 };
 
+const handleProudCount = (e) => {
+    ReactDOM.render(
+    <ProudForm proudCount={e.target.value.length}/>, document.querySelector('#logThought')
+    );
+};
+
 const ProudTitle = (props) => {
     return (
         <h2 id="proudTitle">I am proud of...</h2>
@@ -44,9 +50,10 @@ const ProudForm = (props) => {
             action='/proudThankYou'
             method='POST'
             className='proudForm' >
-                <input id='proudText' type='text' name='answer' maxLength="60" placeholder='...' />
+                <input id='proudText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleProudCount}/>
                 <input className='logThoughtSubmit' id="logProudSubmit" type='submit' value='Log' />
             </form>
+            <p id="proudCount">{props.proudCount}/60</p>
             <button id="proudBackBtn">Go back</button>
             <BackModal/>
             <ProudSubmitModal/>

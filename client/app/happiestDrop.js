@@ -30,6 +30,12 @@ const handleHappiestDrop = (e) => {
     return false;
 };
 
+const handleHappiestCount = (e) => {
+    ReactDOM.render(
+    <HappiestForm happiestCount={e.target.value.length}/>, document.querySelector('#logThought')
+    );
+};
+
 const HappiestTitle = (props) => {
     return (
         <h2 id="happiestTitle">I feel happiest when...</h2>
@@ -45,9 +51,10 @@ const HappiestForm = (props) => {
             action='/happiestThankYou'
             method='POST'
             className='happiestForm' >
-                <input id='happiestText' type='text' name='answer' maxLength="60" placeholder='...' />
+                <input id='happiestText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleHappiestCount}/>
                 <input className='logThoughtSubmit' id="logHappiestSubmit" type='submit' value='Log' />
             </form>
+            <p id="happiestCount">{props.happiestCount}/60</p>
             <button id="happiestBackBtn">Go back</button>
             <BackModal/>
             <HappiestSubmitModal />

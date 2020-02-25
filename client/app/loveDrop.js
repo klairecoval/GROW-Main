@@ -29,6 +29,12 @@ const handleLoveDrop = (e) => {
     return false;
 };
 
+const handleLoveCount = (e) => {
+    ReactDOM.render(
+    <LoveForm loveCount={e.target.value.length}/>, document.querySelector('#logThought')
+    );
+};
+
 const LoveTitle = (props) => {
     return (
         <h2 id="loveTitle">I love...</h2>
@@ -44,9 +50,10 @@ const LoveForm = (props) => {
             action='/loveThankYou'
             method='POST'
             className='loveForm' >
-                <input id='loveText' type='text' name='answer' maxLength="60" placeholder='...' />
+                <input id='loveText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleLoveCount}/>
                 <input className='logThoughtSubmit' id="logLoveSubmit" type='submit' value='Log' />
             </form>
+            <p id="loveCount">{props.loveCount}/60</p>
             <button id="loveBackBtn">Go back</button>
             <BackModal/>
             <LoveSubmitModal />

@@ -29,6 +29,12 @@ const handleThankfulDrop = (e) => {
     return false;
 };
 
+const handleThankfulCount = (e) => {
+    ReactDOM.render(
+    <ThankfulForm thankfulCount={e.target.value.length}/>, document.querySelector('#logThought')
+    );
+};
+
 const ThankfulTitle = (props) => {
     return (
         <h2 id="thankfulTitle">I am thankful for...</h2>
@@ -44,9 +50,10 @@ const ThankfulForm = (props) => {
             action='/thankfulThankYou'
             method='POST'
             className='thankfulForm' >
-                <input id='thankfulText' type='text' name='answer' maxLength="60" placeholder='...' />
+                <input id='thankfulText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleThankfulCount} />
                 <input className='logThoughtSubmit' id="logThankfulSubmit" type='submit' value='Log' />
             </form>
+            <p id="thankfulCount">{props.thankfulCount}/60</p>
             <button id="thankfulBackBtn">Go back</button>
             <BackModal/>
             <ThankfulSubmitModal />

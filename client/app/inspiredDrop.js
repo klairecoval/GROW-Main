@@ -30,6 +30,12 @@ const handleInspiredDrop = (e) => {
     return false;
 };
 
+const handleInspiredCount = (e) => {
+    ReactDOM.render(
+    <InspiredForm inspiredCount={e.target.value.length}/>, document.querySelector('#logThought')
+    );
+};
+
 const InspiredTitle = (props) => {
     return (
         <h2 id="inspiredTitle">I am inspired by...</h2>
@@ -45,9 +51,10 @@ const InspiredForm = (props) => {
             action='/inspiredThankYou'
             method='POST'
             className='inspiredForm' >
-                <input id='inspiredText' type='text' name='answer' maxLength="60" placeholder='...' />
+                <input id='inspiredText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleInspiredCount}/>
                 <input className='logThoughtSubmit' id="logInspiredSubmit" type='submit' value='Log' />
             </form>
+            <p id="inspiredCount">{props.inspiredCount}/60</p>
             <button id="inspiredBackBtn">Go back</button>
             <BackModal/>
             <InspiredSubmitModal/>
