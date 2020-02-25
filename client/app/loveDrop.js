@@ -1,5 +1,19 @@
 const handleLoveDrop = (e) => {
     e.preventDefault();
+    
+    const loveSubmitModal = document.getElementById("loveSubmitModal");
+    const submitLoveBtn = document.getElementById("submitLoveBtn");
+    const dismissLoveModal = document.getElementById("dismissLoveSubmit");
+
+    dismissLoveModal.onclick = () => {
+        loveSubmitModal.style.display = "none";
+    };
+    
+    window.onclick = (event) => {
+      if (event.target === loveSubmitModal) {
+        loveSubmitModal.style.display = "none";
+      }
+    };
 
     $('#errorMessage').animate({width:'hide'}, 350);
 
@@ -8,10 +22,17 @@ const handleLoveDrop = (e) => {
         return false;
     }
 
-    sendAjax('POST', $('#loveForm').attr('action'), $('#loveForm').serialize(), function() {
-    });
+    submitLoveBtn.onclick = () => {
+        sendAjax('POST', $('#loveForm').attr('action'), $('#loveForm').serialize(), redirect);
+    };
 
     return false;
+};
+
+const handleLoveCount = (e) => {
+    ReactDOM.render(
+    <LoveForm loveCount={e.target.value.length}/>, document.querySelector('#logThought')
+    );
 };
 
 const LoveTitle = (props) => {
@@ -22,16 +43,35 @@ const LoveTitle = (props) => {
 
 const LoveForm = (props) => {
     return (
-        <form id='loveForm'
-        onSubmit={handleLoveDrop}
-        name='loveForm'
-        action='/loveThankYou'
-        method='POST'
-        className='loveForm' >
-            <label htmlFor='answer'>Text: </label>
-            <input id='loveText' type='text' name='answer' placeholder='...' />
-            <input className='logThoughtSubmit' type='submit' value='Log' />
-        </form>
+        <div>
+            <form id='loveForm'
+            onSubmit={handleLoveDrop}
+            name='loveForm'
+            action='/loveThankYou'
+            method='POST'
+            className='loveForm' >
+                <input id='loveText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleLoveCount}/>
+                <input className='logThoughtSubmit' id="logLoveSubmit" type='submit' value='Log' />
+            </form>
+            <p id="loveCount">{props.loveCount}/60</p>
+            <button id="loveBackBtn">Go back</button>
+            <BackModal/>
+            <LoveSubmitModal />
+        </div>
+    );
+};
+
+const LoveSubmitModal = () => {
+    return (
+        <div className="loveSubmitModal" id="loveSubmitModal">
+            <div className="loveSubmitContent">
+                <h1>All finished?</h1>
+                <p>This will submit your response to your card.<br/>
+                    Don’t worry, they’re all anonymous.</p>
+                <button id="dismissLoveSubmit">Go back</button>
+                <button id="submitLoveBtn">Finish</button>
+            </div>
+        </div>
     );
 };
 
@@ -43,13 +83,22 @@ const createLoveView = function() {
     ReactDOM.render(
         <LoveForm />, document.querySelector('#logThought')
     );
+
+    const logLoveSubmit = document.getElementById("logLoveSubmit");
+    const dismissLoveModal = document.getElementById("dismissLoveSubmit");
+
+    logLoveSubmit.onclick = () => {
+        loveSubmitModal.style.display = "block";
+    };
 };
 
-const handleLoveClick = () => {
-	const loveType = document.querySelector('#lovePrompt');
+const handleLoveClick = (loveID) => {
+	const loveType = document.querySelector('#loveWrite');
 	
 	loveType.addEventListener('click', e => {
-		e.preventDefault();
-		createLoveView();
+        e.preventDefault();
+        clearTimeout(loveID);
+        createLoveView();
+        triggerBackModal();
 	});
 };

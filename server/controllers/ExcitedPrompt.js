@@ -31,6 +31,21 @@ const logExcited = (req, res) => {
   return excitedPromise;
 };
 
+const getExcited = (request, response) => {
+  const req = request;
+  const res = response;
+
+  return Excited.ExcitedModel.findByOwner(req.session.account._id, (err, docs) => {
+    if (err) {
+      console.log(err);
+      return res.status(400).json({ error: 'An error occurred.' });
+    }
+
+    return res.json({ excitedResponses: docs });
+  });
+};
+
 module.exports = {
   logExcited,
+  getExcited,
 };

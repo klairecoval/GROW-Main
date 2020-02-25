@@ -16,7 +16,7 @@ const logProud = (req, res) => {
   const proudPromise = newProud.save();
 
   proudPromise.then(() => {
-    res.json({ redirect: '/thankYou' });
+    res.json({ redirect: '/thankYouPage' });
   });
 
   proudPromise.catch((err) => {
@@ -24,13 +24,28 @@ const logProud = (req, res) => {
     if (err.code === 11000) {
       return res.status(400).json({ error: 'You have already logged this thought' });
     }
-    
+
     return res.status(400).json({ error: 'An error occurred' });
   });
 
   return proudPromise;
 };
 
+const getProud = (request, response) => {
+  const req = request;
+  const res = response;
+
+  return Proud.ProudModel.findByOwner(req.session.account._id, (err, docs) => {
+    if (err) {
+      console.log(err);
+      return res.status(400).json({ error: 'An error occurred.' });
+    }
+
+    return res.json({ proudResponses: docs });
+  });
+};
+
 module.exports = {
   logProud,
+  getProud,
 };

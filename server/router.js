@@ -3,9 +3,15 @@ const mid = require('./middleware');
 
 // setup routes from controllers folder
 const router = (app) => {
-  // app.get('/startPage', controllers.Session.startPage);
   app.get('/promptPage', mid.requiresLogin, controllers.Account.promptPage);
   app.get('/thankYouPage', mid.requiresLogin, controllers.Account.thankYouPage);
+
+  app.get('/getExcited', mid.requiresLogin, controllers.Excited.getExcited);
+  app.get('/getHappiest', mid.requiresLogin, controllers.Happiest.getHappiest);
+  app.get('/getInspired', mid.requiresLogin, controllers.Inspired.getInspired);
+  app.get('/getLove', mid.requiresLogin, controllers.Love.getLove);
+  app.get('/getProud', mid.requiresLogin, controllers.Proud.getProud);
+  app.get('/getThankful', mid.requiresLogin, controllers.Thankful.getThankful);
 
   app.get('/login', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
   app.get('/logout', mid.requiresLogin, controllers.Account.logout);
@@ -22,7 +28,7 @@ const router = (app) => {
   app.post('/proudThankYou', mid.requiresLogin, controllers.Proud.logProud);
   app.post('/thankfulThankYou', mid.requiresLogin, controllers.Thankful.logThankful);
 
-  app.get('/', controllers.Account.loginPage);
+  app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
 };
 
 module.exports = router;

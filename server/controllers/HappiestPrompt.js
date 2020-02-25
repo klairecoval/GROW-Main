@@ -16,7 +16,7 @@ const logHappiest = (req, res) => {
   const happiestPromise = newHappiest.save();
 
   happiestPromise.then(() => {
-    res.json({ redirect: '/thankYou' });
+    res.json({ redirect: '/thankYouPage' });
   });
 
   happiestPromise.catch((err) => {
@@ -24,13 +24,28 @@ const logHappiest = (req, res) => {
     if (err.code === 11000) {
       return res.status(400).json({ error: 'You have already logged this thought' });
     }
-    
+
     return res.status(400).json({ error: 'An error occurred' });
   });
 
   return happiestPromise;
 };
 
+const getHappiest = (request, response) => {
+  const req = request;
+  const res = response;
+
+  return Happiest.HappiestModel.findByOwner(req.session.account._id, (err, docs) => {
+    if (err) {
+      console.log(err);
+      return res.status(400).json({ error: 'An error occurred.' });
+    }
+
+    return res.json({ happiestResponses: docs });
+  });
+};
+
 module.exports = {
   logHappiest,
+  getHappiest,
 };

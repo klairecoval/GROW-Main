@@ -4,7 +4,7 @@ const _ = require('underscore');
 
 let ProudModel = {};
 
-// const convertId = mongoose.Types.ObjectId;
+const convertId = mongoose.Types.ObjectId;
 // const setAnswer = (answer) => _.escape(answer).trim();
 
 const ProudSchema = new mongoose.Schema({

@@ -13,7 +13,7 @@ const promptPage = (req, res) => {
 
 // render thankyou page
 const thankYouPage = (req, res) => {
-  res.render('thankYou');
+  res.render('thankYouPage');
 };
 
 // logout, delete session, redirect to login page
@@ -38,7 +38,7 @@ const login = (request, response) => {
   }
 
   return Account.AccountModel.findByUsername(username, (err, account) => {
-    if(!account) {
+    if (!account) {
       console.log('no account');
     }
     if (err || !account) {

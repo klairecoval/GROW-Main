@@ -4,7 +4,7 @@ const _ = require('underscore');
 
 let HappiestModel = {};
 
-// const convertId = mongoose.Types.ObjectId;
+const convertId = mongoose.Types.ObjectId;
 // const setAnswer = (answer) => _.escape(answer).trim();
 
 const HappiestSchema = new mongoose.Schema({

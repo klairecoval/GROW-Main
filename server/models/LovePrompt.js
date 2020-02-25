@@ -4,7 +4,7 @@ const _ = require('underscore');
 
 let LoveModel = {};
 
-// const convertId = mongoose.Types.ObjectId;
+const convertId = mongoose.Types.ObjectId;
 // const setAnswer = (answer) => _.escape(answer).trim();
 
 const LoveSchema = new mongoose.Schema({

@@ -50,6 +50,11 @@ var LoginWindow = function LoginWindow(props) {
             'User ID Code: '
         ),
         React.createElement('input', { id: 'user', type: 'text', name: 'username', placeholder: 'username' }),
+        React.createElement(
+            'p',
+            null,
+            'Enter the 4 digit code on your card.'
+        ),
         React.createElement('input', { className: 'formSubmit', type: 'submit', value: 'Sign in' })
     );
 };
@@ -102,13 +107,6 @@ var setup = function setup() {
 
     createLoginWindow();
 };
-
-// // get csrf token
-// const getToken = () => {
-//     sendAjax('GET', '/getToken', null, (result) => {
-//         setup(result.csrfToken);
-//     });
-// };
 
 // load in csrf token
 $(document).ready(function () {
