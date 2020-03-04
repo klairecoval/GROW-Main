@@ -6,6 +6,10 @@ const loginPage = (req, res) => {
   res.render('login');
 };
 
+const loginMobilePage = (req, res) => {
+  res.render('loginMobile');
+};
+
 // render prompt page
 const promptPage = (req, res) => {
   res.render('promptPage');
@@ -16,10 +20,19 @@ const thankYouPage = (req, res) => {
   res.render('thankYouPage');
 };
 
+const howToPage = (req, res) => {
+  res.render('howToPage');
+};
+
 // logout, delete session, redirect to login page
 const logout = (req, res) => {
   req.session.destroy();
   res.redirect('/');
+};
+
+const logoutMobile = (req, res) => {
+  req.session.destroy();
+  res.redirect('/loginMobile');
 };
 
 // login user
@@ -48,6 +61,31 @@ const login = (request, response) => {
     req.session.account = Account.AccountModel.toAPI(account);
 
     return res.json({ redirect: '/promptPage' });
+  });
+};
+
+const loginMobile = (request, response) => {
+  const req = request;
+  const res = response;
+
+  // force case to strings to cover security flaws
+  const username = `${req.body.username}`;
+
+  if (!username) {
+    return res.status(400).json({ error: 'ID code required.' });
+  }
+
+  return Account.AccountModel.findByUsername(username, (err, account) => {
+    if (!account) {
+      console.log('no account');
+    }
+    if (err || !account) {
+      return res.status(401).json({ error: 'Invalid ID code' });
+    }
+
+    req.session.account = Account.AccountModel.toAPI(account);
+
+    return res.json({ redirect: '/howToPage' });
   });
 };
 
@@ -96,4 +134,7 @@ module.exports = {
   thankYouPage,
   logout,
   signup,
+  loginMobilePage,
+  loginMobile,
+  howToPage,
 };

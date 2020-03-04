@@ -20,13 +20,18 @@ const router = (app) => {
   app.post('/login', mid.requiresSecure, mid.requiresLogout, controllers.Account.login);
   app.post('/promptPage', mid.requiresLogin, controllers.Account.promptPage);
 
-  // app.post('/thankYouPage', mid.requiresLogin, controllers.Account.thankYouPage);
   app.post('/excitedThankYou', mid.requiresLogin, controllers.Excited.logExcited);
   app.post('/happiestThankYou', mid.requiresLogin, controllers.Happiest.logHappiest);
   app.post('/inspiredThankYou', mid.requiresLogin, controllers.Inspired.logInspired);
   app.post('/loveThankYou', mid.requiresLogin, controllers.Love.logLove);
   app.post('/proudThankYou', mid.requiresLogin, controllers.Proud.logProud);
   app.post('/thankfulThankYou', mid.requiresLogin, controllers.Thankful.logThankful);
+
+  // mobile
+  app.get('/loginMobile', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginMobilePage);
+  app.get('/logoutMobile', mid.requiresLogin, controllers.Account.logout);
+  app.post('/loginMobile', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginMobile);
+  app.get('/howToPage', mid.requiresLogin, controllers.Account.howToPage);
 
   app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
 };
