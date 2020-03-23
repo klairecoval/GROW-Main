@@ -51,6 +51,7 @@ const ExcitedForm = (props) => {
             className='excitedForm' >
                 <input id='excitedText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleExcitedCount}/>
                 <input className='logThoughtSubmit' id="logExcitedSubmit" type='submit' value='Submit' />
+                <h3 id='category' name='excited'>excited</h3>
             </form>
             <p id="excitedCount">{props.excitedCount}/60</p>
             <button id="excitedBackBtn">Go back</button>
