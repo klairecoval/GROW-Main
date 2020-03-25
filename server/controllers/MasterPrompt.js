@@ -11,7 +11,7 @@ const logMaster = (req, res) => {
     answer: req.body.answer,
     owner: req.session.account._id,
     viewable: true,
-    category:   
+    category: req.body.category,
   };
 
   const newMaster = new Master.MasterModel(masterData);
@@ -33,7 +33,7 @@ const logMaster = (req, res) => {
   return excitedPromise;
 };
 
-//const getMaster = (request, response) => {
+// const getMaster = (request, response) => {
 //  const req = request;
 //  const res = response;
 //
@@ -45,24 +45,23 @@ const logMaster = (req, res) => {
 //
 //    return res.json({ masterResponses: docs });
 //  });
-//};
+// };
 
 const getMaster = (request, response) => {
-    const req = request;
-    const res = response;
-    
-    if(!req.query.category){
-        return res.json({'error': 'missing type'});
-    }
-    
-    MasterModel.find({viewable:true}, (err,docs) => {
-        if(err){res.status(500).json({'error': 'you couldnt find what you were looking for'});
-               res.json({docs});
-        }
-    }).lean();
-};
+  const req = request;
+  const res = response;
 
-const prompt
+  if (!req.query.category) {
+    return res.json({ error: 'missing type' });
+  }
+
+  return Master.MasterModel.find({ viewable: true }, (err, docs) => {
+    if (err) {
+      res.status(500).json({ error: 'you couldnt find what you were looking for' });
+      res.json({ docs });
+    }
+  }).lean();
+};
 
 module.exports = {
   logMaster,

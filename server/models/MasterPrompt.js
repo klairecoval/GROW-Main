@@ -24,17 +24,17 @@ const MasterSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-    
+
   category: {
     type: String,
-    required: false,  
+    required: false,
   },
-    
+
   viewable: {
-      type:Boolean,
-      default: true,
+    type: Boolean,
+    default: true,
   },
-    
+
 });
 
 MasterSchema.statics.toAPI = (doc) => ({

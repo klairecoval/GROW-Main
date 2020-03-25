@@ -5,6 +5,7 @@ const mid = require('./middleware');
 const router = (app) => {
   app.get('/promptPage', mid.requiresLogin, controllers.Account.promptPage);
   app.get('/thankYouPage', mid.requiresLogin, controllers.Account.thankYouPage);
+  app.get('/dataVisPage', mid.requiresLogin, controllers.Account.dataVisPage);
 
   app.get('/getExcited', mid.requiresLogin, controllers.Excited.getExcited);
   app.get('/getHappiest', mid.requiresLogin, controllers.Happiest.getHappiest);
@@ -12,6 +13,7 @@ const router = (app) => {
   app.get('/getLove', mid.requiresLogin, controllers.Love.getLove);
   app.get('/getProud', mid.requiresLogin, controllers.Proud.getProud);
   app.get('/getThankful', mid.requiresLogin, controllers.Thankful.getThankful);
+  app.get('/getMaster', mid.requiresLogin, controllers.Master.getMaster);
 
   app.get('/login', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
   app.get('/logout', mid.requiresLogin, controllers.Account.logout);
@@ -27,6 +29,7 @@ const router = (app) => {
   app.post('/loveThankYou', mid.requiresLogin, controllers.Love.logLove);
   app.post('/proudThankYou', mid.requiresLogin, controllers.Proud.logProud);
   app.post('/thankfulThankYou', mid.requiresLogin, controllers.Thankful.logThankful);
+  app.post('/masterThankYou', mid.requiresLogin, controllers.Master.logMaster);
 
   app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
 };
