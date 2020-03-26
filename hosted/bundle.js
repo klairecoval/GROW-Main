@@ -585,7 +585,7 @@ var MasterForm = function MasterForm(props) {
             { id: "masterForm",
                 onSubmit: handleMasterDrop,
                 name: "masterForm",
-                action: "/excitedThankYou",
+                action: "/masterThankYou",
                 method: "POST",
                 className: "masterForm" },
             React.createElement("input", { id: "masterText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleMasterCount }),

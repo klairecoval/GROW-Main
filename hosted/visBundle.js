@@ -34,13 +34,17 @@ var loadAnswers = function loadAnswers() {
     });
 };
 
-var setup = function setup() {
+var setupDataVis = function setupDataVis() {
     ReactDOM.render(React.createElement(PromptAnswers, { answers: [] }), document.querySelector('#answers'));
     console.log("set has been read through");
     loadAnswers();
 };
 
-setup();
+$(document).ready(function () {
+    if (document.querySelector('#answers')) {
+        setupDataVis();
+    }
+});
 'use strict';
 
 // helper function to create an error message with desired error text

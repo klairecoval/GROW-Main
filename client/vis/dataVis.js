@@ -26,7 +26,7 @@ const loadAnswers = () => {
     });
 };
 
-const setup = function() {
+const setupDataVis = function() {
     ReactDOM.render(
         <PromptAnswers answers={[]} />, document.querySelector('#answers')
     );
@@ -34,4 +34,8 @@ const setup = function() {
     loadAnswers();
 };
 
-setup();
+$(document).ready(function() {
+    if(document.querySelector('#answers')){
+        setupDataVis();
+    }
+});

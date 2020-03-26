@@ -46,7 +46,7 @@ const MasterForm = (props) => {
             <form id='masterForm'
             onSubmit={handleMasterDrop}
             name='masterForm'
-            action='/excitedThankYou'
+            action='/masterThankYou'
             method='POST'
             className='masterForm' >
                 <input id='masterText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleMasterCount}/>
