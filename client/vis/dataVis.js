@@ -1,9 +1,18 @@
 const PromptAnswers = function(props) {
     
+//    if(props.answers.length === 0){
+//        return(
+//            <div className='answerList'>
+//                <h3 className='emptyAnswer'>Nothing has been filled in yet</h3>
+//            </div>
+//        );
+//    }
+//    
     const answerNodes = props.answers.map(function(masterPrompt) {
         return (
-            <div className='answerList'>
+            <div className='answer'>
                 <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
+                <h3 className='promptType'> {masterPrompt.viewable}</h3>
                 <h3 className='promptType'> {masterPrompt.category}</h3>
             </div>
         );

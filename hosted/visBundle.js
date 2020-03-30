@@ -2,10 +2,18 @@
 
 var PromptAnswers = function PromptAnswers(props) {
 
+    //    if(props.answers.length === 0){
+    //        return(
+    //            <div className='answerList'>
+    //                <h3 className='emptyAnswer'>Nothing has been filled in yet</h3>
+    //            </div>
+    //        );
+    //    }
+    //    
     var answerNodes = props.answers.map(function (masterPrompt) {
         return React.createElement(
             'div',
-            { className: 'answerList' },
+            { className: 'answer' },
             React.createElement(
                 'h3',
                 { className: 'promptAnswer' },
@@ -16,7 +24,7 @@ var PromptAnswers = function PromptAnswers(props) {
                 'h3',
                 { className: 'promptType' },
                 ' ',
-                masterPrompt.category
+                masterPrompt.viewable
             )
         );
     });
