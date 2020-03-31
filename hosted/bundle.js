@@ -572,7 +572,7 @@ var MasterTitle = function MasterTitle(props) {
     return React.createElement(
         "h2",
         { id: "masterTitle" },
-        "-M- I am excited for..."
+        "I am excited for..."
     );
 };
 
@@ -589,8 +589,8 @@ var MasterForm = function MasterForm(props) {
                 method: "POST",
                 className: "masterForm" },
             React.createElement("input", { id: "masterText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleMasterCount }),
-            React.createElement("input", { className: "logThoughtSubmit", id: "logMasterSubmit", type: "submit", value: "Submit" }),
-            React.createElement("h3", { id: "category", name: "category", value: "excited" })
+            React.createElement("input", { id: "category", type: "text", name: "category", value: "excited", placeholder: "excited", onChange: handleMasterCount }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logMasterSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
             "p",
@@ -666,6 +666,138 @@ var handleMasterClick = function handleMasterClick(masterID) {
 };
 "use strict";
 
+var handleMasterDrop = function handleMasterDrop(e) {
+    e.preventDefault();
+
+    var masterSubmitModal = document.getElementById("masterSubmitModal");
+    var submitMasterBtn = document.getElementById("submitMasterBtn");
+    var dismissMasterModal = document.getElementById("dismissMasterSubmit");
+
+    dismissMasterModal.onclick = function () {
+        masterSubmitModal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        if (event.target === masterSubmitModal) {
+            masterSubmitModal.style.display = "none";
+        }
+    };
+
+    $('#errorMessage').animate({ width: 'hide' }, 350);
+    if ($('#masterText').val() == '') {
+        handleError('Input required');
+        return false;
+    }
+
+    submitMasterBtn.onclick = function () {
+        sendAjax('POST', $('#masterForm').attr('action'), $('#masterForm').serialize(), redirect);
+    };
+
+    return false;
+};
+
+var handleMasterCount = function handleMasterCount(e) {
+    ReactDOM.render(React.createElement(MasterForm, { masterCount: e.target.value.length }), document.querySelector('#logThought'));
+};
+
+var MasterTitle = function MasterTitle(props) {
+    return React.createElement(
+        "h2",
+        { id: "masterTitle" },
+        "I am thankful for..."
+    );
+};
+
+var MasterForm = function MasterForm(props) {
+    return React.createElement(
+        "div",
+        null,
+        React.createElement(
+            "form",
+            { id: "masterForm",
+                onSubmit: handleMasterDrop,
+                name: "masterForm",
+                action: "/masterThankYou",
+                method: "POST",
+                className: "masterForm" },
+            React.createElement("input", { id: "masterText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleMasterCount }),
+            React.createElement("input", { id: "category", type: "text", name: "category", value: "thankful", placeholder: "thankful", onChange: handleMasterCount }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logMasterSubmit", type: "submit", value: "Submit" })
+        ),
+        React.createElement(
+            "p",
+            { id: "masterCount" },
+            props.masterCount,
+            "/60"
+        ),
+        React.createElement(
+            "button",
+            { id: "masterBackBtn" },
+            "Go back"
+        ),
+        React.createElement(BackModal, null),
+        React.createElement(MasterSubmitModal, null)
+    );
+};
+
+var MasterSubmitModal = function MasterSubmitModal() {
+    return React.createElement(
+        "div",
+        { className: "masterSubmitModal", id: "masterSubmitModal" },
+        React.createElement(
+            "div",
+            { className: "masterSubmitContent" },
+            React.createElement(
+                "h1",
+                null,
+                "All finished?"
+            ),
+            React.createElement(
+                "p",
+                null,
+                "This will submit your response to your card.",
+                React.createElement("br", null),
+                "Don\u2019t worry, they\u2019re all anonymous."
+            ),
+            React.createElement(
+                "button",
+                { id: "dismissMasterSubmit" },
+                "Go back"
+            ),
+            React.createElement(
+                "button",
+                { id: "submitMasterBtn" },
+                "Finish"
+            )
+        )
+    );
+};
+
+var createMasterView = function createMasterView() {
+    ReactDOM.render(React.createElement(MasterTitle, null), document.querySelector('#promptTitle'));
+
+    ReactDOM.render(React.createElement(MasterForm, null), document.querySelector('#logThought'));
+
+    var logMasterSubmit = document.getElementById("logMasterSubmit");
+    var dismissMasterModal = document.getElementById("dismissMasterSubmit");
+
+    logMasterSubmit.onclick = function () {
+        masterSubmitModal.style.display = "block";
+    };
+};
+
+var handleMasterThankfulClick = function handleMasterThankfulClick(masterID) {
+    var masterType = document.querySelector('#masterWrite');
+
+    masterType.addEventListener('click', function (e) {
+        e.preventDefault();
+        clearTimeout(masterID);
+        createMasterView();
+        triggerBackModal();
+    });
+};
+"use strict";
+
 var id = void 0;
 
 var PromptTitle = function PromptTitle(props) {
@@ -721,10 +853,10 @@ var LoveModal = function LoveModal() {
         )
     );
 };
-var ThankfulModal = function ThankfulModal() {
+var MasterThankfulModal = function MasterThankfulModal() {
     return React.createElement(
         "div",
-        { className: "thankfulModal", id: "thankfulModal" },
+        { className: "masterThankfulModal", id: "masterThankfulModal" },
         React.createElement(
             "div",
             { className: "thankfulModalContent" },
@@ -735,12 +867,12 @@ var ThankfulModal = function ThankfulModal() {
             ),
             React.createElement(
                 "button",
-                { id: "thankfulWrite" },
+                { id: "masterThankfulWrite" },
                 "Write response"
             ),
             React.createElement(
                 "button",
-                { id: "dismissThankful" },
+                { id: "masterDismissThankful" },
                 "Select different prompt"
             )
         )
@@ -771,31 +903,7 @@ var InspiredModal = function InspiredModal() {
         )
     );
 };
-var ExcitedModal = function ExcitedModal() {
-    return React.createElement(
-        "div",
-        { className: "excitedModal", id: "excitedModal" },
-        React.createElement(
-            "div",
-            { className: "excitedModalContent" },
-            React.createElement(
-                "h1",
-                null,
-                "I'm excited for..."
-            ),
-            React.createElement(
-                "button",
-                { id: "excitedWrite" },
-                "Write response"
-            ),
-            React.createElement(
-                "button",
-                { id: "dismissExcited" },
-                "Select different prompt"
-            )
-        )
-    );
-};
+
 var HappiestModal = function HappiestModal() {
     return React.createElement(
         "div",
@@ -857,7 +965,7 @@ var MasterModal = function MasterModal() {
             React.createElement(
                 "h1",
                 null,
-                "I'm a test..."
+                "I'm excited for..."
             ),
             React.createElement(
                 "button",
@@ -877,30 +985,25 @@ var triggerPromptModals = function triggerPromptModals() {
     var loveModal = document.getElementById("loveModal");
     var happiestModal = document.getElementById("happiestModal");
     var proudModal = document.getElementById("proudModal");
-    var excitedModal = document.getElementById("excitedModal");
-    var thankfulModal = document.getElementById("thankfulModal");
+    var masterThankfulModal = document.getElementById("masterThankfulModal");
     var inspiredModal = document.getElementById("inspiredModal");
     var masterModal = document.getElementById("masterModal");
 
-    var excitedPromptBtn = document.getElementById("excitedPrompt");
     var happiestPromptBtn = document.getElementById("happiestPrompt");
     var inspiredPromptBtn = document.getElementById("inspiredPrompt");
     var proudPromptBtn = document.getElementById("proudPrompt");
     var lovePromptBtn = document.getElementById("lovePrompt");
-    var thankfulPromptBtn = document.getElementById("thankfulPrompt");
-    var masterPromptBtn = document.getElementById("masterModal");
+    var masterThankfulPromptBtn = document.getElementById("masterThankfulPrompt");
+    var masterPromptBtn = document.getElementById("masterPrompt");
 
     var dismissLove = document.getElementById("dismissLove");
     var dismissThankful = document.getElementById("dismissThankful");
     var dismissInspired = document.getElementById("dismissInspired");
-    var dismissExcited = document.getElementById("dismissExcited");
     var dismissProud = document.getElementById("dismissProud");
     var dismissHappiest = document.getElementById("dismissHappiest");
+    var dismissMasterThankful = document.getElementById("dismissMasterThankful");
     var dismissMaster = document.getElementById("dismissMaster");
 
-    excitedPromptBtn.onclick = function () {
-        excitedModal.style.display = "block";
-    };
     happiestPromptBtn.onclick = function () {
         happiestModal.style.display = "block";
     };
@@ -913,8 +1016,8 @@ var triggerPromptModals = function triggerPromptModals() {
     lovePromptBtn.onclick = function () {
         loveModal.style.display = "block";
     };
-    thankfulPromptBtn.onclick = function () {
-        thankfulModal.style.display = "block";
+    masterThankfulPromptBtn.onclick = function () {
+        masterThankfulModal.style.display = "block";
     };
     masterPromptBtn.onclick = function () {
         masterModal.style.display = "block";
@@ -922,9 +1025,6 @@ var triggerPromptModals = function triggerPromptModals() {
 
     dismissLove.onclick = function () {
         loveModal.style.display = "none";
-    };
-    dismissExcited.onclick = function () {
-        excitedModal.style.display = "none";
     };
     dismissHappiest.onclick = function () {
         happiestModal.style.display = "none";
@@ -935,8 +1035,8 @@ var triggerPromptModals = function triggerPromptModals() {
     dismissProud.onclick = function () {
         proudModal.style.display = "none";
     };
-    dismissThankful.onclick = function () {
-        thankfulModal.style.display = "none";
+    dismissMasterThankful.onclick = function () {
+        masterThankfulModal.style.display = "none";
     };
     dismissMaster.onclick = function () {
         masterModal.style.display = "none";
@@ -945,17 +1045,15 @@ var triggerPromptModals = function triggerPromptModals() {
     window.onclick = function (event) {
         if (event.target === loveModal) {
             loveModal.style.display = "none";
-        } else if (event.target === excitedModal) {
-            excitedModal.style.display = "none";
         } else if (event.target === happiestModal) {
             happiestModal.style.display = "none";
         } else if (event.target === inspiredModal) {
             inspiredModal.style.display = "none";
         } else if (event.target === proudModal) {
             proudModal.style.display = "none";
-        } else if (event.target === thankfulModal) {
-            thankfulModal.style.display = "none";
-        } else if (event.target === MasterModal) {
+        } else if (event.target === masterthankfulModal) {
+            masterThankfulModal.style.display = "none";
+        } else if (event.target === masterModal) {
             masterModal.style.display = "none";
         }
     };
@@ -1001,21 +1099,15 @@ var BackModal = function BackModal() {
 var triggerBackModal = function triggerBackModal() {
     var backModal = document.getElementById("backModal");
 
-    var excitedBtn = document.getElementById("excitedBackBtn");
     var happiestBtn = document.getElementById("happiestBackBtn");
     var inspiredBtn = document.getElementById("inspiredBackBtn");
     var proudBtn = document.getElementById("proudBackBtn");
     var loveBtn = document.getElementById("loveBackBtn");
-    var thankfulBtn = document.getElementById("thankfulBackBtn");
+    var masterThankfulBtn = document.getElementById("masterThankfulBackBtn");
     var masterBtn = document.getElementById("masterBackBtn");
 
     var stay = document.getElementById("stayBtn");
 
-    if (excitedBtn) {
-        excitedBtn.onclick = function () {
-            backModal.style.display = "block";
-        };
-    }
     if (happiestBtn) {
         happiestBtn.onclick = function () {
             backModal.style.display = "block";
@@ -1033,8 +1125,8 @@ var triggerBackModal = function triggerBackModal() {
         loveBtn.onclick = function () {
             backModal.style.display = "block";
         };
-    } else if (thankfulBtn) {
-        thankfulBtn.onclick = function () {
+    } else if (masterThankfulBtn) {
+        masterThankfulBtn.onclick = function () {
             backModal.style.display = "block";
         };
     } else if (masterBtn) {
@@ -1065,11 +1157,6 @@ var PromptButtons = function PromptButtons() {
         ),
         React.createElement(
             "button",
-            { id: "excitedPrompt" },
-            "I'm excited for..."
-        ),
-        React.createElement(
-            "button",
             { id: "happiestPrompt" },
             "I'm happiest when..."
         ),
@@ -1085,18 +1172,17 @@ var PromptButtons = function PromptButtons() {
         ),
         React.createElement(
             "button",
-            { id: "thankfulPrompt" },
+            { id: "masterthankfulPrompt" },
             "I'm thankful for..."
         ),
         React.createElement(
             "button",
             { id: "masterPrompt" },
-            "I'm a master prompt..."
+            "I'm excited for..."
         ),
-        React.createElement(ThankfulModal, null),
+        React.createElement(MasterThankfulModal, null),
         React.createElement(InspiredModal, null),
         React.createElement(LoveModal, null),
-        React.createElement(ExcitedModal, null),
         React.createElement(HappiestModal, null),
         React.createElement(ProudModal, null),
         React.createElement(MasterModal, null)
@@ -1118,7 +1204,6 @@ var setup = function setup() {
     idTimeout();
 
     // load thoughts for testing
-    // loadExcitedFromServer();
     // loadHappiestFromServer();
     // loadInspiredFromServer();
     // loadLoveFromServer();
@@ -1126,13 +1211,12 @@ var setup = function setup() {
     // loadThankfulFromServer();
 
     // handle button prompt clicks
-    if (document.getElementById('inspiredPrompt') && document.getElementById('excitedPrompt') && document.getElementById('happiestPrompt') && document.getElementById('lovePrompt') && document.getElementById('proudPrompt') && document.getElementById('thankfulPrompt') && document.getElementById('masterPrompt')) {
-        handleExcitedClick(id);
+    if (document.getElementById('inspiredPrompt') && document.getElementById('happiestPrompt') && document.getElementById('lovePrompt') && document.getElementById('proudPrompt') && document.getElementById('masterThankfulPrompt') && document.getElementById('masterPrompt')) {
         handleHappiestClick(id);
         handleInspiredClick(id);
         handleLoveClick(id);
         handleProudClick(id);
-        handleThankfulClick(id);
+        handleMasterThankfulClick(id);
         handleMasterClick(id);
     }
 };
@@ -1327,7 +1411,7 @@ var ThankfulForm = function ThankfulForm(props) {
         React.createElement(
             "form",
             { id: "thankfulForm",
-                onSubmit: handleThankfulDrop,
+                onSubmit: handleMasterDrop,
                 name: "thankfulForm",
                 action: "/thankfulThankYou",
                 method: "POST",

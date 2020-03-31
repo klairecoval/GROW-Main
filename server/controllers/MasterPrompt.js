@@ -11,7 +11,7 @@ const logMaster = (req, res) => {
     answer: req.body.answer,
     owner: req.session.account._id,
     viewable: true,
-    //category: req.body.category,
+    category: req.body.category,
   };
 
   const newMaster = new Master.MasterModel(masterData);
@@ -44,9 +44,9 @@ const getMaster = (request, response) => {
   return Master.MasterModel.find({ viewable: true }, (err, docs) => {
     if (err) {
       res.status(500).json({ error: 'you couldnt find what you were looking for' });
-      res.json({ docs });
     }
-    return res.json({ masterResponses: docs });  
+    //return res.json({ masterResponses: docs }); 
+    return res.json({docs});
   });
 };
 

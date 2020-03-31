@@ -36,7 +36,7 @@ const handleMasterCount = (e) => {
 
 const MasterTitle = (props) => {
     return (
-        <h2 id="masterTitle">I am excited for...</h2>
+        <h2 id="masterTitle">I am thankful for...</h2>
     );
 };
 
@@ -50,7 +50,7 @@ const MasterForm = (props) => {
             method='POST'
             className='masterForm' >
                 <input id='masterText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleMasterCount}/>
-                <input id='category' type='text' name='category' value='excited' placeholder='excited' onChange={handleMasterCount}/>        
+                <input id='category' type='text' name='category' value='thankful' placeholder='thankful' onChange={handleMasterCount}/>        
                 <input className='logThoughtSubmit' id="logMasterSubmit" type='submit' value='Submit' />
             </form>
             <p id="masterCount">{props.masterCount}/60</p>
@@ -92,7 +92,7 @@ const createMasterView = function() {
     };
 };
 
-const handleMasterClick = (masterID) => {
+const handleMasterThankfulClick = (masterID) => {
     const masterType = document.querySelector('#masterWrite');
 	
 	masterType.addEventListener('click', e => {

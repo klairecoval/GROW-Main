@@ -45,7 +45,7 @@ const ThankfulForm = (props) => {
     return (
         <div>
             <form id='thankfulForm'
-            onSubmit={handleThankfulDrop}
+            onSubmit={handleMasterDrop}
             name='thankfulForm'
             action='/thankfulThankYou'
             method='POST'

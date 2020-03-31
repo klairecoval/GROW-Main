@@ -22,13 +22,13 @@ const LoveModal = () => {
         </div>
     );
 };
-const ThankfulModal = () => {
+const MasterThankfulModal = () => {
     return (
-        <div className="thankfulModal" id="thankfulModal">
+        <div className="masterThankfulModal" id="masterThankfulModal">
             <div className="thankfulModalContent">
                 <h1>I'm thankful for...</h1>
-                <button id="thankfulWrite">Write response</button>
-                <button id="dismissThankful">Select different prompt</button>
+                <button id="masterThankfulWrite">Write response</button>
+                <button id="masterDismissThankful">Select different prompt</button>
             </div>
         </div>
     );
@@ -44,17 +44,7 @@ const InspiredModal = () => {
         </div>
     );
 };
-const ExcitedModal = () => {
-    return (
-        <div className="excitedModal" id="excitedModal">
-            <div className="excitedModalContent">
-                <h1>I'm excited for...</h1>
-                <button id="excitedWrite">Write response</button>
-                <button id="dismissExcited">Select different prompt</button>
-            </div>
-        </div>
-    );
-};
+
 const HappiestModal = () => {
     return (
         <div className="happiestModal" id="happiestModal">
@@ -82,7 +72,7 @@ const MasterModal = () => {
     return (
         <div className="masterModal" id="masterModal">
             <div className="masterModalContent">
-                <h1>I'm a test...</h1>
+                <h1>I'm excited for...</h1>
                 <button id="masterWrite">Write response</button>
                 <button id="dismissMaster">Select different prompt</button>
             </div>
@@ -94,31 +84,26 @@ const triggerPromptModals = () => {
     const loveModal = document.getElementById("loveModal");
     const happiestModal = document.getElementById("happiestModal");
     const proudModal = document.getElementById("proudModal");
-    const excitedModal = document.getElementById("excitedModal");
-    const thankfulModal = document.getElementById("thankfulModal");
+    const masterThankfulModal = document.getElementById("masterThankfulModal");
     const inspiredModal = document.getElementById("inspiredModal");
     const masterModal = document.getElementById("masterModal");
 
-    const excitedPromptBtn = document.getElementById("excitedPrompt");
     const happiestPromptBtn = document.getElementById("happiestPrompt");
     const inspiredPromptBtn = document.getElementById("inspiredPrompt");
     const proudPromptBtn = document.getElementById("proudPrompt");
     const lovePromptBtn = document.getElementById("lovePrompt");
-    const thankfulPromptBtn = document.getElementById("thankfulPrompt");
-    const masterPromptBtn = document.getElementById("masterModal");
+    const masterThankfulPromptBtn = document.getElementById("masterThankfulPrompt");
+    const masterPromptBtn = document.getElementById("masterPrompt");
     
     const dismissLove = document.getElementById("dismissLove");
     const dismissThankful = document.getElementById("dismissThankful");
     const dismissInspired = document.getElementById("dismissInspired");
-    const dismissExcited = document.getElementById("dismissExcited");
     const dismissProud = document.getElementById("dismissProud");
     const dismissHappiest = document.getElementById("dismissHappiest");
+    const dismissMasterThankful = document.getElementById("dismissMasterThankful");
     const dismissMaster = document.getElementById("dismissMaster");
 
     
-    excitedPromptBtn.onclick = () => {
-        excitedModal.style.display = "block";
-    };
     happiestPromptBtn.onclick = () => {
         happiestModal.style.display = "block";
     };
@@ -131,8 +116,8 @@ const triggerPromptModals = () => {
     lovePromptBtn.onclick = () => {
         loveModal.style.display = "block";
     };
-    thankfulPromptBtn.onclick = () => {
-        thankfulModal.style.display = "block";
+    masterThankfulPromptBtn.onclick = () => {
+        masterThankfulModal.style.display = "block";
     };
     masterPromptBtn.onclick = () => {
         masterModal.style.display = "block";
@@ -140,9 +125,6 @@ const triggerPromptModals = () => {
     
     dismissLove.onclick = () => {
         loveModal.style.display = "none";
-    };
-    dismissExcited.onclick = () => {
-        excitedModal.style.display = "none";
     };
     dismissHappiest.onclick = () => {
         happiestModal.style.display = "none";
@@ -153,8 +135,8 @@ const triggerPromptModals = () => {
     dismissProud.onclick = () => {
         proudModal.style.display = "none";
     };
-    dismissThankful.onclick = () => {
-        thankfulModal.style.display = "none";
+    dismissMasterThankful.onclick = () => {
+        masterThankfulModal.style.display = "none";
     };
     dismissMaster.onclick = () => {
         masterModal.style.display = "none";
@@ -163,17 +145,15 @@ const triggerPromptModals = () => {
     window.onclick = (event) => {
       if (event.target === loveModal) {
         loveModal.style.display = "none";
-      } else if(event.target === excitedModal) {
-        excitedModal.style.display = "none";
       } else if(event.target === happiestModal) {
         happiestModal.style.display = "none";
       } else if(event.target === inspiredModal) {
         inspiredModal.style.display = "none";
       } else if(event.target === proudModal) {
         proudModal.style.display = "none";
-      } else if(event.target === thankfulModal) {
-        thankfulModal.style.display = "none";      
-      } else if(event.target === MasterModal) {
+      } else if(event.target === masterthankfulModal) {
+        masterThankfulModal.style.display = "none";      
+      } else if(event.target === masterModal) {
           masterModal.style.display = "none";
       }
     };
@@ -196,21 +176,15 @@ const BackModal = () => {
 const triggerBackModal = () => {
     const backModal = document.getElementById("backModal");
 
-    const excitedBtn = document.getElementById("excitedBackBtn");
     const happiestBtn = document.getElementById("happiestBackBtn");
     const inspiredBtn = document.getElementById("inspiredBackBtn");
     const proudBtn = document.getElementById("proudBackBtn");
     const loveBtn = document.getElementById("loveBackBtn");
-    const thankfulBtn = document.getElementById("thankfulBackBtn");
+    const masterThankfulBtn = document.getElementById("masterThankfulBackBtn");
     const masterBtn = document.getElementById("masterBackBtn");
     
     const stay = document.getElementById("stayBtn");
     
-    if(excitedBtn) {
-        excitedBtn.onclick = () => {
-            backModal.style.display = "block";
-        };
-    }
     if (happiestBtn) {
         happiestBtn.onclick = () => {
             backModal.style.display = "block";
@@ -228,8 +202,8 @@ const triggerBackModal = () => {
         loveBtn.onclick = () => {
             backModal.style.display = "block";
         };
-    } else if (thankfulBtn) {
-        thankfulBtn.onclick = () => {
+    } else if (masterThankfulBtn) {
+        masterThankfulBtn.onclick = () => {
             backModal.style.display = "block";
         };
     } else if (masterBtn) {
@@ -253,16 +227,14 @@ const PromptButtons = () => {
     return (
         <div>
             <button id="inspiredPrompt">I'm inspired by...</button>
-            <button id="excitedPrompt">I'm excited for...</button>
             <button id="happiestPrompt">I'm happiest when...</button>
             <button id="proudPrompt">I'm proud of...</button>
             <button id="lovePrompt">I love...</button>
-            <button id="thankfulPrompt">I'm thankful for...</button>
-            <button id="masterPrompt">I'm a master prompt...</button>
-            <ThankfulModal />
+            <button id="masterthankfulPrompt">I'm thankful for...</button>
+            <button id="masterPrompt">I'm excited for...</button>
+            <MasterThankfulModal />
             <InspiredModal />
             <LoveModal />
-            <ExcitedModal />
             <HappiestModal />
             <ProudModal />
             <MasterModal />
@@ -289,7 +261,6 @@ const setup = function() {
     idTimeout();
 
     // load thoughts for testing
-    // loadExcitedFromServer();
     // loadHappiestFromServer();
     // loadInspiredFromServer();
     // loadLoveFromServer();
@@ -297,16 +268,15 @@ const setup = function() {
     // loadThankfulFromServer();
 
     // handle button prompt clicks
-    if(document.getElementById('inspiredPrompt') && document.getElementById('excitedPrompt') &&
-    document.getElementById('happiestPrompt') && document.getElementById('lovePrompt') &&
-    document.getElementById('proudPrompt') && document.getElementById('thankfulPrompt') &&
+    if(document.getElementById('inspiredPrompt') && document.getElementById('happiestPrompt') 
+    && document.getElementById('lovePrompt') &&
+    document.getElementById('proudPrompt') && document.getElementById('masterThankfulPrompt') &&
     document.getElementById('masterPrompt')) {
-        handleExcitedClick(id);
         handleHappiestClick(id);
         handleInspiredClick(id);
         handleLoveClick(id);
         handleProudClick(id);
-        handleThankfulClick(id);
+        handleMasterThankfulClick(id);
         handleMasterClick(id);
     }
 };

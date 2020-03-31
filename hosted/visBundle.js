@@ -11,22 +11,56 @@ var PromptAnswers = function PromptAnswers(props) {
     //    }
     //    
     var answerNodes = props.answers.map(function (masterPrompt) {
-        return React.createElement(
-            'div',
-            { className: 'answer' },
-            React.createElement(
-                'h3',
-                { className: 'promptAnswer' },
-                ' ',
-                masterPrompt.answer
-            ),
-            React.createElement(
-                'h3',
-                { className: 'promptType' },
-                ' ',
-                masterPrompt.viewable
-            )
-        );
+        if (masterPrompt.category === "excited") {
+            return React.createElement(
+                'div',
+                { className: 'answer' },
+                React.createElement('img', { src: '/assets/img/redSquare.png', alt: 'red square' }),
+                React.createElement(
+                    'h3',
+                    { className: 'promptAnswer' },
+                    ' ',
+                    masterPrompt.answer
+                ),
+                React.createElement(
+                    'h3',
+                    { className: 'promptType' },
+                    ' ',
+                    masterPrompt.viewable
+                ),
+                React.createElement(
+                    'h3',
+                    { className: 'promptType' },
+                    ' ',
+                    masterPrompt.category
+                )
+            );
+        }
+        if (masterPrompt.category === "thankful") {
+            return React.createElement(
+                'div',
+                { className: 'answer' },
+                React.createElement('img', { src: '/assets/img/blueSquare.png', alt: 'blue square' }),
+                React.createElement(
+                    'h3',
+                    { className: 'promptAnswer' },
+                    ' ',
+                    masterPrompt.answer
+                ),
+                React.createElement(
+                    'h3',
+                    { className: 'promptType' },
+                    ' ',
+                    masterPrompt.viewable
+                ),
+                React.createElement(
+                    'h3',
+                    { className: 'promptType' },
+                    ' ',
+                    masterPrompt.category
+                )
+            );
+        }
     });
 
     return React.createElement(
@@ -38,7 +72,7 @@ var PromptAnswers = function PromptAnswers(props) {
 
 var loadAnswers = function loadAnswers() {
     sendAjax('GET', '/getMaster', null, function (data) {
-        ReactDOM.render(React.createElement(PromptAnswers, { answers: data.answers }), document.querySelector('#answers'));
+        ReactDOM.render(React.createElement(PromptAnswers, { answers: data.docs }), document.querySelector('#answers'));
     });
 };
 

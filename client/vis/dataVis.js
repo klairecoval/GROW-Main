@@ -9,13 +9,27 @@ const PromptAnswers = function(props) {
 //    }
 //    
     const answerNodes = props.answers.map(function(masterPrompt) {
+        if(masterPrompt.category === "excited"){
         return (
             <div className='answer'>
+                <img src='/assets/img/redSquare.png' alt='red square'/>
                 <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                 <h3 className='promptType'> {masterPrompt.viewable}</h3>
                 <h3 className='promptType'> {masterPrompt.category}</h3>
             </div>
-        );
+            );
+        }
+        if(masterPrompt.category === "thankful"){
+            return(
+            <div className='answer'>
+                <img src='/assets/img/blueSquare.png' alt='blue square'/>
+                <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
+                <h3 className='promptType'> {masterPrompt.viewable}</h3>
+                <h3 className='promptType'> {masterPrompt.category}</h3>
+            </div>
+            );
+        }
+
     });
     
     return(
@@ -30,7 +44,7 @@ const PromptAnswers = function(props) {
 const loadAnswers = () => {
     sendAjax('GET', '/getMaster', null, (data) => {
         ReactDOM.render(
-            <PromptAnswers answers={data.answers} />, document.querySelector('#answers')
+            <PromptAnswers answers={data.docs} />, document.querySelector('#answers')
         );
     });
 };
