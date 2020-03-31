@@ -1,17 +1,17 @@
 const handleThankfulDrop = (e) => {
     e.preventDefault();
 
-    const thankfulSubmitModal = document.getElementById("thankfulSubmitModal");
-    const submitThankfulBtn = document.getElementById("submitThankfulBtn");
-    const dismissThankfulModal = document.getElementById("dismissThankfulSubmit");
+    const thankfulMasterSubmitModal = document.getElementById("masterThankfulSubmitModal");
+    const submitMasterThankfulBtn = document.getElementById("submitMasterThankfulBtn");
+    const dismissMasterThankfulModal = document.getElementById("dismissMasterThankfulSubmit");
 
-    dismissThankfulModal.onclick = () => {
+    dismissMasterThankfulModal.onclick = () => {
         thankfulSubmitModal.style.display = "none";
     };
     
     window.onclick = (event) => {
       if (event.target === thankfulSubmitModal) {
-        thankfulSubmitModal.style.display = "none";
+        masterThankfulSubmitModal.style.display = "none";
       }
     };
 
@@ -22,8 +22,8 @@ const handleThankfulDrop = (e) => {
         return false;
     }
 
-    submitThankfulBtn.onclick = () => {
-        sendAjax('POST', $('#thankfulForm').attr('action'), $('#thankfulForm').serialize(), redirect);
+    submitMasterThankfulBtn.onclick = () => {
+        sendAjax('POST', $('#masterThankfulForm').attr('action'), $('#masterThankfulForm').serialize(), redirect);
     };
 
     return false;
@@ -35,21 +35,21 @@ const handleThankfulCount = (e) => {
     );
 };
 
-const ThankfulTitle = (props) => {
+const masterThankfulTitle = (props) => {
     return (
-        <h2 id="thankfulTitle">I am thankful for...</h2>
+        <h2 id="masterThankfulTitle">I am thankful for...</h2>
     );
 };
 
-const ThankfulForm = (props) => {
+const MasterThankfulForm = (props) => {
     return (
         <div>
-            <form id='thankfulForm'
+            <form id='masterThankfulForm'
             onSubmit={handleMasterDrop}
-            name='thankfulForm'
+            name='masterThankfulForm'
             action='/thankfulThankYou'
             method='POST'
-            className='thankfulForm' >
+            className='masterThankfulForm' >
                 <input id='thankfulText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleThankfulCount} />
                 <input className='logThoughtSubmit' id="logThankfulSubmit" type='submit' value='Log' />
             </form>
@@ -61,7 +61,7 @@ const ThankfulForm = (props) => {
     );
 };
 
-const ThankfulSubmitModal = () => {
+const MasterThankfulSubmitModal = () => {
     return (
         <div className="thankfulSubmitModal" id="thankfulSubmitModal">
             <div className="thankfulSubmitContent">
@@ -75,7 +75,7 @@ const ThankfulSubmitModal = () => {
     );
 };
 
-const createThankfulView = function() {
+const createMasterThankfulView = function() {
     ReactDOM.render(
         <ThankfulTitle />, document.querySelector('#promptTitle')
     );
@@ -92,7 +92,7 @@ const createThankfulView = function() {
     };
 };
 
-const handleThankfulClick = (thankfulID) => {
+const handleMasterThankfulClick = (thankfulID) => {
 	const thankfulType = document.querySelector('#thankfulWrite');
 	
 	thankfulType.addEventListener('click', e => {
