@@ -48,7 +48,7 @@ const InspiredForm = (props) => {
             <form id='inspiredForm'
             onSubmit={handleInspiredDrop}
             name='inspiredForm'
-            action='/inspiredThankYou'
+            action='/logInspired'
             method='POST'
             className='inspiredForm' >
                 <input id='inspiredText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleInspiredCount}/>

@@ -48,7 +48,7 @@ const HappiestForm = (props) => {
             <form id='happiestForm'
             onSubmit={handleHappiestDrop}
             name='happiestForm'
-            action='/happiestThankYou'
+            action='/logHappiest'
             method='POST'
             className='happiestForm' >
                 <input id='happiestText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleHappiestCount}/>

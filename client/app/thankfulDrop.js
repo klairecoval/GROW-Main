@@ -47,7 +47,7 @@ const ThankfulForm = (props) => {
             <form id='thankfulForm'
             onSubmit={handleThankfulDrop}
             name='thankfulForm'
-            action='/thankfulThankYou'
+            action='/logThankful'
             method='POST'
             className='thankfulForm' >
                 <input id='thankfulText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleThankfulCount} />

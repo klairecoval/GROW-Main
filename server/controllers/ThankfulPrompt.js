@@ -16,7 +16,7 @@ const logThankful = (req, res) => {
   const thankfulPromise = newThankful.save();
 
   thankfulPromise.then(() => {
-    res.json({ redirect: '/thankYouPage' });
+    res.json({ redirect: '/loggedSavedPage' });
   });
 
   thankfulPromise.catch((err) => {

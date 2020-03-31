@@ -4,7 +4,8 @@ const mid = require('./middleware');
 // setup routes from controllers folder
 const router = (app) => {
   app.get('/promptPage', mid.requiresLogin, controllers.Account.promptPage);
-  app.get('/thankYouPage', mid.requiresLogin, controllers.Account.thankYouPage);
+  app.get('/explorePage', mid.requiresLogin, controllers.Account.explorePage);
+  app.get('/loggedSavedPage', mid.requiresLogin, controllers.Account.loggedSavedPage);
 
   app.get('/getExcited', mid.requiresLogin, controllers.Excited.getExcited);
   app.get('/getHappiest', mid.requiresLogin, controllers.Happiest.getHappiest);
@@ -20,13 +21,12 @@ const router = (app) => {
   app.post('/login', mid.requiresSecure, mid.requiresLogout, controllers.Account.login);
   app.post('/promptPage', mid.requiresLogin, controllers.Account.promptPage);
 
-  // app.post('/thankYouPage', mid.requiresLogin, controllers.Account.thankYouPage);
-  app.post('/excitedThankYou', mid.requiresLogin, controllers.Excited.logExcited);
-  app.post('/happiestThankYou', mid.requiresLogin, controllers.Happiest.logHappiest);
-  app.post('/inspiredThankYou', mid.requiresLogin, controllers.Inspired.logInspired);
-  app.post('/loveThankYou', mid.requiresLogin, controllers.Love.logLove);
-  app.post('/proudThankYou', mid.requiresLogin, controllers.Proud.logProud);
-  app.post('/thankfulThankYou', mid.requiresLogin, controllers.Thankful.logThankful);
+  app.post('/logExcited', mid.requiresLogin, controllers.Excited.logExcited);
+  app.post('/logHappiest', mid.requiresLogin, controllers.Happiest.logHappiest);
+  app.post('/logInspired', mid.requiresLogin, controllers.Inspired.logInspired);
+  app.post('/logLove', mid.requiresLogin, controllers.Love.logLove);
+  app.post('/logProud', mid.requiresLogin, controllers.Proud.logProud);
+  app.post('/logThankful', mid.requiresLogin, controllers.Thankful.logThankful);
 
   app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
 };

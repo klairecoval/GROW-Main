@@ -16,7 +16,7 @@ const logProud = (req, res) => {
   const proudPromise = newProud.save();
 
   proudPromise.then(() => {
-    res.json({ redirect: '/thankYouPage' });
+    res.json({ redirect: '/loggedSavedPage' });
   });
 
   proudPromise.catch((err) => {

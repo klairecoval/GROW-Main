@@ -16,7 +16,7 @@ const logHappiest = (req, res) => {
   const happiestPromise = newHappiest.save();
 
   happiestPromise.then(() => {
-    res.json({ redirect: '/thankYouPage' });
+    res.json({ redirect: '/loggedSavedPage' });
   });
 
   happiestPromise.catch((err) => {

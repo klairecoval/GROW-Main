@@ -52,7 +52,7 @@ var ExcitedForm = function ExcitedForm(props) {
             { id: "excitedForm",
                 onSubmit: handleExcitedDrop,
                 name: "excitedForm",
-                action: "/excitedThankYou",
+                action: "/logExcited",
                 method: "POST",
                 className: "excitedForm" },
             React.createElement("input", { id: "excitedText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleExcitedCount }),
@@ -184,7 +184,7 @@ var HappiestForm = function HappiestForm(props) {
             { id: "happiestForm",
                 onSubmit: handleHappiestDrop,
                 name: "happiestForm",
-                action: "/happiestThankYou",
+                action: "/logHappiest",
                 method: "POST",
                 className: "happiestForm" },
             React.createElement("input", { id: "happiestText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleHappiestCount }),
@@ -316,7 +316,7 @@ var InspiredForm = function InspiredForm(props) {
             { id: "inspiredForm",
                 onSubmit: handleInspiredDrop,
                 name: "inspiredForm",
-                action: "/inspiredThankYou",
+                action: "/logInspired",
                 method: "POST",
                 className: "inspiredForm" },
             React.createElement("input", { id: "inspiredText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleInspiredCount }),
@@ -394,6 +394,7 @@ var handleInspiredClick = function handleInspiredClick() {
     });
 };
 "use strict";
+"use strict";
 
 var handleLoveDrop = function handleLoveDrop(e) {
     e.preventDefault();
@@ -447,7 +448,7 @@ var LoveForm = function LoveForm(props) {
             { id: "loveForm",
                 onSubmit: handleLoveDrop,
                 name: "loveForm",
-                action: "/loveThankYou",
+                action: "/logLove",
                 method: "POST",
                 className: "loveForm" },
             React.createElement("input", { id: "loveText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleLoveCount }),
@@ -763,7 +764,7 @@ var ProudForm = function ProudForm(props) {
             { id: "proudForm",
                 onSubmit: handleProudDrop,
                 name: "proudForm",
-                action: "/proudThankYou",
+                action: "/logProud",
                 method: "POST",
                 className: "proudForm" },
             React.createElement("input", { id: "proudText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleProudCount }),
@@ -894,7 +895,7 @@ var ThankfulForm = function ThankfulForm(props) {
             { id: "thankfulForm",
                 onSubmit: handleThankfulDrop,
                 name: "thankfulForm",
-                action: "/thankfulThankYou",
+                action: "/logThankful",
                 method: "POST",
                 className: "thankfulForm" },
             React.createElement("input", { id: "thankfulText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleThankfulCount }),

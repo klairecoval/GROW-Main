@@ -46,7 +46,7 @@ const ExcitedForm = (props) => {
             <form id='excitedForm'
             onSubmit={handleExcitedDrop}
             name='excitedForm'
-            action='/excitedThankYou'
+            action='/logExcited'
             method='POST'
             className='excitedForm' >
                 <input id='excitedText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleExcitedCount}/>

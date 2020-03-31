@@ -47,7 +47,7 @@ const LoveForm = (props) => {
             <form id='loveForm'
             onSubmit={handleLoveDrop}
             name='loveForm'
-            action='/loveThankYou'
+            action='/logLove'
             method='POST'
             className='loveForm' >
                 <input id='loveText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleLoveCount}/>

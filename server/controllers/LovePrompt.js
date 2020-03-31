@@ -16,7 +16,7 @@ const logLove = (req, res) => {
   const lovePromise = newLove.save();
 
   lovePromise.then(() => {
-    res.json({ redirect: '/thankYouPage' });
+    res.json({ redirect: '/loggedSavedPage' });
   });
 
   lovePromise.catch((err) => {

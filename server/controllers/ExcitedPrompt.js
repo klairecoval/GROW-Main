@@ -16,7 +16,7 @@ const logExcited = (req, res) => {
   const excitedPromise = newExcited.save();
 
   excitedPromise.then(() => {
-    res.json({ redirect: '/thankYouPage' });
+    res.json({ redirect: '/loggedSavedPage' });
   });
 
   excitedPromise.catch((err) => {

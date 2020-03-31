@@ -11,9 +11,12 @@ const promptPage = (req, res) => {
   res.render('promptPage');
 };
 
-// render thankyou page
-const thankYouPage = (req, res) => {
-  res.render('thankYouPage');
+const explorePage = (req, res) => {
+  res.render('explore');
+};
+
+const loggedSavedPage = (req, res) => {
+  res.render('loggedSavedThoughts');
 };
 
 // logout, delete session, redirect to login page
@@ -98,7 +101,8 @@ module.exports = {
   loginPage,
   login,
   promptPage,
-  thankYouPage,
   logout,
   signup,
+  explorePage,
+  loggedSavedPage,
 };

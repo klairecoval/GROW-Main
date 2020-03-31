@@ -16,7 +16,7 @@ const logInspired = (req, res) => {
   const inspiredPromise = newInspired.save();
 
   inspiredPromise.then(() => {
-    res.json({ redirect: '/thankYouPage' });
+    res.json({ redirect: '/loggedSavedPage' });
   });
 
   inspiredPromise.catch((err) => {

@@ -47,7 +47,7 @@ const ProudForm = (props) => {
             <form id='proudForm'
             onSubmit={handleProudDrop}
             name='proudForm'
-            action='/proudThankYou'
+            action='/logProud'
             method='POST'
             className='proudForm' >
                 <input id='proudText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleProudCount}/>
