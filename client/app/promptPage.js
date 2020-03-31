@@ -1,7 +1,7 @@
 const PromptTitle = (props) => {
     return (
         <div>
-            <a href="/logout" target="_parent" id="startBtn"><button>Back</button></a>
+            <a href="/aboutPage" target="_parent" id="startBtn"><button>Back</button></a>
             <h1 id="promptPageTitle">Select a prompt:</h1>
             <p>Which one of these speaks to you? Choose one <br/>
                 that you want to write about.</p>

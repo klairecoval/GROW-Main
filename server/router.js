@@ -6,6 +6,7 @@ const router = (app) => {
   app.get('/promptPage', mid.requiresLogin, controllers.Account.promptPage);
   app.get('/explorePage', mid.requiresLogin, controllers.Account.explorePage);
   app.get('/loggedSavedPage', mid.requiresLogin, controllers.Account.loggedSavedPage);
+  app.get('/aboutPage', mid.requiresLogin, controllers.Account.aboutPage);
 
   app.get('/getExcited', mid.requiresLogin, controllers.Excited.getExcited);
   app.get('/getHappiest', mid.requiresLogin, controllers.Happiest.getHappiest);

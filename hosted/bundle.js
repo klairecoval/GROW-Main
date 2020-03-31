@@ -533,7 +533,7 @@ var PromptTitle = function PromptTitle(props) {
         null,
         React.createElement(
             "a",
-            { href: "/logout", target: "_parent", id: "startBtn" },
+            { href: "/aboutPage", target: "_parent", id: "startBtn" },
             React.createElement(
                 "button",
                 null,

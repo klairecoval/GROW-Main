@@ -19,6 +19,10 @@ const loggedSavedPage = (req, res) => {
   res.render('loggedSavedThoughts');
 };
 
+const aboutPage = (req, res) => {
+  res.render('about');
+};
+
 // logout, delete session, redirect to login page
 const logout = (req, res) => {
   req.session.destroy();
@@ -50,7 +54,7 @@ const login = (request, response) => {
 
     req.session.account = Account.AccountModel.toAPI(account);
 
-    return res.json({ redirect: '/promptPage' });
+    return res.json({ redirect: '/explorePage' });
   });
 };
 
@@ -83,7 +87,7 @@ const signup = (request, response) => {
 
   savePromise.then(() => {
     req.session.account = Account.AccountModel.toAPI(newAccount);
-    res.json({ redirect: '/promptPage' });
+    res.json({ redirect: '/explorePage' });
   });
 
   savePromise.catch((err) => {
@@ -105,4 +109,5 @@ module.exports = {
   signup,
   explorePage,
   loggedSavedPage,
+  aboutPage,
 };
