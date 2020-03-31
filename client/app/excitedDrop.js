@@ -91,12 +91,11 @@ const createExcitedView = function() {
     };
 };
 
-const handleExcitedClick = (excitedID) => {
-    const excitedType = document.querySelector('#excitedWrite');
+const handleExcitedClick = () => {
+    const excitedType = document.querySelector('#excitedPrompt');
 	
 	excitedType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(excitedID);
         createExcitedView();
         triggerBackModal();
 	});

@@ -92,12 +92,11 @@ const createProudView = function() {
     };
 };
 
-const handleProudClick = (proudID) => {
-	const proudType = document.querySelector('#proudWrite');
+const handleProudClick = () => {
+	const proudType = document.querySelector('#proudPrompt');
 	
 	proudType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(proudID);
         createProudView();
         triggerBackModal();
 	});

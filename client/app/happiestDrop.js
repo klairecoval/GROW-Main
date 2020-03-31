@@ -93,12 +93,11 @@ const createHappiestView = function() {
     };
 };
 
-const handleHappiestClick = (happiestID) => {
-	const happiestType = document.querySelector('#happiestWrite');
+const handleHappiestClick = () => {
+	const happiestType = document.querySelector('#happiestPrompt');
 	
 	happiestType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(happiestID);
         createHappiestView();
         triggerBackModal();
 	});

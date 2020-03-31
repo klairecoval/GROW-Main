@@ -93,12 +93,11 @@ const createInspiredView = function() {
     };
 };
 
-const handleInspiredClick = (inspiredID) => {
-	const inspiredType = document.querySelector('#inspiredWrite');
+const handleInspiredClick = () => {
+	const inspiredType = document.querySelector('#inspiredPrompt');
 	
 	inspiredType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(inspiredID);
         createInspiredView();
         triggerBackModal();
 	});

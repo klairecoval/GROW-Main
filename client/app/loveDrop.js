@@ -92,12 +92,11 @@ const createLoveView = function() {
     };
 };
 
-const handleLoveClick = (loveID) => {
-	const loveType = document.querySelector('#loveWrite');
+const handleLoveClick = () => {
+	const loveType = document.querySelector('#lovePrompt');
 	
 	loveType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(loveID);
         createLoveView();
         triggerBackModal();
 	});

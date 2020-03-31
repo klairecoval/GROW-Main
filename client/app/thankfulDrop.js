@@ -92,12 +92,11 @@ const createThankfulView = function() {
     };
 };
 
-const handleThankfulClick = (thankfulID) => {
-	const thankfulType = document.querySelector('#thankfulWrite');
+const handleThankfulClick = () => {
+	const thankfulType = document.querySelector('#thankfulPrompt');
 	
 	thankfulType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(thankfulID);
         createThankfulView();
         triggerBackModal();
 	});
