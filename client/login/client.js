@@ -2,8 +2,6 @@
 const handleLogin = (e) => {
     e.preventDefault();
 
-    // $('#beerMessage').animate({height: 'hide'}, 350);
-
     if($('#user').val() == '') {
         console.log('User ID Code is empty.');
         return false;
@@ -21,10 +19,13 @@ const handleLogin = (e) => {
 const handleSignup = (e) => {
     e.preventDefault();
 
-    // $('#beerMessage').animate({height: 'hide'}, 350);
+    if($('#user').val() == '' || $('#user2').val() == '') {
+        handleError('All fields are required.');
+        return false;
+    }
 
-    if($('#user').val() == '') {
-        handleError('User ID Code required.');
+    if($('#user').val() !== $('#user2').val()) {
+        handleError('Usernames do not match.');
         return false;
     }
 
@@ -41,9 +42,8 @@ const LoginWindow = (props) => {
             action='/login'
             method='POST'
             className='mainForm'>
-            <label htmlFor='username'>User ID Code: </label>
+            <label htmlFor='username'>Username: </label>
             <input id='user' type='text' name='username' placeholder='username' />
-            <p>Enter the 4 digit code on your card.</p>
             <input className='formSubmit' type='submit' value='Sign in' />
         </form>
     );
@@ -57,8 +57,10 @@ const SignupWindow = (props) => {
             action='/signup'
             method='POST'
             className='mainForm'>
-            <label htmlFor='username'>User ID code: </label>
+            <label htmlFor='username'>New Username: </label>
             <input id='user' type='text' name='username' placeholder='username' />
+            <label htmlFor='username2'>Confirm Username: </label>
+            <input id='user2' type='text' name='username2' placeholder='retype username' />
             <input className='formSubmit' type='submit' value='Sign up' />
         </form>
     );

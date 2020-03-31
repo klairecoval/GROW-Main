@@ -4,8 +4,6 @@
 var handleLogin = function handleLogin(e) {
     e.preventDefault();
 
-    // $('#beerMessage').animate({height: 'hide'}, 350);
-
     if ($('#user').val() == '') {
         console.log('User ID Code is empty.');
         return false;
@@ -23,10 +21,13 @@ var handleLogin = function handleLogin(e) {
 var handleSignup = function handleSignup(e) {
     e.preventDefault();
 
-    // $('#beerMessage').animate({height: 'hide'}, 350);
+    if ($('#user').val() == '' || $('#user2').val() == '') {
+        handleError('All fields are required.');
+        return false;
+    }
 
-    if ($('#user').val() == '') {
-        handleError('User ID Code required.');
+    if ($('#user').val() !== $('#user2').val()) {
+        handleError('Usernames do not match.');
         return false;
     }
 
@@ -47,14 +48,9 @@ var LoginWindow = function LoginWindow(props) {
         React.createElement(
             'label',
             { htmlFor: 'username' },
-            'User ID Code: '
+            'Username: '
         ),
         React.createElement('input', { id: 'user', type: 'text', name: 'username', placeholder: 'username' }),
-        React.createElement(
-            'p',
-            null,
-            'Enter the 4 digit code on your card.'
-        ),
         React.createElement('input', { className: 'formSubmit', type: 'submit', value: 'Sign in' })
     );
 };
@@ -71,9 +67,15 @@ var SignupWindow = function SignupWindow(props) {
         React.createElement(
             'label',
             { htmlFor: 'username' },
-            'User ID code: '
+            'New Username: '
         ),
         React.createElement('input', { id: 'user', type: 'text', name: 'username', placeholder: 'username' }),
+        React.createElement(
+            'label',
+            { htmlFor: 'username2' },
+            'Confirm Username: '
+        ),
+        React.createElement('input', { id: 'user2', type: 'text', name: 'username2', placeholder: 'retype username' }),
         React.createElement('input', { className: 'formSubmit', type: 'submit', value: 'Sign up' })
     );
 };
