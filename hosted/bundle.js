@@ -136,88 +136,87 @@ var handleExcitedClick = function handleExcitedClick(excitedID) {
 };
 "use strict";
 
-var handleHappiestDrop = function handleHappiestDrop(e) {
+var handleMasterDrop = function handleMasterDrop(e) {
     e.preventDefault();
 
-    var happiestSubmitModal = document.getElementById("happiestSubmitModal");
+    var masterSubmitModal = document.getElementById("masterSubmitModal");
+    var submitMasterBtn = document.getElementById("submitMasterBtn");
+    var dismissMasterModal = document.getElementById("dismissMasterSubmit");
 
-    var submitHappiestBtn = document.getElementById("submitHappiestBtn");
-    var dismissHappiestModal = document.getElementById("dismissHappiestSubmit");
-
-    dismissHappiestModal.onclick = function () {
-        happiestSubmitModal.style.display = "none";
+    dismissMasterModal.onclick = function () {
+        masterSubmitModal.style.display = "none";
     };
 
     window.onclick = function (event) {
-        if (event.target === happiestSubmitModal) {
-            happiestSubmitModal.style.display = "none";
+        if (event.target === masterSubmitModal) {
+            masterSubmitModal.style.display = "none";
         }
     };
 
     $('#errorMessage').animate({ width: 'hide' }, 350);
-
-    if ($('#happiestText').val() == '') {
+    if ($('#masterText').val() == '') {
         handleError('Input required');
         return false;
     }
 
-    submitHappiestBtn.onclick = function () {
-        sendAjax('POST', $('#happiestForm').attr('action'), $('#happiestForm').serialize(), redirect);
+    submitMasterBtn.onclick = function () {
+        sendAjax('POST', $('#masterForm').attr('action'), $('#masterForm').serialize(), redirect);
     };
 
     return false;
 };
 
-var handleHappiestCount = function handleHappiestCount(e) {
-    ReactDOM.render(React.createElement(HappiestForm, { happiestCount: e.target.value.length }), document.querySelector('#logThought'));
+var handleMasterCount = function handleMasterCount(e) {
+    ReactDOM.render(React.createElement(MasterForm, { masterCount: e.target.value.length }), document.querySelector('#logThought'));
 };
 
-var HappiestTitle = function HappiestTitle(props) {
+var MasterTitle = function MasterTitle(props) {
     return React.createElement(
         "h2",
-        { id: "happiestTitle" },
-        "I feel happiest when..."
+        { id: "masterTitle" },
+        "I am happiest when..."
     );
 };
 
-var HappiestForm = function HappiestForm(props) {
+var MasterForm = function MasterForm(props) {
     return React.createElement(
         "div",
         null,
         React.createElement(
             "form",
-            { id: "happiestForm",
-                onSubmit: handleHappiestDrop,
-                name: "happiestForm",
-                action: "/happiestThankYou",
+            { id: "masterForm",
+                onSubmit: handleMasterDrop,
+                name: "masterForm",
+                action: "/masterThankYou",
                 method: "POST",
-                className: "happiestForm" },
-            React.createElement("input", { id: "happiestText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleHappiestCount }),
-            React.createElement("input", { className: "logThoughtSubmit", id: "logHappiestSubmit", type: "submit", value: "Log" })
+                className: "masterForm" },
+            React.createElement("input", { id: "masterText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleMasterCount }),
+            React.createElement("input", { id: "category", type: "text", name: "category", value: "happiest", placeholder: "happiest", onChange: handleMasterCount }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logMasterSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
             "p",
-            { id: "happiestCount" },
-            props.happiestCount,
+            { id: "masterCount" },
+            props.masterCount,
             "/60"
         ),
         React.createElement(
             "button",
-            { id: "happiestBackBtn" },
+            { id: "masterBackBtn" },
             "Go back"
         ),
         React.createElement(BackModal, null),
-        React.createElement(HappiestSubmitModal, null)
+        React.createElement(MasterSubmitModal, null)
     );
 };
 
-var HappiestSubmitModal = function HappiestSubmitModal() {
+var MasterSubmitModal = function MasterSubmitModal() {
     return React.createElement(
         "div",
-        { className: "happiestSubmitModal", id: "happiestSubmitModal" },
+        { className: "masterSubmitModal", id: "masterSubmitModal" },
         React.createElement(
             "div",
-            { className: "happiestSubmitContent" },
+            { className: "masterSubmitContent" },
             React.createElement(
                 "h1",
                 null,
@@ -232,125 +231,124 @@ var HappiestSubmitModal = function HappiestSubmitModal() {
             ),
             React.createElement(
                 "button",
-                { id: "dismissHappiestSubmit" },
+                { id: "dismissMasterSubmit" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitHappiestBtn" },
+                { id: "submitMasterBtn" },
                 "Finish"
             )
         )
     );
 };
 
-var createHappiestView = function createHappiestView() {
-    ReactDOM.render(React.createElement(HappiestTitle, null), document.querySelector('#promptTitle'));
+var createMasterView = function createMasterView() {
+    ReactDOM.render(React.createElement(MasterTitle, null), document.querySelector('#promptTitle'));
 
-    ReactDOM.render(React.createElement(HappiestForm, null), document.querySelector('#logThought'));
+    ReactDOM.render(React.createElement(MasterForm, null), document.querySelector('#logThought'));
 
-    var logHappiestSubmit = document.getElementById("logHappiestSubmit");
-    var dismissHappiestModal = document.getElementById("dismissHappiestSubmit");
+    var logMasterSubmit = document.getElementById("logMasterSubmit");
+    var dismissMasterModal = document.getElementById("dismissMasterSubmit");
 
-    logHappiestSubmit.onclick = function () {
-        happiestSubmitModal.style.display = "block";
+    logMasterSubmit.onclick = function () {
+        masterSubmitModal.style.display = "block";
     };
 };
 
-var handleHappiestClick = function handleHappiestClick(happiestID) {
-    var happiestType = document.querySelector('#happiestWrite');
+var handleHappiestClick = function handleHappiestClick(masterID) {
+    var masterType = document.querySelector('#happiestWrite');
 
-    happiestType.addEventListener('click', function (e) {
+    masterType.addEventListener('click', function (e) {
         e.preventDefault();
-        clearTimeout(happiestID);
-        createHappiestView();
+        clearTimeout(masterID);
+        createMasterView();
         triggerBackModal();
     });
 };
 "use strict";
 
-var handleInspiredDrop = function handleInspiredDrop(e) {
+var handleMasterDrop = function handleMasterDrop(e) {
     e.preventDefault();
 
-    var inspiredSubmitModal = document.getElementById("inspiredSubmitModal");
+    var masterSubmitModal = document.getElementById("masterSubmitModal");
+    var submitMasterBtn = document.getElementById("submitMasterBtn");
+    var dismissMasterModal = document.getElementById("dismissMasterSubmit");
 
-    var submitInspiredBtn = document.getElementById("submitInspiredBtn");
-    var dismissInspiredModal = document.getElementById("dismissInspiredSubmit");
-
-    dismissInspiredModal.onclick = function () {
-        inspiredSubmitModal.style.display = "none";
+    dismissMasterModal.onclick = function () {
+        masterSubmitModal.style.display = "none";
     };
 
     window.onclick = function (event) {
-        if (event.target === inspiredSubmitModal) {
-            inspiredSubmitModal.style.display = "none";
+        if (event.target === masterSubmitModal) {
+            masterSubmitModal.style.display = "none";
         }
     };
 
     $('#errorMessage').animate({ width: 'hide' }, 350);
-
-    if ($('#inspiredText').val() == '') {
+    if ($('#masterText').val() == '') {
         handleError('Input required');
         return false;
     }
 
-    submitInspiredBtn.onclick = function () {
-        sendAjax('POST', $('#inspiredForm').attr('action'), $('#inspiredForm').serialize(), redirect);
+    submitMasterBtn.onclick = function () {
+        sendAjax('POST', $('#masterForm').attr('action'), $('#masterForm').serialize(), redirect);
     };
 
     return false;
 };
 
-var handleInspiredCount = function handleInspiredCount(e) {
-    ReactDOM.render(React.createElement(InspiredForm, { inspiredCount: e.target.value.length }), document.querySelector('#logThought'));
+var handleMasterCount = function handleMasterCount(e) {
+    ReactDOM.render(React.createElement(MasterForm, { masterCount: e.target.value.length }), document.querySelector('#logThought'));
 };
 
-var InspiredTitle = function InspiredTitle(props) {
+var MasterTitle = function MasterTitle(props) {
     return React.createElement(
         "h2",
-        { id: "inspiredTitle" },
+        { id: "masterTitle" },
         "I am inspired by..."
     );
 };
 
-var InspiredForm = function InspiredForm(props) {
+var MasterForm = function MasterForm(props) {
     return React.createElement(
         "div",
         null,
         React.createElement(
             "form",
-            { id: "inspiredForm",
-                onSubmit: handleInspiredDrop,
-                name: "inspiredForm",
-                action: "/inspiredThankYou",
+            { id: "masterForm",
+                onSubmit: handleMasterDrop,
+                name: "masterForm",
+                action: "/masterThankYou",
                 method: "POST",
-                className: "inspiredForm" },
-            React.createElement("input", { id: "inspiredText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleInspiredCount }),
-            React.createElement("input", { className: "logThoughtSubmit", id: "logInspiredSubmit", type: "submit", value: "Log" })
+                className: "masterForm" },
+            React.createElement("input", { id: "masterText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleMasterCount }),
+            React.createElement("input", { id: "category", type: "text", name: "category", value: "inspired", placeholder: "inspired", onChange: handleMasterCount }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logMasterSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
             "p",
-            { id: "inspiredCount" },
-            props.inspiredCount,
+            { id: "masterCount" },
+            props.masterCount,
             "/60"
         ),
         React.createElement(
             "button",
-            { id: "inspiredBackBtn" },
+            { id: "masterBackBtn" },
             "Go back"
         ),
         React.createElement(BackModal, null),
-        React.createElement(InspiredSubmitModal, null)
+        React.createElement(MasterSubmitModal, null)
     );
 };
 
-var InspiredSubmitModal = function InspiredSubmitModal() {
+var MasterSubmitModal = function MasterSubmitModal() {
     return React.createElement(
         "div",
-        { className: "inspiredSubmitModal", id: "inspiredSubmitModal" },
+        { className: "masterSubmitModal", id: "masterSubmitModal" },
         React.createElement(
             "div",
-            { className: "inspiredSubmitContent" },
+            { className: "masterSubmitContent" },
             React.createElement(
                 "h1",
                 null,
@@ -365,124 +363,124 @@ var InspiredSubmitModal = function InspiredSubmitModal() {
             ),
             React.createElement(
                 "button",
-                { id: "dismissInspiredSubmit" },
+                { id: "dismissMasterSubmit" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitInspiredBtn" },
+                { id: "submitMasterBtn" },
                 "Finish"
             )
         )
     );
 };
 
-var createInspiredView = function createInspiredView() {
-    ReactDOM.render(React.createElement(InspiredTitle, null), document.querySelector('#promptTitle'));
+var createMasterView = function createMasterView() {
+    ReactDOM.render(React.createElement(MasterTitle, null), document.querySelector('#promptTitle'));
 
-    ReactDOM.render(React.createElement(InspiredForm, null), document.querySelector('#logThought'));
+    ReactDOM.render(React.createElement(MasterForm, null), document.querySelector('#logThought'));
 
-    var logInspiredSubmit = document.getElementById("logInspiredSubmit");
-    var dismissInspiredModal = document.getElementById("dismissInspiredSubmit");
+    var logMasterSubmit = document.getElementById("logMasterSubmit");
+    var dismissMasterModal = document.getElementById("dismissMasterSubmit");
 
-    logInspiredSubmit.onclick = function () {
-        inspiredSubmitModal.style.display = "block";
+    logMasterSubmit.onclick = function () {
+        masterSubmitModal.style.display = "block";
     };
 };
 
-var handleInspiredClick = function handleInspiredClick(inspiredID) {
-    var inspiredType = document.querySelector('#inspiredWrite');
+var handleInspiredClick = function handleInspiredClick(masterID) {
+    var masterType = document.querySelector('#inspiredWrite');
 
-    inspiredType.addEventListener('click', function (e) {
+    masterType.addEventListener('click', function (e) {
         e.preventDefault();
-        clearTimeout(inspiredID);
-        createInspiredView();
+        clearTimeout(masterID);
+        createMasterView();
         triggerBackModal();
     });
 };
 "use strict";
 
-var handleLoveDrop = function handleLoveDrop(e) {
+var handleMasterDrop = function handleMasterDrop(e) {
     e.preventDefault();
 
-    var loveSubmitModal = document.getElementById("loveSubmitModal");
-    var submitLoveBtn = document.getElementById("submitLoveBtn");
-    var dismissLoveModal = document.getElementById("dismissLoveSubmit");
+    var masterSubmitModal = document.getElementById("masterSubmitModal");
+    var submitMasterBtn = document.getElementById("submitMasterBtn");
+    var dismissMasterModal = document.getElementById("dismissMasterSubmit");
 
-    dismissLoveModal.onclick = function () {
-        loveSubmitModal.style.display = "none";
+    dismissMasterModal.onclick = function () {
+        masterSubmitModal.style.display = "none";
     };
 
     window.onclick = function (event) {
-        if (event.target === loveSubmitModal) {
-            loveSubmitModal.style.display = "none";
+        if (event.target === masterSubmitModal) {
+            masterSubmitModal.style.display = "none";
         }
     };
 
     $('#errorMessage').animate({ width: 'hide' }, 350);
-
-    if ($('#loveText').val() == '') {
+    if ($('#masterText').val() == '') {
         handleError('Input required');
         return false;
     }
 
-    submitLoveBtn.onclick = function () {
-        sendAjax('POST', $('#loveForm').attr('action'), $('#loveForm').serialize(), redirect);
+    submitMasterBtn.onclick = function () {
+        sendAjax('POST', $('#masterForm').attr('action'), $('#masterForm').serialize(), redirect);
     };
 
     return false;
 };
 
-var handleLoveCount = function handleLoveCount(e) {
-    ReactDOM.render(React.createElement(LoveForm, { loveCount: e.target.value.length }), document.querySelector('#logThought'));
+var handleMasterCount = function handleMasterCount(e) {
+    ReactDOM.render(React.createElement(MasterForm, { masterCount: e.target.value.length }), document.querySelector('#logThought'));
 };
 
-var LoveTitle = function LoveTitle(props) {
+var MasterTitle = function MasterTitle(props) {
     return React.createElement(
         "h2",
-        { id: "loveTitle" },
+        { id: "masterTitle" },
         "I love..."
     );
 };
 
-var LoveForm = function LoveForm(props) {
+var MasterForm = function MasterForm(props) {
     return React.createElement(
         "div",
         null,
         React.createElement(
             "form",
-            { id: "loveForm",
-                onSubmit: handleLoveDrop,
-                name: "loveForm",
-                action: "/loveThankYou",
+            { id: "masterForm",
+                onSubmit: handleMasterDrop,
+                name: "masterForm",
+                action: "/masterThankYou",
                 method: "POST",
-                className: "loveForm" },
-            React.createElement("input", { id: "loveText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleLoveCount }),
-            React.createElement("input", { className: "logThoughtSubmit", id: "logLoveSubmit", type: "submit", value: "Log" })
+                className: "masterForm" },
+            React.createElement("input", { id: "masterText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleMasterCount }),
+            React.createElement("input", { id: "category", type: "text", name: "category", value: "love", placeholder: "love", onChange: handleMasterCount }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logMasterSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
             "p",
-            { id: "loveCount" },
-            props.loveCount,
+            { id: "masterCount" },
+            props.masterCount,
             "/60"
         ),
         React.createElement(
             "button",
-            { id: "loveBackBtn" },
+            { id: "masterBackBtn" },
             "Go back"
         ),
         React.createElement(BackModal, null),
-        React.createElement(LoveSubmitModal, null)
+        React.createElement(MasterSubmitModal, null)
     );
 };
 
-var LoveSubmitModal = function LoveSubmitModal() {
+var MasterSubmitModal = function MasterSubmitModal() {
     return React.createElement(
         "div",
-        { className: "loveSubmitModal", id: "loveSubmitModal" },
+        { className: "masterSubmitModal", id: "masterSubmitModal" },
         React.createElement(
             "div",
-            { className: "loveSubmitContent" },
+            { className: "masterSubmitContent" },
             React.createElement(
                 "h1",
                 null,
@@ -497,38 +495,38 @@ var LoveSubmitModal = function LoveSubmitModal() {
             ),
             React.createElement(
                 "button",
-                { id: "dismissLoveSubmit" },
+                { id: "dismissMasterSubmit" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitLoveBtn" },
+                { id: "submitMasterBtn" },
                 "Finish"
             )
         )
     );
 };
 
-var createLoveView = function createLoveView() {
-    ReactDOM.render(React.createElement(LoveTitle, null), document.querySelector('#promptTitle'));
+var createMasterView = function createMasterView() {
+    ReactDOM.render(React.createElement(MasterTitle, null), document.querySelector('#promptTitle'));
 
-    ReactDOM.render(React.createElement(LoveForm, null), document.querySelector('#logThought'));
+    ReactDOM.render(React.createElement(MasterForm, null), document.querySelector('#logThought'));
 
-    var logLoveSubmit = document.getElementById("logLoveSubmit");
-    var dismissLoveModal = document.getElementById("dismissLoveSubmit");
+    var logMasterSubmit = document.getElementById("logMasterSubmit");
+    var dismissMasterModal = document.getElementById("dismissMasterSubmit");
 
-    logLoveSubmit.onclick = function () {
-        loveSubmitModal.style.display = "block";
+    logMasterSubmit.onclick = function () {
+        masterSubmitModal.style.display = "block";
     };
 };
 
-var handleLoveClick = function handleLoveClick(loveID) {
-    var loveType = document.querySelector('#loveWrite');
+var handleLoveClick = function handleLoveClick(masterID) {
+    var masterType = document.querySelector('#loveWrite');
 
-    loveType.addEventListener('click', function (e) {
+    masterType.addEventListener('click', function (e) {
         e.preventDefault();
-        clearTimeout(loveID);
-        createLoveView();
+        clearTimeout(masterID);
+        createMasterView();
         triggerBackModal();
     });
 };
@@ -704,7 +702,7 @@ var MasterTitle = function MasterTitle(props) {
     return React.createElement(
         "h2",
         { id: "masterTitle" },
-        "I am excited for..."
+        "I am thankful for..."
     );
 };
 
@@ -1211,8 +1209,8 @@ var setup = function setup() {
 
     // handle button prompt clicks
     if (document.getElementById('inspiredPrompt') && document.getElementById('happiestPrompt') && document.getElementById('lovePrompt') && document.getElementById('proudPrompt') && document.getElementById('thankfulPrompt') && document.getElementById('masterPrompt')) {
-        handleHappiestClick(id);
         handleInspiredClick(id);
+        handleHappiestClick(id);
         handleLoveClick(id);
         handleProudClick(id);
         handleThankfulClick(id);
@@ -1228,87 +1226,87 @@ $(document).ready(function () {
 });
 "use strict";
 
-var handleProudDrop = function handleProudDrop(e) {
+var handleMasterDrop = function handleMasterDrop(e) {
     e.preventDefault();
 
-    var proudSubmitModal = document.getElementById("proudSubmitModal");
-    var submitProudBtn = document.getElementById("submitProudBtn");
-    var dismissProudModal = document.getElementById("dismissProudSubmit");
+    var masterSubmitModal = document.getElementById("masterSubmitModal");
+    var submitMasterBtn = document.getElementById("submitMasterBtn");
+    var dismissMasterModal = document.getElementById("dismissMasterSubmit");
 
-    dismissProudModal.onclick = function () {
-        proudSubmitModal.style.display = "none";
+    dismissMasterModal.onclick = function () {
+        masterSubmitModal.style.display = "none";
     };
 
     window.onclick = function (event) {
-        if (event.target === proudSubmitModal) {
-            proudSubmitModal.style.display = "none";
+        if (event.target === masterSubmitModal) {
+            masterSubmitModal.style.display = "none";
         }
     };
 
     $('#errorMessage').animate({ width: 'hide' }, 350);
-
-    if ($('#proudText').val() == '') {
+    if ($('#masterText').val() == '') {
         handleError('Input required');
         return false;
     }
 
-    submitProudBtn.onclick = function () {
-        sendAjax('POST', $('#proudForm').attr('action'), $('#proudForm').serialize(), redirect);
+    submitMasterBtn.onclick = function () {
+        sendAjax('POST', $('#masterForm').attr('action'), $('#masterForm').serialize(), redirect);
     };
 
     return false;
 };
 
-var handleProudCount = function handleProudCount(e) {
-    ReactDOM.render(React.createElement(ProudForm, { proudCount: e.target.value.length }), document.querySelector('#logThought'));
+var handleMasterCount = function handleMasterCount(e) {
+    ReactDOM.render(React.createElement(MasterForm, { masterCount: e.target.value.length }), document.querySelector('#logThought'));
 };
 
-var ProudTitle = function ProudTitle(props) {
+var MasterTitle = function MasterTitle(props) {
     return React.createElement(
         "h2",
-        { id: "proudTitle" },
-        "I am proud of..."
+        { id: "masterTitle" },
+        "I proud..."
     );
 };
 
-var ProudForm = function ProudForm(props) {
+var MasterForm = function MasterForm(props) {
     return React.createElement(
         "div",
         null,
         React.createElement(
             "form",
-            { id: "proudForm",
-                onSubmit: handleProudDrop,
-                name: "proudForm",
-                action: "/proudThankYou",
+            { id: "masterForm",
+                onSubmit: handleMasterDrop,
+                name: "masterForm",
+                action: "/masterThankYou",
                 method: "POST",
-                className: "proudForm" },
-            React.createElement("input", { id: "proudText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleProudCount }),
-            React.createElement("input", { className: "logThoughtSubmit", id: "logProudSubmit", type: "submit", value: "Log" })
+                className: "masterForm" },
+            React.createElement("input", { id: "masterText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleMasterCount }),
+            React.createElement("input", { id: "category", type: "text", name: "category", value: "proud", placeholder: "proud", onChange: handleMasterCount }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logMasterSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
             "p",
-            { id: "proudCount" },
-            props.proudCount,
+            { id: "masterCount" },
+            props.masterCount,
             "/60"
         ),
         React.createElement(
             "button",
-            { id: "proudBackBtn" },
+            { id: "masterBackBtn" },
             "Go back"
         ),
         React.createElement(BackModal, null),
-        React.createElement(ProudSubmitModal, null)
+        React.createElement(MasterSubmitModal, null)
     );
 };
 
-var ProudSubmitModal = function ProudSubmitModal() {
+var MasterSubmitModal = function MasterSubmitModal() {
     return React.createElement(
         "div",
-        { className: "proudSubmitModal", id: "proudSubmitModal" },
+        { className: "masterSubmitModal", id: "masterSubmitModal" },
         React.createElement(
             "div",
-            { className: "proudSubmitContent" },
+            { className: "masterSubmitContent" },
             React.createElement(
                 "h1",
                 null,
@@ -1323,38 +1321,38 @@ var ProudSubmitModal = function ProudSubmitModal() {
             ),
             React.createElement(
                 "button",
-                { id: "dismissProudSubmit" },
+                { id: "dismissMasterSubmit" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitProudBtn" },
+                { id: "submitMasterBtn" },
                 "Finish"
             )
         )
     );
 };
 
-var createProudView = function createProudView() {
-    ReactDOM.render(React.createElement(ProudTitle, null), document.querySelector('#promptTitle'));
+var createMasterView = function createMasterView() {
+    ReactDOM.render(React.createElement(MasterTitle, null), document.querySelector('#promptTitle'));
 
-    ReactDOM.render(React.createElement(ProudForm, null), document.querySelector('#logThought'));
+    ReactDOM.render(React.createElement(MasterForm, null), document.querySelector('#logThought'));
 
-    var logProudSubmit = document.getElementById("logProudSubmit");
-    var dismissProudModal = document.getElementById("dismissProudSubmit");
+    var logMasterSubmit = document.getElementById("logMasterSubmit");
+    var dismissMasterModal = document.getElementById("dismissMasterSubmit");
 
-    logProudSubmit.onclick = function () {
-        proudSubmitModal.style.display = "block";
+    logMasterSubmit.onclick = function () {
+        masterSubmitModal.style.display = "block";
     };
 };
 
-var handleProudClick = function handleProudClick(proudID) {
-    var proudType = document.querySelector('#proudWrite');
+var handleProudClick = function handleProudClick(masterID) {
+    var masterType = document.querySelector('#proudWrite');
 
-    proudType.addEventListener('click', function (e) {
+    masterType.addEventListener('click', function (e) {
         e.preventDefault();
-        clearTimeout(proudID);
-        createProudView();
+        clearTimeout(masterID);
+        createMasterView();
         triggerBackModal();
     });
 };
@@ -1398,7 +1396,7 @@ var MasterTitle = function MasterTitle(props) {
     return React.createElement(
         "h2",
         { id: "masterTitle" },
-        "I am excited for..."
+        "I am thankful for..."
     );
 };
 
@@ -1480,8 +1478,8 @@ var createMasterView = function createMasterView() {
     };
 };
 
-var handleMasterClick = function handleMasterClick(masterID) {
-    var masterType = document.querySelector('#masterWrite');
+var handleThankfulClick = function handleThankfulClick(masterID) {
+    var masterType = document.querySelector('#thankfulWrite');
 
     masterType.addEventListener('click', function (e) {
         e.preventDefault();

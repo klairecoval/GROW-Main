@@ -36,7 +36,7 @@ const handleMasterCount = (e) => {
 
 const MasterTitle = (props) => {
     return (
-        <h2 id="masterTitle">I am excited for...</h2>
+        <h2 id="masterTitle">I am thankful for...</h2>
     );
 };
 

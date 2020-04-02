@@ -14,13 +14,48 @@ const PromptAnswers = function(props) {
             <div className='answer'>
                 <img src='/assets/img/redSquare.png' alt='red square'/>
                 <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
-                <h3 className='promptType'> {masterPrompt.viewable}</h3>
                 <h3 className='promptType'> {masterPrompt.category}</h3>
             </div>
             );
         }
         if(masterPrompt.category === "thankful"){
             return(
+            <div className='answer'>
+                <img src='/assets/img/blueSquare.jpg' alt='blue square'/>
+                <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
+                <h3 className='promptType'> {masterPrompt.category}</h3>
+            </div>
+            );
+        }
+        if(masterPrompt.category === "inspired"){
+        return (
+            <div className='answer'>
+                <img src='/assets/img/redSquare.png' alt='red square'/>
+                <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
+                <h3 className='promptType'> {masterPrompt.category}</h3>
+            </div>
+            );
+        }
+        if(masterPrompt.category === "love"){
+        return (
+            <div className='answer'>
+                <img src='/assets/img/blueSquare.jpg' alt='blue square'/>
+                <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
+                <h3 className='promptType'> {masterPrompt.category}</h3>
+            </div>
+            );
+        }
+        if(masterPrompt.category === "happiest"){
+        return (
+            <div className='answer'>
+                <img src='/assets/img/redSquare.png' alt='red square'/>
+                <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
+                <h3 className='promptType'> {masterPrompt.category}</h3>
+            </div>
+            );
+        }
+        if(masterPrompt.category === "proud"){
+        return (
             <div className='answer'>
                 <img src='/assets/img/blueSquare.jpg' alt='blue square'/>
                 <h3 className='promptAnswer'> {masterPrompt.answer}</h3>

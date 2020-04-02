@@ -8,8 +8,8 @@
 }
 
 .backModal,
-.loveModal, .proudModal, .happiestModal, .masterThankfulModal, .inspiredModal, .masterModal,
-.happiestSubmitModal, .inspiredSubmitModal, .loveSubmitModal, .proudSubmitModal, .masterThankfulSubmitModal, .masterSubmitModal {
+.loveModal, .proudModal, .happiestModal, .thankfulModal, .inspiredModal, .masterModal,
+.happiestSubmitModal, .inspiredSubmitModal, .loveSubmitModal, .proudSubmitModal, .thankfulSubmitModal, .masterSubmitModal {
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -25,8 +25,8 @@
   
 /* Modal Content */
 .backModalContent,
-.loveModalContent, .proudModalContent, .happiestModalContent, .masterThankfulModalContent, .inspiredModalContent, .masterModalContent, 
-.happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .masterThankfulSubmitContent, .masterSubmitContent {
+.loveModalContent, .proudModalContent, .happiestModalContent, .thankfulModalContent, .inspiredModalContent, .masterModalContent, 
+.happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent, .masterSubmitContent {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;

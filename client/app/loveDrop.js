@@ -1,104 +1,104 @@
-const handleLoveDrop = (e) => {
+const handleMasterDrop = (e) => {
     e.preventDefault();
-    
-    const loveSubmitModal = document.getElementById("loveSubmitModal");
-    const submitLoveBtn = document.getElementById("submitLoveBtn");
-    const dismissLoveModal = document.getElementById("dismissLoveSubmit");
 
-    dismissLoveModal.onclick = () => {
-        loveSubmitModal.style.display = "none";
+    const masterSubmitModal = document.getElementById("masterSubmitModal");
+    const submitMasterBtn = document.getElementById("submitMasterBtn");
+    const dismissMasterModal = document.getElementById("dismissMasterSubmit");
+
+    dismissMasterModal.onclick = () => {
+        masterSubmitModal.style.display = "none";
     };
     
     window.onclick = (event) => {
-      if (event.target === loveSubmitModal) {
-        loveSubmitModal.style.display = "none";
+      if (event.target === masterSubmitModal) {
+        masterSubmitModal.style.display = "none";
       }
     };
 
     $('#errorMessage').animate({width:'hide'}, 350);
-
-    if($('#loveText').val() == '') {
+    if($('#masterText').val() == '') {
         handleError('Input required');
         return false;
     }
 
-    submitLoveBtn.onclick = () => {
-        sendAjax('POST', $('#loveForm').attr('action'), $('#loveForm').serialize(), redirect);
+    submitMasterBtn.onclick = () => {
+        sendAjax('POST', $('#masterForm').attr('action'), $('#masterForm').serialize(), redirect);
     };
 
     return false;
 };
-
-const handleLoveCount = (e) => {
+  
+const handleMasterCount = (e) => {
     ReactDOM.render(
-    <LoveForm loveCount={e.target.value.length}/>, document.querySelector('#logThought')
+    <MasterForm masterCount={e.target.value.length}/>, document.querySelector('#logThought')
     );
 };
 
-const LoveTitle = (props) => {
+const MasterTitle = (props) => {
     return (
-        <h2 id="loveTitle">I love...</h2>
+        <h2 id="masterTitle">I love...</h2>
     );
 };
 
-const LoveForm = (props) => {
+const MasterForm = (props) => {
     return (
         <div>
-            <form id='loveForm'
-            onSubmit={handleLoveDrop}
-            name='loveForm'
-            action='/loveThankYou'
+            <form id='masterForm'
+            onSubmit={handleMasterDrop}
+            name='masterForm'
+            action='/masterThankYou'
             method='POST'
-            className='loveForm' >
-                <input id='loveText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleLoveCount}/>
-                <input className='logThoughtSubmit' id="logLoveSubmit" type='submit' value='Log' />
+            className='masterForm' >
+                <input id='masterText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleMasterCount}/>
+                <input id='category' type='text' name='category' value='love' placeholder='love' onChange={handleMasterCount}/>        
+                <input className='logThoughtSubmit' id="logMasterSubmit" type='submit' value='Submit' />
             </form>
-            <p id="loveCount">{props.loveCount}/60</p>
-            <button id="loveBackBtn">Go back</button>
+            <p id="masterCount">{props.masterCount}/60</p>
+            <button id="masterBackBtn">Go back</button>
             <BackModal/>
-            <LoveSubmitModal />
+            <MasterSubmitModal />
         </div>
     );
 };
 
-const LoveSubmitModal = () => {
+const MasterSubmitModal = () => {
     return (
-        <div className="loveSubmitModal" id="loveSubmitModal">
-            <div className="loveSubmitContent">
+        <div className="masterSubmitModal" id="masterSubmitModal">
+            <div className="masterSubmitContent">
                 <h1>All finished?</h1>
                 <p>This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissLoveSubmit">Go back</button>
-                <button id="submitLoveBtn">Finish</button>
+                <button id="dismissMasterSubmit">Go back</button>
+                <button id="submitMasterBtn">Finish</button>
             </div>
         </div>
     );
 };
 
-const createLoveView = function() {
+const createMasterView = function() {
     ReactDOM.render(
-        <LoveTitle />, document.querySelector('#promptTitle')
+        <MasterTitle />, document.querySelector('#promptTitle')
     );
     
     ReactDOM.render(
-        <LoveForm />, document.querySelector('#logThought')
+        <MasterForm />, document.querySelector('#logThought')
     );
 
-    const logLoveSubmit = document.getElementById("logLoveSubmit");
-    const dismissLoveModal = document.getElementById("dismissLoveSubmit");
+    const logMasterSubmit = document.getElementById("logMasterSubmit");
+    const dismissMasterModal = document.getElementById("dismissMasterSubmit");
 
-    logLoveSubmit.onclick = () => {
-        loveSubmitModal.style.display = "block";
+    logMasterSubmit.onclick = () => {
+        masterSubmitModal.style.display = "block";
     };
 };
 
-const handleLoveClick = (loveID) => {
-	const loveType = document.querySelector('#loveWrite');
+const handleLoveClick = (masterID) => {
+    const masterType = document.querySelector('#loveWrite');
 	
-	loveType.addEventListener('click', e => {
+	masterType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(loveID);
-        createLoveView();
+        clearTimeout(masterID);
+        createMasterView();
         triggerBackModal();
 	});
 };

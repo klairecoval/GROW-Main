@@ -1,104 +1,104 @@
-const handleProudDrop = (e) => {
+const handleMasterDrop = (e) => {
     e.preventDefault();
 
-    const proudSubmitModal = document.getElementById("proudSubmitModal");
-    const submitProudBtn = document.getElementById("submitProudBtn");
-    const dismissProudModal = document.getElementById("dismissProudSubmit");
+    const masterSubmitModal = document.getElementById("masterSubmitModal");
+    const submitMasterBtn = document.getElementById("submitMasterBtn");
+    const dismissMasterModal = document.getElementById("dismissMasterSubmit");
 
-    dismissProudModal.onclick = () => {
-        proudSubmitModal.style.display = "none";
+    dismissMasterModal.onclick = () => {
+        masterSubmitModal.style.display = "none";
     };
     
     window.onclick = (event) => {
-      if (event.target === proudSubmitModal) {
-        proudSubmitModal.style.display = "none";
+      if (event.target === masterSubmitModal) {
+        masterSubmitModal.style.display = "none";
       }
     };
 
     $('#errorMessage').animate({width:'hide'}, 350);
-
-    if($('#proudText').val() == '') {
+    if($('#masterText').val() == '') {
         handleError('Input required');
         return false;
     }
 
-    submitProudBtn.onclick = () => {
-        sendAjax('POST', $('#proudForm').attr('action'), $('#proudForm').serialize(), redirect);
+    submitMasterBtn.onclick = () => {
+        sendAjax('POST', $('#masterForm').attr('action'), $('#masterForm').serialize(), redirect);
     };
 
     return false;
 };
-
-const handleProudCount = (e) => {
+  
+const handleMasterCount = (e) => {
     ReactDOM.render(
-    <ProudForm proudCount={e.target.value.length}/>, document.querySelector('#logThought')
+    <MasterForm masterCount={e.target.value.length}/>, document.querySelector('#logThought')
     );
 };
 
-const ProudTitle = (props) => {
+const MasterTitle = (props) => {
     return (
-        <h2 id="proudTitle">I am proud of...</h2>
+        <h2 id="masterTitle">I proud...</h2>
     );
 };
 
-const ProudForm = (props) => {
+const MasterForm = (props) => {
     return (
         <div>
-            <form id='proudForm'
-            onSubmit={handleProudDrop}
-            name='proudForm'
-            action='/proudThankYou'
+            <form id='masterForm'
+            onSubmit={handleMasterDrop}
+            name='masterForm'
+            action='/masterThankYou'
             method='POST'
-            className='proudForm' >
-                <input id='proudText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleProudCount}/>
-                <input className='logThoughtSubmit' id="logProudSubmit" type='submit' value='Log' />
+            className='masterForm' >
+                <input id='masterText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleMasterCount}/>
+                <input id='category' type='text' name='category' value='proud' placeholder='proud' onChange={handleMasterCount}/>        
+                <input className='logThoughtSubmit' id="logMasterSubmit" type='submit' value='Submit' />
             </form>
-            <p id="proudCount">{props.proudCount}/60</p>
-            <button id="proudBackBtn">Go back</button>
+            <p id="masterCount">{props.masterCount}/60</p>
+            <button id="masterBackBtn">Go back</button>
             <BackModal/>
-            <ProudSubmitModal/>
+            <MasterSubmitModal />
         </div>
     );
 };
 
-const ProudSubmitModal = () => {
+const MasterSubmitModal = () => {
     return (
-        <div className="proudSubmitModal" id="proudSubmitModal">
-            <div className="proudSubmitContent">
+        <div className="masterSubmitModal" id="masterSubmitModal">
+            <div className="masterSubmitContent">
                 <h1>All finished?</h1>
                 <p>This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissProudSubmit">Go back</button>
-                <button id="submitProudBtn">Finish</button>
+                <button id="dismissMasterSubmit">Go back</button>
+                <button id="submitMasterBtn">Finish</button>
             </div>
         </div>
     );
 };
 
-const createProudView = function() {
+const createMasterView = function() {
     ReactDOM.render(
-        <ProudTitle />, document.querySelector('#promptTitle')
+        <MasterTitle />, document.querySelector('#promptTitle')
+    );
+    
+    ReactDOM.render(
+        <MasterForm />, document.querySelector('#logThought')
     );
 
-    ReactDOM.render(
-        <ProudForm />, document.querySelector('#logThought')
-    );
+    const logMasterSubmit = document.getElementById("logMasterSubmit");
+    const dismissMasterModal = document.getElementById("dismissMasterSubmit");
 
-    const logProudSubmit = document.getElementById("logProudSubmit");
-    const dismissProudModal = document.getElementById("dismissProudSubmit");
-
-    logProudSubmit.onclick = () => {
-        proudSubmitModal.style.display = "block";
+    logMasterSubmit.onclick = () => {
+        masterSubmitModal.style.display = "block";
     };
 };
 
-const handleProudClick = (proudID) => {
-	const proudType = document.querySelector('#proudWrite');
+const handleProudClick = (masterID) => {
+	const masterType = document.querySelector('#proudWrite');
 	
-	proudType.addEventListener('click', e => {
+	masterType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(proudID);
-        createProudView();
+        clearTimeout(masterID);
+        createMasterView();
         triggerBackModal();
 	});
 };

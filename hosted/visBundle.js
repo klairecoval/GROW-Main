@@ -26,7 +26,20 @@ var PromptAnswers = function PromptAnswers(props) {
                     'h3',
                     { className: 'promptType' },
                     ' ',
-                    masterPrompt.viewable
+                    masterPrompt.category
+                )
+            );
+        }
+        if (masterPrompt.category === "thankful") {
+            return React.createElement(
+                'div',
+                { className: 'answer' },
+                React.createElement('img', { src: '/assets/img/blueSquare.jpg', alt: 'blue square' }),
+                React.createElement(
+                    'h3',
+                    { className: 'promptAnswer' },
+                    ' ',
+                    masterPrompt.answer
                 ),
                 React.createElement(
                     'h3',
@@ -36,7 +49,64 @@ var PromptAnswers = function PromptAnswers(props) {
                 )
             );
         }
-        if (masterPrompt.category === "thankful") {
+        if (masterPrompt.category === "inspired") {
+            return React.createElement(
+                'div',
+                { className: 'answer' },
+                React.createElement('img', { src: '/assets/img/redSquare.png', alt: 'red square' }),
+                React.createElement(
+                    'h3',
+                    { className: 'promptAnswer' },
+                    ' ',
+                    masterPrompt.answer
+                ),
+                React.createElement(
+                    'h3',
+                    { className: 'promptType' },
+                    ' ',
+                    masterPrompt.category
+                )
+            );
+        }
+        if (masterPrompt.category === "love") {
+            return React.createElement(
+                'div',
+                { className: 'answer' },
+                React.createElement('img', { src: '/assets/img/blueSquare.jpg', alt: 'blue square' }),
+                React.createElement(
+                    'h3',
+                    { className: 'promptAnswer' },
+                    ' ',
+                    masterPrompt.answer
+                ),
+                React.createElement(
+                    'h3',
+                    { className: 'promptType' },
+                    ' ',
+                    masterPrompt.category
+                )
+            );
+        }
+        if (masterPrompt.category === "happiest") {
+            return React.createElement(
+                'div',
+                { className: 'answer' },
+                React.createElement('img', { src: '/assets/img/redSquare.png', alt: 'red square' }),
+                React.createElement(
+                    'h3',
+                    { className: 'promptAnswer' },
+                    ' ',
+                    masterPrompt.answer
+                ),
+                React.createElement(
+                    'h3',
+                    { className: 'promptType' },
+                    ' ',
+                    masterPrompt.category
+                )
+            );
+        }
+        if (masterPrompt.category === "proud") {
             return React.createElement(
                 'div',
                 { className: 'answer' },

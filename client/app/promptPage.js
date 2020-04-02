@@ -271,8 +271,8 @@ const setup = function() {
     && document.getElementById('lovePrompt') &&
     document.getElementById('proudPrompt') && document.getElementById('thankfulPrompt') &&
     document.getElementById('masterPrompt')) {
-        handleHappiestClick(id);
         handleInspiredClick(id);
+        handleHappiestClick(id);
         handleLoveClick(id);
         handleProudClick(id);
         handleThankfulClick(id);
