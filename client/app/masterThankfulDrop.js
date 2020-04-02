@@ -36,7 +36,7 @@ const handleMasterCount = (e) => {
 
 const MasterTitle = (props) => {
     return (
-        <h2 id="masterTitle">I am thankful for...</h2>
+        <h2 id="masterTitle">I am excited for...</h2>
     );
 };
 
@@ -92,8 +92,8 @@ const createMasterView = function() {
     };
 };
 
-const handleMasterThankfulClick = (masterID) => {
-    const masterType = document.querySelector('#masterWrite');
+const handleThankfulClick = (masterID) => {
+    const masterType = document.querySelector('#thankfulWrite');
 	
 	masterType.addEventListener('click', e => {
         e.preventDefault();

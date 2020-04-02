@@ -22,13 +22,13 @@ const LoveModal = () => {
         </div>
     );
 };
-const MasterThankfulModal = () => {
+const ThankfulModal = () => {
     return (
-        <div className="masterThankfulModal" id="masterThankfulModal">
+        <div className="thankfulModal" id="thankfulModal">
             <div className="thankfulModalContent">
                 <h1>I'm thankful for...</h1>
-                <button id="masterThankfulWrite">Write response</button>
-                <button id="masterDismissThankful">Select different prompt</button>
+                <button id="thankfulWrite">Write response</button>
+                <button id="dismissThankful">Select different prompt</button>
             </div>
         </div>
     );
@@ -84,7 +84,7 @@ const triggerPromptModals = () => {
     const loveModal = document.getElementById("loveModal");
     const happiestModal = document.getElementById("happiestModal");
     const proudModal = document.getElementById("proudModal");
-    const masterThankfulModal = document.getElementById("masterThankfulModal");
+    const thankfulModal = document.getElementById("thankfulModal");
     const inspiredModal = document.getElementById("inspiredModal");
     const masterModal = document.getElementById("masterModal");
 
@@ -92,7 +92,7 @@ const triggerPromptModals = () => {
     const inspiredPromptBtn = document.getElementById("inspiredPrompt");
     const proudPromptBtn = document.getElementById("proudPrompt");
     const lovePromptBtn = document.getElementById("lovePrompt");
-    const masterThankfulPromptBtn = document.getElementById("masterThankfulPrompt");
+    const thankfulPromptBtn = document.getElementById("thankfulPrompt");
     const masterPromptBtn = document.getElementById("masterPrompt");
     
     const dismissLove = document.getElementById("dismissLove");
@@ -100,7 +100,6 @@ const triggerPromptModals = () => {
     const dismissInspired = document.getElementById("dismissInspired");
     const dismissProud = document.getElementById("dismissProud");
     const dismissHappiest = document.getElementById("dismissHappiest");
-    const dismissMasterThankful = document.getElementById("dismissMasterThankful");
     const dismissMaster = document.getElementById("dismissMaster");
 
     
@@ -116,8 +115,8 @@ const triggerPromptModals = () => {
     lovePromptBtn.onclick = () => {
         loveModal.style.display = "block";
     };
-    masterThankfulPromptBtn.onclick = () => {
-        masterThankfulModal.style.display = "block";
+    thankfulPromptBtn.onclick = () => {
+        thankfulModal.style.display = "block";
     };
     masterPromptBtn.onclick = () => {
         masterModal.style.display = "block";
@@ -135,8 +134,8 @@ const triggerPromptModals = () => {
     dismissProud.onclick = () => {
         proudModal.style.display = "none";
     };
-    dismissMasterThankful.onclick = () => {
-        masterThankfulModal.style.display = "none";
+    dismissThankful.onclick = () => {
+        thankfulModal.style.display = "none";
     };
     dismissMaster.onclick = () => {
         masterModal.style.display = "none";
@@ -151,8 +150,8 @@ const triggerPromptModals = () => {
         inspiredModal.style.display = "none";
       } else if(event.target === proudModal) {
         proudModal.style.display = "none";
-      } else if(event.target === masterthankfulModal) {
-        masterThankfulModal.style.display = "none";      
+      } else if(event.target === thankfulModal) {
+        thankfulModal.style.display = "none";      
       } else if(event.target === masterModal) {
           masterModal.style.display = "none";
       }
@@ -180,7 +179,7 @@ const triggerBackModal = () => {
     const inspiredBtn = document.getElementById("inspiredBackBtn");
     const proudBtn = document.getElementById("proudBackBtn");
     const loveBtn = document.getElementById("loveBackBtn");
-    const masterThankfulBtn = document.getElementById("masterThankfulBackBtn");
+    const thankfulBtn = document.getElementById("thankfulBackBtn");
     const masterBtn = document.getElementById("masterBackBtn");
     
     const stay = document.getElementById("stayBtn");
@@ -202,8 +201,8 @@ const triggerBackModal = () => {
         loveBtn.onclick = () => {
             backModal.style.display = "block";
         };
-    } else if (masterThankfulBtn) {
-        masterThankfulBtn.onclick = () => {
+    } else if (thankfulBtn) {
+        thankfulBtn.onlick = () => {
             backModal.style.display = "block";
         };
     } else if (masterBtn) {
@@ -230,9 +229,9 @@ const PromptButtons = () => {
             <button id="happiestPrompt">I'm happiest when...</button>
             <button id="proudPrompt">I'm proud of...</button>
             <button id="lovePrompt">I love...</button>
-            <button id="masterthankfulPrompt">I'm thankful for...</button>
+            <button id="thankfulPrompt">I'm thankful for...</button>
             <button id="masterPrompt">I'm excited for...</button>
-            <MasterThankfulModal />
+            <ThankfulModal />
             <InspiredModal />
             <LoveModal />
             <HappiestModal />
@@ -270,13 +269,13 @@ const setup = function() {
     // handle button prompt clicks
     if(document.getElementById('inspiredPrompt') && document.getElementById('happiestPrompt') 
     && document.getElementById('lovePrompt') &&
-    document.getElementById('proudPrompt') && document.getElementById('masterThankfulPrompt') &&
+    document.getElementById('proudPrompt') && document.getElementById('thankfulPrompt') &&
     document.getElementById('masterPrompt')) {
         handleHappiestClick(id);
         handleInspiredClick(id);
         handleLoveClick(id);
         handleProudClick(id);
-        handleMasterThankfulClick(id);
+        handleThankfulClick(id);
         handleMasterClick(id);
     }
 };
