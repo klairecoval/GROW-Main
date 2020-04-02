@@ -1,5 +1,15 @@
 'use strict';
 
+var generateUserCode = function generateUserCode(length) {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+};
+
 // check if existing user has entered data into all fields
 var handleLogin = function handleLogin(e) {
     e.preventDefault();
@@ -21,13 +31,8 @@ var handleLogin = function handleLogin(e) {
 var handleSignup = function handleSignup(e) {
     e.preventDefault();
 
-    if ($('#user').val() == '' || $('#user2').val() == '') {
+    if ($('#user').val() == '') {
         handleError('All fields are required.');
-        return false;
-    }
-
-    if ($('#user').val() !== $('#user2').val()) {
-        handleError('Usernames do not match.');
         return false;
     }
 
@@ -39,19 +44,24 @@ var handleSignup = function handleSignup(e) {
 // create login form with username and pass
 var LoginWindow = function LoginWindow(props) {
     return React.createElement(
-        'form',
-        { id: 'loginForm', name: 'loginForm',
-            onSubmit: handleLogin,
-            action: '/login',
-            method: 'POST',
-            className: 'mainForm' },
+        'div',
+        null,
         React.createElement(
-            'label',
-            { htmlFor: 'username' },
-            'Username: '
+            'form',
+            { id: 'loginForm', name: 'loginForm',
+                onSubmit: handleLogin,
+                action: '/login',
+                method: 'POST',
+                className: 'mainForm' },
+            React.createElement(
+                'label',
+                { htmlFor: 'username' },
+                'Username: '
+            ),
+            React.createElement('input', { id: 'user', type: 'text', name: 'username', placeholder: 'username' }),
+            React.createElement('input', { className: 'formSubmit', type: 'submit', value: 'Sign in' })
         ),
-        React.createElement('input', { id: 'user', type: 'text', name: 'username', placeholder: 'username' }),
-        React.createElement('input', { className: 'formSubmit', type: 'submit', value: 'Sign in' })
+        React.createElement(CodeModal, null)
     );
 };
 
@@ -70,13 +80,25 @@ var SignupWindow = function SignupWindow(props) {
             'New Username: '
         ),
         React.createElement('input', { id: 'user', type: 'text', name: 'username', placeholder: 'username' }),
+        React.createElement('input', { className: 'formSubmit', id: 'idkMan', type: 'submit', value: 'Sign up' })
+    );
+};
+
+var CodeModal = function CodeModal(props) {
+    return React.createElement(
+        'div',
+        { className: 'userCodeModal', id: 'userCodeModal' },
         React.createElement(
-            'label',
-            { htmlFor: 'username2' },
-            'Confirm Username: '
-        ),
-        React.createElement('input', { id: 'user2', type: 'text', name: 'username2', placeholder: 'retype username' }),
-        React.createElement('input', { className: 'formSubmit', type: 'submit', value: 'Sign up' })
+            'div',
+            { className: 'userCodeModalContent' },
+            React.createElement(
+                'h2',
+                null,
+                'Your user code is ',
+                generateUserCode(4)
+            ),
+            React.createElement(SignupWindow, null)
+        )
     );
 };
 
@@ -85,10 +107,13 @@ var createLoginWindow = function createLoginWindow() {
     ReactDOM.render(React.createElement(LoginWindow, null), document.querySelector('#content'));
 };
 
-// create signup view in center of page
-var createSignupWindow = function createSignupWindow() {
-    ReactDOM.render(React.createElement(SignupWindow, null), document.querySelector('#content'));
-};
+// // create signup view in center of page
+// const createSignupWindow = () => {
+//     ReactDOM.render(
+//         <SignupWindow />,
+//         document.querySelector('#content')
+//     );
+// };
 
 // depending on if login or signup icon pressed, create corresponding view
 var setup = function setup() {
@@ -97,7 +122,7 @@ var setup = function setup() {
 
     signupButton.addEventListener('click', function (e) {
         e.preventDefault();
-        createSignupWindow();
+        // createSignupWindow();
         return false;
     });
 
@@ -108,6 +133,24 @@ var setup = function setup() {
     });
 
     createLoginWindow();
+
+    var codeModal = document.getElementById("userCodeModal");
+    var genUserCodeBtn = document.getElementById("genUserCodeBtn");
+
+    genUserCodeBtn.onclick = function () {
+        codeModal.style.display = "block";
+    };
+
+    window.onclick = function (event) {
+        if (event.target === codeModal) {
+            codeModal.style.display = "none";
+        }
+    };
+
+    var submit = document.getElementById("idkMan");
+    submit.onclick = function () {
+        sendAjax('POST', $('#signupForm').attr('action'), $('#signupForm').serialize(), redirect);
+    };
 };
 
 // load in csrf token

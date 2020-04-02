@@ -3,8 +3,7 @@
     text-align: center;
 }
 
-.backModal,
-.loveModal, .proudModal, .happiestModal, .excitedModal, .thankfulModal, .inspiredModal,
+.backModal, .userCodeModal,
 .excitedSubmitModal, .happiestSubmitModal, .inspiredSubmitModal, .loveSubmitModal, .proudSubmitModal, .thankfulSubmitModal {
     display: none; 
     position: fixed; 
@@ -20,8 +19,7 @@
 }
   
 /* Modal Content */
-.backModalContent,
-.loveModalContent, .proudModalContent, .happiestModalContent, .excitedModalContent, .thankfulModalContent, .inspiredModalContent,
+.backModalContent, .userCodeModalContent,
 .excitedSubmitContent, .happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent {
     background-color: #fefefe;
     margin: auto;

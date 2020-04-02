@@ -67,14 +67,9 @@ const signup = (request, response) => {
 
   // cast to a string to cover some security flaws
   req.body.username = `${req.body.username}`;
-  req.body.username2 = `${req.body.username2}`;
 
-  if (!req.body.username || !req.body.username2) {
+  if (!req.body.username) {
     return res.status(400).json({ error: 'ID code required.' });
-  }
-
-  if (req.body.username !== req.body.username2) {
-    return res.status(400).json({ error: 'Usernames do not match.' });
   }
 
   const accountData = {
