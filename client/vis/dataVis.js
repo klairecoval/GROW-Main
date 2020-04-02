@@ -22,7 +22,7 @@ const PromptAnswers = function(props) {
         if(masterPrompt.category === "thankful"){
             return(
             <div className='answer'>
-                <img src='/assets/img/blueSquare.png' alt='blue square'/>
+                <img src='/assets/img/blueSquare.jpg' alt='blue square'/>
                 <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                 <h3 className='promptType'> {masterPrompt.viewable}</h3>
                 <h3 className='promptType'> {masterPrompt.category}</h3>

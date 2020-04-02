@@ -40,7 +40,7 @@ var PromptAnswers = function PromptAnswers(props) {
             return React.createElement(
                 'div',
                 { className: 'answer' },
-                React.createElement('img', { src: '/assets/img/blueSquare.png', alt: 'blue square' }),
+                React.createElement('img', { src: '/assets/img/blueSquare.jpg', alt: 'blue square' }),
                 React.createElement(
                     'h3',
                     { className: 'promptAnswer' },
