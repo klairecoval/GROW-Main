@@ -1,104 +1,104 @@
-const handleMasterDrop = (e) => {
+const handleExcitedDrop = (e) => {
     e.preventDefault();
 
-    const masterSubmitModal = document.getElementById("masterSubmitModal");
-    const submitMasterBtn = document.getElementById("submitMasterBtn");
-    const dismissMasterModal = document.getElementById("dismissMasterSubmit");
+    const excitedSubmitModal = document.getElementById("excitedSubmitModal");
+    const submitExcitedBtn = document.getElementById("submitExcitedBtn");
+    const dismissExcitedModal = document.getElementById("dismissExcitedSubmit");
 
-    dismissMasterModal.onclick = () => {
-        masterSubmitModal.style.display = "none";
+    dismissExcitedModal.onclick = () => {
+        excitedSubmitModal.style.display = "none";
     };
     
     window.onclick = (event) => {
-      if (event.target === masterSubmitModal) {
-        masterSubmitModal.style.display = "none";
+      if (event.target === excitedSubmitModal) {
+        excitedSubmitModal.style.display = "none";
       }
     };
 
     $('#errorMessage').animate({width:'hide'}, 350);
-    if($('#masterText').val() == '') {
+    if($('#excitedText').val() == '') {
         handleError('Input required');
         return false;
     }
 
-    submitMasterBtn.onclick = () => {
-        sendAjax('POST', $('#masterForm').attr('action'), $('#masterForm').serialize(), redirect);
+    submitExcitedBtn.onclick = () => {
+        sendAjax('POST', $('#excitedForm').attr('action'), $('#excitedForm').serialize(), redirect);
     };
 
     return false;
 };
   
-const handleMasterCount = (e) => {
+const handleExcitedCount = (e) => {
     ReactDOM.render(
-    <MasterForm masterCount={e.target.value.length}/>, document.querySelector('#logThought')
+    <ExcitedForm excitedCount={e.target.value.length}/>, document.querySelector('#logThought')
     );
 };
 
-const MasterTitle = (props) => {
+const ExcitedTitle = (props) => {
     return (
-        <h2 id="masterTitle">I am excited for...</h2>
+        <h2 id="excitedTitle">I am excited for...</h2>
     );
 };
 
-const MasterForm = (props) => {
+const ExcitedForm = (props) => {
     return (
         <div>
-            <form id='masterForm'
-            onSubmit={handleMasterDrop}
-            name='masterForm'
+            <form id='excitedForm'
+            onSubmit={handleExcitedDrop}
+            name='excitedForm'
             action='/masterThankYou'
             method='POST'
-            className='masterForm' >
-                <input id='masterText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleMasterCount}/>
-                <input id='category' type='text' name='category' value='excited' placeholder='excited' onChange={handleMasterCount}/>        
-                <input className='logThoughtSubmit' id="logMasterSubmit" type='submit' value='Submit' />
+            className='excitedForm' >
+                <input id='excitedText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleExcitedCount}/>
+                <input id='category' type='text' name='category' value='excited' placeholder='excited' onChange={handleExcitedCount}/>        
+                <input className='logThoughtSubmit' id="logExcitedSubmit" type='submit' value='Submit' />
             </form>
-            <p id="masterCount">{props.masterCount}/60</p>
-            <button id="masterBackBtn">Go back</button>
+            <p id="excitedCount">{props.excitedCount}/60</p>
+            <button id="excitedBackBtn">Go back</button>
             <BackModal/>
-            <MasterSubmitModal />
+            <ExcitedSubmitModal />
         </div>
     );
 };
 
-const MasterSubmitModal = () => {
+const ExcitedSubmitModal = () => {
     return (
-        <div className="masterSubmitModal" id="masterSubmitModal">
-            <div className="masterSubmitContent">
+        <div className="excitedSubmitModal" id="excitedSubmitModal">
+            <div className="excitedSubmitContent">
                 <h1>All finished?</h1>
                 <p>This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissMasterSubmit">Go back</button>
-                <button id="submitMasterBtn">Finish</button>
+                <button id="dismissExcitedSubmit">Go back</button>
+                <button id="submitExcitedBtn">Finish</button>
             </div>
         </div>
     );
 };
 
-const createMasterView = function() {
+const createExcitedView = function() {
     ReactDOM.render(
-        <MasterTitle />, document.querySelector('#promptTitle')
+        <ExcitedTitle />, document.querySelector('#promptTitle')
     );
     
     ReactDOM.render(
-        <MasterForm />, document.querySelector('#logThought')
+        <ExcitedForm />, document.querySelector('#logThought')
     );
 
-    const logMasterSubmit = document.getElementById("logMasterSubmit");
-    const dismissMasterModal = document.getElementById("dismissMasterSubmit");
+    const logExcitedSubmit = document.getElementById("logExcitedSubmit");
+    const dismissExcitedModal = document.getElementById("dismissExcitedSubmit");
 
-    logMasterSubmit.onclick = () => {
-        masterSubmitModal.style.display = "block";
+    logExcitedSubmit.onclick = () => {
+        excitedSubmitModal.style.display = "block";
     };
 };
 
-const handleMasterClick = (masterID) => {
-    const masterType = document.querySelector('#masterWrite');
+const handleExcitedClick = (excitedID) => {
+    const excitedType = document.querySelector('#excitedWrite');
 	
-	masterType.addEventListener('click', e => {
+	excitedType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(masterID);
-        createMasterView();
+        clearTimeout(excitedID);
+        createExcitedView();
         triggerBackModal();
 	});
 };

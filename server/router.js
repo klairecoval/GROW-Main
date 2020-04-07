@@ -7,12 +7,6 @@ const router = (app) => {
   app.get('/thankYouPage', mid.requiresLogin, controllers.Account.thankYouPage);
   app.get('/dataVisPage', mid.requiresLogin, controllers.Account.dataVisPage);
 
-  app.get('/getExcited', mid.requiresLogin, controllers.Excited.getExcited);
-  app.get('/getHappiest', mid.requiresLogin, controllers.Happiest.getHappiest);
-  app.get('/getInspired', mid.requiresLogin, controllers.Inspired.getInspired);
-  app.get('/getLove', mid.requiresLogin, controllers.Love.getLove);
-  app.get('/getProud', mid.requiresLogin, controllers.Proud.getProud);
-  app.get('/getThankful', mid.requiresLogin, controllers.Thankful.getThankful);
   app.get('/getMaster', mid.requiresLogin, controllers.Master.getMaster);
 
   app.get('/login', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
@@ -23,12 +17,6 @@ const router = (app) => {
   app.post('/promptPage', mid.requiresLogin, controllers.Account.promptPage);
 
   // app.post('/thankYouPage', mid.requiresLogin, controllers.Account.thankYouPage);
-  app.post('/excitedThankYou', mid.requiresLogin, controllers.Excited.logExcited);
-  app.post('/happiestThankYou', mid.requiresLogin, controllers.Happiest.logHappiest);
-  app.post('/inspiredThankYou', mid.requiresLogin, controllers.Inspired.logInspired);
-  app.post('/loveThankYou', mid.requiresLogin, controllers.Love.logLove);
-  app.post('/proudThankYou', mid.requiresLogin, controllers.Proud.logProud);
-  app.post('/thankfulThankYou', mid.requiresLogin, controllers.Thankful.logThankful);
   app.post('/masterThankYou', mid.requiresLogin, controllers.Master.logMaster);
 
   app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);

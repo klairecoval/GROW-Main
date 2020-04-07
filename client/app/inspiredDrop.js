@@ -1,104 +1,104 @@
-const handleMasterDrop = (e) => {
+const handleInspiredDrop = (e) => {
     e.preventDefault();
 
-    const masterSubmitModal = document.getElementById("masterSubmitModal");
-    const submitMasterBtn = document.getElementById("submitMasterBtn");
-    const dismissMasterModal = document.getElementById("dismissMasterSubmit");
+    const inspiredSubmitModal = document.getElementById("inspiredSubmitModal");
+    const submitInspiredrBtn = document.getElementById("submitInspiredBtn");
+    const dismissInspiredModal = document.getElementById("dismissInspiredSubmit");
 
-    dismissMasterModal.onclick = () => {
-        masterSubmitModal.style.display = "none";
+    dismissInspiredModal.onclick = () => {
+        inspiredSubmitModal.style.display = "none";
     };
     
     window.onclick = (event) => {
-      if (event.target === masterSubmitModal) {
-        masterSubmitModal.style.display = "none";
+      if (event.target === inspiredSubmitModal) {
+        inspiredSubmitModal.style.display = "none";
       }
     };
 
     $('#errorMessage').animate({width:'hide'}, 350);
-    if($('#masterText').val() == '') {
+    if($('#inspiredText').val() == '') {
         handleError('Input required');
         return false;
     }
 
-    submitMasterBtn.onclick = () => {
-        sendAjax('POST', $('#masterForm').attr('action'), $('#masterForm').serialize(), redirect);
+    submitInspiredBtn.onclick = () => {
+        sendAjax('POST', $('#inspiredForm').attr('action'), $('#inspiredForm').serialize(), redirect);
     };
 
     return false;
 };
   
-const handleMasterCount = (e) => {
+const handleInspiredCount = (e) => {
     ReactDOM.render(
-    <MasterForm masterCount={e.target.value.length}/>, document.querySelector('#logThought')
+    <InspiredForm inspiredCount={e.target.value.length}/>, document.querySelector('#logThought')
     );
 };
 
-const MasterTitle = (props) => {
+const InspiredTitle = (props) => {
     return (
-        <h2 id="masterTitle">I am inspired by...</h2>
+        <h2 id="inspiredTitle">I am inspired by...</h2>
     );
 };
 
-const MasterForm = (props) => {
+const InspiredForm = (props) => {
     return (
         <div>
-            <form id='masterForm'
-            onSubmit={handleMasterDrop}
-            name='masterForm'
+            <form id='inspiredForm'
+            onSubmit={handleInspiredDrop}
+            name='inspiredForm'
             action='/masterThankYou'
             method='POST'
-            className='masterForm' >
-                <input id='masterText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleMasterCount}/>
-                <input id='category' type='text' name='category' value='inspired' placeholder='inspired' onChange={handleMasterCount}/>        
-                <input className='logThoughtSubmit' id="logMasterSubmit" type='submit' value='Submit' />
+            className='inspiredForm' >
+                <input id='inspiredText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleInspiredCount}/>
+                <input id='category' type='text' name='category' value='inspired' placeholder='inspired' onChange={handleInspiredCount}/>        
+                <input className='logThoughtSubmit' id="logInspiredSubmit" type='submit' value='Submit' />
             </form>
-            <p id="masterCount">{props.masterCount}/60</p>
-            <button id="masterBackBtn">Go back</button>
+            <p id="inspiredCount">{props.inspiredCount}/60</p>
+            <button id="inspiredBackBtn">Go back</button>
             <BackModal/>
-            <MasterSubmitModal />
+            <InspiredSubmitModal />
         </div>
     );
 };
 
-const MasterSubmitModal = () => {
+const InspiredSubmitModal = () => {
     return (
-        <div className="masterSubmitModal" id="masterSubmitModal">
-            <div className="masterSubmitContent">
+        <div className="inspiredSubmitModal" id="inspiredSubmitModal">
+            <div className="inspiredSubmitContent">
                 <h1>All finished?</h1>
                 <p>This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissMasterSubmit">Go back</button>
-                <button id="submitMasterBtn">Finish</button>
+                <button id="dismissInspiredSubmit">Go back</button>
+                <button id="submitInspiredBtn">Finish</button>
             </div>
         </div>
     );
 };
 
-const createMasterView = function() {
+const createInspiredView = function() {
     ReactDOM.render(
-        <MasterTitle />, document.querySelector('#promptTitle')
+        <InspiredTitle />, document.querySelector('#promptTitle')
     );
     
     ReactDOM.render(
-        <MasterForm />, document.querySelector('#logThought')
+        <InspiredForm />, document.querySelector('#logThought')
     );
 
-    const logMasterSubmit = document.getElementById("logMasterSubmit");
-    const dismissMasterModal = document.getElementById("dismissMasterSubmit");
+    const logInspiredSubmit = document.getElementById("logInspiredSubmit");
+    const dismissInspiredModal = document.getElementById("dismissInspiredSubmit");
 
-    logMasterSubmit.onclick = () => {
-        masterSubmitModal.style.display = "block";
+    logInspiredSubmit.onclick = () => {
+        inspiredSubmitModal.style.display = "block";
     };
 };
 
-const handleInspiredClick = (masterID) => {
-    const masterType = document.querySelector('#inspiredWrite');
+const handleInspiredClick = (inspiredID) => {
+    const inspiredType = document.querySelector('#inspiredWrite');
 	
-	masterType.addEventListener('click', e => {
+	inspiredType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(masterID);
-        createMasterView();
+        clearTimeout(inspiredID);
+        createInspiredView();
         triggerBackModal();
 	});
 };

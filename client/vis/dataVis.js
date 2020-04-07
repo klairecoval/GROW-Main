@@ -59,7 +59,6 @@ const PromptAnswers = function(props) {
             <div className='answer'>
                 <img src='/assets/img/blueSquare.jpg' alt='blue square'/>
                 <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
-                <h3 className='promptType'> {masterPrompt.viewable}</h3>
                 <h3 className='promptType'> {masterPrompt.category}</h3>
             </div>
             );

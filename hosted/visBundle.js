@@ -121,12 +121,6 @@ var PromptAnswers = function PromptAnswers(props) {
                     'h3',
                     { className: 'promptType' },
                     ' ',
-                    masterPrompt.viewable
-                ),
-                React.createElement(
-                    'h3',
-                    { className: 'promptType' },
-                    ' ',
                     masterPrompt.category
                 )
             );

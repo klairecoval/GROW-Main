@@ -1,105 +1,105 @@
-const handleMasterDrop = (e) => {
+const handleHappiestDrop = (e) => {
     e.preventDefault();
 
-    const masterSubmitModal = document.getElementById("masterSubmitModal");
-    const submitMasterBtn = document.getElementById("submitMasterBtn");
-    const dismissMasterModal = document.getElementById("dismissMasterSubmit");
+    const happiestSubmitModal = document.getElementById("happiestSubmitModal");
+    const submitHappiestBtn = document.getElementById("submitHappiestBtn");
+    const dismissHappiestModal = document.getElementById("dismissHappiestSubmit");
 
-    dismissMasterModal.onclick = () => {
-        masterSubmitModal.style.display = "none";
+    dismissHappiestModal.onclick = () => {
+        happiestSubmitModal.style.display = "none";
     };
     
     window.onclick = (event) => {
-      if (event.target === masterSubmitModal) {
-        masterSubmitModal.style.display = "none";
+      if (event.target === happiestSubmitModal) {
+        happiestSubmitModal.style.display = "none";
       }
     };
 
     $('#errorMessage').animate({width:'hide'}, 350);
-    if($('#masterText').val() == '') {
+    if($('#happiestText').val() == '') {
         handleError('Input required');
         return false;
     }
 
-    submitMasterBtn.onclick = () => {
-        sendAjax('POST', $('#masterForm').attr('action'), $('#masterForm').serialize(), redirect);
+    submitHappiestBtn.onclick = () => {
+        sendAjax('POST', $('#happiestForm').attr('action'), $('#happiestForm').serialize(), redirect);
     };
 
     return false;
 };
   
-const handleMasterCount = (e) => {
+const handleHappiestCount = (e) => {
     ReactDOM.render(
-    <MasterForm masterCount={e.target.value.length}/>, document.querySelector('#logThought')
+    <HappiestForm happiestCount={e.target.value.length}/>, document.querySelector('#logThought')
     );
 };
 
-const MasterTitle = (props) => {
+const HappiestTitle = (props) => {
     return (
-        <h2 id="masterTitle">I am happiest when...</h2>
+        <h2 id="happiestTitle">I am happiest when...</h2>
     );
 };
 
-const MasterForm = (props) => {
+const HappiestForm = (props) => {
     return (
         <div>
-            <form id='masterForm'
-            onSubmit={handleMasterDrop}
-            name='masterForm'
+            <form id='happiestForm'
+            onSubmit={handleHappiestDrop}
+            name='happiestForm'
             action='/masterThankYou'
             method='POST'
-            className='masterForm' >
-                <input id='masterText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleMasterCount}/>
-                <input id='category' type='text' name='category' value='happiest' placeholder='happiest' onChange={handleMasterCount}/>        
-                <input className='logThoughtSubmit' id="logMasterSubmit" type='submit' value='Submit' />
+            className='happiestForm' >
+                <input id='happiestText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleHappiestCount}/>
+                <input id='category' type='text' name='category' value='happiest' placeholder='happiest' onChange={handleHappiestCount}/>        
+                <input className='logThoughtSubmit' id="logHappiestSubmit" type='submit' value='Submit' />
             </form>
-            <p id="masterCount">{props.masterCount}/60</p>
-            <button id="masterBackBtn">Go back</button>
+            <p id="happiestCount">{props.happiestCount}/60</p>
+            <button id="happiestBackBtn">Go back</button>
             <BackModal/>
-            <MasterSubmitModal />
+            <HappiestSubmitModal />
         </div>
     );
 };
 
-const MasterSubmitModal = () => {
+const HappiestSubmitModal = () => {
     return (
-        <div className="masterSubmitModal" id="masterSubmitModal">
-            <div className="masterSubmitContent">
+        <div className="happiestSubmitModal" id="happiestSubmitModal">
+            <div className="happiestSubmitContent">
                 <h1>All finished?</h1>
                 <p>This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissMasterSubmit">Go back</button>
-                <button id="submitMasterBtn">Finish</button>
+                <button id="dismissHappiestSubmit">Go back</button>
+                <button id="submitHappiestBtn">Finish</button>
             </div>
         </div>
     );
 };
 
-const createMasterView = function() {
+const createHappiestView = function() {
     ReactDOM.render(
-        <MasterTitle />, document.querySelector('#promptTitle')
+        <HappiestTitle />, document.querySelector('#promptTitle')
     );
     
     ReactDOM.render(
-        <MasterForm />, document.querySelector('#logThought')
+        <HappiestForm />, document.querySelector('#logThought')
     );
 
-    const logMasterSubmit = document.getElementById("logMasterSubmit");
-    const dismissMasterModal = document.getElementById("dismissMasterSubmit");
+    const logHappiestSubmit = document.getElementById("logHappiestSubmit");
+    const dismissHappiestModal = document.getElementById("dismissHappiestSubmit");
 
-    logMasterSubmit.onclick = () => {
-        masterSubmitModal.style.display = "block";
+    logHappiestSubmit.onclick = () => {
+        happiestSubmitModal.style.display = "block";
     };
 };
 
 
-const handleHappiestClick = (masterID) => {
-	const masterType = document.querySelector('#happiestWrite');
+const handleHappiestClick = (happiestID) => {
+	const happiestType = document.querySelector('#happiestWrite');
 	
-	masterType.addEventListener('click', e => {
+	happiestType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(masterID);
-        createMasterView();
+        clearTimeout(happiestID);
+        createHappiestView();
         triggerBackModal();
 	});
 };
