@@ -2,9 +2,12 @@
   width: 100%;
   text-align: center; }
 
+#category {
+  display: none; }
+
 .backModal,
-.loveModal, .proudModal, .happiestModal, .excitedModal, .thankfulModal, .inspiredModal,
-.excitedSubmitModal, .happiestSubmitModal, .inspiredSubmitModal, .loveSubmitModal, .proudSubmitModal, .thankfulSubmitModal {
+.loveModal, .proudModal, .happiestModal, .thankfulModal, .inspiredModal, .excitedModal,
+.happiestSubmitModal, .inspiredSubmitModal, .loveSubmitModal, .proudSubmitModal, .thankfulSubmitModal, .excitedSubmitModal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -19,8 +22,8 @@
 
 /* Modal Content */
 .backModalContent,
-.loveModalContent, .proudModalContent, .happiestModalContent, .excitedModalContent, .thankfulModalContent, .inspiredModalContent,
-.excitedSubmitContent, .happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent {
+.loveModalContent, .proudModalContent, .happiestModalContent, .thankfulModalContent, .inspiredModalContent, .excitedModalContent,
+.happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent, .excitedSubmitContent {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;

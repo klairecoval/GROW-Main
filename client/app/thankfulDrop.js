@@ -16,7 +16,6 @@ const handleThankfulDrop = (e) => {
     };
 
     $('#errorMessage').animate({width:'hide'}, 350);
-
     if($('#thankfulText').val() == '') {
         handleError('Input required');
         return false;
@@ -28,7 +27,7 @@ const handleThankfulDrop = (e) => {
 
     return false;
 };
-
+  
 const handleThankfulCount = (e) => {
     ReactDOM.render(
     <ThankfulForm thankfulCount={e.target.value.length}/>, document.querySelector('#logThought')
@@ -47,11 +46,12 @@ const ThankfulForm = (props) => {
             <form id='thankfulForm'
             onSubmit={handleThankfulDrop}
             name='thankfulForm'
-            action='/thankfulThankYou'
+            action='/masterThankYou'
             method='POST'
             className='thankfulForm' >
-                <input id='thankfulText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleThankfulCount} />
-                <input className='logThoughtSubmit' id="logThankfulSubmit" type='submit' value='Log' />
+                <input id='thankfulText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleThankfulCount}/>
+                <input id='category' type='text' name='category' value='thankful' placeholder='thankful' onChange={handleThankfulCount}/>        
+                <input className='logThoughtSubmit' id="logThankfulSubmit" type='submit' value='Submit' />
             </form>
             <p id="thankfulCount">{props.thankfulCount}/60</p>
             <button id="thankfulBackBtn">Go back</button>
@@ -79,7 +79,7 @@ const createThankfulView = function() {
     ReactDOM.render(
         <ThankfulTitle />, document.querySelector('#promptTitle')
     );
-
+    
     ReactDOM.render(
         <ThankfulForm />, document.querySelector('#logThought')
     );
@@ -93,7 +93,7 @@ const createThankfulView = function() {
 };
 
 const handleThankfulClick = (thankfulID) => {
-	const thankfulType = document.querySelector('#thankfulWrite');
+    const thankfulType = document.querySelector('#thankfulWrite');
 	
 	thankfulType.addEventListener('click', e => {
         e.preventDefault();

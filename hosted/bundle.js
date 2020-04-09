@@ -1,5 +1,4 @@
 "use strict";
-"use strict";
 
 var handleExcitedDrop = function handleExcitedDrop(e) {
     e.preventDefault();
@@ -52,10 +51,11 @@ var ExcitedForm = function ExcitedForm(props) {
             { id: "excitedForm",
                 onSubmit: handleExcitedDrop,
                 name: "excitedForm",
-                action: "/excitedThankYou",
+                action: "/masterThankYou",
                 method: "POST",
                 className: "excitedForm" },
             React.createElement("input", { id: "excitedText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleExcitedCount }),
+            React.createElement("input", { id: "category", type: "text", name: "category", value: "excited", placeholder: "excited", onChange: handleExcitedCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logExcitedSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
@@ -136,7 +136,6 @@ var handleHappiestDrop = function handleHappiestDrop(e) {
     e.preventDefault();
 
     var happiestSubmitModal = document.getElementById("happiestSubmitModal");
-
     var submitHappiestBtn = document.getElementById("submitHappiestBtn");
     var dismissHappiestModal = document.getElementById("dismissHappiestSubmit");
 
@@ -151,7 +150,6 @@ var handleHappiestDrop = function handleHappiestDrop(e) {
     };
 
     $('#errorMessage').animate({ width: 'hide' }, 350);
-
     if ($('#happiestText').val() == '') {
         handleError('Input required');
         return false;
@@ -172,7 +170,7 @@ var HappiestTitle = function HappiestTitle(props) {
     return React.createElement(
         "h2",
         { id: "happiestTitle" },
-        "I feel happiest when..."
+        "I am happiest when..."
     );
 };
 
@@ -185,11 +183,12 @@ var HappiestForm = function HappiestForm(props) {
             { id: "happiestForm",
                 onSubmit: handleHappiestDrop,
                 name: "happiestForm",
-                action: "/happiestThankYou",
+                action: "/masterThankYou",
                 method: "POST",
                 className: "happiestForm" },
             React.createElement("input", { id: "happiestText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleHappiestCount }),
-            React.createElement("input", { className: "logThoughtSubmit", id: "logHappiestSubmit", type: "submit", value: "Log" })
+            React.createElement("input", { id: "category", type: "text", name: "category", value: "happiest", placeholder: "happiest", onChange: handleHappiestCount }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logHappiestSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
             "p",
@@ -269,8 +268,7 @@ var handleInspiredDrop = function handleInspiredDrop(e) {
     e.preventDefault();
 
     var inspiredSubmitModal = document.getElementById("inspiredSubmitModal");
-
-    var submitInspiredBtn = document.getElementById("submitInspiredBtn");
+    var submitInspiredrBtn = document.getElementById("submitInspiredBtn");
     var dismissInspiredModal = document.getElementById("dismissInspiredSubmit");
 
     dismissInspiredModal.onclick = function () {
@@ -284,7 +282,6 @@ var handleInspiredDrop = function handleInspiredDrop(e) {
     };
 
     $('#errorMessage').animate({ width: 'hide' }, 350);
-
     if ($('#inspiredText').val() == '') {
         handleError('Input required');
         return false;
@@ -318,11 +315,12 @@ var InspiredForm = function InspiredForm(props) {
             { id: "inspiredForm",
                 onSubmit: handleInspiredDrop,
                 name: "inspiredForm",
-                action: "/inspiredThankYou",
+                action: "/masterThankYou",
                 method: "POST",
                 className: "inspiredForm" },
             React.createElement("input", { id: "inspiredText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleInspiredCount }),
-            React.createElement("input", { className: "logThoughtSubmit", id: "logInspiredSubmit", type: "submit", value: "Log" })
+            React.createElement("input", { id: "category", type: "text", name: "category", value: "inspired", placeholder: "inspired", onChange: handleInspiredCount }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logInspiredSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
             "p",
@@ -416,7 +414,6 @@ var handleLoveDrop = function handleLoveDrop(e) {
     };
 
     $('#errorMessage').animate({ width: 'hide' }, 350);
-
     if ($('#loveText').val() == '') {
         handleError('Input required');
         return false;
@@ -450,11 +447,12 @@ var LoveForm = function LoveForm(props) {
             { id: "loveForm",
                 onSubmit: handleLoveDrop,
                 name: "loveForm",
-                action: "/loveThankYou",
+                action: "/masterThankYou",
                 method: "POST",
                 className: "loveForm" },
             React.createElement("input", { id: "loveText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleLoveCount }),
-            React.createElement("input", { className: "logThoughtSubmit", id: "logLoveSubmit", type: "submit", value: "Log" })
+            React.createElement("input", { id: "category", type: "text", name: "category", value: "love", placeholder: "love", onChange: handleLoveCount }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logLoveSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
             "p",
@@ -635,31 +633,7 @@ var InspiredModal = function InspiredModal() {
         )
     );
 };
-var ExcitedModal = function ExcitedModal() {
-    return React.createElement(
-        "div",
-        { className: "excitedModal", id: "excitedModal" },
-        React.createElement(
-            "div",
-            { className: "excitedModalContent" },
-            React.createElement(
-                "h1",
-                null,
-                "I'm excited for..."
-            ),
-            React.createElement(
-                "button",
-                { id: "excitedWrite" },
-                "Write response"
-            ),
-            React.createElement(
-                "button",
-                { id: "dismissExcited" },
-                "Select different prompt"
-            )
-        )
-    );
-};
+
 var HappiestModal = function HappiestModal() {
     return React.createElement(
         "div",
@@ -711,31 +685,54 @@ var ProudModal = function ProudModal() {
     );
 };
 
+var ExcitedModal = function ExcitedModal() {
+    return React.createElement(
+        "div",
+        { className: "excitedModal", id: "excitedModal" },
+        React.createElement(
+            "div",
+            { className: "excitedModalContent" },
+            React.createElement(
+                "h1",
+                null,
+                "I'm excited for..."
+            ),
+            React.createElement(
+                "button",
+                { id: "excitedWrite" },
+                "Write response"
+            ),
+            React.createElement(
+                "button",
+                { id: "dismissExcited" },
+                "Select different prompt"
+            )
+        )
+    );
+};
+
 var triggerPromptModals = function triggerPromptModals() {
     var loveModal = document.getElementById("loveModal");
     var happiestModal = document.getElementById("happiestModal");
     var proudModal = document.getElementById("proudModal");
-    var excitedModal = document.getElementById("excitedModal");
     var thankfulModal = document.getElementById("thankfulModal");
     var inspiredModal = document.getElementById("inspiredModal");
+    var excitedModal = document.getElementById("excitedModal");
 
-    var excitedPromptBtn = document.getElementById("excitedPrompt");
     var happiestPromptBtn = document.getElementById("happiestPrompt");
     var inspiredPromptBtn = document.getElementById("inspiredPrompt");
     var proudPromptBtn = document.getElementById("proudPrompt");
     var lovePromptBtn = document.getElementById("lovePrompt");
     var thankfulPromptBtn = document.getElementById("thankfulPrompt");
+    var excitedPromptBtn = document.getElementById("excitedPrompt");
 
     var dismissLove = document.getElementById("dismissLove");
     var dismissThankful = document.getElementById("dismissThankful");
     var dismissInspired = document.getElementById("dismissInspired");
-    var dismissExcited = document.getElementById("dismissExcited");
     var dismissProud = document.getElementById("dismissProud");
     var dismissHappiest = document.getElementById("dismissHappiest");
+    var dismissExcited = document.getElementById("dismissExcited");
 
-    excitedPromptBtn.onclick = function () {
-        excitedModal.style.display = "block";
-    };
     happiestPromptBtn.onclick = function () {
         happiestModal.style.display = "block";
     };
@@ -751,12 +748,12 @@ var triggerPromptModals = function triggerPromptModals() {
     thankfulPromptBtn.onclick = function () {
         thankfulModal.style.display = "block";
     };
+    excitedPromptBtn.onclick = function () {
+        excitedModal.style.display = "block";
+    };
 
     dismissLove.onclick = function () {
         loveModal.style.display = "none";
-    };
-    dismissExcited.onclick = function () {
-        excitedModal.style.display = "none";
     };
     dismissHappiest.onclick = function () {
         happiestModal.style.display = "none";
@@ -770,12 +767,13 @@ var triggerPromptModals = function triggerPromptModals() {
     dismissThankful.onclick = function () {
         thankfulModal.style.display = "none";
     };
+    dismissExcited.onclick = function () {
+        excitedModal.style.display = "none";
+    };
 
     window.onclick = function (event) {
         if (event.target === loveModal) {
             loveModal.style.display = "none";
-        } else if (event.target === excitedModal) {
-            excitedModal.style.display = "none";
         } else if (event.target === happiestModal) {
             happiestModal.style.display = "none";
         } else if (event.target === inspiredModal) {
@@ -784,6 +782,8 @@ var triggerPromptModals = function triggerPromptModals() {
             proudModal.style.display = "none";
         } else if (event.target === thankfulModal) {
             thankfulModal.style.display = "none";
+        } else if (event.target === excitedModal) {
+            excitedModal.style.display = "none";
         }
     };
 };
@@ -827,21 +827,15 @@ var BackModal = function BackModal() {
 
 var triggerBackModal = function triggerBackModal() {
     var backModal = document.getElementById("backModal");
-
-    var excitedBtn = document.getElementById("excitedBackBtn");
     var happiestBtn = document.getElementById("happiestBackBtn");
     var inspiredBtn = document.getElementById("inspiredBackBtn");
     var proudBtn = document.getElementById("proudBackBtn");
     var loveBtn = document.getElementById("loveBackBtn");
     var thankfulBtn = document.getElementById("thankfulBackBtn");
+    var excitedBtn = document.getElementById("excitedBackBtn");
 
     var stay = document.getElementById("stayBtn");
 
-    if (excitedBtn) {
-        excitedBtn.onclick = function () {
-            backModal.style.display = "block";
-        };
-    }
     if (happiestBtn) {
         happiestBtn.onclick = function () {
             backModal.style.display = "block";
@@ -860,7 +854,11 @@ var triggerBackModal = function triggerBackModal() {
             backModal.style.display = "block";
         };
     } else if (thankfulBtn) {
-        thankfulBtn.onclick = function () {
+        thankfulBtn.onlick = function () {
+            backModal.style.display = "block";
+        };
+    } else if (excitedBtn) {
+        excitedBtn.onclick = function () {
             backModal.style.display = "block";
         };
     }
@@ -887,11 +885,6 @@ var PromptButtons = function PromptButtons() {
         ),
         React.createElement(
             "button",
-            { id: "excitedPrompt" },
-            "I'm excited for..."
-        ),
-        React.createElement(
-            "button",
             { id: "happiestPrompt" },
             "I'm happiest when..."
         ),
@@ -910,12 +903,17 @@ var PromptButtons = function PromptButtons() {
             { id: "thankfulPrompt" },
             "I'm thankful for..."
         ),
+        React.createElement(
+            "button",
+            { id: "excitedPrompt" },
+            "I'm excited for..."
+        ),
         React.createElement(ThankfulModal, null),
         React.createElement(InspiredModal, null),
         React.createElement(LoveModal, null),
-        React.createElement(ExcitedModal, null),
         React.createElement(HappiestModal, null),
-        React.createElement(ProudModal, null)
+        React.createElement(ProudModal, null),
+        React.createElement(ExcitedModal, null)
     );
 };
 
@@ -934,7 +932,6 @@ var setup = function setup() {
     idTimeout();
 
     // load thoughts for testing
-    // loadExcitedFromServer();
     // loadHappiestFromServer();
     // loadInspiredFromServer();
     // loadLoveFromServer();
@@ -942,13 +939,13 @@ var setup = function setup() {
     // loadThankfulFromServer();
 
     // handle button prompt clicks
-    if (document.getElementById('inspiredPrompt') && document.getElementById('excitedPrompt') && document.getElementById('happiestPrompt') && document.getElementById('lovePrompt') && document.getElementById('proudPrompt') && document.getElementById('thankfulPrompt')) {
-        handleExcitedClick(id);
-        handleHappiestClick(id);
+    if (document.getElementById('inspiredPrompt') && document.getElementById('happiestPrompt') && document.getElementById('lovePrompt') && document.getElementById('proudPrompt') && document.getElementById('thankfulPrompt') && document.getElementById('excitedPrompt')) {
         handleInspiredClick(id);
+        handleHappiestClick(id);
         handleLoveClick(id);
         handleProudClick(id);
         handleThankfulClick(id);
+        handleExcitedClick(id);
     }
 };
 
@@ -978,7 +975,6 @@ var handleProudDrop = function handleProudDrop(e) {
     };
 
     $('#errorMessage').animate({ width: 'hide' }, 350);
-
     if ($('#proudText').val() == '') {
         handleError('Input required');
         return false;
@@ -999,7 +995,7 @@ var ProudTitle = function ProudTitle(props) {
     return React.createElement(
         "h2",
         { id: "proudTitle" },
-        "I am proud of..."
+        "I proud..."
     );
 };
 
@@ -1012,11 +1008,12 @@ var ProudForm = function ProudForm(props) {
             { id: "proudForm",
                 onSubmit: handleProudDrop,
                 name: "proudForm",
-                action: "/proudThankYou",
+                action: "/masterThankYou",
                 method: "POST",
                 className: "proudForm" },
             React.createElement("input", { id: "proudText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleProudCount }),
-            React.createElement("input", { className: "logThoughtSubmit", id: "logProudSubmit", type: "submit", value: "Log" })
+            React.createElement("input", { id: "category", type: "text", name: "category", value: "proud", placeholder: "proud", onChange: handleProudCount }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logProudSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
             "p",
@@ -1110,7 +1107,6 @@ var handleThankfulDrop = function handleThankfulDrop(e) {
     };
 
     $('#errorMessage').animate({ width: 'hide' }, 350);
-
     if ($('#thankfulText').val() == '') {
         handleError('Input required');
         return false;
@@ -1144,11 +1140,12 @@ var ThankfulForm = function ThankfulForm(props) {
             { id: "thankfulForm",
                 onSubmit: handleThankfulDrop,
                 name: "thankfulForm",
-                action: "/thankfulThankYou",
+                action: "/masterThankYou",
                 method: "POST",
                 className: "thankfulForm" },
             React.createElement("input", { id: "thankfulText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleThankfulCount }),
-            React.createElement("input", { className: "logThoughtSubmit", id: "logThankfulSubmit", type: "submit", value: "Log" })
+            React.createElement("input", { id: "category", type: "text", name: "category", value: "thankful", placeholder: "thankful", onChange: handleThankfulCount }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logThankfulSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
             "p",

@@ -16,7 +16,6 @@ const handleProudDrop = (e) => {
     };
 
     $('#errorMessage').animate({width:'hide'}, 350);
-
     if($('#proudText').val() == '') {
         handleError('Input required');
         return false;
@@ -28,7 +27,7 @@ const handleProudDrop = (e) => {
 
     return false;
 };
-
+  
 const handleProudCount = (e) => {
     ReactDOM.render(
     <ProudForm proudCount={e.target.value.length}/>, document.querySelector('#logThought')
@@ -37,7 +36,7 @@ const handleProudCount = (e) => {
 
 const ProudTitle = (props) => {
     return (
-        <h2 id="proudTitle">I am proud of...</h2>
+        <h2 id="proudTitle">I proud...</h2>
     );
 };
 
@@ -47,16 +46,17 @@ const ProudForm = (props) => {
             <form id='proudForm'
             onSubmit={handleProudDrop}
             name='proudForm'
-            action='/proudThankYou'
+            action='/masterThankYou'
             method='POST'
             className='proudForm' >
                 <input id='proudText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleProudCount}/>
-                <input className='logThoughtSubmit' id="logProudSubmit" type='submit' value='Log' />
+                <input id='category' type='text' name='category' value='proud' placeholder='proud' onChange={handleProudCount}/>        
+                <input className='logThoughtSubmit' id="logProudSubmit" type='submit' value='Submit' />
             </form>
             <p id="proudCount">{props.proudCount}/60</p>
             <button id="proudBackBtn">Go back</button>
             <BackModal/>
-            <ProudSubmitModal/>
+            <ProudSubmitModal />
         </div>
     );
 };
@@ -79,7 +79,7 @@ const createProudView = function() {
     ReactDOM.render(
         <ProudTitle />, document.querySelector('#promptTitle')
     );
-
+    
     ReactDOM.render(
         <ProudForm />, document.querySelector('#logThought')
     );

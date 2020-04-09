@@ -1,6 +1,6 @@
 const handleLoveDrop = (e) => {
     e.preventDefault();
-    
+
     const loveSubmitModal = document.getElementById("loveSubmitModal");
     const submitLoveBtn = document.getElementById("submitLoveBtn");
     const dismissLoveModal = document.getElementById("dismissLoveSubmit");
@@ -16,7 +16,6 @@ const handleLoveDrop = (e) => {
     };
 
     $('#errorMessage').animate({width:'hide'}, 350);
-
     if($('#loveText').val() == '') {
         handleError('Input required');
         return false;
@@ -28,7 +27,7 @@ const handleLoveDrop = (e) => {
 
     return false;
 };
-
+  
 const handleLoveCount = (e) => {
     ReactDOM.render(
     <LoveForm loveCount={e.target.value.length}/>, document.querySelector('#logThought')
@@ -47,11 +46,12 @@ const LoveForm = (props) => {
             <form id='loveForm'
             onSubmit={handleLoveDrop}
             name='loveForm'
-            action='/loveThankYou'
+            action='/masterThankYou'
             method='POST'
             className='loveForm' >
                 <input id='loveText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleLoveCount}/>
-                <input className='logThoughtSubmit' id="logLoveSubmit" type='submit' value='Log' />
+                <input id='category' type='text' name='category' value='love' placeholder='love' onChange={handleLoveCount}/>        
+                <input className='logThoughtSubmit' id="logLoveSubmit" type='submit' value='Submit' />
             </form>
             <p id="loveCount">{props.loveCount}/60</p>
             <button id="loveBackBtn">Go back</button>
@@ -93,7 +93,7 @@ const createLoveView = function() {
 };
 
 const handleLoveClick = (loveID) => {
-	const loveType = document.querySelector('#loveWrite');
+    const loveType = document.querySelector('#loveWrite');
 	
 	loveType.addEventListener('click', e => {
         e.preventDefault();

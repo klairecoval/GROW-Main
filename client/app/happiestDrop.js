@@ -2,22 +2,20 @@ const handleHappiestDrop = (e) => {
     e.preventDefault();
 
     const happiestSubmitModal = document.getElementById("happiestSubmitModal");
-
     const submitHappiestBtn = document.getElementById("submitHappiestBtn");
     const dismissHappiestModal = document.getElementById("dismissHappiestSubmit");
 
     dismissHappiestModal.onclick = () => {
         happiestSubmitModal.style.display = "none";
-    }
+    };
     
     window.onclick = (event) => {
       if (event.target === happiestSubmitModal) {
         happiestSubmitModal.style.display = "none";
       }
-    }
+    };
 
     $('#errorMessage').animate({width:'hide'}, 350);
-
     if($('#happiestText').val() == '') {
         handleError('Input required');
         return false;
@@ -29,7 +27,7 @@ const handleHappiestDrop = (e) => {
 
     return false;
 };
-
+  
 const handleHappiestCount = (e) => {
     ReactDOM.render(
     <HappiestForm happiestCount={e.target.value.length}/>, document.querySelector('#logThought')
@@ -38,7 +36,7 @@ const handleHappiestCount = (e) => {
 
 const HappiestTitle = (props) => {
     return (
-        <h2 id="happiestTitle">I feel happiest when...</h2>
+        <h2 id="happiestTitle">I am happiest when...</h2>
     );
 };
 
@@ -48,11 +46,12 @@ const HappiestForm = (props) => {
             <form id='happiestForm'
             onSubmit={handleHappiestDrop}
             name='happiestForm'
-            action='/happiestThankYou'
+            action='/masterThankYou'
             method='POST'
             className='happiestForm' >
                 <input id='happiestText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleHappiestCount}/>
-                <input className='logThoughtSubmit' id="logHappiestSubmit" type='submit' value='Log' />
+                <input id='category' type='text' name='category' value='happiest' placeholder='happiest' onChange={handleHappiestCount}/>        
+                <input className='logThoughtSubmit' id="logHappiestSubmit" type='submit' value='Submit' />
             </form>
             <p id="happiestCount">{props.happiestCount}/60</p>
             <button id="happiestBackBtn">Go back</button>
@@ -80,7 +79,7 @@ const createHappiestView = function() {
     ReactDOM.render(
         <HappiestTitle />, document.querySelector('#promptTitle')
     );
-
+    
     ReactDOM.render(
         <HappiestForm />, document.querySelector('#logThought')
     );
@@ -92,6 +91,7 @@ const createHappiestView = function() {
         happiestSubmitModal.style.display = "block";
     };
 };
+
 
 const handleHappiestClick = (happiestID) => {
 	const happiestType = document.querySelector('#happiestWrite');

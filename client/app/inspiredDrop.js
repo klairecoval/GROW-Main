@@ -2,8 +2,7 @@ const handleInspiredDrop = (e) => {
     e.preventDefault();
 
     const inspiredSubmitModal = document.getElementById("inspiredSubmitModal");
-
-    const submitInspiredBtn = document.getElementById("submitInspiredBtn");
+    const submitInspiredrBtn = document.getElementById("submitInspiredBtn");
     const dismissInspiredModal = document.getElementById("dismissInspiredSubmit");
 
     dismissInspiredModal.onclick = () => {
@@ -17,7 +16,6 @@ const handleInspiredDrop = (e) => {
     };
 
     $('#errorMessage').animate({width:'hide'}, 350);
-
     if($('#inspiredText').val() == '') {
         handleError('Input required');
         return false;
@@ -29,7 +27,7 @@ const handleInspiredDrop = (e) => {
 
     return false;
 };
-
+  
 const handleInspiredCount = (e) => {
     ReactDOM.render(
     <InspiredForm inspiredCount={e.target.value.length}/>, document.querySelector('#logThought')
@@ -48,16 +46,17 @@ const InspiredForm = (props) => {
             <form id='inspiredForm'
             onSubmit={handleInspiredDrop}
             name='inspiredForm'
-            action='/inspiredThankYou'
+            action='/masterThankYou'
             method='POST'
             className='inspiredForm' >
                 <input id='inspiredText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleInspiredCount}/>
-                <input className='logThoughtSubmit' id="logInspiredSubmit" type='submit' value='Log' />
+                <input id='category' type='text' name='category' value='inspired' placeholder='inspired' onChange={handleInspiredCount}/>        
+                <input className='logThoughtSubmit' id="logInspiredSubmit" type='submit' value='Submit' />
             </form>
             <p id="inspiredCount">{props.inspiredCount}/60</p>
             <button id="inspiredBackBtn">Go back</button>
             <BackModal/>
-            <InspiredSubmitModal/>
+            <InspiredSubmitModal />
         </div>
     );
 };
@@ -80,7 +79,7 @@ const createInspiredView = function() {
     ReactDOM.render(
         <InspiredTitle />, document.querySelector('#promptTitle')
     );
-
+    
     ReactDOM.render(
         <InspiredForm />, document.querySelector('#logThought')
     );
@@ -94,7 +93,7 @@ const createInspiredView = function() {
 };
 
 const handleInspiredClick = (inspiredID) => {
-	const inspiredType = document.querySelector('#inspiredWrite');
+    const inspiredType = document.querySelector('#inspiredWrite');
 	
 	inspiredType.addEventListener('click', e => {
         e.preventDefault();

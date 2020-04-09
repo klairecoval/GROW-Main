@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const _ = require('underscore');
 
-let ExcitedModel = {};
+let MasterModel = {};
 
 const convertId = mongoose.Types.ObjectId;
 // const setAnswer = (answer) => _.escape(answer).trim();
 
-const ExcitedSchema = new mongoose.Schema({
+const MasterSchema = new mongoose.Schema({
   answer: {
     type: String,
     required: true,
@@ -24,23 +24,34 @@ const ExcitedSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+
+  category: {
+    type: String,
+    required: false,
+  },
+
+  viewable: {
+    type: Boolean,
+    default: true,
+  },
+
 });
 
-ExcitedSchema.statics.toAPI = (doc) => ({
+MasterSchema.statics.toAPI = (doc) => ({
   answer: doc.answer,
 });
 
-ExcitedSchema.statics.findByOwner = (ownerId, callback) => {
+MasterSchema.statics.findByOwner = (ownerId, callback) => {
   const search = {
     owner: convertId(ownerId),
   };
 
-  return ExcitedModel.find(search).select('answer').exec(callback);
+  return MasterModel.find(search).select('answer').exec(callback);
 };
 
-ExcitedModel = mongoose.model('ExcitedModel', ExcitedSchema);
+MasterModel = mongoose.model('MasterModel', MasterSchema);
 
 module.exports = {
-  ExcitedModel,
-  ExcitedSchema,
+  MasterModel,
+  MasterSchema,
 };

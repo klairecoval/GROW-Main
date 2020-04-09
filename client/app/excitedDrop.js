@@ -46,10 +46,11 @@ const ExcitedForm = (props) => {
             <form id='excitedForm'
             onSubmit={handleExcitedDrop}
             name='excitedForm'
-            action='/excitedThankYou'
+            action='/masterThankYou'
             method='POST'
             className='excitedForm' >
                 <input id='excitedText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleExcitedCount}/>
+                <input id='category' type='text' name='category' value='excited' placeholder='excited' onChange={handleExcitedCount}/>        
                 <input className='logThoughtSubmit' id="logExcitedSubmit" type='submit' value='Submit' />
             </form>
             <p id="excitedCount">{props.excitedCount}/60</p>

@@ -16,6 +16,11 @@ const thankYouPage = (req, res) => {
   res.render('thankYouPage');
 };
 
+// render dataVis page
+const dataVisPage = (req, res) => {
+  res.render('dataVisPage');
+};
+
 // logout, delete session, redirect to login page
 const logout = (req, res) => {
   req.session.destroy();
@@ -94,6 +99,7 @@ module.exports = {
   login,
   promptPage,
   thankYouPage,
+  dataVisPage,
   logout,
   signup,
 };
