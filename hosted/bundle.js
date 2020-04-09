@@ -55,12 +55,8 @@ var ExcitedForm = function ExcitedForm(props) {
                 method: "POST",
                 className: "excitedForm" },
             React.createElement("input", { id: "excitedText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleExcitedCount }),
-            React.createElement("input", { className: "logThoughtSubmit", id: "logExcitedSubmit", type: "submit", value: "Submit" }),
-            React.createElement(
-                "h3",
-                { id: "category", name: "excited" },
-                "excited"
-            )
+            React.createElement("input", { id: "category", type: "text", name: "category", value: "excited", placeholder: "excited", onChange: handleExcitedCount }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logExcitedSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
             "p",
@@ -527,270 +523,6 @@ var handleLoveClick = function handleLoveClick(loveID) {
         e.preventDefault();
         clearTimeout(loveID);
         createLoveView();
-        triggerBackModal();
-    });
-};
-"use strict";
-
-var handleExcitedDrop = function handleExcitedDrop(e) {
-    e.preventDefault();
-
-    var excitedSubmitModal = document.getElementById("excitedSubmitModal");
-    var submitExcitedBtn = document.getElementById("submitExcitedBtn");
-    var dismissExcitedModal = document.getElementById("dismissExcitedSubmit");
-
-    dismissExcitedModal.onclick = function () {
-        excitedSubmitModal.style.display = "none";
-    };
-
-    window.onclick = function (event) {
-        if (event.target === excitedSubmitModal) {
-            excitedSubmitModal.style.display = "none";
-        }
-    };
-
-    $('#errorMessage').animate({ width: 'hide' }, 350);
-    if ($('#excitedText').val() == '') {
-        handleError('Input required');
-        return false;
-    }
-
-    submitExcitedBtn.onclick = function () {
-        sendAjax('POST', $('#excitedForm').attr('action'), $('#excitedForm').serialize(), redirect);
-    };
-
-    return false;
-};
-
-var handleExcitedCount = function handleExcitedCount(e) {
-    ReactDOM.render(React.createElement(ExcitedForm, { excitedCount: e.target.value.length }), document.querySelector('#logThought'));
-};
-
-var ExcitedTitle = function ExcitedTitle(props) {
-    return React.createElement(
-        "h2",
-        { id: "excitedTitle" },
-        "I am excited for..."
-    );
-};
-
-var ExcitedForm = function ExcitedForm(props) {
-    return React.createElement(
-        "div",
-        null,
-        React.createElement(
-            "form",
-            { id: "excitedForm",
-                onSubmit: handleExcitedDrop,
-                name: "excitedForm",
-                action: "/masterThankYou",
-                method: "POST",
-                className: "excitedForm" },
-            React.createElement("input", { id: "excitedText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleExcitedCount }),
-            React.createElement("input", { id: "category", type: "text", name: "category", value: "excited", placeholder: "excited", onChange: handleExcitedCount }),
-            React.createElement("input", { className: "logThoughtSubmit", id: "logExcitedSubmit", type: "submit", value: "Submit" })
-        ),
-        React.createElement(
-            "p",
-            { id: "excitedCount" },
-            props.excitedCount,
-            "/60"
-        ),
-        React.createElement(
-            "button",
-            { id: "excitedBackBtn" },
-            "Go back"
-        ),
-        React.createElement(BackModal, null),
-        React.createElement(ExcitedSubmitModal, null)
-    );
-};
-
-var ExcitedSubmitModal = function ExcitedSubmitModal() {
-    return React.createElement(
-        "div",
-        { className: "excitedSubmitModal", id: "excitedSubmitModal" },
-        React.createElement(
-            "div",
-            { className: "excitedSubmitContent" },
-            React.createElement(
-                "h1",
-                null,
-                "All finished?"
-            ),
-            React.createElement(
-                "p",
-                null,
-                "This will submit your response to your card.",
-                React.createElement("br", null),
-                "Don\u2019t worry, they\u2019re all anonymous."
-            ),
-            React.createElement(
-                "button",
-                { id: "dismissExcitedSubmit" },
-                "Go back"
-            ),
-            React.createElement(
-                "button",
-                { id: "submitExcitedBtn" },
-                "Finish"
-            )
-        )
-    );
-};
-
-var createExcitedView = function createExcitedView() {
-    ReactDOM.render(React.createElement(ExcitedTitle, null), document.querySelector('#promptTitle'));
-
-    ReactDOM.render(React.createElement(ExcitedForm, null), document.querySelector('#logThought'));
-
-    var logExcitedSubmit = document.getElementById("logExcitedSubmit");
-    var dismissExcitedModal = document.getElementById("dismissExcitedSubmit");
-
-    logExcitedSubmit.onclick = function () {
-        excitedSubmitModal.style.display = "block";
-    };
-};
-
-var handleExcitedClick = function handleExcitedClick(excitedID) {
-    var excitedType = document.querySelector('#excitedWrite');
-
-    excitedType.addEventListener('click', function (e) {
-        e.preventDefault();
-        clearTimeout(excitedID);
-        createExcitedView();
-        triggerBackModal();
-    });
-};
-"use strict";
-
-var handleThankfulDrop = function handleThankfulDrop(e) {
-    e.preventDefault();
-
-    var thankfulSubmitModal = document.getElementById("thankfulSubmitModal");
-    var submitThankfulBtn = document.getElementById("submitThankfulBtn");
-    var dismissThankfulModal = document.getElementById("dismissThankfulSubmit");
-
-    dismissThankfulModal.onclick = function () {
-        thankfulSubmitModal.style.display = "none";
-    };
-
-    window.onclick = function (event) {
-        if (event.target === thankfulSubmitModal) {
-            thankfulSubmitModal.style.display = "none";
-        }
-    };
-
-    $('#errorMessage').animate({ width: 'hide' }, 350);
-    if ($('#thankfulText').val() == '') {
-        handleError('Input required');
-        return false;
-    }
-
-    submitThanksBtn.onclick = function () {
-        sendAjax('POST', $('#thankfulForm').attr('action'), $('#thankfulForm').serialize(), redirect);
-    };
-
-    return false;
-};
-
-var handleThankfulCount = function handleThankfulCount(e) {
-    ReactDOM.render(React.createElement(ThankfulForm, { thankfulCount: e.target.value.length }), document.querySelector('#logThought'));
-};
-
-var ThankfulTitle = function ThankfulTitle(props) {
-    return React.createElement(
-        "h2",
-        { id: "thankfulTitle" },
-        "I am thankful for..."
-    );
-};
-
-var ThankfulForm = function ThankfulForm(props) {
-    return React.createElement(
-        "div",
-        null,
-        React.createElement(
-            "form",
-            { id: "thankfulForm",
-                onSubmit: handleThankfulDrop,
-                name: "thankfulForm",
-                action: "/masterThankYou",
-                method: "POST",
-                className: "thankfulForm" },
-            React.createElement("input", { id: "thankfulText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleThankfulCount }),
-            React.createElement("input", { id: "category", type: "text", name: "category", value: "thankful", placeholder: "thankful", onChange: handleThankfulCount }),
-            React.createElement("input", { className: "logThoughtSubmit", id: "logThankfulSubmit", type: "submit", value: "Submit" })
-        ),
-        React.createElement(
-            "p",
-            { id: "thankfulCount" },
-            props.thankfulCount,
-            "/60"
-        ),
-        React.createElement(
-            "button",
-            { id: "thankfulBackBtn" },
-            "Go back"
-        ),
-        React.createElement(BackModal, null),
-        React.createElement(ThankfulSubmitModal, null)
-    );
-};
-
-var ThankfulSubmitModal = function ThankfulSubmitModal() {
-    return React.createElement(
-        "div",
-        { className: "thankfulSubmitModal", id: "thankfulSubmitModal" },
-        React.createElement(
-            "div",
-            { className: "thankfulSubmitContent" },
-            React.createElement(
-                "h1",
-                null,
-                "All finished?"
-            ),
-            React.createElement(
-                "p",
-                null,
-                "This will submit your response to your card.",
-                React.createElement("br", null),
-                "Don\u2019t worry, they\u2019re all anonymous."
-            ),
-            React.createElement(
-                "button",
-                { id: "dismissThankfulSubmit" },
-                "Go back"
-            ),
-            React.createElement(
-                "button",
-                { id: "submitThankfulBtn" },
-                "Finish"
-            )
-        )
-    );
-};
-
-var createThankfulView = function createThankfulView() {
-    ReactDOM.render(React.createElement(ThankfulTitle, null), document.querySelector('#promptTitle'));
-
-    ReactDOM.render(React.createElement(ThankfulForm, null), document.querySelector('#logThought'));
-
-    var logThankfulSubmit = document.getElementById("logThankfulSubmit");
-    var dismissThankfulModal = document.getElementById("dismissThankfulSubmit");
-
-    logThankfulSubmit.onclick = function () {
-        thankfulSubmitModal.style.display = "block";
-    };
-};
-
-var handleThankfulClick = function handleThankfulClick(thankfulID) {
-    var thankfulType = document.querySelector('#thankfulWrite');
-
-    thankfulType.addEventListener('click', function (e) {
-        e.preventDefault();
-        clearTimeout(thankfulID);
-        createThankfulView();
         triggerBackModal();
     });
 };
@@ -1352,6 +1084,138 @@ var handleProudClick = function handleProudClick(proudID) {
         e.preventDefault();
         clearTimeout(proudID);
         createProudView();
+        triggerBackModal();
+    });
+};
+"use strict";
+
+var handleThankfulDrop = function handleThankfulDrop(e) {
+    e.preventDefault();
+
+    var thankfulSubmitModal = document.getElementById("thankfulSubmitModal");
+    var submitThankfulBtn = document.getElementById("submitThankfulBtn");
+    var dismissThankfulModal = document.getElementById("dismissThankfulSubmit");
+
+    dismissThankfulModal.onclick = function () {
+        thankfulSubmitModal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        if (event.target === thankfulSubmitModal) {
+            thankfulSubmitModal.style.display = "none";
+        }
+    };
+
+    $('#errorMessage').animate({ width: 'hide' }, 350);
+    if ($('#thankfulText').val() == '') {
+        handleError('Input required');
+        return false;
+    }
+
+    submitThanksBtn.onclick = function () {
+        sendAjax('POST', $('#thankfulForm').attr('action'), $('#thankfulForm').serialize(), redirect);
+    };
+
+    return false;
+};
+
+var handleThankfulCount = function handleThankfulCount(e) {
+    ReactDOM.render(React.createElement(ThankfulForm, { thankfulCount: e.target.value.length }), document.querySelector('#logThought'));
+};
+
+var ThankfulTitle = function ThankfulTitle(props) {
+    return React.createElement(
+        "h2",
+        { id: "thankfulTitle" },
+        "I am thankful for..."
+    );
+};
+
+var ThankfulForm = function ThankfulForm(props) {
+    return React.createElement(
+        "div",
+        null,
+        React.createElement(
+            "form",
+            { id: "thankfulForm",
+                onSubmit: handleThankfulDrop,
+                name: "thankfulForm",
+                action: "/masterThankYou",
+                method: "POST",
+                className: "thankfulForm" },
+            React.createElement("input", { id: "thankfulText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleThankfulCount }),
+            React.createElement("input", { id: "category", type: "text", name: "category", value: "thankful", placeholder: "thankful", onChange: handleThankfulCount }),
+            React.createElement("input", { className: "logThoughtSubmit", id: "logThankfulSubmit", type: "submit", value: "Submit" })
+        ),
+        React.createElement(
+            "p",
+            { id: "thankfulCount" },
+            props.thankfulCount,
+            "/60"
+        ),
+        React.createElement(
+            "button",
+            { id: "thankfulBackBtn" },
+            "Go back"
+        ),
+        React.createElement(BackModal, null),
+        React.createElement(ThankfulSubmitModal, null)
+    );
+};
+
+var ThankfulSubmitModal = function ThankfulSubmitModal() {
+    return React.createElement(
+        "div",
+        { className: "thankfulSubmitModal", id: "thankfulSubmitModal" },
+        React.createElement(
+            "div",
+            { className: "thankfulSubmitContent" },
+            React.createElement(
+                "h1",
+                null,
+                "All finished?"
+            ),
+            React.createElement(
+                "p",
+                null,
+                "This will submit your response to your card.",
+                React.createElement("br", null),
+                "Don\u2019t worry, they\u2019re all anonymous."
+            ),
+            React.createElement(
+                "button",
+                { id: "dismissThankfulSubmit" },
+                "Go back"
+            ),
+            React.createElement(
+                "button",
+                { id: "submitThankfulBtn" },
+                "Finish"
+            )
+        )
+    );
+};
+
+var createThankfulView = function createThankfulView() {
+    ReactDOM.render(React.createElement(ThankfulTitle, null), document.querySelector('#promptTitle'));
+
+    ReactDOM.render(React.createElement(ThankfulForm, null), document.querySelector('#logThought'));
+
+    var logThankfulSubmit = document.getElementById("logThankfulSubmit");
+    var dismissThankfulModal = document.getElementById("dismissThankfulSubmit");
+
+    logThankfulSubmit.onclick = function () {
+        thankfulSubmitModal.style.display = "block";
+    };
+};
+
+var handleThankfulClick = function handleThankfulClick(thankfulID) {
+    var thankfulType = document.querySelector('#thankfulWrite');
+
+    thankfulType.addEventListener('click', function (e) {
+        e.preventDefault();
+        clearTimeout(thankfulID);
+        createThankfulView();
         triggerBackModal();
     });
 };
