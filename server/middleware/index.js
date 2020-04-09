@@ -9,7 +9,7 @@ const requiresLogin = (req, res, next) => {
   // send to main page
 const requiresLogout = (req, res, next) => {
   if (req.session.account) {
-    return res.redirect('/promptPage');
+    return res.redirect('/explorePage');
   }
   return next();
 };

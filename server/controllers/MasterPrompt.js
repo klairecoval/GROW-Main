@@ -18,7 +18,7 @@ const logMaster = (req, res) => {
   const masterPromise = newMaster.save();
 
   masterPromise.then(() => {
-    res.json({ redirect: '/thankYouPage' });
+    res.json({ redirect: '/explorePage' });
   });
 
   masterPromise.catch((err) => {
@@ -45,8 +45,7 @@ const getMaster = (request, response) => {
     if (err) {
       res.status(500).json({ error: 'you couldnt find what you were looking for' });
     }
-    //return res.json({ masterResponses: docs }); 
-    return res.json({docs});
+    return res.json({ docs });
   });
 };
 

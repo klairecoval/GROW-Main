@@ -11,9 +11,12 @@ const promptPage = (req, res) => {
   res.render('promptPage');
 };
 
-// render thankyou page
-const thankYouPage = (req, res) => {
-  res.render('thankYouPage');
+const explorePage = (req, res) => {
+  res.render('explorePage');
+};
+
+const aboutPage = (req, res) => {
+  res.render('aboutPage');
 };
 
 // render dataVis page
@@ -52,7 +55,7 @@ const login = (request, response) => {
 
     req.session.account = Account.AccountModel.toAPI(account);
 
-    return res.json({ redirect: '/promptPage' });
+    return res.json({ redirect: '/explorePage' });
   });
 };
 
@@ -80,7 +83,7 @@ const signup = (request, response) => {
 
   savePromise.then(() => {
     req.session.account = Account.AccountModel.toAPI(newAccount);
-    res.json({ redirect: '/promptPage' });
+    res.json({ redirect: '/explorePage' });
   });
 
   savePromise.catch((err) => {
@@ -98,8 +101,9 @@ module.exports = {
   loginPage,
   login,
   promptPage,
-  thankYouPage,
   dataVisPage,
   logout,
   signup,
+  explorePage,
+  aboutPage,
 };

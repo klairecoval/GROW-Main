@@ -46,7 +46,7 @@ const InspiredForm = (props) => {
             <form id='inspiredForm'
             onSubmit={handleInspiredDrop}
             name='inspiredForm'
-            action='/masterThankYou'
+            action='/logMaster'
             method='POST'
             className='inspiredForm' >
                 <input id='inspiredText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleInspiredCount}/>
@@ -92,12 +92,11 @@ const createInspiredView = function() {
     };
 };
 
-const handleInspiredClick = (inspiredID) => {
-    const inspiredType = document.querySelector('#inspiredWrite');
+const handleInspiredClick = () => {
+    const inspiredType = document.querySelector('#inspiredPrompt');
 	
 	inspiredType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(inspiredID);
         createInspiredView();
         triggerBackModal();
 	});

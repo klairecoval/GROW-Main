@@ -46,7 +46,7 @@ const ExcitedForm = (props) => {
             <form id='excitedForm'
             onSubmit={handleExcitedDrop}
             name='excitedForm'
-            action='/masterThankYou'
+            action='/logMaster'
             method='POST'
             className='excitedForm' >
                 <input id='excitedText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleExcitedCount}/>
@@ -92,12 +92,11 @@ const createExcitedView = function() {
     };
 };
 
-const handleExcitedClick = (excitedID) => {
-    const excitedType = document.querySelector('#excitedWrite');
+const handleExcitedClick = () => {
+    const excitedType = document.querySelector('#excitedPrompt');
 	
 	excitedType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(excitedID);
         createExcitedView();
         triggerBackModal();
 	});

@@ -46,7 +46,7 @@ const ProudForm = (props) => {
             <form id='proudForm'
             onSubmit={handleProudDrop}
             name='proudForm'
-            action='/masterThankYou'
+            action='/logMaster'
             method='POST'
             className='proudForm' >
                 <input id='proudText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleProudCount}/>
@@ -92,12 +92,11 @@ const createProudView = function() {
     };
 };
 
-const handleProudClick = (proudID) => {
-	const proudType = document.querySelector('#proudWrite');
+const handleProudClick = () => {
+	const proudType = document.querySelector('#proudPrompt');
 	
 	proudType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(proudID);
         createProudView();
         triggerBackModal();
 	});

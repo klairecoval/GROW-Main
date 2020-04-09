@@ -5,8 +5,7 @@
 #category {
   display: none; }
 
-.backModal,
-.loveModal, .proudModal, .happiestModal, .thankfulModal, .inspiredModal, .excitedModal,
+.backModal, .userCodeModal,
 .happiestSubmitModal, .inspiredSubmitModal, .loveSubmitModal, .proudSubmitModal, .thankfulSubmitModal, .excitedSubmitModal {
   display: none;
   position: fixed;
@@ -21,8 +20,7 @@
   background-color: rgba(0, 0, 0, 0.4); }
 
 /* Modal Content */
-.backModalContent,
-.loveModalContent, .proudModalContent, .happiestModalContent, .thankfulModalContent, .inspiredModalContent, .excitedModalContent,
+.backModalContent, .userCodeModalContent,
 .happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent, .excitedSubmitContent {
   background-color: #fefefe;
   margin: auto;

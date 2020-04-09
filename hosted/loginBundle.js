@@ -1,17 +1,24 @@
 'use strict';
 
+var generateUserCode = function generateUserCode(length) {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+};
+
 // check if existing user has entered data into all fields
 var handleLogin = function handleLogin(e) {
     e.preventDefault();
-
-    // $('#beerMessage').animate({height: 'hide'}, 350);
 
     if ($('#user').val() == '') {
         console.log('User ID Code is empty.');
         return false;
     }
 
-    console.log('we are about to send ajax pray for us');
     console.log($('input[name=username').val());
 
     sendAjax('POST', $('#loginForm').attr('action'), $('#loginForm').serialize(), redirect);
@@ -38,24 +45,24 @@ var handleSignup = function handleSignup(e) {
 // create login form with username and pass
 var LoginWindow = function LoginWindow(props) {
     return React.createElement(
-        'form',
-        { id: 'loginForm', name: 'loginForm',
-            onSubmit: handleLogin,
-            action: '/login',
-            method: 'POST',
-            className: 'mainForm' },
+        'div',
+        null,
         React.createElement(
-            'label',
-            { htmlFor: 'username' },
-            'User ID Code: '
+            'form',
+            { id: 'loginForm', name: 'loginForm',
+                onSubmit: handleLogin,
+                action: '/login',
+                method: 'POST',
+                className: 'mainForm' },
+            React.createElement(
+                'label',
+                { htmlFor: 'username' },
+                'User ID Code: '
+            ),
+            React.createElement('input', { id: 'user', type: 'text', name: 'username', placeholder: 'username' }),
+            React.createElement('input', { className: 'formSubmit', type: 'submit', value: 'Sign in' })
         ),
-        React.createElement('input', { id: 'user', type: 'text', name: 'username', placeholder: 'username' }),
-        React.createElement(
-            'p',
-            null,
-            'Enter the 4 digit code on your card.'
-        ),
-        React.createElement('input', { className: 'formSubmit', type: 'submit', value: 'Sign in' })
+        React.createElement(CodeModal, null)
     );
 };
 
@@ -74,7 +81,25 @@ var SignupWindow = function SignupWindow(props) {
             'User ID code: '
         ),
         React.createElement('input', { id: 'user', type: 'text', name: 'username', placeholder: 'username' }),
-        React.createElement('input', { className: 'formSubmit', type: 'submit', value: 'Sign up' })
+        React.createElement('input', { className: 'formSubmit', id: 'submitSignup', type: 'submit', value: 'Sign up' })
+    );
+};
+
+var CodeModal = function CodeModal(props) {
+    return React.createElement(
+        'div',
+        { className: 'userCodeModal', id: 'userCodeModal' },
+        React.createElement(
+            'div',
+            { className: 'userCodeModalContent' },
+            React.createElement(
+                'h2',
+                null,
+                'Your user code is ',
+                generateUserCode(4)
+            ),
+            React.createElement(SignupWindow, null)
+        )
     );
 };
 
@@ -106,6 +131,24 @@ var setup = function setup() {
     });
 
     createLoginWindow();
+
+    var codeModal = document.getElementById("userCodeModal");
+    var genUserCodeBtn = document.getElementById("genUserCodeBtn");
+
+    genUserCodeBtn.onclick = function () {
+        codeModal.style.display = "block";
+    };
+
+    window.onclick = function (event) {
+        if (event.target === codeModal) {
+            codeModal.style.display = "none";
+        }
+    };
+
+    var submit = document.getElementById("submitSignup");
+    submit.onclick = function () {
+        sendAjax('POST', $('#signupForm').attr('action'), $('#signupForm').serialize(), redirect);
+    };
 };
 
 // load in csrf token

@@ -1,15 +1,22 @@
+const generateUserCode = (length) => {
+    let result           = '';
+    const characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    for ( let i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+};
+
 // check if existing user has entered data into all fields
 const handleLogin = (e) => {
     e.preventDefault();
-
-    // $('#beerMessage').animate({height: 'hide'}, 350);
 
     if($('#user').val() == '') {
         console.log('User ID Code is empty.');
         return false;
     }
 
-    console.log('we are about to send ajax pray for us');
     console.log($('input[name=username').val());
 
     sendAjax('POST', $('#loginForm').attr('action'), $('#loginForm').serialize(), redirect);
@@ -36,16 +43,18 @@ const handleSignup = (e) => {
 // create login form with username and pass
 const LoginWindow = (props) => {
     return (
-        <form id='loginForm' name='loginForm'
-            onSubmit={handleLogin}
-            action='/login'
-            method='POST'
-            className='mainForm'>
-            <label htmlFor='username'>User ID Code: </label>
-            <input id='user' type='text' name='username' placeholder='username' />
-            <p>Enter the 4 digit code on your card.</p>
-            <input className='formSubmit' type='submit' value='Sign in' />
-        </form>
+        <div>
+            <form id='loginForm' name='loginForm'
+                onSubmit={handleLogin}
+                action='/login'
+                method='POST'
+                className='mainForm'>
+                <label htmlFor='username'>User ID Code: </label>
+                <input id='user' type='text' name='username' placeholder='username' />
+                <input className='formSubmit' type='submit' value='Sign in' />
+            </form>
+            <CodeModal />
+        </div>
     );
 };
 
@@ -59,8 +68,19 @@ const SignupWindow = (props) => {
             className='mainForm'>
             <label htmlFor='username'>User ID code: </label>
             <input id='user' type='text' name='username' placeholder='username' />
-            <input className='formSubmit' type='submit' value='Sign up' />
+            <input className='formSubmit' id="submitSignup" type='submit' value='Sign up' />
         </form>
+    );
+};
+
+const CodeModal = (props) => {
+    return (
+        <div className="userCodeModal" id="userCodeModal" >
+            <div className="userCodeModalContent">
+                <h2>Your user code is {generateUserCode(4)}</h2>
+                <SignupWindow />
+            </div>
+        </div>
     );
 };
 
@@ -98,6 +118,24 @@ const setup = () => {
     });
 
     createLoginWindow();
+    
+    const codeModal = document.getElementById("userCodeModal");
+    const genUserCodeBtn = document.getElementById("genUserCodeBtn");
+
+    genUserCodeBtn.onclick = () => {
+        codeModal.style.display = "block";
+    };
+
+    window.onclick = (event) => {
+      if (event.target === codeModal) {
+        codeModal.style.display = "none";
+      }
+    }
+
+    const submit = document.getElementById("submitSignup");
+    submit.onclick = () => {
+        sendAjax('POST', $('#signupForm').attr('action'), $('#signupForm').serialize(), redirect);
+    };
 };
 
 // load in csrf token
