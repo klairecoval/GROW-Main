@@ -46,7 +46,7 @@ const ThankfulForm = (props) => {
             <form id='thankfulForm'
             onSubmit={handleThankfulDrop}
             name='thankfulForm'
-            action='/masterThankYou'
+            action='/logMaster'
             method='POST'
             className='thankfulForm' >
                 <input id='thankfulText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleThankfulCount}/>
@@ -92,12 +92,11 @@ const createThankfulView = function() {
     };
 };
 
-const handleThankfulClick = (thankfulID) => {
-    const thankfulType = document.querySelector('#thankfulWrite');
+const handleThankfulClick = () => {
+    const thankfulType = document.querySelector('#thankfulPrompt');
 	
 	thankfulType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(thankfulID);
         createThankfulView();
         triggerBackModal();
 	});

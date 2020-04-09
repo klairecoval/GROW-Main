@@ -46,7 +46,7 @@ const HappiestForm = (props) => {
             <form id='happiestForm'
             onSubmit={handleHappiestDrop}
             name='happiestForm'
-            action='/masterThankYou'
+            action='/logMaster'
             method='POST'
             className='happiestForm' >
                 <input id='happiestText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleHappiestCount}/>
@@ -93,12 +93,11 @@ const createHappiestView = function() {
 };
 
 
-const handleHappiestClick = (happiestID) => {
-	const happiestType = document.querySelector('#happiestWrite');
+const handleHappiestClick = () => {
+	const happiestType = document.querySelector('#happiestPrompt');
 	
 	happiestType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(happiestID);
         createHappiestView();
         triggerBackModal();
 	});

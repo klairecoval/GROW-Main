@@ -7,8 +7,8 @@
     display: none;
 }
 
-.backModal,
-.loveModal, .proudModal, .happiestModal, .thankfulModal, .inspiredModal, .excitedModal,
+.backModal, .userCodeModal,
+// .loveModal, .proudModal, .happiestModal, .thankfulModal, .inspiredModal, .excitedModal,
 .happiestSubmitModal, .inspiredSubmitModal, .loveSubmitModal, .proudSubmitModal, .thankfulSubmitModal, .excitedSubmitModal {
     display: none; 
     position: fixed; 
@@ -24,8 +24,8 @@
 }
   
 /* Modal Content */
-.backModalContent,
-.loveModalContent, .proudModalContent, .happiestModalContent, .thankfulModalContent, .inspiredModalContent, .excitedModalContent, 
+.backModalContent, .userCodeModalContent,
+// .loveModalContent, .proudModalContent, .happiestModalContent, .thankfulModalContent, .inspiredModalContent, .excitedModalContent, 
 .happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent, .excitedSubmitContent {
     background-color: #fefefe;
     margin: auto;

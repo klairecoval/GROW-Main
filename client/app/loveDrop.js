@@ -46,7 +46,7 @@ const LoveForm = (props) => {
             <form id='loveForm'
             onSubmit={handleLoveDrop}
             name='loveForm'
-            action='/masterThankYou'
+            action='/logMaster'
             method='POST'
             className='loveForm' >
                 <input id='loveText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleLoveCount}/>
@@ -92,12 +92,11 @@ const createLoveView = function() {
     };
 };
 
-const handleLoveClick = (loveID) => {
-    const loveType = document.querySelector('#loveWrite');
+const handleLoveClick = () => {
+    const loveType = document.querySelector('#lovePrompt');
 	
 	loveType.addEventListener('click', e => {
         e.preventDefault();
-        clearTimeout(loveID);
         createLoveView();
         triggerBackModal();
 	});
