@@ -21,7 +21,7 @@ const handleThankfulDrop = (e) => {
         return false;
     }
 
-    submitThanksBtn.onclick = () => {
+    submitThankfulBtn.onclick = () => {
         sendAjax('POST', $('#thankfulForm').attr('action'), $('#thankfulForm').serialize(), redirect);
     };
 

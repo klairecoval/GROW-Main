@@ -1112,7 +1112,7 @@ var handleThankfulDrop = function handleThankfulDrop(e) {
         return false;
     }
 
-    submitThanksBtn.onclick = function () {
+    submitThankfulBtn.onclick = function () {
         sendAjax('POST', $('#thankfulForm').attr('action'), $('#thankfulForm').serialize(), redirect);
     };
 
