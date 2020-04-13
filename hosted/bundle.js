@@ -739,7 +739,7 @@ var ProudTitle = function ProudTitle(props) {
     return React.createElement(
         "h2",
         { id: "proudTitle" },
-        "I proud..."
+        "I am proud of..."
     );
 };
 

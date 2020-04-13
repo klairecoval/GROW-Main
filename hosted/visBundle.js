@@ -29,8 +29,7 @@ var PromptAnswers = function PromptAnswers(props) {
                     masterPrompt.category
                 )
             );
-        }
-        if (masterPrompt.category === "thankful") {
+        } else if (masterPrompt.category === "thankful") {
             return React.createElement(
                 'div',
                 { className: 'answer' },
@@ -48,8 +47,7 @@ var PromptAnswers = function PromptAnswers(props) {
                     masterPrompt.category
                 )
             );
-        }
-        if (masterPrompt.category === "inspired") {
+        } else if (masterPrompt.category === "inspired") {
             return React.createElement(
                 'div',
                 { className: 'answer' },
@@ -67,8 +65,7 @@ var PromptAnswers = function PromptAnswers(props) {
                     masterPrompt.category
                 )
             );
-        }
-        if (masterPrompt.category === "love") {
+        } else if (masterPrompt.category === "love") {
             return React.createElement(
                 'div',
                 { className: 'answer' },
@@ -86,8 +83,7 @@ var PromptAnswers = function PromptAnswers(props) {
                     masterPrompt.category
                 )
             );
-        }
-        if (masterPrompt.category === "happiest") {
+        } else if (masterPrompt.category === "happiest") {
             return React.createElement(
                 'div',
                 { className: 'answer' },
@@ -105,8 +101,7 @@ var PromptAnswers = function PromptAnswers(props) {
                     masterPrompt.category
                 )
             );
-        }
-        if (masterPrompt.category === "proud") {
+        } else if (masterPrompt.category === "proud") {
             return React.createElement(
                 'div',
                 { className: 'answer' },
