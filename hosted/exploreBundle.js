@@ -5,18 +5,26 @@ var ExploreAnswers = function ExploreAnswers(props) {
         if (masterPrompt.category === "excited") {
             return React.createElement(
                 'div',
-                { className: 'exploreExcited', key: masterPrompt._id },
+                { className: 'exploreExcited', key: masterPrompt._id, onClick: ExploreExcitedModal },
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
-                    'h3',
-                    null,
-                    'I am excited for'
-                ),
-                React.createElement(
-                    'h3',
-                    { className: 'promptAnswer' },
-                    ' ',
-                    masterPrompt.answer
+                    'div',
+                    { id: 'exploreExcitedModal', className: 'exploreExcitedModal' },
+                    React.createElement(
+                        'div',
+                        { className: 'exploreExcitedModalContent' },
+                        React.createElement(
+                            'h3',
+                            null,
+                            'I am excited for'
+                        ),
+                        React.createElement(
+                            'h3',
+                            { className: 'promptAnswer' },
+                            ' ',
+                            masterPrompt.answer
+                        )
+                    )
                 )
             );
         } else if (masterPrompt.category === "thankful") {
@@ -26,10 +34,10 @@ var ExploreAnswers = function ExploreAnswers(props) {
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
                     'div',
-                    { id: 'exploreThankfulModal', className: 'exploreThankfulModal', key: masterPrompt._id },
+                    { id: 'exploreThankfulModal', className: 'exploreThankfulModal' },
                     React.createElement(
                         'div',
-                        { className: 'exploreThankfulModalContent', key: masterPrompt._id },
+                        { className: 'exploreThankfulModalContent' },
                         React.createElement(
                             'h3',
                             null,
@@ -41,81 +49,108 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             masterPrompt.answer
                         )
                     )
-                ),
-                React.createElement(
-                    'span',
-                    { className: 'thankfulID' },
-                    masterPrompt._id
                 )
             );
         } else if (masterPrompt.category === "inspired") {
             return React.createElement(
                 'div',
-                { className: 'exploreInspired', key: masterPrompt._id },
+                { className: 'exploreInspired', key: masterPrompt._id, onClick: ExploreInspiredModal },
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
-                    'h3',
-                    null,
-                    'I am inspired by'
-                ),
-                React.createElement(
-                    'h3',
-                    { className: 'promptAnswer' },
-                    ' ',
-                    masterPrompt.answer
+                    'div',
+                    { id: 'exploreInspiredModal', className: 'exploreInspiredModal' },
+                    React.createElement(
+                        'div',
+                        { className: 'exploreInspiredModalContent' },
+                        React.createElement(
+                            'h3',
+                            null,
+                            'I am inspired by'
+                        ),
+                        React.createElement(
+                            'h3',
+                            { className: 'promptAnswer' },
+                            ' ',
+                            masterPrompt.answer
+                        )
+                    )
                 )
             );
         } else if (masterPrompt.category === "love") {
             return React.createElement(
                 'div',
-                { className: 'exploreLove', key: masterPrompt._id },
+                { className: 'exploreLove', key: masterPrompt._id, onClick: ExploreLoveModal },
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
-                    'h3',
-                    null,
-                    'I love'
-                ),
-                React.createElement(
-                    'h3',
-                    { className: 'promptAnswer' },
-                    ' ',
-                    masterPrompt.answer
+                    'div',
+                    { id: 'exploreLoveModal', className: 'exploreLoveModal' },
+                    React.createElement(
+                        'div',
+                        { className: 'exploreLoveModalContent' },
+                        React.createElement(
+                            'h3',
+                            null,
+                            'I love'
+                        ),
+                        React.createElement(
+                            'h3',
+                            { className: 'promptAnswer' },
+                            ' ',
+                            masterPrompt.answer
+                        )
+                    )
                 )
             );
         }
         if (masterPrompt.category === "happiest") {
             return React.createElement(
                 'div',
-                { className: 'exploreHappiest', key: masterPrompt._id },
+                { className: 'exploreHappiest', key: masterPrompt._id, onClick: ExploreHappiestModal },
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
-                    'h3',
-                    null,
-                    'I am happiest when'
-                ),
-                React.createElement(
-                    'h3',
-                    { className: 'promptAnswer' },
-                    ' ',
-                    masterPrompt.answer
+                    'div',
+                    { id: 'exploreHappiestModal', className: 'exploreHappiestModal' },
+                    React.createElement(
+                        'div',
+                        { className: 'exploreHappiestModalContent' },
+                        React.createElement(
+                            'h3',
+                            null,
+                            'I am happiest when'
+                        ),
+                        React.createElement(
+                            'h3',
+                            { className: 'promptAnswer' },
+                            ' ',
+                            masterPrompt.answer
+                        )
+                    )
                 )
             );
         }
         if (masterPrompt.category === "proud") {
             return React.createElement(
                 'div',
-                { className: 'exploreProud', key: masterPrompt._id },
+                { className: 'exploreProud', key: masterPrompt._id, onClick: ExploreProudModal },
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
-                    'h3',
-                    null,
-                    'I am proud of'
-                ),
-                React.createElement(
-                    'h3',
-                    { className: 'promptAnswer' },
-                    ' ',
-                    masterPrompt.answer
+                    'div',
+                    { id: 'exploreProudModal', className: 'exploreProudModal' },
+                    React.createElement(
+                        'div',
+                        { className: 'exploreProudModalContent' },
+                        React.createElement(
+                            'h3',
+                            null,
+                            'I am proud of'
+                        ),
+                        React.createElement(
+                            'h3',
+                            { className: 'promptAnswer' },
+                            ' ',
+                            masterPrompt.answer
+                        )
+                    )
                 )
             );
         }
@@ -129,14 +164,72 @@ var ExploreAnswers = function ExploreAnswers(props) {
 
 var ExploreThankfulModal = function ExploreThankfulModal(e) {
     var exploreThankfulModal = e.target.parentElement.querySelector("#exploreThankfulModal");
-    // const thankfulLeaf = e.target.parentElement.querySelector("#exploreThankfulLeaf");
 
     exploreThankfulModal.style.display = "block";
-    console.log("thankful modal called and triggered");
 
     window.onclick = function (event) {
         if (event.target === exploreThankfulModal) {
             exploreThankfulModal.style.display = "none";
+        }
+    };
+};
+
+var ExploreExcitedModal = function ExploreExcitedModal(e) {
+    var exploreExcitedModal = e.target.parentElement.querySelector("#exploreExcitedModal");
+
+    exploreExcitedModal.style.display = "block";
+
+    window.onclick = function (event) {
+        if (event.target === exploreExcitedModal) {
+            exploreExcitedModal.style.display = "none";
+        }
+    };
+};
+
+var ExploreInspiredModal = function ExploreInspiredModal(e) {
+    var exploreInspiredModal = e.target.parentElement.querySelector("#exploreInspiredModal");
+
+    exploreInspiredModal.style.display = "block";
+
+    window.onclick = function (event) {
+        if (event.target === exploreInspiredModal) {
+            exploreInspiredModal.style.display = "none";
+        }
+    };
+};
+
+var ExploreLoveModal = function ExploreLoveModal(e) {
+    var exploreLoveModal = e.target.parentElement.querySelector("#exploreLoveModal");
+
+    exploreLoveModal.style.display = "block";
+
+    window.onclick = function (event) {
+        if (event.target === exploreInspiredModal) {
+            exploreLoveModal.style.display = "none";
+        }
+    };
+};
+
+var ExploreHappiestModal = function ExploreHappiestModal(e) {
+    var exploreHappiestModal = e.target.parentElement.querySelector("#exploreHappiestModal");
+
+    exploreHappiestModal.style.display = "block";
+
+    window.onclick = function (event) {
+        if (event.target === exploreHappiestModal) {
+            exploreHappiestModal.style.display = "none";
+        }
+    };
+};
+
+var ExploreProudModal = function ExploreProudModal(e) {
+    var exploreProudModal = e.target.parentElement.querySelector("#exploreProudModal");
+
+    exploreProudModal.style.display = "block";
+
+    window.onclick = function (event) {
+        if (event.target === exploreProudModal) {
+            exploreProudModal.style.display = "none";
         }
     };
 };

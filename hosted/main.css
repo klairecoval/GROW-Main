@@ -6,7 +6,7 @@
   display: none; }
 
 .backModal, .userCodeModal,
-.exploreThankfulModal,
+.exploreThankfulModal, .exploreExcitedModal, .exploreInspiredModal, .exploreLoveModal, .exploreHappiestModal, .exploreProudModal,
 .happiestSubmitModal, .inspiredSubmitModal, .loveSubmitModal, .proudSubmitModal, .thankfulSubmitModal, .excitedSubmitModal {
   display: none;
   position: fixed;
@@ -22,7 +22,7 @@
 
 /* Modal Content */
 .backModalContent, .userCodeModalContent,
-.exploreThankfulModalContent,
+.exploreThankfulModalContent, .exploreExcitedModalContent, .exploreInspiredModalContent, .exploreLoveModalContent, .exploreHappiestModalContent, .exploreProudModalContent,
 .happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent, .excitedSubmitContent {
   background-color: #fefefe;
   margin: auto;
