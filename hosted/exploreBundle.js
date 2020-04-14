@@ -5,7 +5,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
         if (masterPrompt.category === "excited") {
             return React.createElement(
                 'div',
-                { className: 'exploreThought' },
+                { className: 'exploreExcited', key: masterPrompt._id },
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
                     'h3',
@@ -22,24 +22,36 @@ var ExploreAnswers = function ExploreAnswers(props) {
         } else if (masterPrompt.category === "thankful") {
             return React.createElement(
                 'div',
-                { className: 'exploreThought' },
+                { className: 'exploreThankful', key: masterPrompt._id, onClick: ExploreThankfulModal },
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
-                    'h3',
-                    null,
-                    'I am thankful for'
+                    'div',
+                    { id: 'exploreThankfulModal', className: 'exploreThankfulModal', key: masterPrompt._id },
+                    React.createElement(
+                        'div',
+                        { className: 'exploreThankfulModalContent', key: masterPrompt._id },
+                        React.createElement(
+                            'h3',
+                            null,
+                            'I am thankful for'
+                        ),
+                        React.createElement(
+                            'h3',
+                            { className: 'promptAnswer' },
+                            masterPrompt.answer
+                        )
+                    )
                 ),
                 React.createElement(
-                    'h3',
-                    { className: 'promptAnswer' },
-                    ' ',
-                    masterPrompt.answer
+                    'span',
+                    { className: 'thankfulID' },
+                    masterPrompt._id
                 )
             );
         } else if (masterPrompt.category === "inspired") {
             return React.createElement(
                 'div',
-                { className: 'exploreThought' },
+                { className: 'exploreInspired', key: masterPrompt._id },
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
                     'h3',
@@ -56,7 +68,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
         } else if (masterPrompt.category === "love") {
             return React.createElement(
                 'div',
-                { className: 'exploreThought' },
+                { className: 'exploreLove', key: masterPrompt._id },
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
                     'h3',
@@ -74,7 +86,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
         if (masterPrompt.category === "happiest") {
             return React.createElement(
                 'div',
-                { className: 'exploreThought' },
+                { className: 'exploreHappiest', key: masterPrompt._id },
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
                     'h3',
@@ -92,7 +104,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
         if (masterPrompt.category === "proud") {
             return React.createElement(
                 'div',
-                { className: 'exploreThought' },
+                { className: 'exploreProud', key: masterPrompt._id },
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
                     'h3',
@@ -113,6 +125,20 @@ var ExploreAnswers = function ExploreAnswers(props) {
         { className: 'exploreList' },
         exploreAnswerNodes
     );
+};
+
+var ExploreThankfulModal = function ExploreThankfulModal(e) {
+    var exploreThankfulModal = e.target.parentElement.querySelector("#exploreThankfulModal");
+    // const thankfulLeaf = e.target.parentElement.querySelector("#exploreThankfulLeaf");
+
+    exploreThankfulModal.style.display = "block";
+    console.log("thankful modal called and triggered");
+
+    window.onclick = function (event) {
+        if (event.target === exploreThankfulModal) {
+            exploreThankfulModal.style.display = "none";
+        }
+    };
 };
 
 var loadExploreAnswers = function loadExploreAnswers() {
