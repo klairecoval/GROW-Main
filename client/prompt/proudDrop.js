@@ -36,7 +36,7 @@ const handleProudCount = (e) => {
 
 const ProudTitle = (props) => {
     return (
-        <h2 id="proudTitle">I proud...</h2>
+        <h2 id="proudTitle">I am proud of...</h2>
     );
 };
 
