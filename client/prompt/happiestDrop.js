@@ -49,11 +49,11 @@ const HappiestForm = (props) => {
             action='/logMaster'
             method='POST'
             className='happiestForm' >
-                <input id='happiestText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleHappiestCount}/>
+                <input id='happiestText' type='text' name='answer' maxLength="90" placeholder='...' onChange={handleHappiestCount}/>
                 <input id='category' type='text' name='category' value='happiest' placeholder='happiest' onChange={handleHappiestCount}/>        
                 <input className='logThoughtSubmit' id="logHappiestSubmit" type='submit' value='Submit' />
             </form>
-            <p id="happiestCount">{props.happiestCount}/60</p>
+            <p id="happiestCount">{props.happiestCount}/90</p>
             <button id="happiestBackBtn">Go back</button>
             <BackModal/>
             <HappiestSubmitModal />

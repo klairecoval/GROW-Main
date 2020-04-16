@@ -49,11 +49,11 @@ const InspiredForm = (props) => {
             action='/logMaster'
             method='POST'
             className='inspiredForm' >
-                <input id='inspiredText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleInspiredCount}/>
+                <input id='inspiredText' type='text' name='answer' maxLength="90" placeholder='...' onChange={handleInspiredCount}/>
                 <input id='category' type='text' name='category' value='inspired' placeholder='inspired' onChange={handleInspiredCount}/>        
                 <input className='logThoughtSubmit' id="logInspiredSubmit" type='submit' value='Submit' />
             </form>
-            <p id="inspiredCount">{props.inspiredCount}/60</p>
+            <p id="inspiredCount">{props.inspiredCount}/90</p>
             <button id="inspiredBackBtn">Go back</button>
             <BackModal/>
             <InspiredSubmitModal />

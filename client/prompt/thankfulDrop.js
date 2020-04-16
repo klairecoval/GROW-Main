@@ -1,3 +1,4 @@
+
 const handleThankfulDrop = (e) => {
     e.preventDefault();
 
@@ -49,11 +50,11 @@ const ThankfulForm = (props) => {
             action='/logMaster'
             method='POST'
             className='thankfulForm' >
-                <input id='thankfulText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleThankfulCount}/>
+                <input id='thankfulText' type='text' name='answer' maxLength="90" placeholder='...' onChange={handleThankfulCount}/>
                 <input id='category' type='text' name='category' value='thankful' placeholder='thankful' onChange={handleThankfulCount}/>        
                 <input className='logThoughtSubmit' id="logThankfulSubmit" type='submit' value='Submit' />
             </form>
-            <p id="thankfulCount">{props.thankfulCount}/60</p>
+            <p id="thankfulCount">{props.thankfulCount}/90</p>
             <button id="thankfulBackBtn">Go back</button>
             <BackModal/>
             <ThankfulSubmitModal />

@@ -54,7 +54,7 @@ var ExcitedForm = function ExcitedForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "excitedForm" },
-            React.createElement("input", { id: "excitedText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleExcitedCount }),
+            React.createElement("input", { id: "excitedText", type: "text", name: "answer", maxLength: "90", placeholder: "...", onChange: handleExcitedCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "excited", placeholder: "excited", onChange: handleExcitedCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logExcitedSubmit", type: "submit", value: "Submit" })
         ),
@@ -62,7 +62,7 @@ var ExcitedForm = function ExcitedForm(props) {
             "p",
             { id: "excitedCount" },
             props.excitedCount,
-            "/60"
+            "/90"
         ),
         React.createElement(
             "button",
@@ -185,7 +185,7 @@ var HappiestForm = function HappiestForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "happiestForm" },
-            React.createElement("input", { id: "happiestText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleHappiestCount }),
+            React.createElement("input", { id: "happiestText", type: "text", name: "answer", maxLength: "90", placeholder: "...", onChange: handleHappiestCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "happiest", placeholder: "happiest", onChange: handleHappiestCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logHappiestSubmit", type: "submit", value: "Submit" })
         ),
@@ -193,7 +193,7 @@ var HappiestForm = function HappiestForm(props) {
             "p",
             { id: "happiestCount" },
             props.happiestCount,
-            "/60"
+            "/90"
         ),
         React.createElement(
             "button",
@@ -316,7 +316,7 @@ var InspiredForm = function InspiredForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "inspiredForm" },
-            React.createElement("input", { id: "inspiredText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleInspiredCount }),
+            React.createElement("input", { id: "inspiredText", type: "text", name: "answer", maxLength: "90", placeholder: "...", onChange: handleInspiredCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "inspired", placeholder: "inspired", onChange: handleInspiredCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logInspiredSubmit", type: "submit", value: "Submit" })
         ),
@@ -324,7 +324,7 @@ var InspiredForm = function InspiredForm(props) {
             "p",
             { id: "inspiredCount" },
             props.inspiredCount,
-            "/60"
+            "/90"
         ),
         React.createElement(
             "button",
@@ -447,7 +447,7 @@ var LoveForm = function LoveForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "loveForm" },
-            React.createElement("input", { id: "loveText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleLoveCount }),
+            React.createElement("input", { id: "loveText", type: "text", name: "answer", maxLength: "90", placeholder: "...", onChange: handleLoveCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "love", placeholder: "love", onChange: handleLoveCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logLoveSubmit", type: "submit", value: "Submit" })
         ),
@@ -455,7 +455,7 @@ var LoveForm = function LoveForm(props) {
             "p",
             { id: "loveCount" },
             props.loveCount,
-            "/60"
+            "/90"
         ),
         React.createElement(
             "button",
@@ -755,7 +755,7 @@ var ProudForm = function ProudForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "proudForm" },
-            React.createElement("input", { id: "proudText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleProudCount }),
+            React.createElement("input", { id: "proudText", type: "text", name: "answer", maxLength: "90", placeholder: "...", onChange: handleProudCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "proud", placeholder: "proud", onChange: handleProudCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logProudSubmit", type: "submit", value: "Submit" })
         ),
@@ -763,7 +763,7 @@ var ProudForm = function ProudForm(props) {
             "p",
             { id: "proudCount" },
             props.proudCount,
-            "/60"
+            "/90"
         ),
         React.createElement(
             "button",
@@ -886,7 +886,7 @@ var ThankfulForm = function ThankfulForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "thankfulForm" },
-            React.createElement("input", { id: "thankfulText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleThankfulCount }),
+            React.createElement("input", { id: "thankfulText", type: "text", name: "answer", maxLength: "90", placeholder: "...", onChange: handleThankfulCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "thankful", placeholder: "thankful", onChange: handleThankfulCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logThankfulSubmit", type: "submit", value: "Submit" })
         ),
@@ -894,7 +894,7 @@ var ThankfulForm = function ThankfulForm(props) {
             "p",
             { id: "thankfulCount" },
             props.thankfulCount,
-            "/60"
+            "/90"
         ),
         React.createElement(
             "button",

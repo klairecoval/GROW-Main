@@ -49,11 +49,11 @@ const ProudForm = (props) => {
             action='/logMaster'
             method='POST'
             className='proudForm' >
-                <input id='proudText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleProudCount}/>
+                <input id='proudText' type='text' name='answer' maxLength="90" placeholder='...' onChange={handleProudCount}/>
                 <input id='category' type='text' name='category' value='proud' placeholder='proud' onChange={handleProudCount}/>        
                 <input className='logThoughtSubmit' id="logProudSubmit" type='submit' value='Submit' />
             </form>
-            <p id="proudCount">{props.proudCount}/60</p>
+            <p id="proudCount">{props.proudCount}/90</p>
             <button id="proudBackBtn">Go back</button>
             <BackModal/>
             <ProudSubmitModal />

@@ -49,11 +49,11 @@ const LoveForm = (props) => {
             action='/logMaster'
             method='POST'
             className='loveForm' >
-                <input id='loveText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleLoveCount}/>
+                <input id='loveText' type='text' name='answer' maxLength="90" placeholder='...' onChange={handleLoveCount}/>
                 <input id='category' type='text' name='category' value='love' placeholder='love' onChange={handleLoveCount}/>        
                 <input className='logThoughtSubmit' id="logLoveSubmit" type='submit' value='Submit' />
             </form>
-            <p id="loveCount">{props.loveCount}/60</p>
+            <p id="loveCount">{props.loveCount}/90</p>
             <button id="loveBackBtn">Go back</button>
             <BackModal/>
             <LoveSubmitModal />

@@ -49,11 +49,11 @@ const ExcitedForm = (props) => {
             action='/logMaster'
             method='POST'
             className='excitedForm' >
-                <input id='excitedText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleExcitedCount}/>
+                <input id='excitedText' type='text' name='answer' maxLength="90" placeholder='...' onChange={handleExcitedCount}/>
                 <input id='category' type='text' name='category' value='excited' placeholder='excited' onChange={handleExcitedCount}/>        
                 <input className='logThoughtSubmit' id="logExcitedSubmit" type='submit' value='Submit' />
             </form>
-            <p id="excitedCount">{props.excitedCount}/60</p>
+            <p id="excitedCount">{props.excitedCount}/90</p>
             <button id="excitedBackBtn">Go back</button>
             <BackModal/>
             <ExcitedSubmitModal />
