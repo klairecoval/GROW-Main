@@ -1,6 +1,8 @@
 # GROW
 Grow is both a digital and physical interactive experience that encourages participants to foster positive thoughts of their own and find common ground with others.  It will showcase how community and positive thinking can light up the whole world.
 
+https://grow-main.herokuapp.com/
+
 ### Development
 - first time: `npm i` (obviously)
 - lint code: `npm test`
