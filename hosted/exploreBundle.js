@@ -23,6 +23,35 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             { className: 'promptAnswer' },
                             ' ',
                             masterPrompt.answer
+                        ),
+                        React.createElement(
+                            'p',
+                            null,
+                            masterPrompt.createdData.slice(0, 10)
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'socialMediaShareBtns' },
+                            React.createElement(
+                                'a',
+                                { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am excited for " + masterPrompt.answer, target: '_blank' },
+                                'Twitter'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: 'https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore', target: '_blank' },
+                                'Facebook'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: "https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am excited for " + masterPrompt.answer, target: '_blank' },
+                                'Reddit'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am excited for " + masterPrompt.answer, target: '_blank' },
+                                'LinkedIn'
+                            )
                         )
                     )
                 )
@@ -47,6 +76,35 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             'h3',
                             { className: 'promptAnswer' },
                             masterPrompt.answer
+                        ),
+                        React.createElement(
+                            'p',
+                            null,
+                            masterPrompt.createdData.slice(0, 10)
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'socialMediaShareBtns' },
+                            React.createElement(
+                                'a',
+                                { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am thankful for " + masterPrompt.answer, target: '_blank' },
+                                'Twitter'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: 'https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore', target: '_blank' },
+                                'Facebook'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: "https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am thankful for " + masterPrompt.answer, target: '_blank' },
+                                'Reddit'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am thankful for " + masterPrompt.answer, target: '_blank' },
+                                'LinkedIn'
+                            )
                         )
                     )
                 )
@@ -72,6 +130,35 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             { className: 'promptAnswer' },
                             ' ',
                             masterPrompt.answer
+                        ),
+                        React.createElement(
+                            'p',
+                            null,
+                            masterPrompt.createdData.slice(0, 10)
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'socialMediaShareBtns' },
+                            React.createElement(
+                                'a',
+                                { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am inspired by " + masterPrompt.answer, target: '_blank' },
+                                'Twitter'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: 'https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore', target: '_blank' },
+                                'Facebook'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: "https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am inspired by " + masterPrompt.answer, target: '_blank' },
+                                'Reddit'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am inspired by " + masterPrompt.answer, target: '_blank' },
+                                'LinkedIn'
+                            )
                         )
                     )
                 )
@@ -97,6 +184,35 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             { className: 'promptAnswer' },
                             ' ',
                             masterPrompt.answer
+                        ),
+                        React.createElement(
+                            'p',
+                            null,
+                            masterPrompt.createdData.slice(0, 10)
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'socialMediaShareBtns' },
+                            React.createElement(
+                                'a',
+                                { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I love " + masterPrompt.answer, target: '_blank' },
+                                'Twitter'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: 'https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore', target: '_blank' },
+                                'Facebook'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: "https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I love " + masterPrompt.answer, target: '_blank' },
+                                'Reddit'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I love " + masterPrompt.answer, target: '_blank' },
+                                'LinkedIn'
+                            )
                         )
                     )
                 )
@@ -123,6 +239,35 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             { className: 'promptAnswer' },
                             ' ',
                             masterPrompt.answer
+                        ),
+                        React.createElement(
+                            'p',
+                            null,
+                            masterPrompt.createdData.slice(0, 10)
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'socialMediaShareBtns' },
+                            React.createElement(
+                                'a',
+                                { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am happiest when " + masterPrompt.answer, target: '_blank' },
+                                'Twitter'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: 'https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore', target: '_blank' },
+                                'Facebook'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: "https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am happiest when " + masterPrompt.answer, target: '_blank' },
+                                'Reddit'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am happiest when " + masterPrompt.answer, target: '_blank' },
+                                'LinkedIn'
+                            )
                         )
                     )
                 )
@@ -149,6 +294,35 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             { className: 'promptAnswer' },
                             ' ',
                             masterPrompt.answer
+                        ),
+                        React.createElement(
+                            'p',
+                            null,
+                            masterPrompt.createdData.slice(0, 10)
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'socialMediaShareBtns' },
+                            React.createElement(
+                                'a',
+                                { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am proud of " + masterPrompt.answer, target: '_blank' },
+                                'Twitter'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: 'https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore', target: '_blank' },
+                                'Facebook'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: "https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am proud of " + masterPrompt.answer, target: '_blank' },
+                                'Reddit'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am proud of " + masterPrompt.answer, target: '_blank' },
+                                'LinkedIn'
+                            )
                         )
                     )
                 )

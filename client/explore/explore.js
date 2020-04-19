@@ -8,6 +8,21 @@ const ExploreAnswers = function(props) {
                         <div className="exploreExcitedModalContent">
                             <h3>I am excited for</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
+                            <p>{masterPrompt.createdData.slice(0,10)}</p>
+                            <div className="socialMediaShareBtns">
+                                <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am excited for " + masterPrompt.answer} target="_blank">
+                                    Twitter
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
+                                    Facebook
+                                </a>
+                                <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am excited for " + masterPrompt.answer} target="_blank">
+                                    Reddit
+                                </a>
+                                <a href={"https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am excited for " + masterPrompt.answer} target="_blank">
+                                    LinkedIn
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -20,6 +35,21 @@ const ExploreAnswers = function(props) {
                         <div className="exploreThankfulModalContent">
                             <h3>I am thankful for</h3>
                             <h3 className='promptAnswer'>{masterPrompt.answer}</h3>
+                            <p>{masterPrompt.createdData.slice(0,10)}</p>
+                            <div className="socialMediaShareBtns">
+                                <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am thankful for " + masterPrompt.answer} target="_blank">
+                                    Twitter
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
+                                    Facebook
+                                </a>
+                                <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am thankful for " + masterPrompt.answer} target="_blank">
+                                    Reddit
+                                </a>
+                                <a href={"https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am thankful for " + masterPrompt.answer} target="_blank">
+                                    LinkedIn
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -32,6 +62,21 @@ const ExploreAnswers = function(props) {
                         <div className="exploreInspiredModalContent">
                             <h3>I am inspired by</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
+                            <p>{masterPrompt.createdData.slice(0,10)}</p>
+                            <div className="socialMediaShareBtns">
+                                <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am inspired by " + masterPrompt.answer} target="_blank">
+                                    Twitter
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
+                                    Facebook
+                                </a>
+                                <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am inspired by " + masterPrompt.answer} target="_blank">
+                                    Reddit
+                                </a>
+                                <a href={"https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am inspired by " + masterPrompt.answer} target="_blank">
+                                    LinkedIn
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -44,6 +89,21 @@ const ExploreAnswers = function(props) {
                         <div className="exploreLoveModalContent">
                             <h3>I love</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
+                            <p>{masterPrompt.createdData.slice(0,10)}</p>
+                            <div className="socialMediaShareBtns">
+                                <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I love " + masterPrompt.answer} target="_blank">
+                                    Twitter
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
+                                    Facebook
+                                </a>
+                                <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I love " + masterPrompt.answer} target="_blank">
+                                    Reddit
+                                </a>
+                                <a href={"https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I love " + masterPrompt.answer} target="_blank">
+                                    LinkedIn
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -57,6 +117,21 @@ const ExploreAnswers = function(props) {
                         <div className="exploreHappiestModalContent">
                             <h3>I am happiest when</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
+                            <p>{masterPrompt.createdData.slice(0,10)}</p>
+                            <div className="socialMediaShareBtns">
+                                <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am happiest when " + masterPrompt.answer} target="_blank">
+                                    Twitter
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
+                                    Facebook
+                                </a>
+                                <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am happiest when " + masterPrompt.answer} target="_blank">
+                                    Reddit
+                                </a>
+                                <a href={"https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am happiest when " + masterPrompt.answer} target="_blank">
+                                    LinkedIn
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -70,6 +145,21 @@ const ExploreAnswers = function(props) {
                         <div className="exploreProudModalContent">
                             <h3>I am proud of</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
+                            <p>{masterPrompt.createdData.slice(0,10)}</p>
+                            <div className="socialMediaShareBtns">
+                                <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am proud of " + masterPrompt.answer} target="_blank">
+                                    Twitter
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
+                                    Facebook
+                                </a>
+                                <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am proud of " + masterPrompt.answer} target="_blank">
+                                    Reddit
+                                </a>
+                                <a href={"https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am proud of " + masterPrompt.answer} target="_blank">
+                                    LinkedIn
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
