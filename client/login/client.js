@@ -77,12 +77,23 @@ const CodeModal = (props) => {
     return (
         <div className="userCodeModal" id="userCodeModal" >
             <div className="userCodeModalContent">
-                <h2>Your user code is {generateUserCode(4)}</h2>
+                <h2>Your user code is</h2>
+                <div id="userCodeVal">{generateUserCode(4)}</div>
+                <button onClick={copyDivToClipboard}>Copy</button>
                 <SignupWindow />
             </div>
         </div>
     );
 };
+
+const copyDivToClipboard = () => {
+    var range = document.createRange();
+    range.selectNode(document.getElementById('userCodeVal'));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+}
 
 // create login view in center of page
 const createLoginWindow = () => {
@@ -123,6 +134,7 @@ const setup = () => {
     const genUserCodeBtn = document.getElementById("genUserCodeBtn");
 
     genUserCodeBtn.onclick = () => {
+        createLoginWindow();
         codeModal.style.display = "block";
     };
 

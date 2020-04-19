@@ -95,12 +95,30 @@ var CodeModal = function CodeModal(props) {
             React.createElement(
                 'h2',
                 null,
-                'Your user code is ',
+                'Your user code is'
+            ),
+            React.createElement(
+                'div',
+                { id: 'userCodeVal' },
                 generateUserCode(4)
+            ),
+            React.createElement(
+                'button',
+                { onClick: copyDivToClipboard },
+                'Copy'
             ),
             React.createElement(SignupWindow, null)
         )
     );
+};
+
+var copyDivToClipboard = function copyDivToClipboard() {
+    var range = document.createRange();
+    range.selectNode(document.getElementById('userCodeVal'));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
 };
 
 // create login view in center of page
@@ -136,6 +154,7 @@ var setup = function setup() {
     var genUserCodeBtn = document.getElementById("genUserCodeBtn");
 
     genUserCodeBtn.onclick = function () {
+        createLoginWindow();
         codeModal.style.display = "block";
     };
 
