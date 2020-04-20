@@ -1,5 +1,20 @@
 'use strict';
 
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var calcDate = function calcDate(date) {
+    var d = new Date(date);
+    var dtf = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit' });
+
+    var _dtf$formatToParts = dtf.formatToParts(d),
+        _dtf$formatToParts2 = _slicedToArray(_dtf$formatToParts, 5),
+        mo = _dtf$formatToParts2[0].value,
+        da = _dtf$formatToParts2[2].value,
+        ye = _dtf$formatToParts2[4].value;
+
+    return mo + ' ' + da + ', ' + ye;
+};
+
 var ExploreAnswers = function ExploreAnswers(props) {
     var exploreAnswerNodes = props.answers.map(function (masterPrompt) {
         if (masterPrompt.category === "excited") {
@@ -14,6 +29,11 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         'div',
                         { className: 'exploreExcitedModalContent' },
                         React.createElement(
+                            'button',
+                            { id: 'dismissExcitedExplore' },
+                            'Back'
+                        ),
+                        React.createElement(
                             'h3',
                             null,
                             'I am excited for'
@@ -25,13 +45,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             masterPrompt.answer
                         ),
                         React.createElement(
-                            'p',
-                            null,
-                            masterPrompt.createdData.slice(0, 10)
-                        ),
-                        React.createElement(
                             'div',
                             { className: 'socialMediaShareBtns' },
+                            React.createElement(
+                                'p',
+                                null,
+                                'Help spread the positivity by sharing this thought.'
+                            ),
                             React.createElement(
                                 'a',
                                 { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am excited for " + masterPrompt.answer, target: '_blank' },
@@ -52,6 +72,12 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am excited for " + masterPrompt.answer, target: '_blank' },
                                 'LinkedIn'
                             )
+                        ),
+                        React.createElement(
+                            'p',
+                            null,
+                            'Submitted: ',
+                            calcDate(masterPrompt.createdData.slice(0, 10))
                         )
                     )
                 )
@@ -68,6 +94,11 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         'div',
                         { className: 'exploreThankfulModalContent' },
                         React.createElement(
+                            'button',
+                            { id: 'dismissThankfulExplore' },
+                            'Back'
+                        ),
+                        React.createElement(
                             'h3',
                             null,
                             'I am thankful for'
@@ -78,13 +109,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             masterPrompt.answer
                         ),
                         React.createElement(
-                            'p',
-                            null,
-                            masterPrompt.createdData.slice(0, 10)
-                        ),
-                        React.createElement(
                             'div',
                             { className: 'socialMediaShareBtns' },
+                            React.createElement(
+                                'p',
+                                null,
+                                'Help spread the positivity by sharing this thought.'
+                            ),
                             React.createElement(
                                 'a',
                                 { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am thankful for " + masterPrompt.answer, target: '_blank' },
@@ -105,6 +136,12 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am thankful for " + masterPrompt.answer, target: '_blank' },
                                 'LinkedIn'
                             )
+                        ),
+                        React.createElement(
+                            'p',
+                            null,
+                            'Submitted: ',
+                            calcDate(masterPrompt.createdData.slice(0, 10))
                         )
                     )
                 )
@@ -121,6 +158,11 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         'div',
                         { className: 'exploreInspiredModalContent' },
                         React.createElement(
+                            'button',
+                            { id: 'dismissInspiredExplore' },
+                            'Back'
+                        ),
+                        React.createElement(
                             'h3',
                             null,
                             'I am inspired by'
@@ -132,13 +174,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             masterPrompt.answer
                         ),
                         React.createElement(
-                            'p',
-                            null,
-                            masterPrompt.createdData.slice(0, 10)
-                        ),
-                        React.createElement(
                             'div',
                             { className: 'socialMediaShareBtns' },
+                            React.createElement(
+                                'p',
+                                null,
+                                'Help spread the positivity by sharing this thought.'
+                            ),
                             React.createElement(
                                 'a',
                                 { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am inspired by " + masterPrompt.answer, target: '_blank' },
@@ -159,6 +201,12 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am inspired by " + masterPrompt.answer, target: '_blank' },
                                 'LinkedIn'
                             )
+                        ),
+                        React.createElement(
+                            'p',
+                            null,
+                            'Submitted: ',
+                            calcDate(masterPrompt.createdData.slice(0, 10))
                         )
                     )
                 )
@@ -175,6 +223,11 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         'div',
                         { className: 'exploreLoveModalContent' },
                         React.createElement(
+                            'button',
+                            { id: 'dismissLoveExplore' },
+                            'Back'
+                        ),
+                        React.createElement(
                             'h3',
                             null,
                             'I love'
@@ -186,13 +239,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             masterPrompt.answer
                         ),
                         React.createElement(
-                            'p',
-                            null,
-                            masterPrompt.createdData.slice(0, 10)
-                        ),
-                        React.createElement(
                             'div',
                             { className: 'socialMediaShareBtns' },
+                            React.createElement(
+                                'p',
+                                null,
+                                'Help spread the positivity by sharing this thought.'
+                            ),
                             React.createElement(
                                 'a',
                                 { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I love " + masterPrompt.answer, target: '_blank' },
@@ -213,6 +266,12 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I love " + masterPrompt.answer, target: '_blank' },
                                 'LinkedIn'
                             )
+                        ),
+                        React.createElement(
+                            'p',
+                            null,
+                            'Submitted: ',
+                            calcDate(masterPrompt.createdData.slice(0, 10))
                         )
                     )
                 )
@@ -230,6 +289,11 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         'div',
                         { className: 'exploreHappiestModalContent' },
                         React.createElement(
+                            'button',
+                            { id: 'dismissHappiestExplore' },
+                            'Back'
+                        ),
+                        React.createElement(
                             'h3',
                             null,
                             'I am happiest when'
@@ -241,13 +305,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             masterPrompt.answer
                         ),
                         React.createElement(
-                            'p',
-                            null,
-                            masterPrompt.createdData.slice(0, 10)
-                        ),
-                        React.createElement(
                             'div',
                             { className: 'socialMediaShareBtns' },
+                            React.createElement(
+                                'p',
+                                null,
+                                'Help spread the positivity by sharing this thought.'
+                            ),
                             React.createElement(
                                 'a',
                                 { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am happiest when " + masterPrompt.answer, target: '_blank' },
@@ -268,6 +332,12 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am happiest when " + masterPrompt.answer, target: '_blank' },
                                 'LinkedIn'
                             )
+                        ),
+                        React.createElement(
+                            'p',
+                            null,
+                            'Submitted: ',
+                            calcDate(masterPrompt.createdData.slice(0, 10))
                         )
                     )
                 )
@@ -285,6 +355,11 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         'div',
                         { className: 'exploreProudModalContent' },
                         React.createElement(
+                            'button',
+                            { id: 'dismissProudExplore' },
+                            'Back'
+                        ),
+                        React.createElement(
                             'h3',
                             null,
                             'I am proud of'
@@ -296,13 +371,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             masterPrompt.answer
                         ),
                         React.createElement(
-                            'p',
-                            null,
-                            masterPrompt.createdData.slice(0, 10)
-                        ),
-                        React.createElement(
                             'div',
                             { className: 'socialMediaShareBtns' },
+                            React.createElement(
+                                'p',
+                                null,
+                                'Help spread the positivity by sharing this thought.'
+                            ),
                             React.createElement(
                                 'a',
                                 { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am proud of " + masterPrompt.answer, target: '_blank' },
@@ -323,6 +398,12 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am proud of " + masterPrompt.answer, target: '_blank' },
                                 'LinkedIn'
                             )
+                        ),
+                        React.createElement(
+                            'p',
+                            null,
+                            'Submitted: ',
+                            calcDate(masterPrompt.createdData.slice(0, 10))
                         )
                     )
                 )
@@ -338,8 +419,15 @@ var ExploreAnswers = function ExploreAnswers(props) {
 
 var ExploreThankfulModal = function ExploreThankfulModal(e) {
     var exploreThankfulModal = e.target.parentElement.querySelector("#exploreThankfulModal");
+    var dismissThankfulExplore = e.target.parentElement.querySelector('#dismissThankfulExplore');
 
-    exploreThankfulModal.style.display = "block";
+    if (exploreThankfulModal) {
+        exploreThankfulModal.style.display = "block";
+    }
+
+    dismissThankfulExplore.onclick = function () {
+        exploreThankfulModal.style.display = "none";
+    };
 
     window.onclick = function (event) {
         if (event.target === exploreThankfulModal) {
@@ -350,8 +438,15 @@ var ExploreThankfulModal = function ExploreThankfulModal(e) {
 
 var ExploreExcitedModal = function ExploreExcitedModal(e) {
     var exploreExcitedModal = e.target.parentElement.querySelector("#exploreExcitedModal");
+    var dismissExcitedExplore = e.target.parentElement.querySelector('#dismissExcitedExplore');
 
-    exploreExcitedModal.style.display = "block";
+    if (exploreExcitedModal) {
+        exploreExcitedModal.style.display = "block";
+    }
+
+    dismissExcitedExplore.onclick = function () {
+        exploreExcitedModal.style.display = "none";
+    };
 
     window.onclick = function (event) {
         if (event.target === exploreExcitedModal) {
@@ -362,8 +457,15 @@ var ExploreExcitedModal = function ExploreExcitedModal(e) {
 
 var ExploreInspiredModal = function ExploreInspiredModal(e) {
     var exploreInspiredModal = e.target.parentElement.querySelector("#exploreInspiredModal");
+    var dismissInspiredExplore = e.target.parentElement.querySelector('#dismissInspiredExplore');
 
-    exploreInspiredModal.style.display = "block";
+    if (exploreInspiredModal) {
+        exploreInspiredModal.style.display = "block";
+    }
+
+    dismissInspiredExplore.onclick = function () {
+        exploreInspiredModal.style.display = "none";
+    };
 
     window.onclick = function (event) {
         if (event.target === exploreInspiredModal) {
@@ -374,8 +476,15 @@ var ExploreInspiredModal = function ExploreInspiredModal(e) {
 
 var ExploreLoveModal = function ExploreLoveModal(e) {
     var exploreLoveModal = e.target.parentElement.querySelector("#exploreLoveModal");
+    var dismissLoveExplore = e.target.parentElement.querySelector('#dismissLoveExplore');
 
-    exploreLoveModal.style.display = "block";
+    if (exploreLoveModal) {
+        exploreLoveModal.style.display = "block";
+    }
+
+    dismissLoveExplore.onclick = function () {
+        exploreLoveModal.style.display = "none";
+    };
 
     window.onclick = function (event) {
         if (event.target === exploreInspiredModal) {
@@ -386,8 +495,15 @@ var ExploreLoveModal = function ExploreLoveModal(e) {
 
 var ExploreHappiestModal = function ExploreHappiestModal(e) {
     var exploreHappiestModal = e.target.parentElement.querySelector("#exploreHappiestModal");
+    var dismissHappiestExplore = e.target.parentElement.querySelector('#dismissHappiestExplore');
 
-    exploreHappiestModal.style.display = "block";
+    if (exploreHappiestModal) {
+        exploreHappiestModal.style.display = "block";
+    }
+
+    dismissHappiestExplore.onclick = function () {
+        exploreHappiestModal.style.display = "none";
+    };
 
     window.onclick = function (event) {
         if (event.target === exploreHappiestModal) {
@@ -398,8 +514,15 @@ var ExploreHappiestModal = function ExploreHappiestModal(e) {
 
 var ExploreProudModal = function ExploreProudModal(e) {
     var exploreProudModal = e.target.parentElement.querySelector("#exploreProudModal");
+    var dismissProudExplore = e.target.parentElement.querySelector('#dismissProudExplore');
 
-    exploreProudModal.style.display = "block";
+    if (exploreProudModal) {
+        exploreProudModal.style.display = "block";
+    }
+
+    dismissProudExplore.onclick = function () {
+        exploreProudModal.style.display = "none";
+    };
 
     window.onclick = function (event) {
         if (event.target === exploreProudModal) {

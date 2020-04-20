@@ -133,20 +133,20 @@ var createSignupWindow = function createSignupWindow() {
 
 // depending on if login or signup icon pressed, create corresponding view
 var setup = function setup() {
-    var loginButton = document.querySelector('#loginButton');
-    var signupButton = document.querySelector('#signupButton');
+    // const loginButton = document.querySelector('#loginButton');
+    // const signupButton = document.querySelector('#signupButton');
 
-    signupButton.addEventListener('click', function (e) {
-        e.preventDefault();
-        createSignupWindow();
-        return false;
-    });
+    // signupButton.addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     createSignupWindow();
+    //     return false;
+    // });
 
-    loginButton.addEventListener('click', function (e) {
-        e.preventDefault();
-        createLoginWindow();
-        return false;
-    });
+    // loginButton.addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     createLoginWindow();
+    //     return false;
+    // });
 
     createLoginWindow();
 

@@ -1,3 +1,11 @@
+const calcDate = (date) => {
+    const d = new Date(date);
+    const dtf = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit' }); 
+    const [{ value: mo },,{ value: da },,{ value: ye }] = dtf.formatToParts(d);
+    
+    return (`${mo} ${da}, ${ye}`);
+};
+
 const ExploreAnswers = function(props) {
     const exploreAnswerNodes = props.answers.map(function(masterPrompt) {
         if(masterPrompt.category === "excited"){
@@ -6,10 +14,11 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreExcitedModal" className="exploreExcitedModal">
                         <div className="exploreExcitedModalContent">
+                            <button id="dismissExcitedExplore">Back</button>
                             <h3>I am excited for</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
-                            <p>{masterPrompt.createdData.slice(0,10)}</p>
                             <div className="socialMediaShareBtns">
+                                <p>Help spread the positivity by sharing this thought.</p>
                                 <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am excited for " + masterPrompt.answer} target="_blank">
                                     Twitter
                                 </a>
@@ -23,6 +32,7 @@ const ExploreAnswers = function(props) {
                                     LinkedIn
                                 </a>
                             </div>
+                            <p>Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
                         </div>
                     </div>
                 </div>
@@ -33,10 +43,11 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreThankfulModal" className="exploreThankfulModal">
                         <div className="exploreThankfulModalContent">
+                            <button id="dismissThankfulExplore">Back</button>
                             <h3>I am thankful for</h3>
                             <h3 className='promptAnswer'>{masterPrompt.answer}</h3>
-                            <p>{masterPrompt.createdData.slice(0,10)}</p>
                             <div className="socialMediaShareBtns">
+                                <p>Help spread the positivity by sharing this thought.</p>
                                 <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am thankful for " + masterPrompt.answer} target="_blank">
                                     Twitter
                                 </a>
@@ -50,6 +61,7 @@ const ExploreAnswers = function(props) {
                                     LinkedIn
                                 </a>
                             </div>
+                            <p>Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
                         </div>
                     </div>
                 </div>
@@ -60,10 +72,11 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreInspiredModal" className="exploreInspiredModal">
                         <div className="exploreInspiredModalContent">
+                            <button id="dismissInspiredExplore">Back</button>
                             <h3>I am inspired by</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
-                            <p>{masterPrompt.createdData.slice(0,10)}</p>
                             <div className="socialMediaShareBtns">
+                                <p>Help spread the positivity by sharing this thought.</p>
                                 <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am inspired by " + masterPrompt.answer} target="_blank">
                                     Twitter
                                 </a>
@@ -77,6 +90,7 @@ const ExploreAnswers = function(props) {
                                     LinkedIn
                                 </a>
                             </div>
+                            <p>Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
                         </div>
                     </div>
                 </div>
@@ -87,10 +101,11 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreLoveModal" className="exploreLoveModal">
                         <div className="exploreLoveModalContent">
+                            <button id="dismissLoveExplore">Back</button>
                             <h3>I love</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
-                            <p>{masterPrompt.createdData.slice(0,10)}</p>
                             <div className="socialMediaShareBtns">
+                                <p>Help spread the positivity by sharing this thought.</p>
                                 <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I love " + masterPrompt.answer} target="_blank">
                                     Twitter
                                 </a>
@@ -104,6 +119,7 @@ const ExploreAnswers = function(props) {
                                     LinkedIn
                                 </a>
                             </div>
+                            <p>Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
                         </div>
                     </div>
                 </div>
@@ -115,10 +131,11 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreHappiestModal" className="exploreHappiestModal">
                         <div className="exploreHappiestModalContent">
+                            <button id="dismissHappiestExplore">Back</button>
                             <h3>I am happiest when</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
-                            <p>{masterPrompt.createdData.slice(0,10)}</p>
                             <div className="socialMediaShareBtns">
+                                <p>Help spread the positivity by sharing this thought.</p>
                                 <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am happiest when " + masterPrompt.answer} target="_blank">
                                     Twitter
                                 </a>
@@ -132,6 +149,7 @@ const ExploreAnswers = function(props) {
                                     LinkedIn
                                 </a>
                             </div>
+                            <p>Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
                         </div>
                     </div>
                 </div>
@@ -143,10 +161,11 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreProudModal" className="exploreProudModal">
                         <div className="exploreProudModalContent">
+                            <button id="dismissProudExplore">Back</button>
                             <h3>I am proud of</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
-                            <p>{masterPrompt.createdData.slice(0,10)}</p>
                             <div className="socialMediaShareBtns">
+                                <p>Help spread the positivity by sharing this thought.</p>
                                 <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am proud of " + masterPrompt.answer} target="_blank">
                                     Twitter
                                 </a>
@@ -160,6 +179,7 @@ const ExploreAnswers = function(props) {
                                     LinkedIn
                                 </a>
                             </div>
+                            <p>Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
                         </div>
                     </div>
                 </div>
@@ -176,8 +196,15 @@ const ExploreAnswers = function(props) {
 
 const ExploreThankfulModal = (e) => {
     const exploreThankfulModal = e.target.parentElement.querySelector("#exploreThankfulModal");
+    const dismissThankfulExplore = e.target.parentElement.querySelector('#dismissThankfulExplore');
 
-    exploreThankfulModal.style.display = "block";
+    if(exploreThankfulModal) {
+        exploreThankfulModal.style.display = "block";
+    }
+
+    dismissThankfulExplore.onclick = () => {
+        exploreThankfulModal.style.display = "none";
+    }
     
     window.onclick = (event) => {
         if (event.target === exploreThankfulModal) {
@@ -188,8 +215,15 @@ const ExploreThankfulModal = (e) => {
 
 const ExploreExcitedModal = (e) => {
     const exploreExcitedModal = e.target.parentElement.querySelector("#exploreExcitedModal");
+    const dismissExcitedExplore = e.target.parentElement.querySelector('#dismissExcitedExplore');
 
-    exploreExcitedModal.style.display = "block";
+    if(exploreExcitedModal) {
+        exploreExcitedModal.style.display = "block";
+    }
+
+    dismissExcitedExplore.onclick = () => {
+        exploreExcitedModal.style.display = "none";
+    }
     
     window.onclick = (event) => {
         if (event.target === exploreExcitedModal) {
@@ -200,8 +234,15 @@ const ExploreExcitedModal = (e) => {
 
 const ExploreInspiredModal = (e) => {
     const exploreInspiredModal = e.target.parentElement.querySelector("#exploreInspiredModal");
+    const dismissInspiredExplore = e.target.parentElement.querySelector('#dismissInspiredExplore');
 
-    exploreInspiredModal.style.display = "block";
+    if(exploreInspiredModal) {
+        exploreInspiredModal.style.display = "block";
+    }
+
+    dismissInspiredExplore.onclick = () => {
+        exploreInspiredModal.style.display = "none";
+    }
     
     window.onclick = (event) => {
         if (event.target === exploreInspiredModal) {
@@ -212,8 +253,15 @@ const ExploreInspiredModal = (e) => {
 
 const ExploreLoveModal = (e) => {
     const exploreLoveModal = e.target.parentElement.querySelector("#exploreLoveModal");
+    const dismissLoveExplore = e.target.parentElement.querySelector('#dismissLoveExplore');
 
-    exploreLoveModal.style.display = "block";
+    if(exploreLoveModal) {
+        exploreLoveModal.style.display = "block";
+    }
+
+    dismissLoveExplore.onclick = () => {
+        exploreLoveModal.style.display = "none";
+    }
     
     window.onclick = (event) => {
         if (event.target === exploreInspiredModal) {
@@ -224,8 +272,15 @@ const ExploreLoveModal = (e) => {
 
 const ExploreHappiestModal = (e) => {
     const exploreHappiestModal = e.target.parentElement.querySelector("#exploreHappiestModal");
+    const dismissHappiestExplore = e.target.parentElement.querySelector('#dismissHappiestExplore');
 
-    exploreHappiestModal.style.display = "block";
+    if(exploreHappiestModal) {
+        exploreHappiestModal.style.display = "block";
+    }
+
+    dismissHappiestExplore.onclick = () => {
+        exploreHappiestModal.style.display = "none";
+    }
     
     window.onclick = (event) => {
         if (event.target === exploreHappiestModal) {
@@ -236,8 +291,15 @@ const ExploreHappiestModal = (e) => {
 
 const ExploreProudModal = (e) => {
     const exploreProudModal = e.target.parentElement.querySelector("#exploreProudModal");
+    const dismissProudExplore = e.target.parentElement.querySelector('#dismissProudExplore');
 
-    exploreProudModal.style.display = "block";
+    if(exploreProudModal) {
+        exploreProudModal.style.display = "block";
+    }
+
+    dismissProudExplore.onclick = () => {
+        exploreProudModal.style.display = "none";
+    }
     
     window.onclick = (event) => {
         if (event.target === exploreProudModal) {
