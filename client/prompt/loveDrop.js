@@ -68,8 +68,8 @@ const LoveSubmitModal = () => {
                 <h1 className="playfair">All finished?</h1>
                 <p>This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissLoveSubmit">Go back</button>
-                <button id="submitLoveBtn">Finish</button>
+                <button id="dismissLoveSubmit" className="playfair">Go back</button>
+                <button id="submitLoveBtn" className="playfair">Finish</button>
             </div>
         </div>
     );

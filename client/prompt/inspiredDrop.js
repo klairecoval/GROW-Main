@@ -68,8 +68,8 @@ const InspiredSubmitModal = () => {
                 <h1 className="playfair">All finished?</h1>
                 <p>This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissInspiredSubmit">Go back</button>
-                <button id="submitInspiredBtn">Finish</button>
+                <button id="dismissInspiredSubmit" className="playfair">Go back</button>
+                <button id="submitInspiredBtn" className="playfair">Finish</button>
             </div>
         </div>
     );

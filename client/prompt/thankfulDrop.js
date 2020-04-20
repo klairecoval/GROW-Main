@@ -69,8 +69,8 @@ const ThankfulSubmitModal = () => {
                 <h1 className="playfair">All finished?</h1>
                 <p>This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissThankfulSubmit">Go back</button>
-                <button id="submitThankfulBtn">Finish</button>
+                <button id="dismissThankfulSubmit" className="playfair">Go back</button>
+                <button id="submitThankfulBtn" className="playfair">Finish</button>
             </div>
         </div>
     );

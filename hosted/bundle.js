@@ -95,12 +95,12 @@ var ExcitedSubmitModal = function ExcitedSubmitModal() {
             ),
             React.createElement(
                 "button",
-                { id: "dismissExcitedSubmit" },
+                { id: "dismissExcitedSubmit", className: "playfair" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitExcitedBtn" },
+                { id: "submitExcitedBtn", className: "playfair" },
                 "Finish"
             )
         )
@@ -226,12 +226,12 @@ var HappiestSubmitModal = function HappiestSubmitModal() {
             ),
             React.createElement(
                 "button",
-                { id: "dismissHappiestSubmit" },
+                { id: "dismissHappiestSubmit", className: "playfair" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitHappiestBtn" },
+                { id: "submitHappiestBtn", className: "playfair" },
                 "Finish"
             )
         )
@@ -357,12 +357,12 @@ var InspiredSubmitModal = function InspiredSubmitModal() {
             ),
             React.createElement(
                 "button",
-                { id: "dismissInspiredSubmit" },
+                { id: "dismissInspiredSubmit", className: "playfair" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitInspiredBtn" },
+                { id: "submitInspiredBtn", className: "playfair" },
                 "Finish"
             )
         )
@@ -488,12 +488,12 @@ var LoveSubmitModal = function LoveSubmitModal() {
             ),
             React.createElement(
                 "button",
-                { id: "dismissLoveSubmit" },
+                { id: "dismissLoveSubmit", className: "playfair" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitLoveBtn" },
+                { id: "submitLoveBtn", className: "playfair" },
                 "Finish"
             )
         )
@@ -796,12 +796,12 @@ var ProudSubmitModal = function ProudSubmitModal() {
             ),
             React.createElement(
                 "button",
-                { id: "dismissProudSubmit" },
+                { id: "dismissProudSubmit", className: "playfair" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitProudBtn" },
+                { id: "submitProudBtn", className: "playfair" },
                 "Finish"
             )
         )
@@ -927,12 +927,12 @@ var ThankfulSubmitModal = function ThankfulSubmitModal() {
             ),
             React.createElement(
                 "button",
-                { id: "dismissThankfulSubmit" },
+                { id: "dismissThankfulSubmit", className: "playfair" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitThankfulBtn" },
+                { id: "submitThankfulBtn", className: "playfair" },
                 "Finish"
             )
         )
