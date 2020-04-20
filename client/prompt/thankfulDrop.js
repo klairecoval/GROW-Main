@@ -1,3 +1,4 @@
+
 const handleThankfulDrop = (e) => {
     e.preventDefault();
 
@@ -49,11 +50,11 @@ const ThankfulForm = (props) => {
             action='/logMaster'
             method='POST'
             className='thankfulForm' >
-                <input id='thankfulText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleThankfulCount}/>
+                <input id='thankfulText' className="playfair" type='text' name='answer' maxLength="90" placeholder='...' onChange={handleThankfulCount}/>
                 <input id='category' type='text' name='category' value='thankful' placeholder='thankful' onChange={handleThankfulCount}/>        
                 <input className='logThoughtSubmit' id="logThankfulSubmit" type='submit' value='Submit' />
             </form>
-            <p id="thankfulCount">{props.thankfulCount}/60</p>
+            <p id="thankfulCount">{props.thankfulCount}/90</p>
             <button id="thankfulBackBtn">Go back</button>
             <BackModal/>
             <ThankfulSubmitModal />
@@ -65,11 +66,11 @@ const ThankfulSubmitModal = () => {
     return (
         <div className="thankfulSubmitModal" id="thankfulSubmitModal">
             <div className="thankfulSubmitContent">
-                <h1>All finished?</h1>
+                <h1 className="playfair">All finished?</h1>
                 <p>This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissThankfulSubmit">Go back</button>
-                <button id="submitThankfulBtn">Finish</button>
+                <button id="dismissThankfulSubmit" className="playfair">Go back</button>
+                <button id="submitThankfulBtn" className="playfair">Finish</button>
             </div>
         </div>
     );

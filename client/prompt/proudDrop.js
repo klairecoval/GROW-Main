@@ -49,11 +49,11 @@ const ProudForm = (props) => {
             action='/logMaster'
             method='POST'
             className='proudForm' >
-                <input id='proudText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleProudCount}/>
+                <input id='proudText' className="playfair" type='text' name='answer' maxLength="90" placeholder='ex: "medical workers"' onChange={handleProudCount}/>
                 <input id='category' type='text' name='category' value='proud' placeholder='proud' onChange={handleProudCount}/>        
                 <input className='logThoughtSubmit' id="logProudSubmit" type='submit' value='Submit' />
             </form>
-            <p id="proudCount">{props.proudCount}/60</p>
+            <p id="proudCount">{props.proudCount}/90</p>
             <button id="proudBackBtn">Go back</button>
             <BackModal/>
             <ProudSubmitModal />
@@ -65,11 +65,11 @@ const ProudSubmitModal = () => {
     return (
         <div className="proudSubmitModal" id="proudSubmitModal">
             <div className="proudSubmitContent">
-                <h1>All finished?</h1>
+                <h1 className="playfair">All finished?</h1>
                 <p>This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissProudSubmit">Go back</button>
-                <button id="submitProudBtn">Finish</button>
+                <button id="dismissProudSubmit" className="playfair">Go back</button>
+                <button id="submitProudBtn" className="playfair">Finish</button>
             </div>
         </div>
     );

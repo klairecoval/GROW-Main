@@ -49,11 +49,11 @@ const LoveForm = (props) => {
             action='/logMaster'
             method='POST'
             className='loveForm' >
-                <input id='loveText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleLoveCount}/>
+                <input id='loveText' className="playfair" type='text' name='answer' maxLength="90" placeholder='...' onChange={handleLoveCount}/>
                 <input id='category' type='text' name='category' value='love' placeholder='love' onChange={handleLoveCount}/>        
                 <input className='logThoughtSubmit' id="logLoveSubmit" type='submit' value='Submit' />
             </form>
-            <p id="loveCount">{props.loveCount}/60</p>
+            <p id="loveCount">{props.loveCount}/90</p>
             <button id="loveBackBtn">Go back</button>
             <BackModal/>
             <LoveSubmitModal />
@@ -65,11 +65,11 @@ const LoveSubmitModal = () => {
     return (
         <div className="loveSubmitModal" id="loveSubmitModal">
             <div className="loveSubmitContent">
-                <h1>All finished?</h1>
+                <h1 className="playfair">All finished?</h1>
                 <p>This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissLoveSubmit">Go back</button>
-                <button id="submitLoveBtn">Finish</button>
+                <button id="dismissLoveSubmit" className="playfair">Go back</button>
+                <button id="submitLoveBtn" className="playfair">Finish</button>
             </div>
         </div>
     );

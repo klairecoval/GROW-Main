@@ -15,10 +15,10 @@ const BackModal = () => {
     return (
         <div id="backModal" className="backModal">
             <div className="backModalContent">
-                <h1>Are you sure you <br/>want to go back?</h1>
+                <h1 className="playfair">Are you sure you <br/>want to go back?</h1>
                 <p>Going back now will lose your progress.</p>
-                <button id="stayBtn">Stay</button>
-                <a href="/promptPage" target="_parent" id="continueBtn"><button>Continue</button></a>
+                <button id="stayBtn"className="playfair">Stay</button>
+                <a href="/promptPage" target="_parent" id="continueBtn"><button className="playfair">Continue</button></a>
             </div>
         </div>
     );

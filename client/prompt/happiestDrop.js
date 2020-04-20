@@ -49,11 +49,11 @@ const HappiestForm = (props) => {
             action='/logMaster'
             method='POST'
             className='happiestForm' >
-                <input id='happiestText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleHappiestCount}/>
+                <input id='happiestText' className="playfair" type='text' name='answer' maxLength="90" placeholder='...' onChange={handleHappiestCount}/>
                 <input id='category' type='text' name='category' value='happiest' placeholder='happiest' onChange={handleHappiestCount}/>        
                 <input className='logThoughtSubmit' id="logHappiestSubmit" type='submit' value='Submit' />
             </form>
-            <p id="happiestCount">{props.happiestCount}/60</p>
+            <p id="happiestCount">{props.happiestCount}/90</p>
             <button id="happiestBackBtn">Go back</button>
             <BackModal/>
             <HappiestSubmitModal />
@@ -65,11 +65,11 @@ const HappiestSubmitModal = () => {
     return (
         <div className="happiestSubmitModal" id="happiestSubmitModal">
             <div className="happiestSubmitContent">
-                <h1>All finished?</h1>
+                <h1 className="playfair">All finished?</h1>
                 <p>This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissHappiestSubmit">Go back</button>
-                <button id="submitHappiestBtn">Finish</button>
+                <button id="dismissHappiestSubmit" className="playfair">Go back</button>
+                <button id="submitHappiestBtn" className="playfair">Finish</button>
             </div>
         </div>
     );

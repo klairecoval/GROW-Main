@@ -49,11 +49,11 @@ const InspiredForm = (props) => {
             action='/logMaster'
             method='POST'
             className='inspiredForm' >
-                <input id='inspiredText' type='text' name='answer' maxLength="60" placeholder='...' onChange={handleInspiredCount}/>
+                <input id='inspiredText' className="playfair" type='text' name='answer' maxLength="90" placeholder='...' onChange={handleInspiredCount}/>
                 <input id='category' type='text' name='category' value='inspired' placeholder='inspired' onChange={handleInspiredCount}/>        
                 <input className='logThoughtSubmit' id="logInspiredSubmit" type='submit' value='Submit' />
             </form>
-            <p id="inspiredCount">{props.inspiredCount}/60</p>
+            <p id="inspiredCount">{props.inspiredCount}/90</p>
             <button id="inspiredBackBtn">Go back</button>
             <BackModal/>
             <InspiredSubmitModal />
@@ -65,11 +65,11 @@ const InspiredSubmitModal = () => {
     return (
         <div className="inspiredSubmitModal" id="inspiredSubmitModal">
             <div className="inspiredSubmitContent">
-                <h1>All finished?</h1>
+                <h1 className="playfair">All finished?</h1>
                 <p>This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissInspiredSubmit">Go back</button>
-                <button id="submitInspiredBtn">Finish</button>
+                <button id="dismissInspiredSubmit" className="playfair">Go back</button>
+                <button id="submitInspiredBtn" className="playfair">Finish</button>
             </div>
         </div>
     );

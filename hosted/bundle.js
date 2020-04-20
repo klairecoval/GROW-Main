@@ -54,7 +54,7 @@ var ExcitedForm = function ExcitedForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "excitedForm" },
-            React.createElement("input", { id: "excitedText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleExcitedCount }),
+            React.createElement("input", { id: "excitedText", className: "playfair", type: "text", name: "answer", maxLength: "90", placeholder: "...", onChange: handleExcitedCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "excited", placeholder: "excited", onChange: handleExcitedCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logExcitedSubmit", type: "submit", value: "Submit" })
         ),
@@ -62,7 +62,7 @@ var ExcitedForm = function ExcitedForm(props) {
             "p",
             { id: "excitedCount" },
             props.excitedCount,
-            "/60"
+            "/90"
         ),
         React.createElement(
             "button",
@@ -83,7 +83,7 @@ var ExcitedSubmitModal = function ExcitedSubmitModal() {
             { className: "excitedSubmitContent" },
             React.createElement(
                 "h1",
-                null,
+                { className: "playfair" },
                 "All finished?"
             ),
             React.createElement(
@@ -95,12 +95,12 @@ var ExcitedSubmitModal = function ExcitedSubmitModal() {
             ),
             React.createElement(
                 "button",
-                { id: "dismissExcitedSubmit" },
+                { id: "dismissExcitedSubmit", className: "playfair" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitExcitedBtn" },
+                { id: "submitExcitedBtn", className: "playfair" },
                 "Finish"
             )
         )
@@ -185,7 +185,7 @@ var HappiestForm = function HappiestForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "happiestForm" },
-            React.createElement("input", { id: "happiestText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleHappiestCount }),
+            React.createElement("input", { id: "happiestText", className: "playfair", type: "text", name: "answer", maxLength: "90", placeholder: "...", onChange: handleHappiestCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "happiest", placeholder: "happiest", onChange: handleHappiestCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logHappiestSubmit", type: "submit", value: "Submit" })
         ),
@@ -193,7 +193,7 @@ var HappiestForm = function HappiestForm(props) {
             "p",
             { id: "happiestCount" },
             props.happiestCount,
-            "/60"
+            "/90"
         ),
         React.createElement(
             "button",
@@ -214,7 +214,7 @@ var HappiestSubmitModal = function HappiestSubmitModal() {
             { className: "happiestSubmitContent" },
             React.createElement(
                 "h1",
-                null,
+                { className: "playfair" },
                 "All finished?"
             ),
             React.createElement(
@@ -226,12 +226,12 @@ var HappiestSubmitModal = function HappiestSubmitModal() {
             ),
             React.createElement(
                 "button",
-                { id: "dismissHappiestSubmit" },
+                { id: "dismissHappiestSubmit", className: "playfair" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitHappiestBtn" },
+                { id: "submitHappiestBtn", className: "playfair" },
                 "Finish"
             )
         )
@@ -316,7 +316,7 @@ var InspiredForm = function InspiredForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "inspiredForm" },
-            React.createElement("input", { id: "inspiredText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleInspiredCount }),
+            React.createElement("input", { id: "inspiredText", className: "playfair", type: "text", name: "answer", maxLength: "90", placeholder: "...", onChange: handleInspiredCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "inspired", placeholder: "inspired", onChange: handleInspiredCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logInspiredSubmit", type: "submit", value: "Submit" })
         ),
@@ -324,7 +324,7 @@ var InspiredForm = function InspiredForm(props) {
             "p",
             { id: "inspiredCount" },
             props.inspiredCount,
-            "/60"
+            "/90"
         ),
         React.createElement(
             "button",
@@ -345,7 +345,7 @@ var InspiredSubmitModal = function InspiredSubmitModal() {
             { className: "inspiredSubmitContent" },
             React.createElement(
                 "h1",
-                null,
+                { className: "playfair" },
                 "All finished?"
             ),
             React.createElement(
@@ -357,12 +357,12 @@ var InspiredSubmitModal = function InspiredSubmitModal() {
             ),
             React.createElement(
                 "button",
-                { id: "dismissInspiredSubmit" },
+                { id: "dismissInspiredSubmit", className: "playfair" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitInspiredBtn" },
+                { id: "submitInspiredBtn", className: "playfair" },
                 "Finish"
             )
         )
@@ -447,7 +447,7 @@ var LoveForm = function LoveForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "loveForm" },
-            React.createElement("input", { id: "loveText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleLoveCount }),
+            React.createElement("input", { id: "loveText", className: "playfair", type: "text", name: "answer", maxLength: "90", placeholder: "...", onChange: handleLoveCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "love", placeholder: "love", onChange: handleLoveCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logLoveSubmit", type: "submit", value: "Submit" })
         ),
@@ -455,7 +455,7 @@ var LoveForm = function LoveForm(props) {
             "p",
             { id: "loveCount" },
             props.loveCount,
-            "/60"
+            "/90"
         ),
         React.createElement(
             "button",
@@ -476,7 +476,7 @@ var LoveSubmitModal = function LoveSubmitModal() {
             { className: "loveSubmitContent" },
             React.createElement(
                 "h1",
-                null,
+                { className: "playfair" },
                 "All finished?"
             ),
             React.createElement(
@@ -488,12 +488,12 @@ var LoveSubmitModal = function LoveSubmitModal() {
             ),
             React.createElement(
                 "button",
-                { id: "dismissLoveSubmit" },
+                { id: "dismissLoveSubmit", className: "playfair" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitLoveBtn" },
+                { id: "submitLoveBtn", className: "playfair" },
                 "Finish"
             )
         )
@@ -563,7 +563,7 @@ var BackModal = function BackModal() {
             { className: "backModalContent" },
             React.createElement(
                 "h1",
-                null,
+                { className: "playfair" },
                 "Are you sure you ",
                 React.createElement("br", null),
                 "want to go back?"
@@ -575,7 +575,7 @@ var BackModal = function BackModal() {
             ),
             React.createElement(
                 "button",
-                { id: "stayBtn" },
+                { id: "stayBtn", className: "playfair" },
                 "Stay"
             ),
             React.createElement(
@@ -583,7 +583,7 @@ var BackModal = function BackModal() {
                 { href: "/promptPage", target: "_parent", id: "continueBtn" },
                 React.createElement(
                     "button",
-                    null,
+                    { className: "playfair" },
                     "Continue"
                 )
             )
@@ -755,7 +755,7 @@ var ProudForm = function ProudForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "proudForm" },
-            React.createElement("input", { id: "proudText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleProudCount }),
+            React.createElement("input", { id: "proudText", className: "playfair", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"medical workers\"", onChange: handleProudCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "proud", placeholder: "proud", onChange: handleProudCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logProudSubmit", type: "submit", value: "Submit" })
         ),
@@ -763,7 +763,7 @@ var ProudForm = function ProudForm(props) {
             "p",
             { id: "proudCount" },
             props.proudCount,
-            "/60"
+            "/90"
         ),
         React.createElement(
             "button",
@@ -784,7 +784,7 @@ var ProudSubmitModal = function ProudSubmitModal() {
             { className: "proudSubmitContent" },
             React.createElement(
                 "h1",
-                null,
+                { className: "playfair" },
                 "All finished?"
             ),
             React.createElement(
@@ -796,12 +796,12 @@ var ProudSubmitModal = function ProudSubmitModal() {
             ),
             React.createElement(
                 "button",
-                { id: "dismissProudSubmit" },
+                { id: "dismissProudSubmit", className: "playfair" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitProudBtn" },
+                { id: "submitProudBtn", className: "playfair" },
                 "Finish"
             )
         )
@@ -886,7 +886,7 @@ var ThankfulForm = function ThankfulForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "thankfulForm" },
-            React.createElement("input", { id: "thankfulText", type: "text", name: "answer", maxLength: "60", placeholder: "...", onChange: handleThankfulCount }),
+            React.createElement("input", { id: "thankfulText", className: "playfair", type: "text", name: "answer", maxLength: "90", placeholder: "...", onChange: handleThankfulCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "thankful", placeholder: "thankful", onChange: handleThankfulCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logThankfulSubmit", type: "submit", value: "Submit" })
         ),
@@ -894,7 +894,7 @@ var ThankfulForm = function ThankfulForm(props) {
             "p",
             { id: "thankfulCount" },
             props.thankfulCount,
-            "/60"
+            "/90"
         ),
         React.createElement(
             "button",
@@ -915,7 +915,7 @@ var ThankfulSubmitModal = function ThankfulSubmitModal() {
             { className: "thankfulSubmitContent" },
             React.createElement(
                 "h1",
-                null,
+                { className: "playfair" },
                 "All finished?"
             ),
             React.createElement(
@@ -927,12 +927,12 @@ var ThankfulSubmitModal = function ThankfulSubmitModal() {
             ),
             React.createElement(
                 "button",
-                { id: "dismissThankfulSubmit" },
+                { id: "dismissThankfulSubmit", className: "playfair" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitThankfulBtn" },
+                { id: "submitThankfulBtn", className: "playfair" },
                 "Finish"
             )
         )
