@@ -30,7 +30,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         { className: 'exploreExcitedModalContent' },
                         React.createElement(
                             'button',
-                            { id: 'dismissExcitedExplore' },
+                            { className: 'playfair', id: 'dismissExcitedExplore' },
                             'Back'
                         ),
                         React.createElement(
@@ -69,7 +69,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             ),
                             React.createElement(
                                 'a',
-                                { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am excited for " + masterPrompt.answer, target: '_blank' },
+                                { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
                                 'LinkedIn'
                             )
                         ),
@@ -133,7 +133,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             ),
                             React.createElement(
                                 'a',
-                                { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am thankful for " + masterPrompt.answer, target: '_blank' },
+                                { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
                                 'LinkedIn'
                             )
                         ),
@@ -198,7 +198,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             ),
                             React.createElement(
                                 'a',
-                                { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am inspired by " + masterPrompt.answer, target: '_blank' },
+                                { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
                                 'LinkedIn'
                             )
                         ),
@@ -263,7 +263,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             ),
                             React.createElement(
                                 'a',
-                                { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I love " + masterPrompt.answer, target: '_blank' },
+                                { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
                                 'LinkedIn'
                             )
                         ),
@@ -329,7 +329,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             ),
                             React.createElement(
                                 'a',
-                                { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am happiest when " + masterPrompt.answer, target: '_blank' },
+                                { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
                                 'LinkedIn'
                             )
                         ),
@@ -395,7 +395,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             ),
                             React.createElement(
                                 'a',
-                                { href: "https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am proud of " + masterPrompt.answer, target: '_blank' },
+                                { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
                                 'LinkedIn'
                             )
                         ),

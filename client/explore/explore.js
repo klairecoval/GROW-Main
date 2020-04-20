@@ -14,7 +14,7 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreExcitedModal" className="exploreExcitedModal">
                         <div className="exploreExcitedModalContent">
-                            <button id="dismissExcitedExplore">Back</button>
+                            <button className="playfair" id="dismissExcitedExplore">Back</button>
                             <h3>I am excited for</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="socialMediaShareBtns">
@@ -28,7 +28,7 @@ const ExploreAnswers = function(props) {
                                 <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am excited for " + masterPrompt.answer} target="_blank">
                                     Reddit
                                 </a>
-                                <a href={"https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am excited for " + masterPrompt.answer} target="_blank">
+                                <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
                                     LinkedIn
                                 </a>
                             </div>
@@ -57,7 +57,7 @@ const ExploreAnswers = function(props) {
                                 <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am thankful for " + masterPrompt.answer} target="_blank">
                                     Reddit
                                 </a>
-                                <a href={"https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am thankful for " + masterPrompt.answer} target="_blank">
+                                <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
                                     LinkedIn
                                 </a>
                             </div>
@@ -86,7 +86,7 @@ const ExploreAnswers = function(props) {
                                 <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am inspired by " + masterPrompt.answer} target="_blank">
                                     Reddit
                                 </a>
-                                <a href={"https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am inspired by " + masterPrompt.answer} target="_blank">
+                                <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
                                     LinkedIn
                                 </a>
                             </div>
@@ -115,7 +115,7 @@ const ExploreAnswers = function(props) {
                                 <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I love " + masterPrompt.answer} target="_blank">
                                     Reddit
                                 </a>
-                                <a href={"https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I love " + masterPrompt.answer} target="_blank">
+                                <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
                                     LinkedIn
                                 </a>
                             </div>
@@ -145,7 +145,7 @@ const ExploreAnswers = function(props) {
                                 <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am happiest when " + masterPrompt.answer} target="_blank">
                                     Reddit
                                 </a>
-                                <a href={"https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am happiest when " + masterPrompt.answer} target="_blank">
+                                <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
                                     LinkedIn
                                 </a>
                             </div>
@@ -175,7 +175,7 @@ const ExploreAnswers = function(props) {
                                 <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am proud of " + masterPrompt.answer} target="_blank">
                                     Reddit
                                 </a>
-                                <a href={"https://www.linkedin.com/shareArticle?url=https://grow-main.herokuapp.com/explore&title=GROW&summary=I am proud of " + masterPrompt.answer} target="_blank">
+                                <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
                                     LinkedIn
                                 </a>
                             </div>

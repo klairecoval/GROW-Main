@@ -50,7 +50,7 @@ const ThankfulForm = (props) => {
             action='/logMaster'
             method='POST'
             className='thankfulForm' >
-                <input id='thankfulText' type='text' name='answer' maxLength="90" placeholder='...' onChange={handleThankfulCount}/>
+                <input id='thankfulText' className="playfair" type='text' name='answer' maxLength="90" placeholder='...' onChange={handleThankfulCount}/>
                 <input id='category' type='text' name='category' value='thankful' placeholder='thankful' onChange={handleThankfulCount}/>        
                 <input className='logThoughtSubmit' id="logThankfulSubmit" type='submit' value='Submit' />
             </form>
@@ -66,7 +66,7 @@ const ThankfulSubmitModal = () => {
     return (
         <div className="thankfulSubmitModal" id="thankfulSubmitModal">
             <div className="thankfulSubmitContent">
-                <h1>All finished?</h1>
+                <h1 className="playfair">All finished?</h1>
                 <p>This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
                 <button id="dismissThankfulSubmit">Go back</button>

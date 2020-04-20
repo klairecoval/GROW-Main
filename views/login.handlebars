@@ -1,15 +1,19 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
+
   <title>GROW</title>
+
   {{!-- <script crossorigin src="https://unpkg.com/react@15/dist/react.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script> --}}
   <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
   <script crossorigin src="https://unpkg.com/prop-types/prop-types.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Abel|Playfair+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
 </head>
 
@@ -18,10 +22,9 @@
     {{!-- <div class="navlink"><a id="loginButton" href="/login">login</a></div> --}}
     {{!-- <div class="navlink"><a id="signupButton" href="/signup">signup</a></div> --}}
   </nav>
-  <h1>Welcome to Grow</h1>
-  <p>In order to grow the garden, we need you. Submit your own <br/>
-    positive thoughts and wishes to help light up our community.</p>
-    <section id="content"></section>
+  <h1 class="playfair">Enter Grow</h1>
+  <p>Please copy the code below and paste it in the text box to enter. Thank you for keeping the garden safe.</p>
+  <section id="content"></section>
   <button id="genUserCodeBtn">Get User Code</button>
   
   <script src="/assets/loginBundle.js"></script>

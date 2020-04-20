@@ -49,7 +49,7 @@ const ExcitedForm = (props) => {
             action='/logMaster'
             method='POST'
             className='excitedForm' >
-                <input id='excitedText' type='text' name='answer' maxLength="90" placeholder='...' onChange={handleExcitedCount}/>
+                <input id='excitedText' className="playfair" type='text' name='answer' maxLength="90" placeholder='...' onChange={handleExcitedCount}/>
                 <input id='category' type='text' name='category' value='excited' placeholder='excited' onChange={handleExcitedCount}/>        
                 <input className='logThoughtSubmit' id="logExcitedSubmit" type='submit' value='Submit' />
             </form>
@@ -65,7 +65,7 @@ const ExcitedSubmitModal = () => {
     return (
         <div className="excitedSubmitModal" id="excitedSubmitModal">
             <div className="excitedSubmitContent">
-                <h1>All finished?</h1>
+                <h1 className="playfair">All finished?</h1>
                 <p>This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
                 <button id="dismissExcitedSubmit">Go back</button>
