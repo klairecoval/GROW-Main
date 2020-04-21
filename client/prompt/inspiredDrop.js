@@ -30,19 +30,20 @@ const handleInspiredDrop = (e) => {
   
 const handleInspiredCount = (e) => {
     ReactDOM.render(
-    <InspiredForm inspiredCount={e.target.value.length}/>, document.querySelector('#logThought')
+        <InspiredForm inspiredCount={e.target.value.length}/>, document.querySelector('#logThought')
     );
 };
 
 const InspiredTitle = (props) => {
     return (
-        <h2 id="inspiredTitle">I am inspired by...</h2>
+        <h2  className="lato promptTitle" id="inspiredTitle">I'M INSPIRED BY:</h2>
     );
 };
 
 const InspiredForm = (props) => {
     return (
         <div>
+            <button className="playfair" id="inspiredBackBtn">Back to prompts</button>
             <form id='inspiredForm'
             onSubmit={handleInspiredDrop}
             name='inspiredForm'
@@ -51,10 +52,9 @@ const InspiredForm = (props) => {
             className='inspiredForm' >
                 <input id='inspiredText' className="playfair" type='text' name='answer' maxLength="90" placeholder='...' onChange={handleInspiredCount}/>
                 <input id='category' type='text' name='category' value='inspired' placeholder='inspired' onChange={handleInspiredCount}/>        
-                <input className='logThoughtSubmit' id="logInspiredSubmit" type='submit' value='Submit' />
+                <input className='logThoughtSubmit' id="logInspiredSubmit" type='submit' value='Submit response' />
             </form>
-            <p id="inspiredCount">{props.inspiredCount}/90</p>
-            <button id="inspiredBackBtn">Go back</button>
+            <p id="inspiredCount" className="lato">{props.inspiredCount}/90</p>
             <BackModal/>
             <InspiredSubmitModal />
         </div>
@@ -66,10 +66,10 @@ const InspiredSubmitModal = () => {
         <div className="inspiredSubmitModal" id="inspiredSubmitModal">
             <div className="inspiredSubmitContent">
                 <h1 className="playfair">All finished?</h1>
-                <p>This will submit your response to your card.<br/>
+                <p className="lato">This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissInspiredSubmit" className="playfair">Go back</button>
-                <button id="submitInspiredBtn" className="playfair">Finish</button>
+                <button id="dismissInspiredSubmit" className="playfair closeModalBtn">Go back</button>
+                <button id="submitInspiredBtn" className="playfair modalSubmitBtn">Submit</button>
             </div>
         </div>
     );

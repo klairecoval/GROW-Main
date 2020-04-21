@@ -1,3 +1,6 @@
+$pinkBtnBackground: #ED7163;
+$blackBlue: #070822;
+
 .playfair, .promptAnswer {
     font-family: 'Playfair Display', serif;
 }
@@ -11,11 +14,23 @@
     text-align: center;
 }
 
+#submitSignup {
+    background: $pinkBtnBackground;
+    border: none;
+    color: white;
+}
+
+#copyCodeBtn {
+    background: $blackBlue;
+    color: white;
+    border: none;
+};
+
 #category{
     display: none;
 }
 
-.backModal, .userCodeModal,
+.backModal,
 .exploreThankfulModal, .exploreExcitedModal, .exploreInspiredModal, .exploreLoveModal, .exploreHappiestModal, .exploreProudModal,
 .happiestSubmitModal, .inspiredSubmitModal, .loveSubmitModal, .proudSubmitModal, .thankfulSubmitModal, .excitedSubmitModal {
     display: none; 
@@ -32,7 +47,7 @@
 }
   
 /* Modal Content */
-.backModalContent, .userCodeModalContent,
+.backModalContent, 
 .exploreThankfulModalContent, .exploreExcitedModalContent, .exploreInspiredModalContent, .exploreLoveModalContent, .exploreHappiestModalContent, .exploreProudModalContent,
 .happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent, .excitedSubmitContent {
     background-color: #fefefe;
@@ -40,4 +55,17 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+}
+
+// modal elements
+.closeModalBtn {
+    background: white;
+    border: 1px solid $blackBlue;
+    color: $blackBlue;
+}
+
+.modalSubmitBtn {
+    background: $blackBlue;
+    border: 1px solid $blackBlue;
+    color: white;
 }

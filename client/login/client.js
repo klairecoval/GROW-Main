@@ -66,9 +66,8 @@ const SignupWindow = (props) => {
             action='/signup'
             method='POST'
             className='mainForm'>
-            <label htmlFor='username'>User ID code: </label>
-            <input id='user' type='text' name='username' placeholder='username' />
-            <input className='formSubmit' id="submitSignup" type='submit' value='Sign up' />
+            <input id='user' className="lato" type='text' name='username' placeholder='Paste code here!' />
+            <input className='formSubmit playfair' id="submitSignup" type='submit' value='Enter Grow' />
         </form>
     );
 };
@@ -77,9 +76,10 @@ const CodeModal = (props) => {
     return (
         <div className="userCodeModal" id="userCodeModal" >
             <div className="userCodeModalContent">
-                <h2>Your user code is</h2>
-                <div id="userCodeVal">{generateUserCode(4)}</div>
-                <button onClick={copyDivToClipboard}>Copy</button>
+                <h2 className="playfair">Enter Grow</h2>
+                <p className="lato">Please copy the code below and paste it in the text box to enter. Thank you for keeping the garden safe.</p>
+                <div id="userCodeVal" className="playfair">{generateUserCode(4)}</div>
+                <button onClick={copyDivToClipboard} className="playfair" id="copyCodeBtn">Copy</button>
                 <SignupWindow />
             </div>
         </div>
@@ -111,43 +111,17 @@ const createSignupWindow = () => {
     );
 };
 
+const createCodeModal = () => {
+    ReactDOM.render(
+        <CodeModal />, 
+        document.querySelector('#content')
+    );
+}
+
 // depending on if login or signup icon pressed, create corresponding view
 const setup = () => {
-    // const loginButton = document.querySelector('#loginButton');
-    // const signupButton = document.querySelector('#signupButton');
-
-    // signupButton.addEventListener('click', (e) => {
-    //     e.preventDefault();
-    //     createSignupWindow();
-    //     return false;
-    // });
-
-    // loginButton.addEventListener('click', (e) => {
-    //     e.preventDefault();
-    //     createLoginWindow();
-    //     return false;
-    // });
-
     createLoginWindow();
-    
-    const codeModal = document.getElementById("userCodeModal");
-    const genUserCodeBtn = document.getElementById("genUserCodeBtn");
-
-    genUserCodeBtn.onclick = () => {
-        createLoginWindow();
-        codeModal.style.display = "block";
-    };
-
-    window.onclick = (event) => {
-      if (event.target === codeModal) {
-        codeModal.style.display = "none";
-      }
-    }
-
-    const submit = document.getElementById("submitSignup");
-    submit.onclick = () => {
-        sendAjax('POST', $('#signupForm').attr('action'), $('#signupForm').serialize(), redirect);
-    };
+    // createCodeModal();
 };
 
 // load in csrf token

@@ -35,8 +35,8 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         ),
                         React.createElement(
                             'h3',
-                            null,
-                            'I am excited for'
+                            { className: 'lato' },
+                            'I\'M EXCITED FOR'
                         ),
                         React.createElement(
                             'h3',
@@ -49,7 +49,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             { className: 'socialMediaShareBtns' },
                             React.createElement(
                                 'p',
-                                null,
+                                { className: 'lato' },
                                 'Help spread the positivity by sharing this thought.'
                             ),
                             React.createElement(
@@ -64,18 +64,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             ),
                             React.createElement(
                                 'a',
-                                { href: "https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am excited for " + masterPrompt.answer, target: '_blank' },
-                                'Reddit'
-                            ),
-                            React.createElement(
-                                'a',
                                 { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
                                 'LinkedIn'
                             )
                         ),
                         React.createElement(
                             'p',
-                            null,
+                            { className: 'lato' },
                             'Submitted: ',
                             calcDate(masterPrompt.createdData.slice(0, 10))
                         )
@@ -95,13 +90,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         { className: 'exploreThankfulModalContent' },
                         React.createElement(
                             'button',
-                            { id: 'dismissThankfulExplore' },
+                            { className: 'playfair', id: 'dismissThankfulExplore' },
                             'Back'
                         ),
                         React.createElement(
                             'h3',
-                            null,
-                            'I am thankful for'
+                            { className: 'lato' },
+                            'I\'M THANKFUL FOR'
                         ),
                         React.createElement(
                             'h3',
@@ -113,7 +108,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             { className: 'socialMediaShareBtns' },
                             React.createElement(
                                 'p',
-                                null,
+                                { className: 'lato' },
                                 'Help spread the positivity by sharing this thought.'
                             ),
                             React.createElement(
@@ -128,18 +123,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             ),
                             React.createElement(
                                 'a',
-                                { href: "https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am thankful for " + masterPrompt.answer, target: '_blank' },
-                                'Reddit'
-                            ),
-                            React.createElement(
-                                'a',
                                 { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
                                 'LinkedIn'
                             )
                         ),
                         React.createElement(
                             'p',
-                            null,
+                            { className: 'lato' },
                             'Submitted: ',
                             calcDate(masterPrompt.createdData.slice(0, 10))
                         )
@@ -159,13 +149,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         { className: 'exploreInspiredModalContent' },
                         React.createElement(
                             'button',
-                            { id: 'dismissInspiredExplore' },
+                            { className: 'playfair', id: 'dismissInspiredExplore' },
                             'Back'
                         ),
                         React.createElement(
                             'h3',
-                            null,
-                            'I am inspired by'
+                            { className: 'lato' },
+                            'I\'M INSPIRED BY'
                         ),
                         React.createElement(
                             'h3',
@@ -193,18 +183,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             ),
                             React.createElement(
                                 'a',
-                                { href: "https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am inspired by " + masterPrompt.answer, target: '_blank' },
-                                'Reddit'
-                            ),
-                            React.createElement(
-                                'a',
                                 { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
                                 'LinkedIn'
                             )
                         ),
                         React.createElement(
                             'p',
-                            null,
+                            { className: 'lato' },
                             'Submitted: ',
                             calcDate(masterPrompt.createdData.slice(0, 10))
                         )
@@ -224,13 +209,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         { className: 'exploreLoveModalContent' },
                         React.createElement(
                             'button',
-                            { id: 'dismissLoveExplore' },
+                            { className: 'playfair', id: 'dismissLoveExplore' },
                             'Back'
                         ),
                         React.createElement(
                             'h3',
-                            null,
-                            'I love'
+                            { className: 'lato' },
+                            'I LOVE'
                         ),
                         React.createElement(
                             'h3',
@@ -258,18 +243,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             ),
                             React.createElement(
                                 'a',
-                                { href: "https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I love " + masterPrompt.answer, target: '_blank' },
-                                'Reddit'
-                            ),
-                            React.createElement(
-                                'a',
                                 { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
                                 'LinkedIn'
                             )
                         ),
                         React.createElement(
                             'p',
-                            null,
+                            { className: 'lato' },
                             'Submitted: ',
                             calcDate(masterPrompt.createdData.slice(0, 10))
                         )
@@ -290,13 +270,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         { className: 'exploreHappiestModalContent' },
                         React.createElement(
                             'button',
-                            { id: 'dismissHappiestExplore' },
+                            { className: 'playfair', id: 'dismissHappiestExplore' },
                             'Back'
                         ),
                         React.createElement(
                             'h3',
-                            null,
-                            'I am happiest when'
+                            { className: 'lato' },
+                            'I\'M HAPPIEST WHEN'
                         ),
                         React.createElement(
                             'h3',
@@ -324,18 +304,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             ),
                             React.createElement(
                                 'a',
-                                { href: "https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am happiest when " + masterPrompt.answer, target: '_blank' },
-                                'Reddit'
-                            ),
-                            React.createElement(
-                                'a',
                                 { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
                                 'LinkedIn'
                             )
                         ),
                         React.createElement(
                             'p',
-                            null,
+                            { className: 'lato' },
                             'Submitted: ',
                             calcDate(masterPrompt.createdData.slice(0, 10))
                         )
@@ -356,13 +331,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         { className: 'exploreProudModalContent' },
                         React.createElement(
                             'button',
-                            { id: 'dismissProudExplore' },
+                            { className: 'playfair', id: 'dismissProudExplore' },
                             'Back'
                         ),
                         React.createElement(
                             'h3',
-                            null,
-                            'I am proud of'
+                            { className: 'lato' },
+                            'I\'M PROUD OF'
                         ),
                         React.createElement(
                             'h3',
@@ -390,18 +365,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             ),
                             React.createElement(
                                 'a',
-                                { href: "https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am proud of " + masterPrompt.answer, target: '_blank' },
-                                'Reddit'
-                            ),
-                            React.createElement(
-                                'a',
                                 { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
                                 'LinkedIn'
                             )
                         ),
                         React.createElement(
                             'p',
-                            null,
+                            { className: 'lato' },
                             'Submitted: ',
                             calcDate(masterPrompt.createdData.slice(0, 10))
                         )

@@ -30,19 +30,20 @@ const handleExcitedDrop = (e) => {
   
 const handleExcitedCount = (e) => {
     ReactDOM.render(
-    <ExcitedForm excitedCount={e.target.value.length}/>, document.querySelector('#logThought')
+        <ExcitedForm excitedCount={e.target.value.length}/>, document.querySelector('#logThought')
     );
 };
 
 const ExcitedTitle = (props) => {
     return (
-        <h2 id="excitedTitle">I am excited for...</h2>
+        <h2 className="lato promptTitle" id="excitedTitle">I'M EXCITED FOR:</h2>
     );
 };
 
 const ExcitedForm = (props) => {
     return (
         <div>
+            <button id="excitedBackBtn" className="playfair">Back to prompts</button>
             <form id='excitedForm'
             onSubmit={handleExcitedDrop}
             name='excitedForm'
@@ -51,10 +52,9 @@ const ExcitedForm = (props) => {
             className='excitedForm' >
                 <input id='excitedText' className="playfair" type='text' name='answer' maxLength="90" placeholder='...' onChange={handleExcitedCount}/>
                 <input id='category' type='text' name='category' value='excited' placeholder='excited' onChange={handleExcitedCount}/>        
-                <input className='logThoughtSubmit' id="logExcitedSubmit" type='submit' value='Submit' />
+                <input className='logThoughtSubmit' id="logExcitedSubmit" className="playfair" type='submit' value='Submit Response' />
             </form>
-            <p id="excitedCount">{props.excitedCount}/90</p>
-            <button id="excitedBackBtn">Go back</button>
+            <p id="excitedCount" className="lato">{props.excitedCount}/90</p>
             <BackModal/>
             <ExcitedSubmitModal />
         </div>
@@ -66,10 +66,10 @@ const ExcitedSubmitModal = () => {
         <div className="excitedSubmitModal" id="excitedSubmitModal">
             <div className="excitedSubmitContent">
                 <h1 className="playfair">All finished?</h1>
-                <p>This will submit your response to your card.<br/>
+                <p className="lato">This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissExcitedSubmit" className="playfair">Go back</button>
-                <button id="submitExcitedBtn" className="playfair">Finish</button>
+                <button id="dismissExcitedSubmit" className="playfair closeModalBtn">Go back</button>
+                <button id="submitExcitedBtn" className="playfair modalSubmitBtn">Submit</button>
             </div>
         </div>
     );

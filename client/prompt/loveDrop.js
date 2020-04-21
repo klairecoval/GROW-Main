@@ -36,13 +36,14 @@ const handleLoveCount = (e) => {
 
 const LoveTitle = (props) => {
     return (
-        <h2 id="loveTitle">I love...</h2>
+        <h2  className="lato promptTitle" id="loveTitle">I LOVE:</h2>
     );
 };
 
 const LoveForm = (props) => {
     return (
         <div>
+            <button className="playfair" id="loveBackBtn">Back to prompts</button>
             <form id='loveForm'
             onSubmit={handleLoveDrop}
             name='loveForm'
@@ -53,8 +54,7 @@ const LoveForm = (props) => {
                 <input id='category' type='text' name='category' value='love' placeholder='love' onChange={handleLoveCount}/>        
                 <input className='logThoughtSubmit' id="logLoveSubmit" type='submit' value='Submit' />
             </form>
-            <p id="loveCount">{props.loveCount}/90</p>
-            <button id="loveBackBtn">Go back</button>
+            <p className="lato" id="loveCount">{props.loveCount}/90</p>
             <BackModal/>
             <LoveSubmitModal />
         </div>
@@ -66,10 +66,10 @@ const LoveSubmitModal = () => {
         <div className="loveSubmitModal" id="loveSubmitModal">
             <div className="loveSubmitContent">
                 <h1 className="playfair">All finished?</h1>
-                <p>This will submit your response to your card.<br/>
+                <p className="lato">This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissLoveSubmit" className="playfair">Go back</button>
-                <button id="submitLoveBtn" className="playfair">Finish</button>
+                <button id="dismissLoveSubmit" className="playfair closeModalBtn">Go back</button>
+                <button id="submitLoveBtn" className="playfair modalSubmitBtn">Submit</button>
             </div>
         </div>
     );

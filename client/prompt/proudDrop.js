@@ -36,13 +36,14 @@ const handleProudCount = (e) => {
 
 const ProudTitle = (props) => {
     return (
-        <h2 id="proudTitle">I am proud of...</h2>
+        <h2  className="lato promptTitle" id="proudTitle">I'M PROUD OF:</h2>
     );
 };
 
 const ProudForm = (props) => {
     return (
         <div>
+            <button className="playfair" id="proudBackBtn">Back to prompts</button>
             <form id='proudForm'
             onSubmit={handleProudDrop}
             name='proudForm'
@@ -53,8 +54,7 @@ const ProudForm = (props) => {
                 <input id='category' type='text' name='category' value='proud' placeholder='proud' onChange={handleProudCount}/>        
                 <input className='logThoughtSubmit' id="logProudSubmit" type='submit' value='Submit' />
             </form>
-            <p id="proudCount">{props.proudCount}/90</p>
-            <button id="proudBackBtn">Go back</button>
+            <p className="lato" id="proudCount">{props.proudCount}/90</p>
             <BackModal/>
             <ProudSubmitModal />
         </div>
@@ -66,10 +66,10 @@ const ProudSubmitModal = () => {
         <div className="proudSubmitModal" id="proudSubmitModal">
             <div className="proudSubmitContent">
                 <h1 className="playfair">All finished?</h1>
-                <p>This will submit your response to your card.<br/>
+                <p className="lato">This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissProudSubmit" className="playfair">Go back</button>
-                <button id="submitProudBtn" className="playfair">Finish</button>
+                <button id="dismissProudSubmit" className="playfair closeModalBtn">Go back</button>
+                <button id="submitProudBtn" className="playfair modalSubmitBtn">Submit</button>
             </div>
         </div>
     );

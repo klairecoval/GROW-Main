@@ -37,13 +37,14 @@ const handleThankfulCount = (e) => {
 
 const ThankfulTitle = (props) => {
     return (
-        <h2 id="thankfulTitle">I am thankful for...</h2>
+        <h2  className="lato promptTitle" id="thankfulTitle">I'M THANKFUL FOR:</h2>
     );
 };
 
 const ThankfulForm = (props) => {
     return (
         <div>
+            <button className="playfair" id="thankfulBackBtn">Back to prompts</button>
             <form id='thankfulForm'
             onSubmit={handleThankfulDrop}
             name='thankfulForm'
@@ -55,7 +56,6 @@ const ThankfulForm = (props) => {
                 <input className='logThoughtSubmit' id="logThankfulSubmit" type='submit' value='Submit' />
             </form>
             <p id="thankfulCount">{props.thankfulCount}/90</p>
-            <button id="thankfulBackBtn">Go back</button>
             <BackModal/>
             <ThankfulSubmitModal />
         </div>
@@ -67,10 +67,10 @@ const ThankfulSubmitModal = () => {
         <div className="thankfulSubmitModal" id="thankfulSubmitModal">
             <div className="thankfulSubmitContent">
                 <h1 className="playfair">All finished?</h1>
-                <p>This will submit your response to your card.<br/>
+                <p className="lato">This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissThankfulSubmit" className="playfair">Go back</button>
-                <button id="submitThankfulBtn" className="playfair">Finish</button>
+                <button id="dismissThankfulSubmit" className="playfair closeModalBtn">Go back</button>
+                <button id="submitThankfulBtn" className="playfair modalSubmitBtn">Submit</button>
             </div>
         </div>
     );

@@ -15,24 +15,21 @@ const ExploreAnswers = function(props) {
                     <div id="exploreExcitedModal" className="exploreExcitedModal">
                         <div className="exploreExcitedModalContent">
                             <button className="playfair" id="dismissExcitedExplore">Back</button>
-                            <h3>I am excited for</h3>
+                            <h3 className="lato">I'M EXCITED FOR</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="socialMediaShareBtns">
-                                <p>Help spread the positivity by sharing this thought.</p>
+                                <p className="lato">Help spread the positivity by sharing this thought.</p>
                                 <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am excited for " + masterPrompt.answer} target="_blank">
                                     Twitter
                                 </a>
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
                                     Facebook
                                 </a>
-                                <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am excited for " + masterPrompt.answer} target="_blank">
-                                    Reddit
-                                </a>
                                 <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
                                     LinkedIn
                                 </a>
                             </div>
-                            <p>Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
+                            <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
                         </div>
                     </div>
                 </div>
@@ -43,25 +40,22 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreThankfulModal" className="exploreThankfulModal">
                         <div className="exploreThankfulModalContent">
-                            <button id="dismissThankfulExplore">Back</button>
-                            <h3>I am thankful for</h3>
+                            <button className="playfair" id="dismissThankfulExplore">Back</button>
+                            <h3 className="lato">I'M THANKFUL FOR</h3>
                             <h3 className='promptAnswer'>{masterPrompt.answer}</h3>
                             <div className="socialMediaShareBtns">
-                                <p>Help spread the positivity by sharing this thought.</p>
+                                <p className="lato">Help spread the positivity by sharing this thought.</p>
                                 <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am thankful for " + masterPrompt.answer} target="_blank">
                                     Twitter
                                 </a>
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
                                     Facebook
                                 </a>
-                                <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am thankful for " + masterPrompt.answer} target="_blank">
-                                    Reddit
-                                </a>
                                 <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
                                     LinkedIn
                                 </a>
                             </div>
-                            <p>Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
+                            <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
                         </div>
                     </div>
                 </div>
@@ -72,8 +66,8 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreInspiredModal" className="exploreInspiredModal">
                         <div className="exploreInspiredModalContent">
-                            <button id="dismissInspiredExplore">Back</button>
-                            <h3>I am inspired by</h3>
+                            <button className="playfair" id="dismissInspiredExplore">Back</button>
+                            <h3 className="lato">I'M INSPIRED BY</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="socialMediaShareBtns">
                                 <p>Help spread the positivity by sharing this thought.</p>
@@ -83,14 +77,11 @@ const ExploreAnswers = function(props) {
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
                                     Facebook
                                 </a>
-                                <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am inspired by " + masterPrompt.answer} target="_blank">
-                                    Reddit
-                                </a>
                                 <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
                                     LinkedIn
                                 </a>
                             </div>
-                            <p>Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
+                            <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
                         </div>
                     </div>
                 </div>
@@ -101,8 +92,8 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreLoveModal" className="exploreLoveModal">
                         <div className="exploreLoveModalContent">
-                            <button id="dismissLoveExplore">Back</button>
-                            <h3>I love</h3>
+                            <button className="playfair" id="dismissLoveExplore">Back</button>
+                            <h3 className="lato">I LOVE</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="socialMediaShareBtns">
                                 <p>Help spread the positivity by sharing this thought.</p>
@@ -112,14 +103,11 @@ const ExploreAnswers = function(props) {
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
                                     Facebook
                                 </a>
-                                <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I love " + masterPrompt.answer} target="_blank">
-                                    Reddit
-                                </a>
                                 <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
                                     LinkedIn
                                 </a>
                             </div>
-                            <p>Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
+                            <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
                         </div>
                     </div>
                 </div>
@@ -131,8 +119,8 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreHappiestModal" className="exploreHappiestModal">
                         <div className="exploreHappiestModalContent">
-                            <button id="dismissHappiestExplore">Back</button>
-                            <h3>I am happiest when</h3>
+                            <button className="playfair" id="dismissHappiestExplore">Back</button>
+                            <h3 className="lato">I'M HAPPIEST WHEN</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="socialMediaShareBtns">
                                 <p>Help spread the positivity by sharing this thought.</p>
@@ -142,14 +130,11 @@ const ExploreAnswers = function(props) {
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
                                     Facebook
                                 </a>
-                                <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am happiest when " + masterPrompt.answer} target="_blank">
-                                    Reddit
-                                </a>
                                 <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
                                     LinkedIn
                                 </a>
                             </div>
-                            <p>Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
+                            <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
                         </div>
                     </div>
                 </div>
@@ -161,8 +146,8 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreProudModal" className="exploreProudModal">
                         <div className="exploreProudModalContent">
-                            <button id="dismissProudExplore">Back</button>
-                            <h3>I am proud of</h3>
+                            <button className="playfair" id="dismissProudExplore">Back</button>
+                            <h3 className="lato">I'M PROUD OF</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="socialMediaShareBtns">
                                 <p>Help spread the positivity by sharing this thought.</p>
@@ -172,14 +157,11 @@ const ExploreAnswers = function(props) {
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
                                     Facebook
                                 </a>
-                                <a href={"https://reddit.com/submit?url=https://grow-main.herokuapp.com/explore&title=I am proud of " + masterPrompt.answer} target="_blank">
-                                    Reddit
-                                </a>
                                 <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
                                     LinkedIn
                                 </a>
                             </div>
-                            <p>Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
+                            <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
                         </div>
                     </div>
                 </div>

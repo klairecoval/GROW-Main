@@ -75,13 +75,8 @@ var SignupWindow = function SignupWindow(props) {
             action: '/signup',
             method: 'POST',
             className: 'mainForm' },
-        React.createElement(
-            'label',
-            { htmlFor: 'username' },
-            'User ID code: '
-        ),
-        React.createElement('input', { id: 'user', type: 'text', name: 'username', placeholder: 'username' }),
-        React.createElement('input', { className: 'formSubmit', id: 'submitSignup', type: 'submit', value: 'Sign up' })
+        React.createElement('input', { id: 'user', className: 'lato', type: 'text', name: 'username', placeholder: 'Paste code here!' }),
+        React.createElement('input', { className: 'formSubmit playfair', id: 'submitSignup', type: 'submit', value: 'Enter Grow' })
     );
 };
 
@@ -94,17 +89,22 @@ var CodeModal = function CodeModal(props) {
             { className: 'userCodeModalContent' },
             React.createElement(
                 'h2',
-                null,
-                'Your user code is'
+                { className: 'playfair' },
+                'Enter Grow'
+            ),
+            React.createElement(
+                'p',
+                { className: 'lato' },
+                'Please copy the code below and paste it in the text box to enter. Thank you for keeping the garden safe.'
             ),
             React.createElement(
                 'div',
-                { id: 'userCodeVal' },
+                { id: 'userCodeVal', className: 'playfair' },
                 generateUserCode(4)
             ),
             React.createElement(
                 'button',
-                { onClick: copyDivToClipboard },
+                { onClick: copyDivToClipboard, className: 'playfair', id: 'copyCodeBtn' },
                 'Copy'
             ),
             React.createElement(SignupWindow, null)
@@ -131,43 +131,14 @@ var createSignupWindow = function createSignupWindow() {
     ReactDOM.render(React.createElement(SignupWindow, null), document.querySelector('#content'));
 };
 
+var createCodeModal = function createCodeModal() {
+    ReactDOM.render(React.createElement(CodeModal, null), document.querySelector('#content'));
+};
+
 // depending on if login or signup icon pressed, create corresponding view
 var setup = function setup() {
-    // const loginButton = document.querySelector('#loginButton');
-    // const signupButton = document.querySelector('#signupButton');
-
-    // signupButton.addEventListener('click', (e) => {
-    //     e.preventDefault();
-    //     createSignupWindow();
-    //     return false;
-    // });
-
-    // loginButton.addEventListener('click', (e) => {
-    //     e.preventDefault();
-    //     createLoginWindow();
-    //     return false;
-    // });
-
     createLoginWindow();
-
-    var codeModal = document.getElementById("userCodeModal");
-    var genUserCodeBtn = document.getElementById("genUserCodeBtn");
-
-    genUserCodeBtn.onclick = function () {
-        createLoginWindow();
-        codeModal.style.display = "block";
-    };
-
-    window.onclick = function (event) {
-        if (event.target === codeModal) {
-            codeModal.style.display = "none";
-        }
-    };
-
-    var submit = document.getElementById("submitSignup");
-    submit.onclick = function () {
-        sendAjax('POST', $('#signupForm').attr('action'), $('#signupForm').serialize(), redirect);
-    };
+    // createCodeModal();
 };
 
 // load in csrf token

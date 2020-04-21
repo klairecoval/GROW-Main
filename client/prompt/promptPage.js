@@ -3,10 +3,9 @@ let id;
 const PromptTitle = (props) => {
     return (
         <div>
-            <a href="/aboutPage" target="_parent" id="startBtn"><button>Back</button></a>
-            <h1 id="promptPageTitle">Select a prompt:</h1>
-            <p>Which one of these speaks to you? Choose one <br/>
-                that you want to write about.</p>
+            <a href="/explorePage" target="_parent" id="startBtn"><button>Back to explore</button></a>
+            <h3 className="lato">THOUGHT SUBMISSION</h3>
+            <h1 className="playfair">Choose your prompt</h1>
         </div>
     );
 };
@@ -16,9 +15,9 @@ const BackModal = () => {
         <div id="backModal" className="backModal">
             <div className="backModalContent">
                 <h1 className="playfair">Are you sure you <br/>want to go back?</h1>
-                <p>Going back now will lose your progress.</p>
-                <button id="stayBtn"className="playfair">Stay</button>
-                <a href="/promptPage" target="_parent" id="continueBtn"><button className="playfair">Continue</button></a>
+                <p className="lato">Going back now will lose your progress.</p>
+                <button id="stayBtn"className="playfair closeModalBtn">Stay</button>
+                <a href="/promptPage" target="_parent" id="continueBtn"><button className="playfair modalSubmitBtn">Go back</button></a>
             </div>
         </div>
     );

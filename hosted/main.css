@@ -8,10 +8,20 @@
   width: 100%;
   text-align: center; }
 
+#submitSignup {
+  background: #ED7163;
+  border: none;
+  color: white; }
+
+#copyCodeBtn {
+  background: #070822;
+  color: white;
+  border: none; }
+
 #category {
   display: none; }
 
-.backModal, .userCodeModal,
+.backModal,
 .exploreThankfulModal, .exploreExcitedModal, .exploreInspiredModal, .exploreLoveModal, .exploreHappiestModal, .exploreProudModal,
 .happiestSubmitModal, .inspiredSubmitModal, .loveSubmitModal, .proudSubmitModal, .thankfulSubmitModal, .excitedSubmitModal {
   display: none;
@@ -27,7 +37,7 @@
   background-color: rgba(0, 0, 0, 0.4); }
 
 /* Modal Content */
-.backModalContent, .userCodeModalContent,
+.backModalContent,
 .exploreThankfulModalContent, .exploreExcitedModalContent, .exploreInspiredModalContent, .exploreLoveModalContent, .exploreHappiestModalContent, .exploreProudModalContent,
 .happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent, .excitedSubmitContent {
   background-color: #fefefe;
@@ -35,3 +45,13 @@
   padding: 20px;
   border: 1px solid #888;
   width: 80%; }
+
+.closeModalBtn {
+  background: white;
+  border: 1px solid #070822;
+  color: #070822; }
+
+.modalSubmitBtn {
+  background: #070822;
+  border: 1px solid #070822;
+  color: white; }
