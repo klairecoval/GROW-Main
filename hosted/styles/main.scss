@@ -31,7 +31,6 @@ $blackBlue: #070822;
 }
 
 .backModal,
-.exploreThankfulModal, .exploreExcitedModal, .exploreInspiredModal, .exploreLoveModal, .exploreHappiestModal, .exploreProudModal,
 .happiestSubmitModal, .inspiredSubmitModal, .loveSubmitModal, .proudSubmitModal, .thankfulSubmitModal, .excitedSubmitModal {
     display: none; 
     position: fixed; 
@@ -48,7 +47,6 @@ $blackBlue: #070822;
   
 /* Modal Content */
 .backModalContent, 
-.exploreThankfulModalContent, .exploreExcitedModalContent, .exploreInspiredModalContent, .exploreLoveModalContent, .exploreHappiestModalContent, .exploreProudModalContent,
 .happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent, .excitedSubmitContent {
     background-color: #fefefe;
     margin: auto;
@@ -56,6 +54,32 @@ $blackBlue: #070822;
     border: 1px solid #888;
     width: 80%;
 }
+
+// explore modals
+.exploreThankfulModal, .exploreExcitedModal, .exploreInspiredModal, .exploreLoveModal, .exploreHappiestModal, .exploreProudModal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+
+// explore modals content
+.exploreThankfulModalContent, .exploreExcitedModalContent, .exploreInspiredModalContent, .exploreLoveModalContent, .exploreHappiestModalContent, .exploreProudModalContent {
+    background-color: white;
+    color: $blackBlue;
+    margin: auto;
+    padding: 20px;
+    width: 40%;
+}
+
 
 // modal elements
 .closeModalBtn {
