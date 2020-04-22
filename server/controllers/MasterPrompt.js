@@ -49,7 +49,28 @@ const getMaster = (request, response) => {
   });
 };
 
+const reportMaster = (req, res) => {  
+    const request = req;  
+    const response = res;
+    const search = {    
+      viewable: ${MasterModel.viewable},
+        
+    };
+  return Master.MasterModel.update(search, { $set: { viewable: false } }, {}, (err) => {    
+      if (err) {      
+          return response.status(500).json({ error: 'Unable to update viewable' });    }
+    request.session.account.premium = true;    
+    return response.status(200).json({ message: 'Viewable has been changed' });  
+  });
+};
+
 module.exports = {
   logMaster,
   getMaster,
+  reportMaster,    
 };
+
+
+
+
+

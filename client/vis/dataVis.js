@@ -9,12 +9,13 @@ const PromptAnswers = function(props) {
 //    }
 //    
     const answerNodes = props.answers.map(function(masterPrompt) {
-        if(masterPrompt.category === "excited"){
+        if((masterPrompt.category === "excited") || (masterPrompt.viewable === "true")){
             return (
                 <div className='answer'>
                     <img src='/assets/img/redSquare.png' alt='red square'/>
                     <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                     <h3 className='promptType'> {masterPrompt.category}</h3>
+                    <button class="errorButton" onClick={handleReportBtn}>Report</button>
                 </div>
             );
         } else if(masterPrompt.category === "thankful"){
@@ -84,6 +85,14 @@ const setupDataVis = function() {
     console.log("set has been read through");
     loadAnswers();
 };
+
+const handleReportBtn = e => {
+    e.preventDefault();
+    
+    sendAjax('POST', '/reportMaster', null, data => { createMasterMessage("reportSuccess", data.message); }); 
+};
+
+
 
 $(document).ready(function() {
     if(document.querySelector('#answers')){

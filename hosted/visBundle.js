@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var PromptAnswers = function PromptAnswers(props) {
 
@@ -11,111 +11,116 @@ var PromptAnswers = function PromptAnswers(props) {
     //    }
     //    
     var answerNodes = props.answers.map(function (masterPrompt) {
-        if (masterPrompt.category === "excited") {
+        if (masterPrompt.category === "excited" || masterPrompt.viewable === "true") {
             return React.createElement(
-                'div',
-                { className: 'answer' },
-                React.createElement('img', { src: '/assets/img/redSquare.png', alt: 'red square' }),
+                "div",
+                { className: "answer" },
+                React.createElement("img", { src: "/assets/img/redSquare.png", alt: "red square" }),
                 React.createElement(
-                    'h3',
-                    { className: 'promptAnswer' },
-                    ' ',
+                    "h3",
+                    { className: "promptAnswer" },
+                    " ",
                     masterPrompt.answer
                 ),
                 React.createElement(
-                    'h3',
-                    { className: 'promptType' },
-                    ' ',
+                    "h3",
+                    { className: "promptType" },
+                    " ",
                     masterPrompt.category
+                ),
+                React.createElement(
+                    "button",
+                    { "class": "errorButton", onClick: handleReportBtn },
+                    "Report"
                 )
             );
         } else if (masterPrompt.category === "thankful") {
             return React.createElement(
-                'div',
-                { className: 'answer' },
-                React.createElement('img', { src: '/assets/img/blueSquare.jpg', alt: 'blue square' }),
+                "div",
+                { className: "answer" },
+                React.createElement("img", { src: "/assets/img/blueSquare.jpg", alt: "blue square" }),
                 React.createElement(
-                    'h3',
-                    { className: 'promptAnswer' },
-                    ' ',
+                    "h3",
+                    { className: "promptAnswer" },
+                    " ",
                     masterPrompt.answer
                 ),
                 React.createElement(
-                    'h3',
-                    { className: 'promptType' },
-                    ' ',
+                    "h3",
+                    { className: "promptType" },
+                    " ",
                     masterPrompt.category
                 )
             );
         } else if (masterPrompt.category === "inspired") {
             return React.createElement(
-                'div',
-                { className: 'answer' },
-                React.createElement('img', { src: '/assets/img/redSquare.png', alt: 'red square' }),
+                "div",
+                { className: "answer" },
+                React.createElement("img", { src: "/assets/img/redSquare.png", alt: "red square" }),
                 React.createElement(
-                    'h3',
-                    { className: 'promptAnswer' },
-                    ' ',
+                    "h3",
+                    { className: "promptAnswer" },
+                    " ",
                     masterPrompt.answer
                 ),
                 React.createElement(
-                    'h3',
-                    { className: 'promptType' },
-                    ' ',
+                    "h3",
+                    { className: "promptType" },
+                    " ",
                     masterPrompt.category
                 )
             );
         } else if (masterPrompt.category === "love") {
             return React.createElement(
-                'div',
-                { className: 'answer' },
-                React.createElement('img', { src: '/assets/img/blueSquare.jpg', alt: 'blue square' }),
+                "div",
+                { className: "answer" },
+                React.createElement("img", { src: "/assets/img/blueSquare.jpg", alt: "blue square" }),
                 React.createElement(
-                    'h3',
-                    { className: 'promptAnswer' },
-                    ' ',
+                    "h3",
+                    { className: "promptAnswer" },
+                    " ",
                     masterPrompt.answer
                 ),
                 React.createElement(
-                    'h3',
-                    { className: 'promptType' },
-                    ' ',
+                    "h3",
+                    { className: "promptType" },
+                    " ",
                     masterPrompt.category
                 )
             );
         } else if (masterPrompt.category === "happiest") {
             return React.createElement(
-                'div',
-                { className: 'answer' },
-                React.createElement('img', { src: '/assets/img/redSquare.png', alt: 'red square' }),
+                "div",
+                { className: "answer" },
+                React.createElement("img", { src: "/assets/img/redSquare.png", alt: "red square" }),
                 React.createElement(
-                    'h3',
-                    { className: 'promptAnswer' },
-                    ' ',
+                    "h3",
+                    { className: "promptAnswer" },
+                    " ",
                     masterPrompt.answer
                 ),
                 React.createElement(
-                    'h3',
-                    { className: 'promptType' },
-                    ' ',
+                    "h3",
+                    { className: "promptType" },
+                    " ",
                     masterPrompt.category
                 )
             );
         } else if (masterPrompt.category === "proud") {
             return React.createElement(
-                'div',
-                { className: 'answer' },
-                React.createElement('img', { src: '/assets/img/blueSquare.jpg', alt: 'blue square' }),
+                "div",
+                { className: "answer" },
+                React.createElement("img", { src: "/assets/img/blueSquare.jpg", alt: "blue square" }),
                 React.createElement(
-                    'h3',
-                    { className: 'promptAnswer' },
-                    ' ',
+                    "h3",
+                    { className: "promptAnswer" },
+                    " ",
                     masterPrompt.answer
                 ),
                 React.createElement(
-                    'h3',
-                    { className: 'promptType' },
-                    ' ',
+                    "h3",
+                    { className: "promptType" },
+                    " ",
                     masterPrompt.category
                 )
             );
@@ -123,8 +128,8 @@ var PromptAnswers = function PromptAnswers(props) {
     });
 
     return React.createElement(
-        'div',
-        { className: 'answerList' },
+        "div",
+        { className: "answerList" },
         answerNodes
     );
 };
@@ -139,6 +144,14 @@ var setupDataVis = function setupDataVis() {
     ReactDOM.render(React.createElement(PromptAnswers, { answers: [] }), document.querySelector('#answers'));
     console.log("set has been read through");
     loadAnswers();
+};
+
+var handleReportBtn = function handleReportBtn(e) {
+    e.preventDefault();
+
+    sendAjax('POST', '/reportMaster', null, function (data) {
+        createMasterMessage("reportSuccess", data.message);
+    });
 };
 
 $(document).ready(function () {
