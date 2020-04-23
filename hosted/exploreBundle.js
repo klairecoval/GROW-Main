@@ -30,7 +30,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         { className: 'exploreExcitedModalContent' },
                         React.createElement(
                             'button',
-                            { className: 'playfair', id: 'dismissExcitedExplore' },
+                            { className: 'playfair dismissExploreModal', id: 'dismissExcitedExplore' },
                             'Back'
                         ),
                         React.createElement(
@@ -90,7 +90,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         { className: 'exploreThankfulModalContent' },
                         React.createElement(
                             'button',
-                            { className: 'playfair', id: 'dismissThankfulExplore' },
+                            { className: 'playfair dismissExploreModal', id: 'dismissThankfulExplore' },
                             'Back'
                         ),
                         React.createElement(
@@ -149,7 +149,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         { className: 'exploreInspiredModalContent' },
                         React.createElement(
                             'button',
-                            { className: 'playfair', id: 'dismissInspiredExplore' },
+                            { className: 'playfair dismissExploreModal', id: 'dismissInspiredExplore' },
                             'Back'
                         ),
                         React.createElement(
@@ -209,7 +209,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         { className: 'exploreLoveModalContent' },
                         React.createElement(
                             'button',
-                            { className: 'playfair', id: 'dismissLoveExplore' },
+                            { className: 'playfair dismissExploreModal', id: 'dismissLoveExplore' },
                             'Back'
                         ),
                         React.createElement(
@@ -270,7 +270,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         { className: 'exploreHappiestModalContent' },
                         React.createElement(
                             'button',
-                            { className: 'playfair', id: 'dismissHappiestExplore' },
+                            { className: 'playfair dismissExploreModal', id: 'dismissHappiestExplore' },
                             'Back'
                         ),
                         React.createElement(
@@ -331,7 +331,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         { className: 'exploreProudModalContent' },
                         React.createElement(
                             'button',
-                            { className: 'playfair', id: 'dismissProudExplore' },
+                            { className: 'playfair dismissExploreModal', id: 'dismissProudExplore' },
                             'Back'
                         ),
                         React.createElement(

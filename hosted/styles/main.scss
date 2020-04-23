@@ -60,11 +60,11 @@ $thankfulGreen: #55D897;
 // modal content
 .backModalContent, 
 .happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent, .excitedSubmitContent {
-    background-color: #fefefe;
+    background-color: white;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+    width: 592px;
+    height: 377px;
 }
 
 // explore modals
@@ -89,9 +89,14 @@ $thankfulGreen: #55D897;
     color: $blackBlue;
     margin: auto;
     padding: 20px;
-    width: 40%;
+    width: 690px;
+    height: 525px;
 }
-
+.promptAnswer {
+    color: $blackBlue;
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+}
 
 // modal elements
 .closeModalBtn {
@@ -106,9 +111,6 @@ $thankfulGreen: #55D897;
 }
 
 // individual prompt page
-.promptAnswer {
-    font-family: 'Playfair Display', serif;
-}
 .logThoughtSubmit {
     border: none;
     font-family: 'Playfair Display', serif;
@@ -162,23 +164,18 @@ $thankfulGreen: #55D897;
 #inspiredPrompt:hover {
     color: $inspiredOrange;
 }
-
 #excitedPrompt:hover {
     color: $excitedBlue;
 }
-
 #thankfulPrompt:hover {
     color: $thankfulGreen;
 }
-
 #proudPrompt:hover {
     color: $proudRed;
 }
-
 #happiestPrompt:hover {
     color: $happiestYellow;
 }
-
 #lovePrompt:hover {
     color: $lovePink;
 }
@@ -194,7 +191,7 @@ $thankfulGreen: #55D897;
 }
 
 // back buttons
-.back2prompts, .back2explore {
+.back2prompts, .back2explore, .dismissExploreModal {
     background: none;
     border: none;
 }

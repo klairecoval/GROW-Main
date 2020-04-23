@@ -14,7 +14,7 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreExcitedModal" className="exploreExcitedModal">
                         <div className="exploreExcitedModalContent">
-                            <button className="playfair" id="dismissExcitedExplore">Back</button>
+                            <button className="playfair dismissExploreModal" id="dismissExcitedExplore">Back</button>
                             <h3 className="lato">I'M EXCITED FOR</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="socialMediaShareBtns">
@@ -40,7 +40,7 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreThankfulModal" className="exploreThankfulModal">
                         <div className="exploreThankfulModalContent">
-                            <button className="playfair" id="dismissThankfulExplore">Back</button>
+                            <button className="playfair dismissExploreModal" id="dismissThankfulExplore">Back</button>
                             <h3 className="lato">I'M THANKFUL FOR</h3>
                             <h3 className='promptAnswer'>{masterPrompt.answer}</h3>
                             <div className="socialMediaShareBtns">
@@ -66,7 +66,7 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreInspiredModal" className="exploreInspiredModal">
                         <div className="exploreInspiredModalContent">
-                            <button className="playfair" id="dismissInspiredExplore">Back</button>
+                            <button className="playfair dismissExploreModal" id="dismissInspiredExplore">Back</button>
                             <h3 className="lato">I'M INSPIRED BY</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="socialMediaShareBtns">
@@ -92,7 +92,7 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreLoveModal" className="exploreLoveModal">
                         <div className="exploreLoveModalContent">
-                            <button className="playfair" id="dismissLoveExplore">Back</button>
+                            <button className="playfair dismissExploreModal" id="dismissLoveExplore">Back</button>
                             <h3 className="lato">I LOVE</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="socialMediaShareBtns">
@@ -119,7 +119,7 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreHappiestModal" className="exploreHappiestModal">
                         <div className="exploreHappiestModalContent">
-                            <button className="playfair" id="dismissHappiestExplore">Back</button>
+                            <button className="playfair dismissExploreModal" id="dismissHappiestExplore">Back</button>
                             <h3 className="lato">I'M HAPPIEST WHEN</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="socialMediaShareBtns">
@@ -146,7 +146,7 @@ const ExploreAnswers = function(props) {
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreProudModal" className="exploreProudModal">
                         <div className="exploreProudModalContent">
-                            <button className="playfair" id="dismissProudExplore">Back</button>
+                            <button className="playfair dismissExploreModal" id="dismissProudExplore">Back</button>
                             <h3 className="lato">I'M PROUD OF</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="socialMediaShareBtns">

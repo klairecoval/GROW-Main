@@ -37,11 +37,11 @@
 
 .backModalContent,
 .happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent, .excitedSubmitContent {
-  background-color: #fefefe;
+  background-color: white;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%; }
+  width: 592px;
+  height: 377px; }
 
 .exploreThankfulModal, .exploreExcitedModal, .exploreInspiredModal, .exploreLoveModal, .exploreHappiestModal, .exploreProudModal {
   display: none;
@@ -61,7 +61,13 @@
   color: #070822;
   margin: auto;
   padding: 20px;
-  width: 40%; }
+  width: 690px;
+  height: 525px; }
+
+.promptAnswer {
+  color: #070822;
+  font-family: 'Playfair Display', serif;
+  font-size: 48px; }
 
 .closeModalBtn {
   background: white;
@@ -72,9 +78,6 @@
   background: #070822;
   border: 1px solid #070822;
   color: white; }
-
-.promptAnswer {
-  font-family: 'Playfair Display', serif; }
 
 .logThoughtSubmit {
   border: none;
@@ -147,6 +150,6 @@
   height: 216px;
   width: 216px; }
 
-.back2prompts, .back2explore {
+.back2prompts, .back2explore, .dismissExploreModal {
   background: none;
   border: none; }
