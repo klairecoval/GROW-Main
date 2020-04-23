@@ -43,14 +43,14 @@ const InspiredTitle = (props) => {
 const InspiredForm = (props) => {
     return (
         <div>
-            <button className="playfair" id="inspiredBackBtn">Back to prompts</button>
+            <button className="playfair back2prompts" id="inspiredBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
             <form id='inspiredForm'
             onSubmit={handleInspiredDrop}
             name='inspiredForm'
             action='/logMaster'
             method='POST'
             className='inspiredForm' >
-                <input id='inspiredText' className="playfair" type='text' name='answer' maxLength="90" placeholder='...' onChange={handleInspiredCount}/>
+                <input id='inspiredText' className="playfair" type='text' name='answer' maxLength="90" placeholder='ex: "the generosity of others"' onChange={handleInspiredCount}/>
                 <input id='category' type='text' name='category' value='inspired' placeholder='inspired' onChange={handleInspiredCount}/>        
                 <input className='logThoughtSubmit' id="logInspiredSubmit" type='submit' value='Submit response' />
             </form>

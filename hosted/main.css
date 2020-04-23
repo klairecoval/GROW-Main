@@ -1,4 +1,4 @@
-.playfair, .promptAnswer {
+.playfair {
   font-family: 'Playfair Display', serif; }
 
 .lato {
@@ -35,7 +35,6 @@
   background-color: black;
   background-color: rgba(0, 0, 0, 0.4); }
 
-/* Modal Content */
 .backModalContent,
 .happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent, .excitedSubmitContent {
   background-color: #fefefe;
@@ -73,3 +72,73 @@
   background: #070822;
   border: 1px solid #070822;
   color: white; }
+
+.promptAnswer {
+  font-family: 'Playfair Display', serif; }
+
+.logThoughtSubmit {
+  border: none;
+  font-family: 'Playfair Display', serif;
+  opacity: 75%; }
+
+#logExcitedSubmit {
+  background: #4FD4FE; }
+
+#logHappiestSubmit {
+  background: #FFE175; }
+
+#logInspiredSubmit {
+  background: #FEA050; }
+
+#logLoveSubmit {
+  background: #FC528F; }
+
+#logProudSubmit {
+  background: #ED6E5F; }
+
+#logThankfulSubmit {
+  background: #55D897; }
+
+.promptNumbers {
+  color: #AAAAAA;
+  font-size: 24px; }
+
+#promptPageTitle {
+  font-size: 24px; }
+
+#promptPageSubtitle {
+  font-size: 48px;
+  width: 310px; }
+
+#inspiredPrompt, #excitedPrompt, #thankfulPrompt, #proudPrompt, #happiestPrompt, #lovePrompt {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 96px;
+  font-weight: bold;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #E5E5E5; }
+  #inspiredPrompt:hover, #excitedPrompt:hover, #thankfulPrompt:hover, #proudPrompt:hover, #happiestPrompt:hover, #lovePrompt:hover {
+    -webkit-text-stroke-width: 0px; }
+
+#inspiredPrompt:hover {
+  color: #FEA050; }
+
+#excitedPrompt:hover {
+  color: #4FD4FE; }
+
+#thankfulPrompt:hover {
+  color: #55D897; }
+
+#proudPrompt:hover {
+  color: #ED6E5F; }
+
+#happiestPrompt:hover {
+  color: #FFE175; }
+
+#lovePrompt:hover {
+  color: #FC528F; }
+
+.back2prompts, .back2explore {
+  background: none;
+  border: none; }

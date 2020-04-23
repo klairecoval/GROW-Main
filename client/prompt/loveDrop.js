@@ -43,14 +43,14 @@ const LoveTitle = (props) => {
 const LoveForm = (props) => {
     return (
         <div>
-            <button className="playfair" id="loveBackBtn">Back to prompts</button>
+            <button className="playfair back2prompts" id="loveBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
             <form id='loveForm'
             onSubmit={handleLoveDrop}
             name='loveForm'
             action='/logMaster'
             method='POST'
             className='loveForm' >
-                <input id='loveText' className="playfair" type='text' name='answer' maxLength="90" placeholder='...' onChange={handleLoveCount}/>
+                <input id='loveText' className="playfair" type='text' name='answer' maxLength="90" placeholder='ex: "humanity"' onChange={handleLoveCount}/>
                 <input id='category' type='text' name='category' value='love' placeholder='love' onChange={handleLoveCount}/>        
                 <input className='logThoughtSubmit' id="logLoveSubmit" type='submit' value='Submit' />
             </form>

@@ -1,10 +1,21 @@
+// color variables
 $pinkBtnBackground: #ED7163;
 $blackBlue: #070822;
+$grey: #AAAAAA;
+$promptOutline: #E5E5E5;
 
-.playfair, .promptAnswer {
+// prompt color variables
+$inspiredOrange: #FEA050;
+$excitedBlue: #4FD4FE;
+$happiestYellow: #FFE175;
+$proudRed: #ED6E5F;
+$lovePink: #FC528F;
+$thankfulGreen: #55D897;
+
+// fonts
+.playfair {
     font-family: 'Playfair Display', serif;
 }
-
 .lato {
     font-family: 'Lato', sans-serif;
 }
@@ -26,10 +37,11 @@ $blackBlue: #070822;
     border: none;
 };
 
-#category{
+#category {
     display: none;
 }
 
+// modals
 .backModal,
 .happiestSubmitModal, .inspiredSubmitModal, .loveSubmitModal, .proudSubmitModal, .thankfulSubmitModal, .excitedSubmitModal {
     display: none; 
@@ -45,7 +57,7 @@ $blackBlue: #070822;
     background-color: rgba(0,0,0,0.4); 
 }
   
-/* Modal Content */
+// modal content
 .backModalContent, 
 .happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent, .excitedSubmitContent {
     background-color: #fefefe;
@@ -87,9 +99,92 @@ $blackBlue: #070822;
     border: 1px solid $blackBlue;
     color: $blackBlue;
 }
-
 .modalSubmitBtn {
     background: $blackBlue;
     border: 1px solid $blackBlue;
     color: white;
+}
+
+// individual prompt page
+.promptAnswer {
+    font-family: 'Playfair Display', serif;
+}
+.logThoughtSubmit {
+    border: none;
+    font-family: 'Playfair Display', serif;
+    opacity: 75%;
+}
+#logExcitedSubmit {
+    background: $excitedBlue;
+}
+#logHappiestSubmit {
+    background: $happiestYellow;
+}
+#logInspiredSubmit {
+    background: $inspiredOrange;
+}
+#logLoveSubmit {
+    background: $lovePink;
+}
+#logProudSubmit {
+    background: $proudRed;
+}
+#logThankfulSubmit {
+    background: $thankfulGreen;
+}
+
+// choose prompt
+.promptNumbers {
+    color: $grey;
+    font-size: 24px;
+}
+#promptPageTitle {
+    font-size: 24px;
+}
+#promptPageSubtitle {
+    font-size: 48px;
+    width: 310px;
+}
+#inspiredPrompt, #excitedPrompt, #thankfulPrompt, #proudPrompt, #happiestPrompt, #lovePrompt {
+    background: none;
+    border: none;
+	color: white;
+    font-size: 96px;
+    font-weight: bold;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $promptOutline;
+
+    &:hover {
+        -webkit-text-stroke-width: 0px;
+    }
+}
+
+#inspiredPrompt:hover {
+    color: $inspiredOrange;
+}
+
+#excitedPrompt:hover {
+    color: $excitedBlue;
+}
+
+#thankfulPrompt:hover {
+    color: $thankfulGreen;
+}
+
+#proudPrompt:hover {
+    color: $proudRed;
+}
+
+#happiestPrompt:hover {
+    color: $happiestYellow;
+}
+
+#lovePrompt:hover {
+    color: $lovePink;
+}
+
+// back buttons
+.back2prompts, .back2explore {
+    background: none;
+    border: none;
 }

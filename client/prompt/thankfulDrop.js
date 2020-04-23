@@ -44,14 +44,14 @@ const ThankfulTitle = (props) => {
 const ThankfulForm = (props) => {
     return (
         <div>
-            <button className="playfair" id="thankfulBackBtn">Back to prompts</button>
+            <button className="playfair back2prompts" id="thankfulBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
             <form id='thankfulForm'
             onSubmit={handleThankfulDrop}
             name='thankfulForm'
             action='/logMaster'
             method='POST'
             className='thankfulForm' >
-                <input id='thankfulText' className="playfair" type='text' name='answer' maxLength="90" placeholder='...' onChange={handleThankfulCount}/>
+                <input id='thankfulText' className="playfair" type='text' name='answer' maxLength="90" placeholder='ex: "essential workers"' onChange={handleThankfulCount}/>
                 <input id='category' type='text' name='category' value='thankful' placeholder='thankful' onChange={handleThankfulCount}/>        
                 <input className='logThoughtSubmit' id="logThankfulSubmit" type='submit' value='Submit' />
             </form>

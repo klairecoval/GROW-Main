@@ -43,14 +43,14 @@ const ExcitedTitle = (props) => {
 const ExcitedForm = (props) => {
     return (
         <div>
-            <button id="excitedBackBtn" className="playfair">Back to prompts</button>
+            <button id="excitedBackBtn" className="playfair back2prompts"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
             <form id='excitedForm'
             onSubmit={handleExcitedDrop}
             name='excitedForm'
             action='/logMaster'
             method='POST'
             className='excitedForm' >
-                <input id='excitedText' className="playfair" type='text' name='answer' maxLength="90" placeholder='...' onChange={handleExcitedCount}/>
+                <input id='excitedText' className="playfair" type='text' name='answer' maxLength="90" placeholder='ex: "social gatherings"' onChange={handleExcitedCount}/>
                 <input id='category' type='text' name='category' value='excited' placeholder='excited' onChange={handleExcitedCount}/>        
                 <input className='logThoughtSubmit' id="logExcitedSubmit" className="playfair" type='submit' value='Submit Response' />
             </form>

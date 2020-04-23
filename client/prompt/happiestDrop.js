@@ -43,14 +43,14 @@ const HappiestTitle = (props) => {
 const HappiestForm = (props) => {
     return (
         <div>
-            <button className="playfair" id="happiestBackBtn">Back to prompts</button>
+            <button className="playfair back2prompts" id="happiestBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
             <form id='happiestForm'
             onSubmit={handleHappiestDrop}
             name='happiestForm'
             action='/logMaster'
             method='POST'
             className='happiestForm' >
-                <input id='happiestText' className="playfair" type='text' name='answer' maxLength="90" placeholder='...' onChange={handleHappiestCount}/>
+                <input id='happiestText' className="playfair" type='text' name='answer' maxLength="90" placeholder='ex: "I am with loved ones"' onChange={handleHappiestCount}/>
                 <input id='category' type='text' name='category' value='happiest' placeholder='happiest' onChange={handleHappiestCount}/>        
                 <input className='logThoughtSubmit' id="logHappiestSubmit" type='submit' value='Submit response' />
             </form>

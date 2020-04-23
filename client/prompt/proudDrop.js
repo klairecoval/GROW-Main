@@ -43,7 +43,7 @@ const ProudTitle = (props) => {
 const ProudForm = (props) => {
     return (
         <div>
-            <button className="playfair" id="proudBackBtn">Back to prompts</button>
+            <button className="playfair back2prompts" id="proudBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
             <form id='proudForm'
             onSubmit={handleProudDrop}
             name='proudForm'
