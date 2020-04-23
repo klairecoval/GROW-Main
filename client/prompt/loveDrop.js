@@ -30,7 +30,7 @@ const handleLoveDrop = (e) => {
   
 const handleLoveCount = (e) => {
     ReactDOM.render(
-    <LoveForm loveCount={e.target.value.length}/>, document.querySelector('#logThought')
+    <LoveForm loveCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
     );
 };
 
@@ -54,7 +54,7 @@ const LoveForm = (props) => {
                 <input id='category' type='text' name='category' value='love' placeholder='love' onChange={handleLoveCount}/>        
                 <input className='logThoughtSubmit' id="logLoveSubmit" type='submit' value='Submit' />
             </form>
-            <p className="lato" id="loveCount">{props.loveCount}/90</p>
+            <p className="lato" id="loveCount">{props.loveCount} characters remaining</p>
             <BackModal/>
             <LoveSubmitModal />
         </div>

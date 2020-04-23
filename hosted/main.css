@@ -139,6 +139,14 @@
 #lovePrompt:hover {
   color: #FC528F; }
 
+#submitThoughtBtn, #totalSubBtn, #exploreThoughtsBtn {
+  border: 0px;
+  border-radius: 50%;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  height: 216px;
+  width: 216px; }
+
 .back2prompts, .back2explore {
   background: none;
   border: none; }

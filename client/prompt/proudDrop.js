@@ -30,7 +30,7 @@ const handleProudDrop = (e) => {
   
 const handleProudCount = (e) => {
     ReactDOM.render(
-    <ProudForm proudCount={e.target.value.length}/>, document.querySelector('#logThought')
+    <ProudForm proudCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
     );
 };
 
@@ -54,7 +54,7 @@ const ProudForm = (props) => {
                 <input id='category' type='text' name='category' value='proud' placeholder='proud' onChange={handleProudCount}/>        
                 <input className='logThoughtSubmit' id="logProudSubmit" type='submit' value='Submit' />
             </form>
-            <p className="lato" id="proudCount">{props.proudCount}/90</p>
+            <p className="lato" id="proudCount">{props.proudCount} characters remaining</p>
             <BackModal/>
             <ProudSubmitModal />
         </div>

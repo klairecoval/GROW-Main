@@ -31,7 +31,7 @@ const handleThankfulDrop = (e) => {
   
 const handleThankfulCount = (e) => {
     ReactDOM.render(
-    <ThankfulForm thankfulCount={e.target.value.length}/>, document.querySelector('#logThought')
+    <ThankfulForm thankfulCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
     );
 };
 
@@ -55,7 +55,7 @@ const ThankfulForm = (props) => {
                 <input id='category' type='text' name='category' value='thankful' placeholder='thankful' onChange={handleThankfulCount}/>        
                 <input className='logThoughtSubmit' id="logThankfulSubmit" type='submit' value='Submit' />
             </form>
-            <p id="thankfulCount">{props.thankfulCount}/90</p>
+            <p id="thankfulCount">{props.thankfulCount} characters remaining</p>
             <BackModal/>
             <ThankfulSubmitModal />
         </div>

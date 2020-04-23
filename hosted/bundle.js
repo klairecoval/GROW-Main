@@ -1,7 +1,5 @@
 "use strict";
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var handleExcitedDrop = function handleExcitedDrop(e) {
     e.preventDefault();
 
@@ -33,7 +31,7 @@ var handleExcitedDrop = function handleExcitedDrop(e) {
 };
 
 var handleExcitedCount = function handleExcitedCount(e) {
-    ReactDOM.render(React.createElement(ExcitedForm, { excitedCount: e.target.value.length }), document.querySelector('#logThought'));
+    ReactDOM.render(React.createElement(ExcitedForm, { excitedCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
 };
 
 var ExcitedTitle = function ExcitedTitle(props) {
@@ -45,8 +43,6 @@ var ExcitedTitle = function ExcitedTitle(props) {
 };
 
 var ExcitedForm = function ExcitedForm(props) {
-    var _React$createElement;
-
     return React.createElement(
         "div",
         null,
@@ -66,13 +62,13 @@ var ExcitedForm = function ExcitedForm(props) {
                 className: "excitedForm" },
             React.createElement("input", { id: "excitedText", className: "playfair", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"social gatherings\"", onChange: handleExcitedCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "excited", placeholder: "excited", onChange: handleExcitedCount }),
-            React.createElement("input", (_React$createElement = { className: "logThoughtSubmit", id: "logExcitedSubmit" }, _defineProperty(_React$createElement, "className", "playfair"), _defineProperty(_React$createElement, "type", "submit"), _defineProperty(_React$createElement, "value", "Submit Response"), _React$createElement))
+            React.createElement("input", { className: "logThoughtSubmit", id: "logExcitedSubmit", type: "submit", value: "Submit Response" })
         ),
         React.createElement(
             "p",
             { id: "excitedCount", className: "lato" },
             props.excitedCount,
-            "/90"
+            " characters remaining"
         ),
         React.createElement(BackModal, null),
         React.createElement(ExcitedSubmitModal, null)
@@ -167,7 +163,7 @@ var handleHappiestDrop = function handleHappiestDrop(e) {
 };
 
 var handleHappiestCount = function handleHappiestCount(e) {
-    ReactDOM.render(React.createElement(HappiestForm, { happiestCount: e.target.value.length }), document.querySelector('#logThought'));
+    ReactDOM.render(React.createElement(HappiestForm, { happiestCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
 };
 
 var HappiestTitle = function HappiestTitle(props) {
@@ -204,7 +200,7 @@ var HappiestForm = function HappiestForm(props) {
             "p",
             { className: "lato", id: "happiestCount" },
             props.happiestCount,
-            "/90"
+            " characters remaining"
         ),
         React.createElement(BackModal, null),
         React.createElement(HappiestSubmitModal, null)
@@ -299,7 +295,7 @@ var handleInspiredDrop = function handleInspiredDrop(e) {
 };
 
 var handleInspiredCount = function handleInspiredCount(e) {
-    ReactDOM.render(React.createElement(InspiredForm, { inspiredCount: e.target.value.length }), document.querySelector('#logThought'));
+    ReactDOM.render(React.createElement(InspiredForm, { inspiredCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
 };
 
 var InspiredTitle = function InspiredTitle(props) {
@@ -336,7 +332,7 @@ var InspiredForm = function InspiredForm(props) {
             "p",
             { id: "inspiredCount", className: "lato" },
             props.inspiredCount,
-            "/90"
+            " characters remaining"
         ),
         React.createElement(BackModal, null),
         React.createElement(InspiredSubmitModal, null)
@@ -431,7 +427,7 @@ var handleLoveDrop = function handleLoveDrop(e) {
 };
 
 var handleLoveCount = function handleLoveCount(e) {
-    ReactDOM.render(React.createElement(LoveForm, { loveCount: e.target.value.length }), document.querySelector('#logThought'));
+    ReactDOM.render(React.createElement(LoveForm, { loveCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
 };
 
 var LoveTitle = function LoveTitle(props) {
@@ -468,7 +464,7 @@ var LoveForm = function LoveForm(props) {
             "p",
             { className: "lato", id: "loveCount" },
             props.loveCount,
-            "/90"
+            " characters remaining"
         ),
         React.createElement(BackModal, null),
         React.createElement(LoveSubmitModal, null)
@@ -793,7 +789,7 @@ var handleProudDrop = function handleProudDrop(e) {
 };
 
 var handleProudCount = function handleProudCount(e) {
-    ReactDOM.render(React.createElement(ProudForm, { proudCount: e.target.value.length }), document.querySelector('#logThought'));
+    ReactDOM.render(React.createElement(ProudForm, { proudCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
 };
 
 var ProudTitle = function ProudTitle(props) {
@@ -830,7 +826,7 @@ var ProudForm = function ProudForm(props) {
             "p",
             { className: "lato", id: "proudCount" },
             props.proudCount,
-            "/90"
+            " characters remaining"
         ),
         React.createElement(BackModal, null),
         React.createElement(ProudSubmitModal, null)
@@ -925,7 +921,7 @@ var handleThankfulDrop = function handleThankfulDrop(e) {
 };
 
 var handleThankfulCount = function handleThankfulCount(e) {
-    ReactDOM.render(React.createElement(ThankfulForm, { thankfulCount: e.target.value.length }), document.querySelector('#logThought'));
+    ReactDOM.render(React.createElement(ThankfulForm, { thankfulCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
 };
 
 var ThankfulTitle = function ThankfulTitle(props) {
@@ -962,7 +958,7 @@ var ThankfulForm = function ThankfulForm(props) {
             "p",
             { id: "thankfulCount" },
             props.thankfulCount,
-            "/90"
+            " characters remaining"
         ),
         React.createElement(BackModal, null),
         React.createElement(ThankfulSubmitModal, null)

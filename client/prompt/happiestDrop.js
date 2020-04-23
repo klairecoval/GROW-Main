@@ -30,7 +30,7 @@ const handleHappiestDrop = (e) => {
   
 const handleHappiestCount = (e) => {
     ReactDOM.render(
-        <HappiestForm happiestCount={e.target.value.length}/>, document.querySelector('#logThought')
+        <HappiestForm happiestCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
     );
 };
 
@@ -54,7 +54,7 @@ const HappiestForm = (props) => {
                 <input id='category' type='text' name='category' value='happiest' placeholder='happiest' onChange={handleHappiestCount}/>        
                 <input className='logThoughtSubmit' id="logHappiestSubmit" type='submit' value='Submit response' />
             </form>
-            <p className="lato" id="happiestCount">{props.happiestCount}/90</p>
+            <p className="lato" id="happiestCount">{props.happiestCount} characters remaining</p>
             <BackModal/>
             <HappiestSubmitModal />
         </div>

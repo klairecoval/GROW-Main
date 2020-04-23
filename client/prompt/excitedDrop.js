@@ -30,7 +30,7 @@ const handleExcitedDrop = (e) => {
   
 const handleExcitedCount = (e) => {
     ReactDOM.render(
-        <ExcitedForm excitedCount={e.target.value.length}/>, document.querySelector('#logThought')
+        <ExcitedForm excitedCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
     );
 };
 
@@ -52,9 +52,9 @@ const ExcitedForm = (props) => {
             className='excitedForm' >
                 <input id='excitedText' className="playfair" type='text' name='answer' maxLength="90" placeholder='ex: "social gatherings"' onChange={handleExcitedCount}/>
                 <input id='category' type='text' name='category' value='excited' placeholder='excited' onChange={handleExcitedCount}/>        
-                <input className='logThoughtSubmit' id="logExcitedSubmit" className="playfair" type='submit' value='Submit Response' />
+                <input className='logThoughtSubmit' id="logExcitedSubmit" type='submit' value='Submit Response' />
             </form>
-            <p id="excitedCount" className="lato">{props.excitedCount}/90</p>
+            <p id="excitedCount" className="lato">{props.excitedCount} characters remaining</p>
             <BackModal/>
             <ExcitedSubmitModal />
         </div>

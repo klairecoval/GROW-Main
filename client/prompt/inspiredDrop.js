@@ -30,7 +30,7 @@ const handleInspiredDrop = (e) => {
   
 const handleInspiredCount = (e) => {
     ReactDOM.render(
-        <InspiredForm inspiredCount={e.target.value.length}/>, document.querySelector('#logThought')
+        <InspiredForm inspiredCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
     );
 };
 
@@ -54,7 +54,7 @@ const InspiredForm = (props) => {
                 <input id='category' type='text' name='category' value='inspired' placeholder='inspired' onChange={handleInspiredCount}/>        
                 <input className='logThoughtSubmit' id="logInspiredSubmit" type='submit' value='Submit response' />
             </form>
-            <p id="inspiredCount" className="lato">{props.inspiredCount}/90</p>
+            <p id="inspiredCount" className="lato">{props.inspiredCount} characters remaining</p>
             <BackModal/>
             <InspiredSubmitModal />
         </div>
