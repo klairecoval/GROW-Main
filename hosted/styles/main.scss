@@ -195,3 +195,10 @@ $thankfulGreen: #55D897;
     background: none;
     border: none;
 }
+
+// mobile screen
+.mobile {
+    display: none;
+}
+@media only screen and (min-width: 320px) and (max-width: 568px) and 
+   (orientation: portrait) { .mobile { display: inline; } }
