@@ -93,11 +93,11 @@ const PromptButtons = () => {
             </div>
             <div>
                 <p className="promptNumbers lato">05</p>
-                <button id="lovePrompt" className="lato">I love...</button>
+                <button id="lovePrompt" className="lato">I love</button>
             </div>
             <div>
                 <p className="promptNumbers lato">06</p>
-                <button id="thankfulPrompt" className="lato">I'm thankful for...</button>
+                <button id="thankfulPrompt" className="lato">I'm thankful for</button>
             </div>
         </div>
     );

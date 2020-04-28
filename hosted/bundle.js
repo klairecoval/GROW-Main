@@ -71,7 +71,8 @@ var ExcitedForm = function ExcitedForm(props) {
             " characters remaining"
         ),
         React.createElement(BackModal, null),
-        React.createElement(ExcitedSubmitModal, null)
+        React.createElement(ExcitedSubmitModal, null),
+        React.createElement("img", { src: "/assets/img/ExcitedLeaf.svg" })
     );
 };
 
@@ -203,7 +204,8 @@ var HappiestForm = function HappiestForm(props) {
             " characters remaining"
         ),
         React.createElement(BackModal, null),
-        React.createElement(HappiestSubmitModal, null)
+        React.createElement(HappiestSubmitModal, null),
+        React.createElement("img", { src: "/assets/img/HappiestLeaf.svg" })
     );
 };
 
@@ -335,7 +337,8 @@ var InspiredForm = function InspiredForm(props) {
             " characters remaining"
         ),
         React.createElement(BackModal, null),
-        React.createElement(InspiredSubmitModal, null)
+        React.createElement(InspiredSubmitModal, null),
+        React.createElement("img", { src: "/assets/img/InspiredLeaf.svg" })
     );
 };
 
@@ -467,7 +470,8 @@ var LoveForm = function LoveForm(props) {
             " characters remaining"
         ),
         React.createElement(BackModal, null),
-        React.createElement(LoveSubmitModal, null)
+        React.createElement(LoveSubmitModal, null),
+        React.createElement("img", { src: "/assets/img/LoveLeaf.svg" })
     );
 };
 
@@ -714,7 +718,7 @@ var PromptButtons = function PromptButtons() {
             React.createElement(
                 "button",
                 { id: "lovePrompt", className: "lato" },
-                "I love..."
+                "I love"
             )
         ),
         React.createElement(
@@ -728,7 +732,7 @@ var PromptButtons = function PromptButtons() {
             React.createElement(
                 "button",
                 { id: "thankfulPrompt", className: "lato" },
-                "I'm thankful for..."
+                "I'm thankful for"
             )
         )
     );
@@ -829,7 +833,8 @@ var ProudForm = function ProudForm(props) {
             " characters remaining"
         ),
         React.createElement(BackModal, null),
-        React.createElement(ProudSubmitModal, null)
+        React.createElement(ProudSubmitModal, null),
+        React.createElement("img", { src: "/assets/img/ProudLeaf.svg" })
     );
 };
 
@@ -950,7 +955,7 @@ var ThankfulForm = function ThankfulForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "thankfulForm" },
-            React.createElement("input", { id: "thankfulText", className: "playfair", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"essential workers\"", onChange: handleThankfulCount }),
+            React.createElement("input", { id: "thankfulText", className: "playfair whiteText", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"essential workers\"", onChange: handleThankfulCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "thankful", placeholder: "thankful", onChange: handleThankfulCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logThankfulSubmit", type: "submit", value: "Submit" })
         ),
@@ -961,7 +966,8 @@ var ThankfulForm = function ThankfulForm(props) {
             " characters remaining"
         ),
         React.createElement(BackModal, null),
-        React.createElement(ThankfulSubmitModal, null)
+        React.createElement(ThankfulSubmitModal, null),
+        React.createElement("img", { src: "/assets/img/ThankfulLeaf.svg" })
     );
 };
 

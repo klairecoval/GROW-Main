@@ -57,6 +57,7 @@ const ExcitedForm = (props) => {
             <p id="excitedCount" className="lato">{props.excitedCount} characters remaining</p>
             <BackModal/>
             <ExcitedSubmitModal />
+            <img src="/assets/img/ExcitedLeaf.svg" />
         </div>
     );
 };

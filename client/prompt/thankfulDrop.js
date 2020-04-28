@@ -51,13 +51,14 @@ const ThankfulForm = (props) => {
             action='/logMaster'
             method='POST'
             className='thankfulForm' >
-                <input id='thankfulText' className="playfair" type='text' name='answer' maxLength="90" placeholder='ex: "essential workers"' onChange={handleThankfulCount}/>
+                <input id='thankfulText' className="playfair whiteText" type='text' name='answer' maxLength="90" placeholder='ex: "essential workers"' onChange={handleThankfulCount}/>
                 <input id='category' type='text' name='category' value='thankful' placeholder='thankful' onChange={handleThankfulCount}/>        
                 <input className='logThoughtSubmit' id="logThankfulSubmit" type='submit' value='Submit' />
             </form>
             <p id="thankfulCount">{props.thankfulCount} characters remaining</p>
             <BackModal/>
             <ThankfulSubmitModal />
+            <img src="/assets/img/ThankfulLeaf.svg" />
         </div>
     );
 };

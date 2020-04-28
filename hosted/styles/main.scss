@@ -20,6 +20,11 @@ $thankfulGreen: #55D897;
     font-family: 'Lato', sans-serif;
 }
 
+// backgrounds
+#exploreBody, #promptBody {
+    background-image: url("/assets/img/background.svg");
+}
+
 // about screen
 #introVid {
     position: fixed;
@@ -28,6 +33,9 @@ $thankfulGreen: #55D897;
     min-width: 100%;
     min-height: 100%;
     z-index: 1;
+}
+#aboutContent {
+    color: white;
 }
 
 #startBtn {
@@ -151,16 +159,18 @@ $thankfulGreen: #55D897;
     font-size: 24px;
 }
 #promptPageTitle {
+    color: white;
     font-size: 24px;
 }
 #promptPageSubtitle {
+    color: white;
     font-size: 48px;
     width: 310px;
 }
 #inspiredPrompt, #excitedPrompt, #thankfulPrompt, #proudPrompt, #happiestPrompt, #lovePrompt {
     background: none;
     border: none;
-	color: white;
+	color: $blackBlue;
     font-size: 96px;
     font-weight: bold;
     -webkit-text-stroke-width: 1px;
@@ -211,4 +221,8 @@ $thankfulGreen: #55D897;
     display: none;
 }
 @media only screen and (min-width: 320px) and (max-width: 568px) and 
-   (orientation: portrait) { .mobile { display: inline; } }
+   (orientation: portrait) { .mobile { 
+        background-image: url("/assets/img/mobileBg.svg");
+        color: white;
+        display: inline; 
+    } }

@@ -4,6 +4,9 @@
 .lato {
   font-family: 'Lato', sans-serif; }
 
+#exploreBody, #promptBody {
+  background-image: url("/assets/img/background.svg"); }
+
 #introVid {
   position: fixed;
   right: 0;
@@ -11,6 +14,9 @@
   min-width: 100%;
   min-height: 100%;
   z-index: 1; }
+
+#aboutContent {
+  color: white; }
 
 #startBtn {
   width: 100%;
@@ -115,16 +121,18 @@
   font-size: 24px; }
 
 #promptPageTitle {
+  color: white;
   font-size: 24px; }
 
 #promptPageSubtitle {
+  color: white;
   font-size: 48px;
   width: 310px; }
 
 #inspiredPrompt, #excitedPrompt, #thankfulPrompt, #proudPrompt, #happiestPrompt, #lovePrompt {
   background: none;
   border: none;
-  color: white;
+  color: #070822;
   font-size: 96px;
   font-weight: bold;
   -webkit-text-stroke-width: 1px;
@@ -167,4 +175,6 @@
 
 @media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: portrait) {
   .mobile {
+    background-image: url("/assets/img/mobileBg.svg");
+    color: white;
     display: inline; } }
