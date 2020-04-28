@@ -31,6 +31,13 @@
 
     <a href="/login" target="_parent" id="aboutNextBtn"><button class="playfair">Start</button></a>
   </section>
+  
+  {{!-- <div class="introVid" id="introVid">
+    <img src="/assets/img/leaf-intro.mp4" />
+  </div> --}}
+  <video autoplay muted loop id="introVid">
+      <source src="/assets/img/leaf-intro.mp4" type="video/mp4">
+  </video>
 
   <div class="mobile">
     <h1 class="playfair">GROW</h1>
@@ -41,7 +48,12 @@
   <div class="error">
   </div>
 
-  <script src="/assets/bundle.js"></script>
+  {{!-- <script src="/assets/bundle.js"></script> --}}
+  <script>
+    setTimeout(function() {
+      document.getElementById('introVid').style.display='none'
+    }, 8000);
+  </script>
 </body>
 
 </html>
