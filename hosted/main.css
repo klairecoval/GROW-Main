@@ -4,7 +4,7 @@
 .lato {
   font-family: 'Lato', sans-serif; }
 
-#exploreBody, #promptBody, #aboutBody, #dataVisBody {
+#exploreBody, #promptBody, #aboutBody, #dataVisBody, #loginBody {
   background-image: url("/assets/img/background.svg"); }
 
 #introVid {
@@ -18,14 +18,16 @@
 #aboutContent {
   color: white; }
 
+#aboutStartBtn {
+  background: none;
+  border: none;
+  color: white; }
+  #aboutStartBtn:hover {
+    color: #ED7163; }
+
 #startBtn {
   width: 100%;
   text-align: center; }
-
-#submitSignup {
-  background: #ED7163;
-  border: none;
-  color: white; }
 
 #copyCodeBtn {
   background: #070822;
@@ -33,6 +35,14 @@
   border: none; }
   #copyCodeBtn:hover {
     background: #ED7163; }
+
+#submitSignup {
+  background: #ED7163;
+  border: none;
+  color: white;
+  opacity: 75%; }
+  #submitSignup:hover {
+    opacity: 100%; }
 
 #category {
   display: none; }
@@ -85,6 +95,24 @@
   font-family: 'Playfair Display', serif;
   font-size: 48px; }
 
+#inspiredExploreColorModal {
+  background: #FFF4EB; }
+
+#excitedExploreColorModal {
+  background: #DCF7FF; }
+
+#happiestExploreColorModal {
+  background: #FFF9E2; }
+
+#proudExploreColorModal {
+  background: #FFEDED; }
+
+#loveExploreColorModal {
+  background: #FFE7EF; }
+
+#thankfulExploreColorModal {
+  background: #E1FFF0; }
+
 .closeModalBtn {
   background: white;
   border: 1px solid #070822;
@@ -95,7 +123,7 @@
 
 .modalSubmitBtn {
   background: #070822;
-  border: 1px solid #070822;
+  border: none;
   color: white; }
   .modalSubmitBtn:hover {
     background: #ED7163; }
@@ -119,6 +147,8 @@
   border: none;
   font-family: 'Playfair Display', serif;
   opacity: 75%; }
+  .logThoughtSubmit:hover {
+    opacity: 100%; }
 
 #logExcitedSubmit {
   background: #4FD4FE; }
@@ -156,7 +186,6 @@
   border: none;
   color: #070822;
   font-size: 96px;
-  font-weight: bold;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #E5E5E5; }
   #inspiredPrompt:hover, #excitedPrompt:hover, #thankfulPrompt:hover, #proudPrompt:hover, #happiestPrompt:hover, #lovePrompt:hover {

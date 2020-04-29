@@ -21,7 +21,7 @@ $thankfulGreen: #55D897;
 }
 
 // backgrounds
-#exploreBody, #promptBody, #aboutBody, #dataVisBody {
+#exploreBody, #promptBody, #aboutBody, #dataVisBody, #loginBody {
     background-image: url("/assets/img/background.svg");
 }
 
@@ -37,16 +37,19 @@ $thankfulGreen: #55D897;
 #aboutContent {
     color: white;
 }
+#aboutStartBtn {
+    background: none;
+    border: none;
+    color: white;
+
+    &:hover {
+        color: $pinkBtnBackground;
+    }
+}
 
 #startBtn {
     width: 100%;
     text-align: center;
-}
-
-#submitSignup {
-    background: $pinkBtnBackground;
-    border: none;
-    color: white;
 }
 
 #copyCodeBtn {
@@ -58,6 +61,17 @@ $thankfulGreen: #55D897;
         background: $pinkBtnBackground;
     }
 };
+
+#submitSignup {
+    background: $pinkBtnBackground;
+    border: none;
+    color: white;
+    opacity: 75%;
+
+    &:hover {
+        opacity: 100%;
+    }
+}
 
 #category {
     display: none;
@@ -119,6 +133,27 @@ $thankfulGreen: #55D897;
     font-family: 'Playfair Display', serif;
     font-size: 48px;
 }
+.exploreColorModal{
+
+}
+#inspiredExploreColorModal {
+    background: #FFF4EB;
+}
+#excitedExploreColorModal {
+    background: #DCF7FF;
+}
+#happiestExploreColorModal {
+    background: #FFF9E2;
+}
+#proudExploreColorModal {
+    background: #FFEDED;
+}
+#loveExploreColorModal {
+    background: #FFE7EF;
+}
+#thankfulExploreColorModal {
+    background: #E1FFF0;
+}
 
 // modal elements
 .closeModalBtn {
@@ -133,7 +168,7 @@ $thankfulGreen: #55D897;
 }
 .modalSubmitBtn {
     background: $blackBlue;
-    border: 1px solid $blackBlue;
+    border: none;
     color: white;
 
     &:hover {
@@ -165,6 +200,10 @@ $thankfulGreen: #55D897;
     border: none;
     font-family: 'Playfair Display', serif;
     opacity: 75%;
+
+    &:hover {
+        opacity: 100%;
+    }
 }
 #logExcitedSubmit {
     background: $excitedBlue;
@@ -204,7 +243,6 @@ $thankfulGreen: #55D897;
     border: none;
 	color: $blackBlue;
     font-size: 96px;
-    font-weight: bold;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: $promptOutline;
 
