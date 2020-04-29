@@ -17,21 +17,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script>
 
-  <link href="https://fonts.googleapis.com/css?family=Abel|Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Playfair+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
 </head>
 
-<body>
+<body id="exploreBody">
   <section id="exploreThoughts">
   </section>
-    <a href="/promptPage" target="_parent" id="promptPageBtn" class="playfair"><button>Submit thought</button></a>
-    <a href="/dataVisPage" target="_parent" id="dataVisBtn" class="playfair"><button>Total submissions</button></a>
+    <a href="/promptPage" target="_parent" id="promptPageBtn" class="playfair"><button id="submitThoughtBtn">Submit thought</button></a>
+    <a href="/dataVisPage" target="_parent" id="dataVisBtn" class="playfair"><button id="totalSubBtn">Total submissions</button></a>
 
   <div class="error">
   </div>
-    <a href="/logout" target="_parent" id="logOutBtn"><button>Log Out</button></a>
-
-
   <script src="/assets/exploreBundle.js"></script>
 </body>
 

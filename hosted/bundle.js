@@ -31,14 +31,24 @@ var handleExcitedDrop = function handleExcitedDrop(e) {
 };
 
 var handleExcitedCount = function handleExcitedCount(e) {
-    ReactDOM.render(React.createElement(ExcitedForm, { excitedCount: e.target.value.length }), document.querySelector('#logThought'));
+    ReactDOM.render(React.createElement(ExcitedForm, { excitedCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
 };
 
 var ExcitedTitle = function ExcitedTitle(props) {
     return React.createElement(
-        "h2",
-        { id: "excitedTitle" },
-        "I am excited for..."
+        "div",
+        null,
+        React.createElement(
+            "button",
+            { id: "excitedBackBtn", className: "playfair back2prompts" },
+            React.createElement("img", { src: "/assets/img/arrow.svg", className: "backArrow" }),
+            "Back to prompts"
+        ),
+        React.createElement(
+            "h2",
+            { className: "lato promptTitle", id: "excitedTitle" },
+            "I'M EXCITED FOR:"
+        )
     );
 };
 
@@ -54,23 +64,19 @@ var ExcitedForm = function ExcitedForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "excitedForm" },
-            React.createElement("input", { id: "excitedText", className: "playfair", type: "text", name: "answer", maxLength: "90", placeholder: "...", onChange: handleExcitedCount }),
+            React.createElement("input", { id: "excitedText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"social gatherings\"", onChange: handleExcitedCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "excited", placeholder: "excited", onChange: handleExcitedCount }),
-            React.createElement("input", { className: "logThoughtSubmit", id: "logExcitedSubmit", type: "submit", value: "Submit" })
+            React.createElement("input", { className: "logThoughtSubmit", id: "logExcitedSubmit", type: "submit", value: "Submit Response" })
         ),
         React.createElement(
             "p",
-            { id: "excitedCount" },
+            { id: "excitedCount", className: "lato answerCharCount" },
             props.excitedCount,
-            "/90"
-        ),
-        React.createElement(
-            "button",
-            { id: "excitedBackBtn" },
-            "Go back"
+            " characters remaining"
         ),
         React.createElement(BackModal, null),
-        React.createElement(ExcitedSubmitModal, null)
+        React.createElement(ExcitedSubmitModal, null),
+        React.createElement("img", { src: "/assets/img/PromptAnswerLeves/ExcitedLeaf.svg", className: "promptAnswerLeaf" })
     );
 };
 
@@ -88,20 +94,20 @@ var ExcitedSubmitModal = function ExcitedSubmitModal() {
             ),
             React.createElement(
                 "p",
-                null,
+                { className: "lato" },
                 "This will submit your response to your card.",
                 React.createElement("br", null),
                 "Don\u2019t worry, they\u2019re all anonymous."
             ),
             React.createElement(
                 "button",
-                { id: "dismissExcitedSubmit", className: "playfair" },
+                { id: "dismissExcitedSubmit", className: "playfair closeModalBtn" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitExcitedBtn", className: "playfair" },
-                "Finish"
+                { id: "submitExcitedBtn", className: "playfair modalSubmitBtn" },
+                "Submit"
             )
         )
     );
@@ -162,14 +168,24 @@ var handleHappiestDrop = function handleHappiestDrop(e) {
 };
 
 var handleHappiestCount = function handleHappiestCount(e) {
-    ReactDOM.render(React.createElement(HappiestForm, { happiestCount: e.target.value.length }), document.querySelector('#logThought'));
+    ReactDOM.render(React.createElement(HappiestForm, { happiestCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
 };
 
 var HappiestTitle = function HappiestTitle(props) {
     return React.createElement(
-        "h2",
-        { id: "happiestTitle" },
-        "I am happiest when..."
+        "div",
+        null,
+        React.createElement(
+            "button",
+            { className: "playfair back2prompts", id: "happiestBackBtn" },
+            React.createElement("img", { src: "/assets/img/arrow.svg", className: "backArrow" }),
+            "Back to prompts"
+        ),
+        React.createElement(
+            "h2",
+            { className: "lato promptTitle", id: "happiestTitle" },
+            "I'M HAPPIEST WHEN:"
+        )
     );
 };
 
@@ -185,23 +201,19 @@ var HappiestForm = function HappiestForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "happiestForm" },
-            React.createElement("input", { id: "happiestText", className: "playfair", type: "text", name: "answer", maxLength: "90", placeholder: "...", onChange: handleHappiestCount }),
+            React.createElement("input", { id: "happiestText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"I am with loved ones\"", onChange: handleHappiestCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "happiest", placeholder: "happiest", onChange: handleHappiestCount }),
-            React.createElement("input", { className: "logThoughtSubmit", id: "logHappiestSubmit", type: "submit", value: "Submit" })
+            React.createElement("input", { className: "logThoughtSubmit", id: "logHappiestSubmit", type: "submit", value: "Submit response" })
         ),
         React.createElement(
             "p",
-            { id: "happiestCount" },
+            { className: "lato answerCharCount", id: "happiestCount" },
             props.happiestCount,
-            "/90"
-        ),
-        React.createElement(
-            "button",
-            { id: "happiestBackBtn" },
-            "Go back"
+            " characters remaining"
         ),
         React.createElement(BackModal, null),
-        React.createElement(HappiestSubmitModal, null)
+        React.createElement(HappiestSubmitModal, null),
+        React.createElement("img", { src: "/assets/img/PromptAnswerLeaves/HappiestLeaf.svg", className: "promptAnswerLeaf" })
     );
 };
 
@@ -219,20 +231,20 @@ var HappiestSubmitModal = function HappiestSubmitModal() {
             ),
             React.createElement(
                 "p",
-                null,
+                { className: "lato" },
                 "This will submit your response to your card.",
                 React.createElement("br", null),
                 "Don\u2019t worry, they\u2019re all anonymous."
             ),
             React.createElement(
                 "button",
-                { id: "dismissHappiestSubmit", className: "playfair" },
+                { id: "dismissHappiestSubmit", className: "playfair closeModalBtn" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitHappiestBtn", className: "playfair" },
-                "Finish"
+                { id: "submitHappiestBtn", className: "playfair modalSubmitBtn" },
+                "Submit"
             )
         )
     );
@@ -293,14 +305,24 @@ var handleInspiredDrop = function handleInspiredDrop(e) {
 };
 
 var handleInspiredCount = function handleInspiredCount(e) {
-    ReactDOM.render(React.createElement(InspiredForm, { inspiredCount: e.target.value.length }), document.querySelector('#logThought'));
+    ReactDOM.render(React.createElement(InspiredForm, { inspiredCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
 };
 
 var InspiredTitle = function InspiredTitle(props) {
     return React.createElement(
-        "h2",
-        { id: "inspiredTitle" },
-        "I am inspired by..."
+        "div",
+        null,
+        React.createElement(
+            "button",
+            { className: "playfair back2prompts", id: "inspiredBackBtn" },
+            React.createElement("img", { src: "/assets/img/arrow.svg", className: "backArrow" }),
+            "Back to prompts"
+        ),
+        React.createElement(
+            "h2",
+            { className: "lato promptTitle", id: "inspiredTitle" },
+            "I'M INSPIRED BY:"
+        )
     );
 };
 
@@ -316,23 +338,19 @@ var InspiredForm = function InspiredForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "inspiredForm" },
-            React.createElement("input", { id: "inspiredText", className: "playfair", type: "text", name: "answer", maxLength: "90", placeholder: "...", onChange: handleInspiredCount }),
+            React.createElement("input", { id: "inspiredText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"the generosity of others\"", onChange: handleInspiredCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "inspired", placeholder: "inspired", onChange: handleInspiredCount }),
-            React.createElement("input", { className: "logThoughtSubmit", id: "logInspiredSubmit", type: "submit", value: "Submit" })
+            React.createElement("input", { className: "logThoughtSubmit", id: "logInspiredSubmit", type: "submit", value: "Submit response" })
         ),
         React.createElement(
             "p",
-            { id: "inspiredCount" },
+            { id: "inspiredCount", className: "lato answerCharCount" },
             props.inspiredCount,
-            "/90"
-        ),
-        React.createElement(
-            "button",
-            { id: "inspiredBackBtn" },
-            "Go back"
+            " characters remaining"
         ),
         React.createElement(BackModal, null),
-        React.createElement(InspiredSubmitModal, null)
+        React.createElement(InspiredSubmitModal, null),
+        React.createElement("img", { src: "/assets/img/PromptAnswerLeaves/InspiredLeaf.svg", className: "promptAnswerLeaf" })
     );
 };
 
@@ -350,20 +368,20 @@ var InspiredSubmitModal = function InspiredSubmitModal() {
             ),
             React.createElement(
                 "p",
-                null,
+                { className: "lato" },
                 "This will submit your response to your card.",
                 React.createElement("br", null),
                 "Don\u2019t worry, they\u2019re all anonymous."
             ),
             React.createElement(
                 "button",
-                { id: "dismissInspiredSubmit", className: "playfair" },
+                { id: "dismissInspiredSubmit", className: "playfair closeModalBtn" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitInspiredBtn", className: "playfair" },
-                "Finish"
+                { id: "submitInspiredBtn", className: "playfair modalSubmitBtn" },
+                "Submit"
             )
         )
     );
@@ -424,14 +442,24 @@ var handleLoveDrop = function handleLoveDrop(e) {
 };
 
 var handleLoveCount = function handleLoveCount(e) {
-    ReactDOM.render(React.createElement(LoveForm, { loveCount: e.target.value.length }), document.querySelector('#logThought'));
+    ReactDOM.render(React.createElement(LoveForm, { loveCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
 };
 
 var LoveTitle = function LoveTitle(props) {
     return React.createElement(
-        "h2",
-        { id: "loveTitle" },
-        "I love..."
+        "div",
+        null,
+        React.createElement(
+            "button",
+            { className: "playfair back2prompts", id: "loveBackBtn" },
+            React.createElement("img", { src: "/assets/img/arrow.svg", className: "backArrow" }),
+            "Back to prompts"
+        ),
+        React.createElement(
+            "h2",
+            { className: "lato promptTitle", id: "loveTitle" },
+            "I LOVE:"
+        )
     );
 };
 
@@ -447,23 +475,19 @@ var LoveForm = function LoveForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "loveForm" },
-            React.createElement("input", { id: "loveText", className: "playfair", type: "text", name: "answer", maxLength: "90", placeholder: "...", onChange: handleLoveCount }),
+            React.createElement("input", { id: "loveText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"humanity\"", onChange: handleLoveCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "love", placeholder: "love", onChange: handleLoveCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logLoveSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
             "p",
-            { id: "loveCount" },
+            { className: "lato answerCharCount", id: "loveCount" },
             props.loveCount,
-            "/90"
-        ),
-        React.createElement(
-            "button",
-            { id: "loveBackBtn" },
-            "Go back"
+            " characters remaining"
         ),
         React.createElement(BackModal, null),
-        React.createElement(LoveSubmitModal, null)
+        React.createElement(LoveSubmitModal, null),
+        React.createElement("img", { src: "/assets/img/PromptAnswerLeaves/LoveLeaf.svg", className: "promptAnswerLeaf" })
     );
 };
 
@@ -481,20 +505,20 @@ var LoveSubmitModal = function LoveSubmitModal() {
             ),
             React.createElement(
                 "p",
-                null,
+                { className: "lato" },
                 "This will submit your response to your card.",
                 React.createElement("br", null),
                 "Don\u2019t worry, they\u2019re all anonymous."
             ),
             React.createElement(
                 "button",
-                { id: "dismissLoveSubmit", className: "playfair" },
+                { id: "dismissLoveSubmit", className: "playfair closeModalBtn" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitLoveBtn", className: "playfair" },
-                "Finish"
+                { id: "submitLoveBtn", className: "playfair modalSubmitBtn" },
+                "Submit"
             )
         )
     );
@@ -532,24 +556,23 @@ var PromptTitle = function PromptTitle(props) {
         null,
         React.createElement(
             "a",
-            { href: "/aboutPage", target: "_parent", id: "startBtn" },
+            { href: "/explorePage", target: "_parent", id: "startBtn" },
             React.createElement(
                 "button",
-                null,
-                "Back"
+                { className: "back2explore playfair" },
+                React.createElement("img", { src: "/assets/img/arrow.svg", className: "backArrow" }),
+                "Back to explore"
             )
         ),
         React.createElement(
-            "h1",
-            { id: "promptPageTitle" },
-            "Select a prompt:"
+            "h3",
+            { className: "lato", id: "promptPageTitle" },
+            "THOUGHT SUBMISSION"
         ),
         React.createElement(
-            "p",
-            null,
-            "Which one of these speaks to you? Choose one ",
-            React.createElement("br", null),
-            "that you want to write about."
+            "h1",
+            { className: "playfair", id: "promptPageSubtitle" },
+            "Choose your prompt"
         )
     );
 };
@@ -570,12 +593,12 @@ var BackModal = function BackModal() {
             ),
             React.createElement(
                 "p",
-                null,
+                { className: "lato" },
                 "Going back now will lose your progress."
             ),
             React.createElement(
                 "button",
-                { id: "stayBtn", className: "playfair" },
+                { id: "stayBtn", className: "playfair closeModalBtn" },
                 "Stay"
             ),
             React.createElement(
@@ -583,8 +606,8 @@ var BackModal = function BackModal() {
                 { href: "/promptPage", target: "_parent", id: "continueBtn" },
                 React.createElement(
                     "button",
-                    { className: "playfair" },
-                    "Continue"
+                    { className: "playfair modalSubmitBtn" },
+                    "Go back"
                 )
             )
         )
@@ -643,36 +666,90 @@ var triggerBackModal = function triggerBackModal() {
 var PromptButtons = function PromptButtons() {
     return React.createElement(
         "div",
-        null,
+        { id: "promptBtns" },
         React.createElement(
-            "button",
-            { id: "inspiredPrompt" },
-            "I'm inspired by..."
+            "div",
+            null,
+            React.createElement(
+                "p",
+                { className: "promptNumbers lato" },
+                "01"
+            ),
+            React.createElement(
+                "button",
+                { id: "inspiredPrompt", className: "lato" },
+                "I'm inspired by"
+            )
         ),
         React.createElement(
-            "button",
-            { id: "happiestPrompt" },
-            "I'm happiest when..."
+            "div",
+            null,
+            React.createElement(
+                "p",
+                { className: "promptNumbers lato" },
+                "02"
+            ),
+            React.createElement(
+                "button",
+                { id: "excitedPrompt", className: "lato" },
+                "I'm excited for"
+            )
         ),
         React.createElement(
-            "button",
-            { id: "proudPrompt" },
-            "I'm proud of..."
+            "div",
+            null,
+            React.createElement(
+                "p",
+                { className: "promptNumbers lato" },
+                "03"
+            ),
+            React.createElement(
+                "button",
+                { id: "happiestPrompt", className: "lato" },
+                "I'm happiest when"
+            )
         ),
         React.createElement(
-            "button",
-            { id: "lovePrompt" },
-            "I love..."
+            "div",
+            null,
+            React.createElement(
+                "p",
+                { className: "promptNumbers lato" },
+                "04"
+            ),
+            React.createElement(
+                "button",
+                { id: "proudPrompt", className: "lato" },
+                "I'm proud of"
+            )
         ),
         React.createElement(
-            "button",
-            { id: "thankfulPrompt" },
-            "I'm thankful for..."
+            "div",
+            null,
+            React.createElement(
+                "p",
+                { className: "promptNumbers lato" },
+                "05"
+            ),
+            React.createElement(
+                "button",
+                { id: "lovePrompt", className: "lato" },
+                "I love"
+            )
         ),
         React.createElement(
-            "button",
-            { id: "excitedPrompt" },
-            "I'm excited for..."
+            "div",
+            null,
+            React.createElement(
+                "p",
+                { className: "promptNumbers lato" },
+                "06"
+            ),
+            React.createElement(
+                "button",
+                { id: "thankfulPrompt", className: "lato" },
+                "I'm thankful for"
+            )
         )
     );
 };
@@ -732,14 +809,24 @@ var handleProudDrop = function handleProudDrop(e) {
 };
 
 var handleProudCount = function handleProudCount(e) {
-    ReactDOM.render(React.createElement(ProudForm, { proudCount: e.target.value.length }), document.querySelector('#logThought'));
+    ReactDOM.render(React.createElement(ProudForm, { proudCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
 };
 
 var ProudTitle = function ProudTitle(props) {
     return React.createElement(
-        "h2",
-        { id: "proudTitle" },
-        "I am proud of..."
+        "div",
+        null,
+        React.createElement(
+            "button",
+            { className: "playfair back2prompts", id: "proudBackBtn" },
+            React.createElement("img", { src: "/assets/img/arrow.svg", className: "backArrow" }),
+            "Back to prompts"
+        ),
+        React.createElement(
+            "h2",
+            { className: "lato promptTitle", id: "proudTitle" },
+            "I'M PROUD OF:"
+        )
     );
 };
 
@@ -755,23 +842,19 @@ var ProudForm = function ProudForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "proudForm" },
-            React.createElement("input", { id: "proudText", className: "playfair", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"medical workers\"", onChange: handleProudCount }),
+            React.createElement("input", { id: "proudText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"medical workers\"", onChange: handleProudCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "proud", placeholder: "proud", onChange: handleProudCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logProudSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
             "p",
-            { id: "proudCount" },
+            { className: "lato answerCharCount", id: "proudCount" },
             props.proudCount,
-            "/90"
-        ),
-        React.createElement(
-            "button",
-            { id: "proudBackBtn" },
-            "Go back"
+            " characters remaining"
         ),
         React.createElement(BackModal, null),
-        React.createElement(ProudSubmitModal, null)
+        React.createElement(ProudSubmitModal, null),
+        React.createElement("img", { src: "/assets/img/PromptAnswerLeaves/ProudLeaf.svg", className: "promptAnswerLeaf" })
     );
 };
 
@@ -789,20 +872,20 @@ var ProudSubmitModal = function ProudSubmitModal() {
             ),
             React.createElement(
                 "p",
-                null,
+                { className: "lato" },
                 "This will submit your response to your card.",
                 React.createElement("br", null),
                 "Don\u2019t worry, they\u2019re all anonymous."
             ),
             React.createElement(
                 "button",
-                { id: "dismissProudSubmit", className: "playfair" },
+                { id: "dismissProudSubmit", className: "playfair closeModalBtn" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitProudBtn", className: "playfair" },
-                "Finish"
+                { id: "submitProudBtn", className: "playfair modalSubmitBtn" },
+                "Submit"
             )
         )
     );
@@ -863,14 +946,24 @@ var handleThankfulDrop = function handleThankfulDrop(e) {
 };
 
 var handleThankfulCount = function handleThankfulCount(e) {
-    ReactDOM.render(React.createElement(ThankfulForm, { thankfulCount: e.target.value.length }), document.querySelector('#logThought'));
+    ReactDOM.render(React.createElement(ThankfulForm, { thankfulCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
 };
 
 var ThankfulTitle = function ThankfulTitle(props) {
     return React.createElement(
-        "h2",
-        { id: "thankfulTitle" },
-        "I am thankful for..."
+        "div",
+        null,
+        React.createElement(
+            "button",
+            { className: "playfair back2prompts", id: "thankfulBackBtn" },
+            React.createElement("img", { src: "/assets/img/arrow.svg", className: "backArrow" }),
+            "Back to prompts"
+        ),
+        React.createElement(
+            "h2",
+            { className: "lato promptTitle", id: "thankfulTitle" },
+            "I'M THANKFUL FOR:"
+        )
     );
 };
 
@@ -886,23 +979,19 @@ var ThankfulForm = function ThankfulForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "thankfulForm" },
-            React.createElement("input", { id: "thankfulText", className: "playfair", type: "text", name: "answer", maxLength: "90", placeholder: "...", onChange: handleThankfulCount }),
+            React.createElement("input", { id: "thankfulText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"essential workers\"", onChange: handleThankfulCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "thankful", placeholder: "thankful", onChange: handleThankfulCount }),
             React.createElement("input", { className: "logThoughtSubmit", id: "logThankfulSubmit", type: "submit", value: "Submit" })
         ),
         React.createElement(
             "p",
-            { id: "thankfulCount" },
+            { id: "thankfulCount", className: "lato answerCharCount" },
             props.thankfulCount,
-            "/90"
-        ),
-        React.createElement(
-            "button",
-            { id: "thankfulBackBtn" },
-            "Go back"
+            " characters remaining"
         ),
         React.createElement(BackModal, null),
-        React.createElement(ThankfulSubmitModal, null)
+        React.createElement(ThankfulSubmitModal, null),
+        React.createElement("img", { src: "/assets/img/PromptAnswerLeaves/ThankfulLeaf.svg", className: "promptAnswerLeaf" })
     );
 };
 
@@ -920,20 +1009,20 @@ var ThankfulSubmitModal = function ThankfulSubmitModal() {
             ),
             React.createElement(
                 "p",
-                null,
+                { className: "lato" },
                 "This will submit your response to your card.",
                 React.createElement("br", null),
                 "Don\u2019t worry, they\u2019re all anonymous."
             ),
             React.createElement(
                 "button",
-                { id: "dismissThankfulSubmit", className: "playfair" },
+                { id: "dismissThankfulSubmit", className: "playfair closeModalBtn" },
                 "Go back"
             ),
             React.createElement(
                 "button",
-                { id: "submitThankfulBtn", className: "playfair" },
-                "Finish"
+                { id: "submitThankfulBtn", className: "playfair modalSubmitBtn" },
+                "Submit"
             )
         )
     );

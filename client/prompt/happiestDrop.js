@@ -30,13 +30,16 @@ const handleHappiestDrop = (e) => {
   
 const handleHappiestCount = (e) => {
     ReactDOM.render(
-    <HappiestForm happiestCount={e.target.value.length}/>, document.querySelector('#logThought')
+        <HappiestForm happiestCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
     );
 };
 
 const HappiestTitle = (props) => {
     return (
-        <h2 id="happiestTitle">I am happiest when...</h2>
+        <div>
+            <button className="playfair back2prompts" id="happiestBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
+            <h2  className="lato promptTitle" id="happiestTitle">I'M HAPPIEST WHEN:</h2>
+        </div>
     );
 };
 
@@ -49,14 +52,14 @@ const HappiestForm = (props) => {
             action='/logMaster'
             method='POST'
             className='happiestForm' >
-                <input id='happiestText' className="playfair" type='text' name='answer' maxLength="90" placeholder='...' onChange={handleHappiestCount}/>
+                <input id='happiestText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "I am with loved ones"' onChange={handleHappiestCount}/>
                 <input id='category' type='text' name='category' value='happiest' placeholder='happiest' onChange={handleHappiestCount}/>        
-                <input className='logThoughtSubmit' id="logHappiestSubmit" type='submit' value='Submit' />
+                <input className='logThoughtSubmit' id="logHappiestSubmit" type='submit' value='Submit response' />
             </form>
-            <p id="happiestCount">{props.happiestCount}/90</p>
-            <button id="happiestBackBtn">Go back</button>
+            <p className="lato answerCharCount" id="happiestCount">{props.happiestCount} characters remaining</p>
             <BackModal/>
             <HappiestSubmitModal />
+            <img src="/assets/img/PromptAnswerLeaves/HappiestLeaf.svg" className="promptAnswerLeaf" />
         </div>
     );
 };
@@ -66,10 +69,10 @@ const HappiestSubmitModal = () => {
         <div className="happiestSubmitModal" id="happiestSubmitModal">
             <div className="happiestSubmitContent">
                 <h1 className="playfair">All finished?</h1>
-                <p>This will submit your response to your card.<br/>
+                <p className="lato">This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissHappiestSubmit" className="playfair">Go back</button>
-                <button id="submitHappiestBtn" className="playfair">Finish</button>
+                <button id="dismissHappiestSubmit" className="playfair closeModalBtn">Go back</button>
+                <button id="submitHappiestBtn" className="playfair modalSubmitBtn">Submit</button>
             </div>
         </div>
     );

@@ -30,13 +30,16 @@ const handleProudDrop = (e) => {
   
 const handleProudCount = (e) => {
     ReactDOM.render(
-    <ProudForm proudCount={e.target.value.length}/>, document.querySelector('#logThought')
+    <ProudForm proudCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
     );
 };
 
 const ProudTitle = (props) => {
     return (
-        <h2 id="proudTitle">I am proud of...</h2>
+        <div>
+            <button className="playfair back2prompts" id="proudBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
+            <h2  className="lato promptTitle" id="proudTitle">I'M PROUD OF:</h2>
+        </div>
     );
 };
 
@@ -49,14 +52,14 @@ const ProudForm = (props) => {
             action='/logMaster'
             method='POST'
             className='proudForm' >
-                <input id='proudText' className="playfair" type='text' name='answer' maxLength="90" placeholder='ex: "medical workers"' onChange={handleProudCount}/>
+                <input id='proudText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "medical workers"' onChange={handleProudCount}/>
                 <input id='category' type='text' name='category' value='proud' placeholder='proud' onChange={handleProudCount}/>        
                 <input className='logThoughtSubmit' id="logProudSubmit" type='submit' value='Submit' />
             </form>
-            <p id="proudCount">{props.proudCount}/90</p>
-            <button id="proudBackBtn">Go back</button>
+            <p className="lato answerCharCount" id="proudCount">{props.proudCount} characters remaining</p>
             <BackModal/>
             <ProudSubmitModal />
+            <img src="/assets/img/PromptAnswerLeaves/ProudLeaf.svg" className="promptAnswerLeaf"/>
         </div>
     );
 };
@@ -66,10 +69,10 @@ const ProudSubmitModal = () => {
         <div className="proudSubmitModal" id="proudSubmitModal">
             <div className="proudSubmitContent">
                 <h1 className="playfair">All finished?</h1>
-                <p>This will submit your response to your card.<br/>
+                <p className="lato">This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissProudSubmit" className="playfair">Go back</button>
-                <button id="submitProudBtn" className="playfair">Finish</button>
+                <button id="dismissProudSubmit" className="playfair closeModalBtn">Go back</button>
+                <button id="submitProudBtn" className="playfair modalSubmitBtn">Submit</button>
             </div>
         </div>
     );

@@ -1,18 +1,53 @@
-.playfair, .promptAnswer {
+.playfair {
   font-family: 'Playfair Display', serif; }
 
-.abel {
-  font-family: 'Abel', sans-serif; }
+.lato {
+  font-family: 'Lato', sans-serif; }
+
+#exploreBody, #promptBody, #aboutBody, #dataVisBody, #loginBody {
+  background-image: url("/assets/img/background.svg"); }
+
+#introVid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 1; }
+
+#aboutContent {
+  color: white; }
+
+#aboutStartBtn {
+  background: none;
+  border: none;
+  color: white; }
+  #aboutStartBtn:hover {
+    color: #ED7163; }
 
 #startBtn {
   width: 100%;
   text-align: center; }
 
+#copyCodeBtn {
+  background: #070822;
+  color: white;
+  border: none; }
+  #copyCodeBtn:hover {
+    background: #ED7163; }
+
+#submitSignup {
+  background: #ED7163;
+  border: none;
+  color: white;
+  opacity: 75%; }
+  #submitSignup:hover {
+    opacity: 100%; }
+
 #category {
   display: none; }
 
-.backModal, .userCodeModal,
-.exploreThankfulModal, .exploreExcitedModal, .exploreInspiredModal, .exploreLoveModal, .exploreHappiestModal, .exploreProudModal,
+.backModal,
 .happiestSubmitModal, .inspiredSubmitModal, .loveSubmitModal, .proudSubmitModal, .thankfulSubmitModal, .excitedSubmitModal {
   display: none;
   position: fixed;
@@ -26,12 +61,190 @@
   background-color: black;
   background-color: rgba(0, 0, 0, 0.4); }
 
-/* Modal Content */
-.backModalContent, .userCodeModalContent,
-.exploreThankfulModalContent, .exploreExcitedModalContent, .exploreInspiredModalContent, .exploreLoveModalContent, .exploreHappiestModalContent, .exploreProudModalContent,
+.backModalContent,
 .happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent, .excitedSubmitContent {
-  background-color: #fefefe;
+  background-color: white;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%; }
+  width: 592px;
+  height: 377px; }
+
+.exploreThankfulModal, .exploreExcitedModal, .exploreInspiredModal, .exploreLoveModal, .exploreHappiestModal, .exploreProudModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+.exploreThankfulModalContent, .exploreExcitedModalContent, .exploreInspiredModalContent, .exploreLoveModalContent, .exploreHappiestModalContent, .exploreProudModalContent {
+  background-color: white;
+  color: #070822;
+  margin: auto;
+  padding: 20px;
+  width: 690px;
+  height: 525px; }
+
+.promptAnswer {
+  color: #070822;
+  font-family: 'Playfair Display', serif;
+  font-size: 48px; }
+
+#inspiredExploreColorModal {
+  background: #FFF4EB; }
+
+#excitedExploreColorModal {
+  background: #DCF7FF; }
+
+#happiestExploreColorModal {
+  background: #FFF9E2; }
+
+#proudExploreColorModal {
+  background: #FFEDED; }
+
+#loveExploreColorModal {
+  background: #FFE7EF; }
+
+#thankfulExploreColorModal {
+  background: #E1FFF0; }
+
+.answerId {
+  display: none; }
+
+.closeModalBtn {
+  background: white;
+  border: 1px solid #070822;
+  color: #070822; }
+  .closeModalBtn:hover {
+    border: 1px solid #ED7163;
+    color: #ED7163; }
+
+.modalSubmitBtn {
+  background: #070822;
+  border: none;
+  color: white; }
+  .modalSubmitBtn:hover {
+    background: #ED7163; }
+
+.promptTitle {
+  color: white; }
+
+.promptTextArea {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px; }
+
+.answerCharCount {
+  color: white; }
+
+.promptAnswerLeaf {
+  float: right; }
+
+.logThoughtSubmit {
+  border: none;
+  font-family: 'Playfair Display', serif;
+  opacity: 75%; }
+  .logThoughtSubmit:hover {
+    opacity: 100%; }
+
+#logExcitedSubmit {
+  background: #4FD4FE; }
+
+#logHappiestSubmit {
+  background: #FFE175; }
+
+#logInspiredSubmit {
+  background: #FEA050; }
+
+#logLoveSubmit {
+  background: #FC528F; }
+
+#logProudSubmit {
+  background: #ED6E5F; }
+
+#logThankfulSubmit {
+  background: #55D897; }
+
+.promptNumbers {
+  color: #AAAAAA;
+  font-size: 24px; }
+
+#promptPageTitle {
+  color: white;
+  font-size: 24px; }
+
+#promptPageSubtitle {
+  color: white;
+  font-size: 48px;
+  width: 310px; }
+
+#inspiredPrompt, #excitedPrompt, #thankfulPrompt, #proudPrompt, #happiestPrompt, #lovePrompt {
+  background: none;
+  border: none;
+  color: #070822;
+  font-size: 96px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #E5E5E5; }
+  #inspiredPrompt:hover, #excitedPrompt:hover, #thankfulPrompt:hover, #proudPrompt:hover, #happiestPrompt:hover, #lovePrompt:hover {
+    -webkit-text-stroke-width: 0px; }
+
+#inspiredPrompt:hover {
+  color: #FEA050; }
+
+#excitedPrompt:hover {
+  color: #4FD4FE; }
+
+#thankfulPrompt:hover {
+  color: #55D897; }
+
+#proudPrompt:hover {
+  color: #ED6E5F; }
+
+#happiestPrompt:hover {
+  color: #FFE175; }
+
+#lovePrompt:hover {
+  color: #FC528F; }
+
+#submitThoughtBtn, #totalSubBtn, #exploreThoughtsBtn {
+  border-radius: 50%;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  height: 216px;
+  width: 216px; }
+
+#submitThoughtBtn {
+  background: white;
+  border: 1px solid white;
+  color: #070822; }
+  #submitThoughtBtn:hover {
+    color: white;
+    background: #ED7163; }
+
+#totalSubBtn, #exploreThoughtsBtn {
+  background: none;
+  border: 1px solid white;
+  color: white; }
+  #totalSubBtn:hover, #exploreThoughtsBtn:hover {
+    border: 1px solid #ED7163;
+    color: #ED7163; }
+
+.back2prompts, .back2explore, .dismissExploreModal {
+  background: none;
+  border: none;
+  color: white; }
+
+.mobile {
+  display: none; }
+
+@media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: portrait) {
+  .mobile {
+    background-image: url("/assets/img/mobileBg.svg");
+    color: white;
+    display: inline; } }

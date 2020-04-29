@@ -13,19 +13,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script>
 
-  <link href="https://fonts.googleapis.com/css?family=Abel|Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Playfair+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
 </head>
 
-<body>
+<body id="loginBody">
   <nav>
     {{!-- <div class="navlink"><a id="loginButton" href="/login">login</a></div> --}}
     {{!-- <div class="navlink"><a id="signupButton" href="/signup">signup</a></div> --}}
   </nav>
-  <h1 class="playfair">Enter Grow</h1>
-  <p>Please copy the code below and paste it in the text box to enter. Thank you for keeping the garden safe.</p>
+  <h2 class="lato">OUR</h2>
+  <h1 class="playfair">MISSION</h1>
+  <img src="/assets/img/introLeaves.svg" />
+  <a href="/aboutPage" target="_parent"><button class="playfair">Back</button></a>
+
   <section id="content"></section>
-  <button id="genUserCodeBtn">Get User Code</button>
   
   <script src="/assets/loginBundle.js"></script>
 </body>

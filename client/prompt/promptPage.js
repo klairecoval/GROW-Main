@@ -3,10 +3,9 @@ let id;
 const PromptTitle = (props) => {
     return (
         <div>
-            <a href="/aboutPage" target="_parent" id="startBtn"><button>Back</button></a>
-            <h1 id="promptPageTitle">Select a prompt:</h1>
-            <p>Which one of these speaks to you? Choose one <br/>
-                that you want to write about.</p>
+            <a href="/explorePage" target="_parent" id="startBtn"><button className="back2explore playfair"><img src="/assets/img/arrow.svg" className="backArrow" />Back to explore</button></a>
+            <h3 className="lato" id="promptPageTitle">THOUGHT SUBMISSION</h3>
+            <h1 className="playfair" id="promptPageSubtitle">Choose your prompt</h1>
         </div>
     );
 };
@@ -16,9 +15,9 @@ const BackModal = () => {
         <div id="backModal" className="backModal">
             <div className="backModalContent">
                 <h1 className="playfair">Are you sure you <br/>want to go back?</h1>
-                <p>Going back now will lose your progress.</p>
-                <button id="stayBtn"className="playfair">Stay</button>
-                <a href="/promptPage" target="_parent" id="continueBtn"><button className="playfair">Continue</button></a>
+                <p className="lato">Going back now will lose your progress.</p>
+                <button id="stayBtn"className="playfair closeModalBtn">Stay</button>
+                <a href="/promptPage" target="_parent" id="continueBtn"><button className="playfair modalSubmitBtn">Go back</button></a>
             </div>
         </div>
     );
@@ -75,13 +74,31 @@ const triggerBackModal = () => {
 
 const PromptButtons = () => {
     return (
-        <div>
-            <button id="inspiredPrompt">I'm inspired by...</button>
-            <button id="happiestPrompt">I'm happiest when...</button>
-            <button id="proudPrompt">I'm proud of...</button>
-            <button id="lovePrompt">I love...</button>
-            <button id="thankfulPrompt">I'm thankful for...</button>
-            <button id="excitedPrompt">I'm excited for...</button>
+        <div id="promptBtns">
+            <div>
+                <p className="promptNumbers lato">01</p>
+                <button id="inspiredPrompt" className="lato">I'm inspired by</button>
+            </div>
+            <div>
+                <p className="promptNumbers lato">02</p>
+                <button id="excitedPrompt" className="lato">I'm excited for</button>
+            </div>
+            <div>
+                <p className="promptNumbers lato">03</p>
+                <button id="happiestPrompt" className="lato">I'm happiest when</button>
+            </div>
+            <div>
+                <p className="promptNumbers lato">04</p>
+                <button id="proudPrompt" className="lato">I'm proud of</button>
+            </div>
+            <div>
+                <p className="promptNumbers lato">05</p>
+                <button id="lovePrompt" className="lato">I love</button>
+            </div>
+            <div>
+                <p className="promptNumbers lato">06</p>
+                <button id="thankfulPrompt" className="lato">I'm thankful for</button>
+            </div>
         </div>
     );
 };

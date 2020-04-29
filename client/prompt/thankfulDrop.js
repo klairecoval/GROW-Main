@@ -31,13 +31,16 @@ const handleThankfulDrop = (e) => {
   
 const handleThankfulCount = (e) => {
     ReactDOM.render(
-    <ThankfulForm thankfulCount={e.target.value.length}/>, document.querySelector('#logThought')
+    <ThankfulForm thankfulCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
     );
 };
 
 const ThankfulTitle = (props) => {
     return (
-        <h2 id="thankfulTitle">I am thankful for...</h2>
+        <div>
+            <button className="playfair back2prompts" id="thankfulBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
+            <h2  className="lato promptTitle" id="thankfulTitle">I'M THANKFUL FOR:</h2>
+        </div>
     );
 };
 
@@ -50,14 +53,14 @@ const ThankfulForm = (props) => {
             action='/logMaster'
             method='POST'
             className='thankfulForm' >
-                <input id='thankfulText' className="playfair" type='text' name='answer' maxLength="90" placeholder='...' onChange={handleThankfulCount}/>
+                <input id='thankfulText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "essential workers"' onChange={handleThankfulCount}/>
                 <input id='category' type='text' name='category' value='thankful' placeholder='thankful' onChange={handleThankfulCount}/>        
                 <input className='logThoughtSubmit' id="logThankfulSubmit" type='submit' value='Submit' />
             </form>
-            <p id="thankfulCount">{props.thankfulCount}/90</p>
-            <button id="thankfulBackBtn">Go back</button>
+            <p id="thankfulCount" className="lato answerCharCount">{props.thankfulCount} characters remaining</p>
             <BackModal/>
             <ThankfulSubmitModal />
+            <img src="/assets/img/PromptAnswerLeaves/ThankfulLeaf.svg" className="promptAnswerLeaf"/>
         </div>
     );
 };
@@ -67,10 +70,10 @@ const ThankfulSubmitModal = () => {
         <div className="thankfulSubmitModal" id="thankfulSubmitModal">
             <div className="thankfulSubmitContent">
                 <h1 className="playfair">All finished?</h1>
-                <p>This will submit your response to your card.<br/>
+                <p className="lato">This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
-                <button id="dismissThankfulSubmit" className="playfair">Go back</button>
-                <button id="submitThankfulBtn" className="playfair">Finish</button>
+                <button id="dismissThankfulSubmit" className="playfair closeModalBtn">Go back</button>
+                <button id="submitThankfulBtn" className="playfair modalSubmitBtn">Submit</button>
             </div>
         </div>
     );

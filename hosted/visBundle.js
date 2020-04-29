@@ -1,133 +1,42 @@
 "use strict";
 
 var PromptAnswers = function PromptAnswers(props) {
-
-    //    if(props.answers.length === 0){
-    //        return(
-    //            <div className='answerList'>
-    //                <h3 className='emptyAnswer'>Nothing has been filled in yet</h3>
-    //            </div>
-    //        );
-    //    }
-    //    
     var answerNodes = props.answers.map(function (masterPrompt) {
         if (masterPrompt.category === "excited" || masterPrompt.viewable === "true") {
             return React.createElement(
                 "div",
-                { key: masterPrompt._id, className: "answer" },
-                React.createElement("img", { src: "/assets/img/redSquare.png", alt: "red square" }),
-                React.createElement(
-                    "h3",
-                    { className: "promptAnswer" },
-                    " ",
-                    masterPrompt.answer
-                ),
-                React.createElement(
-                    "h3",
-                    { className: "promptType" },
-                    " ",
-                    masterPrompt.category
-                ),
-                React.createElement(
-                    "button",
-                    { className: "reportButton", onClick: reportAnswer },
-                    "Report"
-                ),
-                React.createElement(
-                    "span",
-                    { type: "hidden", className: "answerId" },
-                    masterPrompt._id
-                )
+                { className: "answer" },
+                React.createElement("img", { src: "/assets/img/LeafVariation1/Excited1.svg", alt: "excited leaf" })
             );
         } else if (masterPrompt.category === "thankful") {
             return React.createElement(
                 "div",
-                { key: masterPrompt._id, className: "answer" },
-                React.createElement("img", { src: "/assets/img/blueSquare.jpg", alt: "blue square" }),
-                React.createElement(
-                    "h3",
-                    { className: "promptAnswer" },
-                    " ",
-                    masterPrompt.answer
-                ),
-                React.createElement(
-                    "h3",
-                    { className: "promptType" },
-                    " ",
-                    masterPrompt.category
-                )
+                { className: "answer" },
+                React.createElement("img", { src: "/assets/img/LeafVariation2/Thankful2.svg", alt: "thankful leaf" })
             );
         } else if (masterPrompt.category === "inspired") {
             return React.createElement(
                 "div",
-                { key: masterPrompt._id, className: "answer" },
-                React.createElement("img", { src: "/assets/img/redSquare.png", alt: "red square" }),
-                React.createElement(
-                    "h3",
-                    { className: "promptAnswer" },
-                    " ",
-                    masterPrompt.answer
-                ),
-                React.createElement(
-                    "h3",
-                    { className: "promptType" },
-                    " ",
-                    masterPrompt.category
-                )
+                { className: "answer" },
+                React.createElement("img", { src: "/assets/img/LeafVariation3/Inspired3.svg", alt: "inspired leaf" })
             );
         } else if (masterPrompt.category === "love") {
             return React.createElement(
                 "div",
-                { key: masterPrompt._id, className: "answer" },
-                React.createElement("img", { src: "/assets/img/blueSquare.jpg", alt: "blue square" }),
-                React.createElement(
-                    "h3",
-                    { className: "promptAnswer" },
-                    " ",
-                    masterPrompt.answer
-                ),
-                React.createElement(
-                    "h3",
-                    { className: "promptType" },
-                    " ",
-                    masterPrompt.category
-                )
+                { className: "answer" },
+                React.createElement("img", { src: "/assets/img/LeafVariation1/Love1.svg", alt: "love leaf" })
             );
         } else if (masterPrompt.category === "happiest") {
             return React.createElement(
                 "div",
-                { key: masterPrompt._id, className: "answer" },
-                React.createElement("img", { src: "/assets/img/redSquare.png", alt: "red square" }),
-                React.createElement(
-                    "h3",
-                    { className: "promptAnswer" },
-                    " ",
-                    masterPrompt.answer
-                ),
-                React.createElement(
-                    "h3",
-                    { className: "promptType" },
-                    " ",
-                    masterPrompt.category
-                )
+                { className: "answer" },
+                React.createElement("img", { src: "/assets/img/LeafVariation2/Happiest2.svg", alt: "happiest leaf" })
             );
         } else if (masterPrompt.category === "proud") {
             return React.createElement(
                 "div",
-                { key: masterPrompt._id, className: "answer" },
-                React.createElement("img", { src: "/assets/img/blueSquare.jpg", alt: "blue square" }),
-                React.createElement(
-                    "h3",
-                    { className: "promptAnswer" },
-                    " ",
-                    masterPrompt.answer
-                ),
-                React.createElement(
-                    "h3",
-                    { className: "promptType" },
-                    " ",
-                    masterPrompt.category
-                )
+                { className: "answer" },
+                React.createElement("img", { src: "/assets/img/LeafVariation3/Proud3.svg", alt: "proud leaf" })
             );
         }
     });
