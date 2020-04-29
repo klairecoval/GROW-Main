@@ -20,7 +20,8 @@ const router = (app) => {
   app.post('/promptPage', mid.requiresLogin, controllers.Account.promptPage);
 
   app.post('/logMaster', mid.requiresLogin, controllers.Master.logMaster);
-  app.post('/reportMaster', mid.requiresLogin, controllers.Master.reportMaster);
+    
+  app.delete('/reportMaster', mid.requiresLogin, controllers.Master.reportMaster);    
     
   app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.aboutPage);
 };

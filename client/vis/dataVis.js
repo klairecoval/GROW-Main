@@ -11,16 +11,17 @@ const PromptAnswers = function(props) {
     const answerNodes = props.answers.map(function(masterPrompt) {
         if((masterPrompt.category === "excited") || (masterPrompt.viewable === "true")){
             return (
-                <div className='answer'>
+                <div key={masterPrompt._id} className='answer'>
                     <img src='/assets/img/redSquare.png' alt='red square'/>
                     <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                     <h3 className='promptType'> {masterPrompt.category}</h3>
-                    <button class="errorButton" onClick={handleReportBtn}>Report</button>
+                    <button className='reportButton' onClick={reportAnswer}>Report</button>
+                    <span type="hidden" className="answerId">{masterPrompt._id}</span>
                 </div>
             );
         } else if(masterPrompt.category === "thankful"){
             return(
-                <div className='answer'>
+                <div key={masterPrompt._id} className='answer'>
                     <img src='/assets/img/blueSquare.jpg' alt='blue square'/>
                     <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                     <h3 className='promptType'> {masterPrompt.category}</h3>
@@ -28,7 +29,7 @@ const PromptAnswers = function(props) {
             );
         } else if(masterPrompt.category === "inspired"){
             return (
-                <div className='answer'>
+                <div key={masterPrompt._id} className='answer'>
                     <img src='/assets/img/redSquare.png' alt='red square'/>
                     <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                     <h3 className='promptType'> {masterPrompt.category}</h3>
@@ -36,7 +37,7 @@ const PromptAnswers = function(props) {
             );
         } else if(masterPrompt.category === "love"){
             return (
-                <div className='answer'>
+                <div key={masterPrompt._id} className='answer'>
                     <img src='/assets/img/blueSquare.jpg' alt='blue square'/>
                     <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                     <h3 className='promptType'> {masterPrompt.category}</h3>
@@ -44,7 +45,7 @@ const PromptAnswers = function(props) {
             );
         } else if(masterPrompt.category === "happiest"){
             return (
-                <div className='answer'>
+                <div key={masterPrompt._id} className='answer'>
                     <img src='/assets/img/redSquare.png' alt='red square'/>
                     <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                     <h3 className='promptType'> {masterPrompt.category}</h3>
@@ -52,7 +53,7 @@ const PromptAnswers = function(props) {
             );
         } else if(masterPrompt.category === "proud"){
             return (
-                <div className='answer'>
+                <div key={masterPrompt._id} className='answer'>
                     <img src='/assets/img/blueSquare.jpg' alt='blue square'/>
                     <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                     <h3 className='promptType'> {masterPrompt.category}</h3>
@@ -68,7 +69,14 @@ const PromptAnswers = function(props) {
     );
 };
 
-
+const reportAnswer = (e) => {
+    const id = e.target.parentElement.querySelector('.answerId').innerText;
+    const _csrf = document.querySelector('input[name="_csrf]').value;
+    
+    sendAjax('DELETE', '/reportMaster', {id, _csrf}, data => {
+        loadAnswers();
+    });
+};
 
 const loadAnswers = () => {
     sendAjax('GET', '/getMaster', null, (data) => {

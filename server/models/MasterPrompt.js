@@ -49,6 +49,14 @@ MasterSchema.statics.findByOwner = (ownerId, callback) => {
   return MasterModel.find(search).select('answer').exec(callback);
 };
 
+MasterSchema.statics.deleteById = (id, callback) => {
+    const search = {
+        _id: convertId(id),
+    };
+    
+    return MasterModel.findOneAndRemove(search).exec(callback);
+};
+
 MasterModel = mongoose.model('MasterModel', MasterSchema);
 
 module.exports = {

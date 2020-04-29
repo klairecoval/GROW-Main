@@ -50,18 +50,18 @@ const getMaster = (request, response) => {
 };
 
 const reportMaster = (req, res) => {  
-    const request = req;  
-    const response = res;
-    const search = {    
-      viewable: ${MasterModel.viewable},
+    if(!req.body.id){
+        return res.status(400).json({error: 'Answer id is required for deletion'});
+    }
+    
+    return Master.MasterModel.deleteById(req.body.id, (err) => {
+        if(err){
+            console.log(err);
+            return res.status(500).json({error: 'An error has occured'});
+        }
         
-    };
-  return Master.MasterModel.update(search, { $set: { viewable: false } }, {}, (err) => {    
-      if (err) {      
-          return response.status(500).json({ error: 'Unable to update viewable' });    }
-    request.session.account.premium = true;    
-    return response.status(200).json({ message: 'Viewable has been changed' });  
-  });
+        return res.status(200).json({msg: 'Beer deleted successfully'});
+    })
 };
 
 module.exports = {

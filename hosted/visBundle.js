@@ -14,7 +14,7 @@ var PromptAnswers = function PromptAnswers(props) {
         if (masterPrompt.category === "excited" || masterPrompt.viewable === "true") {
             return React.createElement(
                 "div",
-                { className: "answer" },
+                { key: masterPrompt._id, className: "answer" },
                 React.createElement("img", { src: "/assets/img/redSquare.png", alt: "red square" }),
                 React.createElement(
                     "h3",
@@ -30,14 +30,19 @@ var PromptAnswers = function PromptAnswers(props) {
                 ),
                 React.createElement(
                     "button",
-                    { "class": "errorButton", onClick: handleReportBtn },
+                    { className: "reportButton", onClick: reportAnswer },
                     "Report"
+                ),
+                React.createElement(
+                    "span",
+                    { className: "answerId" },
+                    masterPrompt._id
                 )
             );
         } else if (masterPrompt.category === "thankful") {
             return React.createElement(
                 "div",
-                { className: "answer" },
+                { key: masterPrompt._id, className: "answer" },
                 React.createElement("img", { src: "/assets/img/blueSquare.jpg", alt: "blue square" }),
                 React.createElement(
                     "h3",
@@ -55,7 +60,7 @@ var PromptAnswers = function PromptAnswers(props) {
         } else if (masterPrompt.category === "inspired") {
             return React.createElement(
                 "div",
-                { className: "answer" },
+                { key: masterPrompt._id, className: "answer" },
                 React.createElement("img", { src: "/assets/img/redSquare.png", alt: "red square" }),
                 React.createElement(
                     "h3",
@@ -73,7 +78,7 @@ var PromptAnswers = function PromptAnswers(props) {
         } else if (masterPrompt.category === "love") {
             return React.createElement(
                 "div",
-                { className: "answer" },
+                { key: masterPrompt._id, className: "answer" },
                 React.createElement("img", { src: "/assets/img/blueSquare.jpg", alt: "blue square" }),
                 React.createElement(
                     "h3",
@@ -91,7 +96,7 @@ var PromptAnswers = function PromptAnswers(props) {
         } else if (masterPrompt.category === "happiest") {
             return React.createElement(
                 "div",
-                { className: "answer" },
+                { key: masterPrompt._id, className: "answer" },
                 React.createElement("img", { src: "/assets/img/redSquare.png", alt: "red square" }),
                 React.createElement(
                     "h3",
@@ -109,7 +114,7 @@ var PromptAnswers = function PromptAnswers(props) {
         } else if (masterPrompt.category === "proud") {
             return React.createElement(
                 "div",
-                { className: "answer" },
+                { key: masterPrompt._id, className: "answer" },
                 React.createElement("img", { src: "/assets/img/blueSquare.jpg", alt: "blue square" }),
                 React.createElement(
                     "h3",
@@ -132,6 +137,15 @@ var PromptAnswers = function PromptAnswers(props) {
         { className: "answerList" },
         answerNodes
     );
+};
+
+var reportAnswer = function reportAnswer(e) {
+    var id = e.target.parentElement.querySelector('.answerId').innerText;
+    var _csrf = document.querySelector('input[name="_csrf]').value;
+
+    sendAjax('DELETE', '/reportMaster', { id: id, _csrf: _csrf }, function (data) {
+        loadAnswers();
+    });
 };
 
 var loadAnswers = function loadAnswers() {
