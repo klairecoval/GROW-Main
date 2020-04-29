@@ -31,6 +31,8 @@
   background: #070822;
   color: white;
   border: none; }
+  #copyCodeBtn:hover {
+    background: #ED7163; }
 
 #category {
   display: none; }
@@ -87,11 +89,16 @@
   background: white;
   border: 1px solid #070822;
   color: #070822; }
+  .closeModalBtn:hover {
+    border: 1px solid #ED7163;
+    color: #ED7163; }
 
 .modalSubmitBtn {
   background: #070822;
   border: 1px solid #070822;
   color: white; }
+  .modalSubmitBtn:hover {
+    background: #ED7163; }
 
 .promptTitle {
   color: white; }
@@ -174,12 +181,27 @@
   color: #FC528F; }
 
 #submitThoughtBtn, #totalSubBtn, #exploreThoughtsBtn {
-  border: 0px;
   border-radius: 50%;
   font-family: 'Playfair Display', serif;
   font-size: 18px;
   height: 216px;
   width: 216px; }
+
+#submitThoughtBtn {
+  background: white;
+  border: 1px solid white;
+  color: #070822; }
+  #submitThoughtBtn:hover {
+    color: white;
+    background: #ED7163; }
+
+#totalSubBtn, #exploreThoughtsBtn {
+  background: none;
+  border: 1px solid white;
+  color: white; }
+  #totalSubBtn:hover, #exploreThoughtsBtn:hover {
+    border: 1px solid #ED7163;
+    color: #ED7163; }
 
 .back2prompts, .back2explore, .dismissExploreModal {
   background: none;

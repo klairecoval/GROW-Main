@@ -53,6 +53,10 @@ $thankfulGreen: #55D897;
     background: $blackBlue;
     color: white;
     border: none;
+
+    &:hover {
+        background: $pinkBtnBackground;
+    }
 };
 
 #category {
@@ -121,11 +125,20 @@ $thankfulGreen: #55D897;
     background: white;
     border: 1px solid $blackBlue;
     color: $blackBlue;
+
+    &:hover {
+        border: 1px solid $pinkBtnBackground;
+        color: $pinkBtnBackground;
+    }
 }
 .modalSubmitBtn {
     background: $blackBlue;
     border: 1px solid $blackBlue;
     color: white;
+
+    &:hover {
+        background: $pinkBtnBackground;
+    }
 }
 
 // individual prompt page
@@ -221,12 +234,31 @@ $thankfulGreen: #55D897;
 
 // explore page
 #submitThoughtBtn, #totalSubBtn, #exploreThoughtsBtn {
-    border: 0px;
     border-radius: 50%;
     font-family: 'Playfair Display', serif;
     font-size: 18px;
     height: 216px;
     width: 216px;
+}
+#submitThoughtBtn {
+    background: white;
+    border: 1px solid white;
+    color: $blackBlue;
+
+    &:hover {
+        color: white;
+        background: $pinkBtnBackground;
+    }
+}
+#totalSubBtn, #exploreThoughtsBtn {
+    background: none;
+    border: 1px solid white;
+    color: white;
+
+    &:hover {
+        border: 1px solid $pinkBtnBackground;
+        color: $pinkBtnBackground;
+    }
 }
 
 // back buttons
