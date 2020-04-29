@@ -49,7 +49,28 @@ const getMaster = (request, response) => {
   });
 };
 
+const reportMaster = (req, res) => {  
+    if(!req.body.id){
+        return res.status(400).json({error: 'Answer id is required for deletion'});
+    }
+    
+    return Master.MasterModel.deleteById(req.body.id, (err) => {
+        if(err){
+            console.log(err);
+            return res.status(500).json({error: 'An error has occured'});
+        }
+        
+        return res.status(200).json({msg: 'Beer deleted successfully'});
+    })
+};
+
 module.exports = {
   logMaster,
   getMaster,
+  reportMaster,    
 };
+
+
+
+
+

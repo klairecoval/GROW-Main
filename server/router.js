@@ -10,7 +10,8 @@ const router = (app) => {
   app.get('/aboutPage', mid.requiresLogin, controllers.Account.aboutPage);
 
   app.get('/getMaster', mid.requiresLogin, controllers.Master.getMaster);
-
+      
+    
   app.get('/login', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
   app.get('/logout', mid.requiresLogin, controllers.Account.logout);
 
@@ -19,7 +20,9 @@ const router = (app) => {
   app.post('/promptPage', mid.requiresLogin, controllers.Account.promptPage);
 
   app.post('/logMaster', mid.requiresLogin, controllers.Master.logMaster);
-
+    
+  app.delete('/reportMaster', mid.requiresLogin, controllers.Master.reportMaster);    
+    
   app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.aboutPage);
 };
 

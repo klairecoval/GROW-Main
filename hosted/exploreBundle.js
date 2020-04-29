@@ -2,6 +2,8 @@
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var calcDate = function calcDate(date) {
     var d = new Date(date);
     var dtf = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit' });
@@ -27,7 +29,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                     { id: 'exploreExcitedModal', className: 'exploreExcitedModal' },
                     React.createElement(
                         'div',
-                        { className: 'exploreExcitedModalContent' },
+                        _defineProperty({ className: 'exploreExcitedModalContent' }, 'className', 'answer'),
                         React.createElement(
                             'button',
                             { className: 'playfair', id: 'dismissExcitedExplore' },
@@ -78,6 +80,16 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             null,
                             'Submitted: ',
                             calcDate(masterPrompt.createdData.slice(0, 10))
+                        ),
+                        React.createElement(
+                            'button',
+                            { className: 'reportButton', onClick: reportAnswer },
+                            'Report'
+                        ),
+                        React.createElement(
+                            'span',
+                            { type: 'hidden', className: 'answerId' },
+                            masterPrompt._id
                         )
                     )
                 )
@@ -92,7 +104,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                     { id: 'exploreThankfulModal', className: 'exploreThankfulModal' },
                     React.createElement(
                         'div',
-                        { className: 'exploreThankfulModalContent' },
+                        _defineProperty({ className: 'exploreThankfulModalContent' }, 'className', 'answer'),
                         React.createElement(
                             'button',
                             { id: 'dismissThankfulExplore' },
@@ -142,6 +154,16 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             null,
                             'Submitted: ',
                             calcDate(masterPrompt.createdData.slice(0, 10))
+                        ),
+                        React.createElement(
+                            'button',
+                            { className: 'reportButton', onClick: reportAnswer },
+                            'Report'
+                        ),
+                        React.createElement(
+                            'span',
+                            { type: 'hidden', className: 'answerId' },
+                            masterPrompt._id
                         )
                     )
                 )
@@ -156,7 +178,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                     { id: 'exploreInspiredModal', className: 'exploreInspiredModal' },
                     React.createElement(
                         'div',
-                        { className: 'exploreInspiredModalContent' },
+                        _defineProperty({ className: 'exploreInspiredModalContent' }, 'className', 'answer'),
                         React.createElement(
                             'button',
                             { id: 'dismissInspiredExplore' },
@@ -207,6 +229,16 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             null,
                             'Submitted: ',
                             calcDate(masterPrompt.createdData.slice(0, 10))
+                        ),
+                        React.createElement(
+                            'button',
+                            { className: 'reportButton', onClick: reportAnswer },
+                            'Report'
+                        ),
+                        React.createElement(
+                            'span',
+                            { type: 'hidden', className: 'answerId' },
+                            masterPrompt._id
                         )
                     )
                 )
@@ -218,10 +250,10 @@ var ExploreAnswers = function ExploreAnswers(props) {
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
                     'div',
-                    { id: 'exploreLoveModal', className: 'exploreLoveModal' },
+                    { id: 'exploreLoveModal', className: 'exploreLoveModal', key: masterPrompt._id },
                     React.createElement(
                         'div',
-                        { className: 'exploreLoveModalContent' },
+                        _defineProperty({ className: 'exploreLoveModalContent' }, 'className', 'answer'),
                         React.createElement(
                             'button',
                             { id: 'dismissLoveExplore' },
@@ -272,6 +304,16 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             null,
                             'Submitted: ',
                             calcDate(masterPrompt.createdData.slice(0, 10))
+                        ),
+                        React.createElement(
+                            'button',
+                            { className: 'reportButton', onClick: reportAnswer },
+                            'Report'
+                        ),
+                        React.createElement(
+                            'span',
+                            { type: 'hidden', className: 'answerId' },
+                            masterPrompt._id
                         )
                     )
                 )
@@ -284,10 +326,10 @@ var ExploreAnswers = function ExploreAnswers(props) {
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
                     'div',
-                    { id: 'exploreHappiestModal', className: 'exploreHappiestModal' },
+                    { id: 'exploreHappiestModal', className: 'exploreHappiestModal', key: masterPrompt._id },
                     React.createElement(
                         'div',
-                        { className: 'exploreHappiestModalContent' },
+                        _defineProperty({ className: 'exploreHappiestModalContent' }, 'className', 'answer'),
                         React.createElement(
                             'button',
                             { id: 'dismissHappiestExplore' },
@@ -338,6 +380,16 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             null,
                             'Submitted: ',
                             calcDate(masterPrompt.createdData.slice(0, 10))
+                        ),
+                        React.createElement(
+                            'button',
+                            { className: 'reportButton', onClick: reportAnswer },
+                            'Report'
+                        ),
+                        React.createElement(
+                            'span',
+                            { type: 'hidden', className: 'answerId' },
+                            masterPrompt._id
                         )
                     )
                 )
@@ -350,7 +402,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
                     'div',
-                    { id: 'exploreProudModal', className: 'exploreProudModal' },
+                    _defineProperty({ id: 'exploreProudModal', className: 'exploreProudModal', key: masterPrompt._id }, 'className', 'answer'),
                     React.createElement(
                         'div',
                         { className: 'exploreProudModalContent' },
@@ -404,6 +456,16 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             null,
                             'Submitted: ',
                             calcDate(masterPrompt.createdData.slice(0, 10))
+                        ),
+                        React.createElement(
+                            'button',
+                            { className: 'reportButton', onClick: reportAnswer },
+                            'Report'
+                        ),
+                        React.createElement(
+                            'span',
+                            { type: 'hidden', className: 'answerId' },
+                            masterPrompt._id
                         )
                     )
                 )
@@ -529,6 +591,14 @@ var ExploreProudModal = function ExploreProudModal(e) {
             exploreProudModal.style.display = "none";
         }
     };
+};
+
+var reportAnswer = function reportAnswer(e) {
+    var id = e.target.parentElement.querySelector('.answerId').innerText;
+
+    sendAjax('DELETE', '/reportMaster', { id: id }, function (data) {
+        loadExploreAnswers();
+    });
 };
 
 var loadExploreAnswers = function loadExploreAnswers() {
