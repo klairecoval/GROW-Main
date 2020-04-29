@@ -168,7 +168,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             { className: 'socialMediaShareBtns' },
                             React.createElement(
                                 'p',
-                                null,
+                                { className: 'lato' },
                                 'Help spread the positivity by sharing this thought.'
                             ),
                             React.createElement(
@@ -228,7 +228,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             { className: 'socialMediaShareBtns' },
                             React.createElement(
                                 'p',
-                                null,
+                                { className: 'lato' },
                                 'Help spread the positivity by sharing this thought.'
                             ),
                             React.createElement(
@@ -289,7 +289,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             { className: 'socialMediaShareBtns' },
                             React.createElement(
                                 'p',
-                                null,
+                                { className: 'lato' },
                                 'Help spread the positivity by sharing this thought.'
                             ),
                             React.createElement(
@@ -350,7 +350,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             { className: 'socialMediaShareBtns' },
                             React.createElement(
                                 'p',
-                                null,
+                                { className: 'lato' },
                                 'Help spread the positivity by sharing this thought.'
                             ),
                             React.createElement(

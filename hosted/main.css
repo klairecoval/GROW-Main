@@ -4,7 +4,7 @@
 .lato {
   font-family: 'Lato', sans-serif; }
 
-#exploreBody, #promptBody {
+#exploreBody, #promptBody, #aboutBody, #dataVisBody {
   background-image: url("/assets/img/background.svg"); }
 
 #introVid {
@@ -93,6 +93,21 @@
   border: 1px solid #070822;
   color: white; }
 
+.promptTitle {
+  color: white; }
+
+.promptTextArea {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px; }
+
+.answerCharCount {
+  color: white; }
+
+.promptAnswerLeaf {
+  float: right; }
+
 .logThoughtSubmit {
   border: none;
   font-family: 'Playfair Display', serif;
@@ -168,7 +183,8 @@
 
 .back2prompts, .back2explore, .dismissExploreModal {
   background: none;
-  border: none; }
+  border: none;
+  color: white; }
 
 .mobile {
   display: none; }

@@ -21,7 +21,7 @@ $thankfulGreen: #55D897;
 }
 
 // backgrounds
-#exploreBody, #promptBody {
+#exploreBody, #promptBody, #aboutBody, #dataVisBody {
     background-image: url("/assets/img/background.svg");
 }
 
@@ -129,6 +129,25 @@ $thankfulGreen: #55D897;
 }
 
 // individual prompt page
+.promptTitle {
+    color: white;
+}
+
+.promptTextArea {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+}
+
+.answerCharCount {
+    color: white;
+}
+
+.promptAnswerLeaf {
+    float: right;
+}
+
 .logThoughtSubmit {
     border: none;
     font-family: 'Playfair Display', serif;
@@ -214,6 +233,7 @@ $thankfulGreen: #55D897;
 .back2prompts, .back2explore, .dismissExploreModal {
     background: none;
     border: none;
+    color: white;
 }
 
 // mobile screen

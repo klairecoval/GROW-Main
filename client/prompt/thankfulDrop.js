@@ -37,28 +37,30 @@ const handleThankfulCount = (e) => {
 
 const ThankfulTitle = (props) => {
     return (
-        <h2  className="lato promptTitle" id="thankfulTitle">I'M THANKFUL FOR:</h2>
+        <div>
+            <button className="playfair back2prompts" id="thankfulBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
+            <h2  className="lato promptTitle" id="thankfulTitle">I'M THANKFUL FOR:</h2>
+        </div>
     );
 };
 
 const ThankfulForm = (props) => {
     return (
         <div>
-            <button className="playfair back2prompts" id="thankfulBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
             <form id='thankfulForm'
             onSubmit={handleThankfulDrop}
             name='thankfulForm'
             action='/logMaster'
             method='POST'
             className='thankfulForm' >
-                <input id='thankfulText' className="playfair whiteText" type='text' name='answer' maxLength="90" placeholder='ex: "essential workers"' onChange={handleThankfulCount}/>
+                <input id='thankfulText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "essential workers"' onChange={handleThankfulCount}/>
                 <input id='category' type='text' name='category' value='thankful' placeholder='thankful' onChange={handleThankfulCount}/>        
                 <input className='logThoughtSubmit' id="logThankfulSubmit" type='submit' value='Submit' />
             </form>
-            <p id="thankfulCount">{props.thankfulCount} characters remaining</p>
+            <p id="thankfulCount" className="lato answerCharCount">{props.thankfulCount} characters remaining</p>
             <BackModal/>
             <ThankfulSubmitModal />
-            <img src="/assets/img/ThankfulLeaf.svg" />
+            <img src="/assets/img/ThankfulLeaf.svg" className="promptAnswerLeaf"/>
         </div>
     );
 };

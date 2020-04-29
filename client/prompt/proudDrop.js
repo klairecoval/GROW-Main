@@ -36,28 +36,30 @@ const handleProudCount = (e) => {
 
 const ProudTitle = (props) => {
     return (
-        <h2  className="lato promptTitle" id="proudTitle">I'M PROUD OF:</h2>
+        <div>
+            <button className="playfair back2prompts" id="proudBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
+            <h2  className="lato promptTitle" id="proudTitle">I'M PROUD OF:</h2>
+        </div>
     );
 };
 
 const ProudForm = (props) => {
     return (
         <div>
-            <button className="playfair back2prompts" id="proudBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
             <form id='proudForm'
             onSubmit={handleProudDrop}
             name='proudForm'
             action='/logMaster'
             method='POST'
             className='proudForm' >
-                <input id='proudText' className="playfair" type='text' name='answer' maxLength="90" placeholder='ex: "medical workers"' onChange={handleProudCount}/>
+                <input id='proudText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "medical workers"' onChange={handleProudCount}/>
                 <input id='category' type='text' name='category' value='proud' placeholder='proud' onChange={handleProudCount}/>        
                 <input className='logThoughtSubmit' id="logProudSubmit" type='submit' value='Submit' />
             </form>
-            <p className="lato" id="proudCount">{props.proudCount} characters remaining</p>
+            <p className="lato answerCharCount" id="proudCount">{props.proudCount} characters remaining</p>
             <BackModal/>
             <ProudSubmitModal />
-            <img src="/assets/img/ProudLeaf.svg" />
+            <img src="/assets/img/ProudLeaf.svg" className="promptAnswerLeaf"/>
         </div>
     );
 };

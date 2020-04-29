@@ -36,28 +36,30 @@ const handleLoveCount = (e) => {
 
 const LoveTitle = (props) => {
     return (
-        <h2  className="lato promptTitle" id="loveTitle">I LOVE:</h2>
+        <div>
+            <button className="playfair back2prompts" id="loveBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
+            <h2  className="lato promptTitle" id="loveTitle">I LOVE:</h2>
+        </div>
     );
 };
 
 const LoveForm = (props) => {
     return (
         <div>
-            <button className="playfair back2prompts" id="loveBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
             <form id='loveForm'
             onSubmit={handleLoveDrop}
             name='loveForm'
             action='/logMaster'
             method='POST'
             className='loveForm' >
-                <input id='loveText' className="playfair" type='text' name='answer' maxLength="90" placeholder='ex: "humanity"' onChange={handleLoveCount}/>
+                <input id='loveText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "humanity"' onChange={handleLoveCount}/>
                 <input id='category' type='text' name='category' value='love' placeholder='love' onChange={handleLoveCount}/>        
                 <input className='logThoughtSubmit' id="logLoveSubmit" type='submit' value='Submit' />
             </form>
-            <p className="lato" id="loveCount">{props.loveCount} characters remaining</p>
+            <p className="lato answerCharCount" id="loveCount">{props.loveCount} characters remaining</p>
             <BackModal/>
             <LoveSubmitModal />
-            <img src="/assets/img/LoveLeaf.svg" />
+            <img src="/assets/img/LoveLeaf.svg" className="promptAnswerLeaf"/>
         </div>
     );
 };

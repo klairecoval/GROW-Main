@@ -70,7 +70,7 @@ const ExploreAnswers = function(props) {
                             <h3 className="lato">I'M INSPIRED BY</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="socialMediaShareBtns">
-                                <p>Help spread the positivity by sharing this thought.</p>
+                                <p className="lato">Help spread the positivity by sharing this thought.</p>
                                 <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am inspired by " + masterPrompt.answer} target="_blank">
                                     Twitter
                                 </a>
@@ -96,7 +96,7 @@ const ExploreAnswers = function(props) {
                             <h3 className="lato">I LOVE</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="socialMediaShareBtns">
-                                <p>Help spread the positivity by sharing this thought.</p>
+                                <p className="lato">Help spread the positivity by sharing this thought.</p>
                                 <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I love " + masterPrompt.answer} target="_blank">
                                     Twitter
                                 </a>
@@ -123,7 +123,7 @@ const ExploreAnswers = function(props) {
                             <h3 className="lato">I'M HAPPIEST WHEN</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="socialMediaShareBtns">
-                                <p>Help spread the positivity by sharing this thought.</p>
+                                <p className="lato">Help spread the positivity by sharing this thought.</p>
                                 <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am happiest when " + masterPrompt.answer} target="_blank">
                                     Twitter
                                 </a>
@@ -150,7 +150,7 @@ const ExploreAnswers = function(props) {
                             <h3 className="lato">I'M PROUD OF</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="socialMediaShareBtns">
-                                <p>Help spread the positivity by sharing this thought.</p>
+                                <p className="lato">Help spread the positivity by sharing this thought.</p>
                                 <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am proud of " + masterPrompt.answer} target="_blank">
                                     Twitter
                                 </a>

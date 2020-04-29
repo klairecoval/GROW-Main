@@ -36,28 +36,30 @@ const handleExcitedCount = (e) => {
 
 const ExcitedTitle = (props) => {
     return (
-        <h2 className="lato promptTitle" id="excitedTitle">I'M EXCITED FOR:</h2>
+        <div>
+            <button id="excitedBackBtn" className="playfair back2prompts"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
+            <h2 className="lato promptTitle" id="excitedTitle">I'M EXCITED FOR:</h2>
+        </div>
     );
 };
 
 const ExcitedForm = (props) => {
     return (
         <div>
-            <button id="excitedBackBtn" className="playfair back2prompts"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
             <form id='excitedForm'
             onSubmit={handleExcitedDrop}
             name='excitedForm'
             action='/logMaster'
             method='POST'
             className='excitedForm' >
-                <input id='excitedText' className="playfair" type='text' name='answer' maxLength="90" placeholder='ex: "social gatherings"' onChange={handleExcitedCount}/>
+                <input id='excitedText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "social gatherings"' onChange={handleExcitedCount}/>
                 <input id='category' type='text' name='category' value='excited' placeholder='excited' onChange={handleExcitedCount}/>        
                 <input className='logThoughtSubmit' id="logExcitedSubmit" type='submit' value='Submit Response' />
             </form>
-            <p id="excitedCount" className="lato">{props.excitedCount} characters remaining</p>
+            <p id="excitedCount" className="lato answerCharCount">{props.excitedCount} characters remaining</p>
             <BackModal/>
             <ExcitedSubmitModal />
-            <img src="/assets/img/ExcitedLeaf.svg" />
+            <img src="/assets/img/ExcitedLeaf.svg" className="promptAnswerLeaf"/>
         </div>
     );
 };

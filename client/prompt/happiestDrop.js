@@ -36,28 +36,30 @@ const handleHappiestCount = (e) => {
 
 const HappiestTitle = (props) => {
     return (
-        <h2  className="lato promptTitle" id="happiestTitle">I'M HAPPIEST WHEN:</h2>
+        <div>
+            <button className="playfair back2prompts" id="happiestBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
+            <h2  className="lato promptTitle" id="happiestTitle">I'M HAPPIEST WHEN:</h2>
+        </div>
     );
 };
 
 const HappiestForm = (props) => {
     return (
         <div>
-            <button className="playfair back2prompts" id="happiestBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
             <form id='happiestForm'
             onSubmit={handleHappiestDrop}
             name='happiestForm'
             action='/logMaster'
             method='POST'
             className='happiestForm' >
-                <input id='happiestText' className="playfair" type='text' name='answer' maxLength="90" placeholder='ex: "I am with loved ones"' onChange={handleHappiestCount}/>
+                <input id='happiestText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "I am with loved ones"' onChange={handleHappiestCount}/>
                 <input id='category' type='text' name='category' value='happiest' placeholder='happiest' onChange={handleHappiestCount}/>        
                 <input className='logThoughtSubmit' id="logHappiestSubmit" type='submit' value='Submit response' />
             </form>
-            <p className="lato" id="happiestCount">{props.happiestCount} characters remaining</p>
+            <p className="lato answerCharCount" id="happiestCount">{props.happiestCount} characters remaining</p>
             <BackModal/>
             <HappiestSubmitModal />
-            <img src="/assets/img/HappiestLeaf.svg" />
+            <img src="/assets/img/HappiestLeaf.svg" className="promptAnswerLeaf" />
         </div>
     );
 };

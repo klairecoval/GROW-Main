@@ -36,28 +36,30 @@ const handleInspiredCount = (e) => {
 
 const InspiredTitle = (props) => {
     return (
-        <h2  className="lato promptTitle" id="inspiredTitle">I'M INSPIRED BY:</h2>
+        <div>
+            <button className="playfair back2prompts" id="inspiredBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
+            <h2  className="lato promptTitle" id="inspiredTitle">I'M INSPIRED BY:</h2>
+        </div>
     );
 };
 
 const InspiredForm = (props) => {
     return (
         <div>
-            <button className="playfair back2prompts" id="inspiredBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
             <form id='inspiredForm'
             onSubmit={handleInspiredDrop}
             name='inspiredForm'
             action='/logMaster'
             method='POST'
             className='inspiredForm' >
-                <input id='inspiredText' className="playfair" type='text' name='answer' maxLength="90" placeholder='ex: "the generosity of others"' onChange={handleInspiredCount}/>
+                <input id='inspiredText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "the generosity of others"' onChange={handleInspiredCount}/>
                 <input id='category' type='text' name='category' value='inspired' placeholder='inspired' onChange={handleInspiredCount}/>        
                 <input className='logThoughtSubmit' id="logInspiredSubmit" type='submit' value='Submit response' />
             </form>
-            <p id="inspiredCount" className="lato">{props.inspiredCount} characters remaining</p>
+            <p id="inspiredCount" className="lato answerCharCount">{props.inspiredCount} characters remaining</p>
             <BackModal/>
             <InspiredSubmitModal />
-            <img src="/assets/img/InspiredLeaf.svg" />
+            <img src="/assets/img/InspiredLeaf.svg" className="promptAnswerLeaf"/>
         </div>
     );
 };
