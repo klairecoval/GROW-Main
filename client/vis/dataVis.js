@@ -3,37 +3,37 @@ const PromptAnswers = function(props) {
         if(masterPrompt.category === "excited"){
             return (
                 <div className='answer'>
-                    <img src='/assets/img/Excited2.svg' alt='excited leaf'/>
+                    <img src='/assets/img/LeafVariation1/Excited1.svg' alt='excited leaf'/>
                 </div>
             );
         } else if(masterPrompt.category === "thankful"){
             return(
                 <div className='answer'>
-                    <img src='/assets/img/Thankful3.svg' alt='thankful leaf'/>
+                    <img src='/assets/img/LeafVariation2/Thankful2.svg' alt='thankful leaf'/>
                 </div>
             );
         } else if(masterPrompt.category === "inspired"){
             return (
                 <div className='answer'>
-                    <img src='/assets/img/Inspired1.svg' alt='inspired leaf'/>
+                    <img src='/assets/img/LeafVariation3/Inspired3.svg' alt='inspired leaf'/>
                 </div>
             );
         } else if(masterPrompt.category === "love"){
             return (
                 <div className='answer'>
-                    <img src='/assets/img/Love2.svg' alt='love leaf'/>
+                    <img src='/assets/img/LeafVariation1/Love1.svg' alt='love leaf'/>
                 </div>
             );
         } else if(masterPrompt.category === "happiest"){
             return (
                 <div className='answer'>
-                    <img src='/assets/img/Happiest3.svg' alt='happiest leaf'/>
+                    <img src='/assets/img/LeafVariation2/Happiest2.svg' alt='happiest leaf'/>
                 </div>
             );
         } else if(masterPrompt.category === "proud"){
             return (
                 <div className='answer'>
-                    <img src='/assets/img/Proud1.svg' alt='proud leaf'/>
+                    <img src='/assets/img/LeafVariation3/Proud3.svg' alt='proud leaf'/>
                 </div>
             );
         }

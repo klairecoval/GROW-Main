@@ -76,7 +76,7 @@ var ExcitedForm = function ExcitedForm(props) {
         ),
         React.createElement(BackModal, null),
         React.createElement(ExcitedSubmitModal, null),
-        React.createElement("img", { src: "/assets/img/ExcitedLeaf.svg", className: "promptAnswerLeaf" })
+        React.createElement("img", { src: "/assets/img/PromptAnswerLeves/ExcitedLeaf.svg", className: "promptAnswerLeaf" })
     );
 };
 
@@ -213,7 +213,7 @@ var HappiestForm = function HappiestForm(props) {
         ),
         React.createElement(BackModal, null),
         React.createElement(HappiestSubmitModal, null),
-        React.createElement("img", { src: "/assets/img/HappiestLeaf.svg", className: "promptAnswerLeaf" })
+        React.createElement("img", { src: "/assets/img/PromptAnswerLeaves/HappiestLeaf.svg", className: "promptAnswerLeaf" })
     );
 };
 
@@ -350,7 +350,7 @@ var InspiredForm = function InspiredForm(props) {
         ),
         React.createElement(BackModal, null),
         React.createElement(InspiredSubmitModal, null),
-        React.createElement("img", { src: "/assets/img/InspiredLeaf.svg", className: "promptAnswerLeaf" })
+        React.createElement("img", { src: "/assets/img/PromptAnswerLeaves/InspiredLeaf.svg", className: "promptAnswerLeaf" })
     );
 };
 
@@ -487,7 +487,7 @@ var LoveForm = function LoveForm(props) {
         ),
         React.createElement(BackModal, null),
         React.createElement(LoveSubmitModal, null),
-        React.createElement("img", { src: "/assets/img/LoveLeaf.svg", className: "promptAnswerLeaf" })
+        React.createElement("img", { src: "/assets/img/PromptAnswerLeaves/LoveLeaf.svg", className: "promptAnswerLeaf" })
     );
 };
 
@@ -854,7 +854,7 @@ var ProudForm = function ProudForm(props) {
         ),
         React.createElement(BackModal, null),
         React.createElement(ProudSubmitModal, null),
-        React.createElement("img", { src: "/assets/img/ProudLeaf.svg", className: "promptAnswerLeaf" })
+        React.createElement("img", { src: "/assets/img/PromptAnswerLeaves/ProudLeaf.svg", className: "promptAnswerLeaf" })
     );
 };
 
@@ -991,7 +991,7 @@ var ThankfulForm = function ThankfulForm(props) {
         ),
         React.createElement(BackModal, null),
         React.createElement(ThankfulSubmitModal, null),
-        React.createElement("img", { src: "/assets/img/ThankfulLeaf.svg", className: "promptAnswerLeaf" })
+        React.createElement("img", { src: "/assets/img/PromptAnswerLeaves/ThankfulLeaf.svg", className: "promptAnswerLeaf" })
     );
 };
 

@@ -59,7 +59,7 @@ const LoveForm = (props) => {
             <p className="lato answerCharCount" id="loveCount">{props.loveCount} characters remaining</p>
             <BackModal/>
             <LoveSubmitModal />
-            <img src="/assets/img/LoveLeaf.svg" className="promptAnswerLeaf"/>
+            <img src="/assets/img/PromptAnswerLeaves/LoveLeaf.svg" className="promptAnswerLeaf"/>
         </div>
     );
 };

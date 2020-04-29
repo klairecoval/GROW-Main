@@ -59,7 +59,7 @@ const ProudForm = (props) => {
             <p className="lato answerCharCount" id="proudCount">{props.proudCount} characters remaining</p>
             <BackModal/>
             <ProudSubmitModal />
-            <img src="/assets/img/ProudLeaf.svg" className="promptAnswerLeaf"/>
+            <img src="/assets/img/PromptAnswerLeaves/ProudLeaf.svg" className="promptAnswerLeaf"/>
         </div>
     );
 };

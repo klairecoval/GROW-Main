@@ -59,7 +59,7 @@ const HappiestForm = (props) => {
             <p className="lato answerCharCount" id="happiestCount">{props.happiestCount} characters remaining</p>
             <BackModal/>
             <HappiestSubmitModal />
-            <img src="/assets/img/HappiestLeaf.svg" className="promptAnswerLeaf" />
+            <img src="/assets/img/PromptAnswerLeaves/HappiestLeaf.svg" className="promptAnswerLeaf" />
         </div>
     );
 };

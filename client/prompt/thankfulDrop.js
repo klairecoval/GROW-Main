@@ -60,7 +60,7 @@ const ThankfulForm = (props) => {
             <p id="thankfulCount" className="lato answerCharCount">{props.thankfulCount} characters remaining</p>
             <BackModal/>
             <ThankfulSubmitModal />
-            <img src="/assets/img/ThankfulLeaf.svg" className="promptAnswerLeaf"/>
+            <img src="/assets/img/PromptAnswerLeaves/ThankfulLeaf.svg" className="promptAnswerLeaf"/>
         </div>
     );
 };

@@ -6,37 +6,37 @@ var PromptAnswers = function PromptAnswers(props) {
             return React.createElement(
                 'div',
                 { className: 'answer' },
-                React.createElement('img', { src: '/assets/img/Excited2.svg', alt: 'excited leaf' })
+                React.createElement('img', { src: '/assets/img/LeafVariation1/Excited1.svg', alt: 'excited leaf' })
             );
         } else if (masterPrompt.category === "thankful") {
             return React.createElement(
                 'div',
                 { className: 'answer' },
-                React.createElement('img', { src: '/assets/img/Thankful3.svg', alt: 'thankful leaf' })
+                React.createElement('img', { src: '/assets/img/LeafVariation2/Thankful2.svg', alt: 'thankful leaf' })
             );
         } else if (masterPrompt.category === "inspired") {
             return React.createElement(
                 'div',
                 { className: 'answer' },
-                React.createElement('img', { src: '/assets/img/Inspired1.svg', alt: 'inspired leaf' })
+                React.createElement('img', { src: '/assets/img/LeafVariation3/Inspired3.svg', alt: 'inspired leaf' })
             );
         } else if (masterPrompt.category === "love") {
             return React.createElement(
                 'div',
                 { className: 'answer' },
-                React.createElement('img', { src: '/assets/img/Love2.svg', alt: 'love leaf' })
+                React.createElement('img', { src: '/assets/img/LeafVariation1/Love1.svg', alt: 'love leaf' })
             );
         } else if (masterPrompt.category === "happiest") {
             return React.createElement(
                 'div',
                 { className: 'answer' },
-                React.createElement('img', { src: '/assets/img/Happiest3.svg', alt: 'happiest leaf' })
+                React.createElement('img', { src: '/assets/img/LeafVariation2/Happiest2.svg', alt: 'happiest leaf' })
             );
         } else if (masterPrompt.category === "proud") {
             return React.createElement(
                 'div',
                 { className: 'answer' },
-                React.createElement('img', { src: '/assets/img/Proud1.svg', alt: 'proud leaf' })
+                React.createElement('img', { src: '/assets/img/LeafVariation3/Proud3.svg', alt: 'proud leaf' })
             );
         }
     });

@@ -59,7 +59,7 @@ const InspiredForm = (props) => {
             <p id="inspiredCount" className="lato answerCharCount">{props.inspiredCount} characters remaining</p>
             <BackModal/>
             <InspiredSubmitModal />
-            <img src="/assets/img/InspiredLeaf.svg" className="promptAnswerLeaf"/>
+            <img src="/assets/img/PromptAnswerLeaves/InspiredLeaf.svg" className="promptAnswerLeaf"/>
         </div>
     );
 };
