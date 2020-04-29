@@ -5,9 +5,11 @@ const ExploreAnswers = function(props) {
                 <div className='exploreExcited' key={masterPrompt._id} onClick={ExploreExcitedModal}>
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreExcitedModal" className="exploreExcitedModal">
-                        <div className="exploreExcitedModalContent">
+                        <div className="exploreExcitedModalContent" className='answer'>
                             <h3>I am excited for</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
+                            <button className='reportButton' onClick={reportAnswer}>Report</button>
+                            <span type="hidden" className="answerId">{masterPrompt._id}</span>
                         </div>
                     </div>
                 </div>
@@ -17,9 +19,11 @@ const ExploreAnswers = function(props) {
                 <div className='exploreThankful' key={masterPrompt._id} onClick={ExploreThankfulModal}>
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreThankfulModal" className="exploreThankfulModal">
-                        <div className="exploreThankfulModalContent">
+                        <div className="exploreThankfulModalContent" key={masterPrompt._id} className='answer'>
                             <h3>I am thankful for</h3>
                             <h3 className='promptAnswer'>{masterPrompt.answer}</h3>
+                            <button className='reportButton' onClick={reportAnswer}>Report</button>
+                            <span type="hidden" className="answerId">{masterPrompt._id}</span>
                         </div>
                     </div>
                 </div>
@@ -29,9 +33,11 @@ const ExploreAnswers = function(props) {
                 <div className='exploreInspired' key={masterPrompt._id} onClick={ExploreInspiredModal}>
                     <img src='/assets/img/leafFILLER.png'/>
                     <div id="exploreInspiredModal" className="exploreInspiredModal">
-                        <div className="exploreInspiredModalContent">
+                        <div className="exploreInspiredModalContent" key={masterPrompt._id} className='answer'>
                             <h3>I am inspired by</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
+                            <button className='reportButton' onClick={reportAnswer}>Report</button>
+                            <span type="hidden" className="answerId">{masterPrompt._id}</span>
                         </div>
                     </div>
                 </div>
@@ -40,10 +46,12 @@ const ExploreAnswers = function(props) {
             return (
                 <div className='exploreLove' key={masterPrompt._id} onClick={ExploreLoveModal}>
                     <img src='/assets/img/leafFILLER.png'/>
-                    <div id="exploreLoveModal" className="exploreLoveModal">
+                    <div id="exploreLoveModal" className="exploreLoveModal" key={masterPrompt._id} className='answer'>
                         <div className="exploreLoveModalContent">
                             <h3>I love</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
+                            <button className='reportButton' onClick={reportAnswer}>Report</button>
+                            <span type="hidden" className="answerId">{masterPrompt._id}</span>
                         </div>
                     </div>
                 </div>
@@ -53,10 +61,12 @@ const ExploreAnswers = function(props) {
             return (
                 <div className='exploreHappiest' key={masterPrompt._id} onClick={ExploreHappiestModal}>
                     <img src='/assets/img/leafFILLER.png'/>
-                    <div id="exploreHappiestModal" className="exploreHappiestModal">
+                    <div id="exploreHappiestModal" className="exploreHappiestModal" key={masterPrompt._id} className='answer'>
                         <div className="exploreHappiestModalContent">
                             <h3>I am happiest when</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
+                            <button className='reportButton' onClick={reportAnswer}>Report</button>
+                            <span type="hidden" className="answerId">{masterPrompt._id}</span>
                         </div>
                     </div>
                 </div>
@@ -66,10 +76,12 @@ const ExploreAnswers = function(props) {
             return (
                 <div className='exploreProud' key={masterPrompt._id} onClick={ExploreProudModal}>
                     <img src='/assets/img/leafFILLER.png'/>
-                    <div id="exploreProudModal" className="exploreProudModal">
+                    <div id="exploreProudModal" className="exploreProudModal" key={masterPrompt._id} className='answer'>
                         <div className="exploreProudModalContent">
                             <h3>I am proud of</h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
+                            <button className='reportButton' onClick={reportAnswer}>Report</button>
+                            <span type="hidden" className="answerId">{masterPrompt._id}</span>
                         </div>
                     </div>
                 </div>
@@ -155,7 +167,15 @@ const ExploreProudModal = (e) => {
         }
     }
 };
-        
+
+const reportAnswer = (e) => {
+    const id = e.target.parentElement.querySelector('.answerId').innerText;
+    
+    sendAjax('DELETE', '/reportMaster', {id}, data => {
+        loadExploreAnswers();
+    });
+};
+
 const loadExploreAnswers = () => {
     sendAjax('GET', '/getMaster', null, (data) => {
         ReactDOM.render(

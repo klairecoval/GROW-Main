@@ -71,9 +71,8 @@ const PromptAnswers = function(props) {
 
 const reportAnswer = (e) => {
     const id = e.target.parentElement.querySelector('.answerId').innerText;
-    const _csrf = document.querySelector('input[name="_csrf]').value;
     
-    sendAjax('DELETE', '/reportMaster', {id, _csrf}, data => {
+    sendAjax('DELETE', '/reportMaster', {id}, data => {
         loadAnswers();
     });
 };

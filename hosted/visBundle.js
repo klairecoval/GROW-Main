@@ -35,7 +35,7 @@ var PromptAnswers = function PromptAnswers(props) {
                 ),
                 React.createElement(
                     "span",
-                    { className: "answerId" },
+                    { type: "hidden", className: "answerId" },
                     masterPrompt._id
                 )
             );
@@ -141,9 +141,8 @@ var PromptAnswers = function PromptAnswers(props) {
 
 var reportAnswer = function reportAnswer(e) {
     var id = e.target.parentElement.querySelector('.answerId').innerText;
-    var _csrf = document.querySelector('input[name="_csrf]').value;
 
-    sendAjax('DELETE', '/reportMaster', { id: id, _csrf: _csrf }, function (data) {
+    sendAjax('DELETE', '/reportMaster', { id: id }, function (data) {
         loadAnswers();
     });
 };

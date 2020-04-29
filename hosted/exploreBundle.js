@@ -1,5 +1,7 @@
 'use strict';
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var ExploreAnswers = function ExploreAnswers(props) {
     var exploreAnswerNodes = props.answers.map(function (masterPrompt) {
         if (masterPrompt.category === "excited") {
@@ -12,7 +14,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                     { id: 'exploreExcitedModal', className: 'exploreExcitedModal' },
                     React.createElement(
                         'div',
-                        { className: 'exploreExcitedModalContent' },
+                        _defineProperty({ className: 'exploreExcitedModalContent' }, 'className', 'answer'),
                         React.createElement(
                             'h3',
                             null,
@@ -23,6 +25,16 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             { className: 'promptAnswer' },
                             ' ',
                             masterPrompt.answer
+                        ),
+                        React.createElement(
+                            'button',
+                            { className: 'reportButton', onClick: reportAnswer },
+                            'Report'
+                        ),
+                        React.createElement(
+                            'span',
+                            { type: 'hidden', className: 'answerId' },
+                            masterPrompt._id
                         )
                     )
                 )
@@ -37,7 +49,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                     { id: 'exploreThankfulModal', className: 'exploreThankfulModal' },
                     React.createElement(
                         'div',
-                        { className: 'exploreThankfulModalContent' },
+                        _defineProperty({ className: 'exploreThankfulModalContent', key: masterPrompt._id }, 'className', 'answer'),
                         React.createElement(
                             'h3',
                             null,
@@ -47,6 +59,16 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             'h3',
                             { className: 'promptAnswer' },
                             masterPrompt.answer
+                        ),
+                        React.createElement(
+                            'button',
+                            { className: 'reportButton', onClick: reportAnswer },
+                            'Report'
+                        ),
+                        React.createElement(
+                            'span',
+                            { type: 'hidden', className: 'answerId' },
+                            masterPrompt._id
                         )
                     )
                 )
@@ -61,7 +83,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                     { id: 'exploreInspiredModal', className: 'exploreInspiredModal' },
                     React.createElement(
                         'div',
-                        { className: 'exploreInspiredModalContent' },
+                        _defineProperty({ className: 'exploreInspiredModalContent', key: masterPrompt._id }, 'className', 'answer'),
                         React.createElement(
                             'h3',
                             null,
@@ -72,6 +94,16 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             { className: 'promptAnswer' },
                             ' ',
                             masterPrompt.answer
+                        ),
+                        React.createElement(
+                            'button',
+                            { className: 'reportButton', onClick: reportAnswer },
+                            'Report'
+                        ),
+                        React.createElement(
+                            'span',
+                            { type: 'hidden', className: 'answerId' },
+                            masterPrompt._id
                         )
                     )
                 )
@@ -83,7 +115,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
                     'div',
-                    { id: 'exploreLoveModal', className: 'exploreLoveModal' },
+                    _defineProperty({ id: 'exploreLoveModal', className: 'exploreLoveModal', key: masterPrompt._id }, 'className', 'answer'),
                     React.createElement(
                         'div',
                         { className: 'exploreLoveModalContent' },
@@ -97,6 +129,16 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             { className: 'promptAnswer' },
                             ' ',
                             masterPrompt.answer
+                        ),
+                        React.createElement(
+                            'button',
+                            { className: 'reportButton', onClick: reportAnswer },
+                            'Report'
+                        ),
+                        React.createElement(
+                            'span',
+                            { type: 'hidden', className: 'answerId' },
+                            masterPrompt._id
                         )
                     )
                 )
@@ -109,7 +151,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
                     'div',
-                    { id: 'exploreHappiestModal', className: 'exploreHappiestModal' },
+                    _defineProperty({ id: 'exploreHappiestModal', className: 'exploreHappiestModal', key: masterPrompt._id }, 'className', 'answer'),
                     React.createElement(
                         'div',
                         { className: 'exploreHappiestModalContent' },
@@ -123,6 +165,16 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             { className: 'promptAnswer' },
                             ' ',
                             masterPrompt.answer
+                        ),
+                        React.createElement(
+                            'button',
+                            { className: 'reportButton', onClick: reportAnswer },
+                            'Report'
+                        ),
+                        React.createElement(
+                            'span',
+                            { type: 'hidden', className: 'answerId' },
+                            masterPrompt._id
                         )
                     )
                 )
@@ -135,7 +187,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                 React.createElement('img', { src: '/assets/img/leafFILLER.png' }),
                 React.createElement(
                     'div',
-                    { id: 'exploreProudModal', className: 'exploreProudModal' },
+                    _defineProperty({ id: 'exploreProudModal', className: 'exploreProudModal', key: masterPrompt._id }, 'className', 'answer'),
                     React.createElement(
                         'div',
                         { className: 'exploreProudModalContent' },
@@ -149,6 +201,16 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             { className: 'promptAnswer' },
                             ' ',
                             masterPrompt.answer
+                        ),
+                        React.createElement(
+                            'button',
+                            { className: 'reportButton', onClick: reportAnswer },
+                            'Report'
+                        ),
+                        React.createElement(
+                            'span',
+                            { type: 'hidden', className: 'answerId' },
+                            masterPrompt._id
                         )
                     )
                 )
@@ -232,6 +294,14 @@ var ExploreProudModal = function ExploreProudModal(e) {
             exploreProudModal.style.display = "none";
         }
     };
+};
+
+var reportAnswer = function reportAnswer(e) {
+    var id = e.target.parentElement.querySelector('.answerId').innerText;
+
+    sendAjax('DELETE', '/reportMaster', { id: id }, function (data) {
+        loadExploreAnswers();
+    });
 };
 
 var loadExploreAnswers = function loadExploreAnswers() {
