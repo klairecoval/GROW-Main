@@ -248,3 +248,46 @@
     background-image: url("/assets/img/mobileBg.svg");
     color: white;
     display: inline; } }
+
+.leaf {
+  width: 10vw;
+  opacity: 1;
+  position: fixed;
+  stroke-width: 3;
+  stroke-opacity: "100%";
+  display: block;
+  margin: 20px auto; }
+
+.motionPath {
+  position: fixed;
+  width: 120vw;
+  stroke-width: 10;
+  stroke: "gray";
+  fill-opacity: "1";
+  transform: translate(-15vw);
+  left: -5rem;
+  z-index: -20; }
+
+.reverse {
+  transform: translate(-10vw) scale(-1, 1); }
+
+#mp1 {
+  top: 10vh; }
+
+#mp2 {
+  top: 20vh; }
+
+#mp3 {
+  top: 85vh; }
+
+#mp4 {
+  top: 76vh; }
+
+#mp5 {
+  top: 60vh; }
+
+#mp6 {
+  top: 35vh; }
+
+.exploreExcited, .exploreThankful, .exploreHappiest, .exploreProud, .exploreInspired, .exploreLove {
+  border: 1px solid red; }
