@@ -88,8 +88,9 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         React.createElement('img', { src: '/assets/img/LeafVariation1/Excited1.svg', className: 'exploreModalPromptLeaf' }),
                         React.createElement(
                             'h3',
-                            { className: 'lato' },
-                            'I\'M EXCITED FOR'
+                            { className: 'lato exploreModalTitle' },
+                            'I\'M EXCITED FORM ',
+                            React.createElement('img', { src: '/assets/img/PromptLine.svg' })
                         ),
                         React.createElement(
                             'h3',
@@ -131,9 +132,18 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 calcDate(masterPrompt.createdData.slice(0, 10))
                             ),
                             React.createElement(
-                                'button',
-                                { className: 'reportButton', onClick: reportAnswer },
-                                'Report'
+                                'p',
+                                { className: 'lato' },
+                                'Inappropriate submission?',
+                                React.createElement(
+                                    'button',
+                                    { className: 'reportButton', onClick: reportAnswer },
+                                    React.createElement(
+                                        'strong',
+                                        null,
+                                        'Let us know.'
+                                    )
+                                )
                             ),
                             React.createElement(
                                 'span',
@@ -215,8 +225,9 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         React.createElement('img', { src: '/assets/img/LeafVariation1/Thankful1.svg', className: 'exploreModalPromptLeaf' }),
                         React.createElement(
                             'h3',
-                            { className: 'lato' },
-                            'I\'M THANKFUL FOR'
+                            { className: 'lato exploreModalTitle' },
+                            'I\'M THANKFUL FOR ',
+                            React.createElement('img', { src: '/assets/img/PromptLine.svg' })
                         ),
                         React.createElement(
                             'h3',
@@ -257,10 +268,20 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 calcDate(masterPrompt.createdData.slice(0, 10))
                             ),
                             React.createElement(
-                                'button',
-                                { className: 'reportButton', onClick: reportAnswer },
-                                'Report'
+                                'p',
+                                { className: 'lato' },
+                                'Inappropriate submission?',
+                                React.createElement(
+                                    'button',
+                                    { className: 'reportButton', onClick: reportAnswer },
+                                    React.createElement(
+                                        'strong',
+                                        null,
+                                        'Let us know.'
+                                    )
+                                )
                             ),
+                            '                                ',
                             React.createElement(
                                 'span',
                                 { type: 'hidden', className: 'answerId' },
@@ -341,8 +362,9 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         React.createElement('img', { src: '/assets/img/LeafVariation1/Inspired1.svg', className: 'exploreModalPromptLeaf' }),
                         React.createElement(
                             'h3',
-                            { className: 'lato' },
-                            'I\'M INSPIRED BY'
+                            { className: 'lato exploreModalTitle' },
+                            'I\'M INSPIRED BY ',
+                            React.createElement('img', { src: '/assets/img/PromptLine.svg' })
                         ),
                         React.createElement(
                             'h3',
@@ -384,10 +406,20 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 calcDate(masterPrompt.createdData.slice(0, 10))
                             ),
                             React.createElement(
-                                'button',
-                                { className: 'reportButton', onClick: reportAnswer },
-                                'Report'
+                                'p',
+                                { className: 'lato' },
+                                'Inappropriate submission?',
+                                React.createElement(
+                                    'button',
+                                    { className: 'reportButton', onClick: reportAnswer },
+                                    React.createElement(
+                                        'strong',
+                                        null,
+                                        'Let us know.'
+                                    )
+                                )
                             ),
+                            '                                ',
                             React.createElement(
                                 'span',
                                 { type: 'hidden', className: 'answerId' },
@@ -468,8 +500,9 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         React.createElement('img', { src: '/assets/img/LeafVariation1/Love1.svg', className: 'exploreModalPromptLeaf' }),
                         React.createElement(
                             'h3',
-                            { className: 'lato' },
-                            'I LOVE'
+                            { className: 'lato exploreModalTitle' },
+                            'I LOVE ',
+                            React.createElement('img', { src: '/assets/img/PromptLine.svg' })
                         ),
                         React.createElement(
                             'h3',
@@ -511,10 +544,20 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 calcDate(masterPrompt.createdData.slice(0, 10))
                             ),
                             React.createElement(
-                                'button',
-                                { className: 'reportButton', onClick: reportAnswer },
-                                'Report'
+                                'p',
+                                { className: 'lato' },
+                                'Inappropriate submission?',
+                                React.createElement(
+                                    'button',
+                                    { className: 'reportButton', onClick: reportAnswer },
+                                    React.createElement(
+                                        'strong',
+                                        null,
+                                        'Let us know.'
+                                    )
+                                )
                             ),
+                            '                                ',
                             React.createElement(
                                 'span',
                                 { type: 'hidden', className: 'answerId' },
@@ -596,8 +639,9 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         React.createElement('img', { src: '/assets/img/LeafVariation1/Happiest1.svg', className: 'exploreModalPromptLeaf' }),
                         React.createElement(
                             'h3',
-                            { className: 'lato' },
-                            'I\'M HAPPIEST WHEN'
+                            { className: 'lato exploreModalTitle' },
+                            'I\'M HAPPIEST WHEN ',
+                            React.createElement('img', { src: '/assets/img/PromptLine.svg' })
                         ),
                         React.createElement(
                             'h3',
@@ -639,10 +683,20 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 calcDate(masterPrompt.createdData.slice(0, 10))
                             ),
                             React.createElement(
-                                'button',
-                                { className: 'reportButton', onClick: reportAnswer },
-                                'Report'
+                                'p',
+                                { className: 'lato' },
+                                'Inappropriate submission?',
+                                React.createElement(
+                                    'button',
+                                    { className: 'reportButton', onClick: reportAnswer },
+                                    React.createElement(
+                                        'strong',
+                                        null,
+                                        'Let us know.'
+                                    )
+                                )
                             ),
+                            '                                ',
                             React.createElement(
                                 'span',
                                 { type: 'hidden', className: 'answerId' },
@@ -724,8 +778,9 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         React.createElement('img', { src: '/assets/img/LeafVariation1/Proud1.svg', className: 'exploreModalPromptLeaf' }),
                         React.createElement(
                             'h3',
-                            { className: 'lato' },
-                            'I\'M PROUD OF'
+                            { className: 'lato exploreModalTitle' },
+                            'I\'M PROUD OF ',
+                            React.createElement('img', { src: '/assets/img/PromptLine.svg' })
                         ),
                         React.createElement(
                             'h3',
@@ -767,10 +822,20 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 calcDate(masterPrompt.createdData.slice(0, 10))
                             ),
                             React.createElement(
-                                'button',
-                                { className: 'reportButton', onClick: reportAnswer },
-                                'Report'
+                                'p',
+                                { className: 'lato' },
+                                'Inappropriate submission?',
+                                React.createElement(
+                                    'button',
+                                    { className: 'reportButton', onClick: reportAnswer },
+                                    React.createElement(
+                                        'strong',
+                                        null,
+                                        'Let us know.'
+                                    )
+                                )
                             ),
+                            '                                ',
                             React.createElement(
                                 'span',
                                 { type: 'hidden', className: 'answerId' },
@@ -873,9 +938,11 @@ var ExploreHappiestModal = function ExploreHappiestModal(e) {
         exploreHappiestModal.style.display = "block";
     }
 
-    dismissHappiestExplore.onclick = function () {
-        exploreHappiestModal.style.display = "none";
-    };
+    if (dismissHappiestExplore) {
+        dismissHappiestExplore.onclick = function () {
+            exploreHappiestModal.style.display = "none";
+        };
+    }
 
     window.onclick = function (event) {
         if (event.target === exploreHappiestModal) {

@@ -3,6 +3,7 @@ $pinkBtnBackground: #ED7163;
 $blackBlue: #070822;
 $grey: #AAAAAA;
 $promptOutline: #E5E5E5;
+$greySubtext: #585858;
 
 // prompt color variables
 $inspiredOrange: #FEA050;
@@ -118,15 +119,16 @@ $thankfulGreen: #55D897;
     background-color: rgba(0,0,0,0.4); 
 }
 
-
 // explore modals content
 .exploreThankfulModalContent, .exploreExcitedModalContent, .exploreInspiredModalContent, .exploreLoveModalContent, .exploreHappiestModalContent, .exploreProudModalContent {
     background-color: white;
     color: $blackBlue;
     margin: auto;
-    padding: 20px;
     width: 690px;
     height: 525px;
+}
+.exploreModalTitle {
+    color: $greySubtext;
 }
 .promptAnswer {
     color: $blackBlue;
@@ -153,6 +155,16 @@ $thankfulGreen: #55D897;
 }
 #thankfulExploreColorModal {
     background: #E1FFF0;
+}
+
+.exploreModalPromptLeaf {
+    float: right;
+    margin-top: -3.1rem;
+    margin-right:-3.1rem
+}
+
+.reportButton {
+    text-decoration: underline;
 }
 
 .answerId {
@@ -304,10 +316,13 @@ $thankfulGreen: #55D897;
 }
 
 // back buttons
-.back2prompts, .back2explore, .dismissExploreModal {
+.back2prompts, .back2explore, {
     background: none;
     border: none;
     color: white;
+}
+.dismissExploreModal {
+    color: $blackBlue;
 }
 
 // mobile screen
@@ -346,6 +361,7 @@ $thankfulGreen: #55D897;
     stroke-opacity:"100%";
     display: block;
     margin: 20px auto;
+    border: 1px solid red;
 }
 
 .motionPath {
@@ -363,26 +379,26 @@ $thankfulGreen: #55D897;
     transform: translate(-10vw) scale(-1,1);
 }
 
-#mp1{
-    top: 10vh;
-}
+// #mp1{
+//     top: 10vh;
+// }
 
-#mp2{
-    top: 20vh;
-}
+// #mp2{
+//     top: 20vh;
+// }
 
-#mp3{
-    top: 85vh;
-}
+// #mp3{
+//     top: 85vh;
+// }
 
-#mp4{
-    top:76vh;
-}
+// #mp4{
+//     top:76vh;
+// }
 
-#mp5{
-    top: 60vh;
-}
+// #mp5{
+//     top: 60vh;
+// }
 
-#mp6{
-    top: 35vh;
-}
+// #mp6{
+//     top: 35vh;
+// }

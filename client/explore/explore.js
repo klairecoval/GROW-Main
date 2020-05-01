@@ -50,7 +50,7 @@ const ExploreAnswers = function(props) {
                         <div className="exploreExcitedModalContent answer">
                             <button className="playfair dismissExploreModal" id="dismissExcitedExplore">Back</button>
                             <img src="/assets/img/LeafVariation1/Excited1.svg" className="exploreModalPromptLeaf"/>
-                            <h3 className="lato">I'M EXCITED FOR</h3>
+                            <h3 className="lato exploreModalTitle">I'M EXCITED FORM <img src="/assets/img/PromptLine.svg"/></h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="exploreColorModal" id="excitedExploreColorModal">
                                 <div className="socialMediaShareBtns">
@@ -66,7 +66,10 @@ const ExploreAnswers = function(props) {
                                     </a>
                                 </div>
                                 <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
-                                <button className='reportButton' onClick={reportAnswer}>Report</button>
+                                <p className="lato">
+                                    Inappropriate submission?
+                                    <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
+                                </p>
                                 <span type="hidden" className="answerId">{masterPrompt._id}</span>
                             </div>
                         </div>
@@ -115,7 +118,7 @@ const ExploreAnswers = function(props) {
                         <div className="exploreThankfulModalContent answer">
                             <button className="playfair dismissExploreModal" id="dismissThankfulExplore">Back</button>
                             <img src="/assets/img/LeafVariation1/Thankful1.svg"  className="exploreModalPromptLeaf" />
-                            <h3 className="lato">I'M THANKFUL FOR</h3>
+                            <h3 className="lato exploreModalTitle">I'M THANKFUL FOR <img src="/assets/img/PromptLine.svg"/></h3>
                             <h3 className='promptAnswer'>{masterPrompt.answer}</h3>
                             <div className="exploreColorModal" id="thankfulExploreColorModal">
                                 <div className="socialMediaShareBtns">
@@ -131,8 +134,10 @@ const ExploreAnswers = function(props) {
                                     </a>
                                 </div>
                                 <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
-                                <button className='reportButton' onClick={reportAnswer}>Report</button>
-                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
+                                <p className="lato">
+                                    Inappropriate submission?
+                                    <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
+                                </p>                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
                             </div>
                         </div>
                     </div>
@@ -180,7 +185,7 @@ const ExploreAnswers = function(props) {
                         <div className="exploreInspiredModalContent answer">
                             <button className="playfair dismissExploreModal" id="dismissInspiredExplore">Back</button>
                             <img src="/assets/img/LeafVariation1/Inspired1.svg"  className="exploreModalPromptLeaf" />
-                            <h3 className="lato">I'M INSPIRED BY</h3>
+                            <h3 className="lato exploreModalTitle">I'M INSPIRED BY <img src="/assets/img/PromptLine.svg"/></h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="exploreColorModal" id="inspiredExploreColorModal">
                                 <div className="socialMediaShareBtns">
@@ -196,8 +201,10 @@ const ExploreAnswers = function(props) {
                                     </a>
                                 </div>
                                 <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
-                                <button className='reportButton' onClick={reportAnswer}>Report</button>
-                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
+                                <p className="lato">
+                                    Inappropriate submission?
+                                    <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
+                                </p>                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
                             </div>
                         </div>
                     </div>
@@ -245,7 +252,7 @@ const ExploreAnswers = function(props) {
                         <div className="exploreLoveModalContent answer">
                             <button className="playfair dismissExploreModal" id="dismissLoveExplore">Back</button>
                             <img src="/assets/img/LeafVariation1/Love1.svg"  className="exploreModalPromptLeaf" />
-                            <h3 className="lato">I LOVE</h3>
+                            <h3 className="lato exploreModalTitle">I LOVE <img src="/assets/img/PromptLine.svg"/></h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="exploreColorModal" id="loveExploreColorModal">
                                 <div className="socialMediaShareBtns">
@@ -261,8 +268,10 @@ const ExploreAnswers = function(props) {
                                     </a>
                                 </div>
                                 <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
-                                <button className='reportButton' onClick={reportAnswer}>Report</button>
-                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
+                                <p className="lato">
+                                    Inappropriate submission?
+                                    <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
+                                </p>                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
                             </div>
                         </div>
                     </div>
@@ -311,7 +320,7 @@ const ExploreAnswers = function(props) {
                         <div className="exploreHappiestModalContent answer">
                             <button className="playfair dismissExploreModal" id="dismissHappiestExplore">Back</button>
                             <img src="/assets/img/LeafVariation1/Happiest1.svg"  className="exploreModalPromptLeaf" />
-                            <h3 className="lato">I'M HAPPIEST WHEN</h3>
+                            <h3 className="lato exploreModalTitle">I'M HAPPIEST WHEN <img src="/assets/img/PromptLine.svg"/></h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="exploreColorModal" id="happiestExploreColorModal">
                                 <div className="socialMediaShareBtns">
@@ -327,8 +336,10 @@ const ExploreAnswers = function(props) {
                                     </a>
                                 </div>
                                 <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
-                                <button className='reportButton' onClick={reportAnswer}>Report</button>
-                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
+                                <p className="lato">
+                                    Inappropriate submission?
+                                    <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
+                                </p>                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
                             </div>
                         </div>
                     </div>
@@ -377,7 +388,7 @@ const ExploreAnswers = function(props) {
                         <div className="exploreProudModalContent answer">
                             <button className="playfair dismissExploreModal" id="dismissProudExplore">Back</button>
                             <img src="/assets/img/LeafVariation1/Proud1.svg"  className="exploreModalPromptLeaf" />
-                            <h3 className="lato">I'M PROUD OF</h3>
+                            <h3 className="lato exploreModalTitle">I'M PROUD OF <img src="/assets/img/PromptLine.svg"/></h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="exploreColorModal" id="proudExploreColorModal">
                                 <div className="socialMediaShareBtns">
@@ -393,8 +404,10 @@ const ExploreAnswers = function(props) {
                                     </a>
                                 </div>
                                 <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
-                                <button className='reportButton' onClick={reportAnswer}>Report</button>
-                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
+                                <p className="lato">
+                                    Inappropriate submission?
+                                    <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
+                                </p>                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
                             </div>
                         </div>
                     </div>
@@ -494,8 +507,10 @@ const ExploreHappiestModal = (e) => {
         exploreHappiestModal.style.display = "block";
     }
 
-    dismissHappiestExplore.onclick = () => {
-        exploreHappiestModal.style.display = "none";
+    if(dismissHappiestExplore) {
+        dismissHappiestExplore.onclick = () => {
+            exploreHappiestModal.style.display = "none";
+        }
     }
     
     window.onclick = (event) => {
@@ -514,12 +529,12 @@ const ExploreProudModal = (e) => {
     }
 
     dismissProudExplore.onclick = () => {
-        exploreProudModal.style.display = "none";
+            exploreProudModal.style.display = "none";
     }
     
     window.onclick = (event) => {
         if (event.target === exploreProudModal) {
-            exploreProudModal.style.display = "none";
+                exploreProudModal.style.display = "none";
         }
     }
 };

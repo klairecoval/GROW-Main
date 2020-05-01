@@ -86,9 +86,11 @@
   background-color: white;
   color: #070822;
   margin: auto;
-  padding: 20px;
   width: 690px;
   height: 525px; }
+
+.exploreModalTitle {
+  color: #585858; }
 
 .promptAnswer {
   color: #070822;
@@ -112,6 +114,14 @@
 
 #thankfulExploreColorModal {
   background: #E1FFF0; }
+
+.exploreModalPromptLeaf {
+  float: right;
+  margin-top: -3.1rem;
+  margin-right: -3.1rem; }
+
+.reportButton {
+  text-decoration: underline; }
 
 .answerId {
   display: none; }
@@ -235,10 +245,13 @@
     border: 1px solid #ED7163;
     color: #ED7163; }
 
-.back2prompts, .back2explore, .dismissExploreModal {
+.back2prompts, .back2explore {
   background: none;
   border: none;
   color: white; }
+
+.dismissExploreModal {
+  color: #070822; }
 
 .mobile {
   display: none; }
@@ -256,7 +269,8 @@
   stroke-width: 3;
   stroke-opacity: "100%";
   display: block;
-  margin: 20px auto; }
+  margin: 20px auto;
+  border: 1px solid red; }
 
 .motionPath {
   position: fixed;
@@ -270,21 +284,3 @@
 
 .reverse {
   transform: translate(-10vw) scale(-1, 1); }
-
-#mp1 {
-  top: 10vh; }
-
-#mp2 {
-  top: 20vh; }
-
-#mp3 {
-  top: 85vh; }
-
-#mp4 {
-  top: 76vh; }
-
-#mp5 {
-  top: 60vh; }
-
-#mp6 {
-  top: 35vh; }
