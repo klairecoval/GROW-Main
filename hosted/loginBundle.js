@@ -88,6 +88,15 @@ var CodeModal = function CodeModal(props) {
             'div',
             { className: 'userCodeModalContent' },
             React.createElement(
+                'a',
+                { href: '/aboutPage', target: '_parent' },
+                React.createElement(
+                    'button',
+                    { className: 'playfair' },
+                    'Back'
+                )
+            ),
+            React.createElement(
                 'h2',
                 { className: 'playfair' },
                 'Enter Grow'
@@ -123,22 +132,22 @@ var copyDivToClipboard = function copyDivToClipboard() {
 
 // create login view in center of page
 var createLoginWindow = function createLoginWindow() {
-    ReactDOM.render(React.createElement(LoginWindow, null), document.querySelector('#content'));
+    ReactDOM.render(React.createElement(LoginWindow, null), document.querySelector('#loginContent'));
 };
 
 // create signup view in center of page
 var createSignupWindow = function createSignupWindow() {
-    ReactDOM.render(React.createElement(SignupWindow, null), document.querySelector('#content'));
+    ReactDOM.render(React.createElement(SignupWindow, null), document.querySelector('#loginContent'));
 };
 
 var createCodeModal = function createCodeModal() {
-    ReactDOM.render(React.createElement(CodeModal, null), document.querySelector('#content'));
+    ReactDOM.render(React.createElement(CodeModal, null), document.querySelector('#loginContent'));
 };
 
 // depending on if login or signup icon pressed, create corresponding view
 var setup = function setup() {
-    createLoginWindow();
-    // createCodeModal();
+    // createLoginWindow();
+    createCodeModal();
 };
 
 // load in csrf token

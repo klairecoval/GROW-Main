@@ -5,7 +5,8 @@
   font-family: 'Lato', sans-serif; }
 
 #exploreBody, #promptBody, #aboutBody, #dataVisBody, #loginBody {
-  background-image: url("/assets/img/background.svg"); }
+  background-image: url("/assets/img/background.svg");
+  overflow: hidden; }
 
 #introVid {
   position: fixed;
@@ -28,6 +29,35 @@
 #startBtn {
   width: 100%;
   text-align: center; }
+
+#loginAbout {
+  width: 45%; }
+
+#loginAboutText {
+  color: white; }
+
+.userCodeModal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+.userCodeModalContent {
+  float: right;
+  width: 45%;
+  background: white;
+  float: right;
+  color: #070822;
+  height: 100%;
+  margin-top: 0; }
+
+#userCodeVal {
+  font-size: 64px; }
 
 #copyCodeBtn {
   background: #070822;
@@ -121,7 +151,12 @@
   margin-right: -3.1rem; }
 
 .reportButton {
-  text-decoration: underline; }
+  text-decoration: underline;
+  background: none;
+  border: none;
+  color: #070822; }
+  .reportButton:hover {
+    color: #ED7163; }
 
 .answerId {
   display: none; }
@@ -251,7 +286,11 @@
   color: white; }
 
 .dismissExploreModal {
-  color: #070822; }
+  color: #070822;
+  background: none;
+  border: none; }
+  .dismissExploreModal:hover {
+    color: #ED7163; }
 
 .mobile {
   display: none; }
@@ -269,8 +308,7 @@
   stroke-width: 3;
   stroke-opacity: "100%";
   display: block;
-  margin: 20px auto;
-  border: 1px solid red; }
+  margin: 20px auto; }
 
 .motionPath {
   position: fixed;

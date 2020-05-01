@@ -24,6 +24,7 @@ $thankfulGreen: #55D897;
 // backgrounds
 #exploreBody, #promptBody, #aboutBody, #dataVisBody, #loginBody {
     background-image: url("/assets/img/background.svg");
+    overflow: hidden;
 }
 
 // about screen
@@ -53,6 +54,35 @@ $thankfulGreen: #55D897;
     text-align: center;
 }
 
+//login page
+#loginAbout {
+    width: 45%
+}
+#loginAboutText {
+    color: white;
+}
+.userCodeModal {
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+.userCodeModalContent {
+    float: right;
+    width: 45%;
+    background: white;
+    float: right;
+    color: $blackBlue;
+    height: 100%;
+    margin-top: 0;}
+#userCodeVal {
+    font-size: 64px;
+}
 #copyCodeBtn {
     background: $blackBlue;
     color: white;
@@ -165,6 +195,12 @@ $thankfulGreen: #55D897;
 
 .reportButton {
     text-decoration: underline;
+    background: none;
+    border: none;
+    color: $blackBlue;
+    &:hover {
+        color: $pinkBtnBackground;
+    }
 }
 
 .answerId {
@@ -323,6 +359,11 @@ $thankfulGreen: #55D897;
 }
 .dismissExploreModal {
     color: $blackBlue;
+    background: none;
+    border: none;
+    &:hover {
+        color: $pinkBtnBackground;
+    }
 }
 
 // mobile screen
@@ -361,7 +402,6 @@ $thankfulGreen: #55D897;
     stroke-opacity:"100%";
     display: block;
     margin: 20px auto;
-    border: 1px solid red;
 }
 
 .motionPath {

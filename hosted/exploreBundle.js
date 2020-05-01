@@ -862,9 +862,11 @@ var ExploreThankfulModal = function ExploreThankfulModal(e) {
         exploreThankfulModal.style.display = "block";
     }
 
-    dismissThankfulExplore.onclick = function () {
-        exploreThankfulModal.style.display = "none";
-    };
+    if (dismissThankfulExplore) {
+        dismissThankfulExplore.onclick = function () {
+            exploreThankfulModal.style.display = "none";
+        };
+    }
 
     window.onclick = function (event) {
         if (event.target === exploreThankfulModal) {
@@ -881,9 +883,11 @@ var ExploreExcitedModal = function ExploreExcitedModal(e) {
         exploreExcitedModal.style.display = "block";
     }
 
-    dismissExcitedExplore.onclick = function () {
-        exploreExcitedModal.style.display = "none";
-    };
+    if (dismissExcitedExplore) {
+        dismissExcitedExplore.onclick = function () {
+            exploreExcitedModal.style.display = "none";
+        };
+    }
 
     window.onclick = function (event) {
         if (event.target === exploreExcitedModal) {
@@ -900,9 +904,11 @@ var ExploreInspiredModal = function ExploreInspiredModal(e) {
         exploreInspiredModal.style.display = "block";
     }
 
-    dismissInspiredExplore.onclick = function () {
-        exploreInspiredModal.style.display = "none";
-    };
+    if (dismissInspiredExplore) {
+        dismissInspiredExplore.onclick = function () {
+            exploreInspiredModal.style.display = "none";
+        };
+    }
 
     window.onclick = function (event) {
         if (event.target === exploreInspiredModal) {
@@ -919,9 +925,11 @@ var ExploreLoveModal = function ExploreLoveModal(e) {
         exploreLoveModal.style.display = "block";
     }
 
-    dismissLoveExplore.onclick = function () {
-        exploreLoveModal.style.display = "none";
-    };
+    if (dismissLoveExplore) {
+        dismissLoveExplore.onclick = function () {
+            exploreLoveModal.style.display = "none";
+        };
+    }
 
     window.onclick = function (event) {
         if (event.target === exploreLoveModal) {
@@ -959,9 +967,11 @@ var ExploreProudModal = function ExploreProudModal(e) {
         exploreProudModal.style.display = "block";
     }
 
-    dismissProudExplore.onclick = function () {
-        exploreProudModal.style.display = "none";
-    };
+    if (dismissProudExplore) {
+        dismissProudExplore.onclick = function () {
+            exploreProudModal.style.display = "none";
+        };
+    }
 
     window.onclick = function (event) {
         if (event.target === exploreProudModal) {

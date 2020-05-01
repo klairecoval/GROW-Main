@@ -76,6 +76,7 @@ const CodeModal = (props) => {
     return (
         <div className="userCodeModal" id="userCodeModal" >
             <div className="userCodeModalContent">
+                <a href="/aboutPage" target="_parent"><button className="playfair">Back</button></a>
                 <h2 className="playfair">Enter Grow</h2>
                 <p className="lato">Please copy the code below and paste it in the text box to enter. Thank you for keeping the garden safe.</p>
                 <div id="userCodeVal" className="playfair">{generateUserCode(4)}</div>
@@ -99,7 +100,7 @@ const copyDivToClipboard = () => {
 const createLoginWindow = () => {
     ReactDOM.render(
         <LoginWindow />,
-        document.querySelector('#content')
+        document.querySelector('#loginContent')
     );
 };
 
@@ -107,21 +108,21 @@ const createLoginWindow = () => {
 const createSignupWindow = () => {
     ReactDOM.render(
         <SignupWindow />,
-        document.querySelector('#content')
+        document.querySelector('#loginContent')
     );
 };
 
 const createCodeModal = () => {
     ReactDOM.render(
         <CodeModal />, 
-        document.querySelector('#content')
+        document.querySelector('#loginContent')
     );
 }
 
 // depending on if login or signup icon pressed, create corresponding view
 const setup = () => {
-    createLoginWindow();
-    // createCodeModal();
+    // createLoginWindow();
+    createCodeModal();
 };
 
 // load in csrf token

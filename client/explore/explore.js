@@ -431,8 +431,10 @@ const ExploreThankfulModal = (e) => {
         exploreThankfulModal.style.display = "block";
     }
 
-    dismissThankfulExplore.onclick = () => {
-        exploreThankfulModal.style.display = "none";
+    if(dismissThankfulExplore) {
+        dismissThankfulExplore.onclick = () => {
+            exploreThankfulModal.style.display = "none";
+        }
     }
     
     window.onclick = (event) => {
@@ -450,8 +452,10 @@ const ExploreExcitedModal = (e) => {
         exploreExcitedModal.style.display = "block";
     }
 
-    dismissExcitedExplore.onclick = () => {
-        exploreExcitedModal.style.display = "none";
+    if(dismissExcitedExplore) {
+        dismissExcitedExplore.onclick = () => {
+            exploreExcitedModal.style.display = "none";
+        }
     }
     
     window.onclick = (event) => {
@@ -469,8 +473,10 @@ const ExploreInspiredModal = (e) => {
         exploreInspiredModal.style.display = "block";
     }
 
-    dismissInspiredExplore.onclick = () => {
-        exploreInspiredModal.style.display = "none";
+    if(dismissInspiredExplore) {
+        dismissInspiredExplore.onclick = () => {
+            exploreInspiredModal.style.display = "none";
+        }
     }
     
     window.onclick = (event) => {
@@ -488,8 +494,10 @@ const ExploreLoveModal = (e) => {
         exploreLoveModal.style.display = "block";
     }
 
-    dismissLoveExplore.onclick = () => {
-        exploreLoveModal.style.display = "none";
+    if(dismissLoveExplore) {
+        dismissLoveExplore.onclick = () => {
+            exploreLoveModal.style.display = "none";
+        }
     }
     
     window.onclick = (event) => {
@@ -528,8 +536,10 @@ const ExploreProudModal = (e) => {
         exploreProudModal.style.display = "block";
     }
 
-    dismissProudExplore.onclick = () => {
+    if(dismissProudExplore) {
+        dismissProudExplore.onclick = () => {
             exploreProudModal.style.display = "none";
+        }
     }
     
     window.onclick = (event) => {
