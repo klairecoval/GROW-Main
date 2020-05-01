@@ -19,6 +19,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Lato|Playfair+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
+  {{!-- <link rel="stylesheet" href="/assets/styles/exploreStyles.css"> --}}
 </head>
 
 <body id="exploreBody">
@@ -27,9 +28,28 @@
     <a href="/promptPage" target="_parent" id="promptPageBtn" class="playfair"><button id="submitThoughtBtn">Submit thought</button></a>
     <a href="/dataVisPage" target="_parent" id="dataVisBtn" class="playfair"><button id="totalSubBtn">Total submissions</button></a>
 
+    <svg class="motionPath" id="mp1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1921.53 349.13"><path class="cls-1" id="path1" d="M-.5,610.5s14.52,35,528.86-225,403.39-33,703.08,64,459.39-52,688.56-27" transform="translate(1.42 -263.94)"/></svg>
+
+    <svg class="motionPath reverse" id="mp2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920.58 389.18"><defs><style>.cls-1{fill:none;stroke:none;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="cls-1" id="path2" d="M1919.5,610.5S1838.39,975,1324.31,715s-470.07-116-769.6-19S229.05,397.5,0,422.5" transform="translate(0.11 -420.36)"/></svg>
+
+    <svg class="motionPath" id="mp3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920.58 389.18"><defs><style>.cls-1{fill:none;stroke:none;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="cls-1" id="path3" d="M0,70.7c0,0,461.5,440.9,662.3,167.1c75.1-102.4,419.6,42.7,570.5,34.4c52.7-2.9,293.5-114.4,688.6,143.3" transform="translate(0.11 -420.36)"/></svg>
+
+    <svg class="motionPath" id="mp4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920.58 389.18"><defs><style>.cls-1{fill:none;stroke:none;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="cls-1" id="path4" d="M0,271.6c0,0,248.5-566.3,529.8-63.3c62,110.8,273.7,385.3,703.1,64c471.3-352.7,190.4-32.7,688.6-27" transform="translate(0.11 -420.36)"/></svg>
+
+    <svg class="motionPath" id="mp5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1921.53 349.13"><path class="cls-1" id="path5" d="M-.5,610.5s14.52,35,528.86-225,403.39-33,703.08,64,459.39-52,688.56-27" transform="translate(1.42 -263.94)"/></svg>
+
+    <svg class="motionPath reverse" id="mp6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920.58 389.18"><defs><style>.cls-1{fill:none;stroke:none;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="cls-1" id="path6" d="M1919.5,610.5S1838.39,975,1324.31,715s-470.07-116-769.6-19S229.05,397.5,0,422.5" transform="translate(0.11 -420.36)"/></svg>
+
   <div class="error">
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/MotionPathPlugin.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/EasePack.min.js"></script>
+
   <script src="/assets/exploreBundle.js"></script>
+  {{!-- <script src="/assets/leaves.js"></script> --}}
 </body>
 
 </html> 
