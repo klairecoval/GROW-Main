@@ -144,14 +144,28 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                         'Let us know.'
                                     )
                                 )
-                            ),
-                            React.createElement(
-                                'span',
-                                { type: 'hidden', className: 'answerId' },
-                                masterPrompt._id
                             )
                         )
                     )
+                ),
+                React.createElement(
+                    'p',
+                    { className: 'lato report' },
+                    'Inappropriate submission?',
+                    React.createElement(
+                        'button',
+                        { className: 'reportButton', onClick: reportAnswer },
+                        React.createElement(
+                            'strong',
+                            null,
+                            'Let us know.'
+                        )
+                    )
+                ),
+                React.createElement(
+                    'span',
+                    { className: 'answerId' },
+                    masterPrompt._id
                 )
             );
         } else if (masterPrompt.category === "thankful") {
@@ -280,15 +294,14 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                         'Let us know.'
                                     )
                                 )
-                            ),
-                            '                                ',
-                            React.createElement(
-                                'span',
-                                { type: 'hidden', className: 'answerId' },
-                                masterPrompt._id
                             )
                         )
                     )
+                ),
+                React.createElement(
+                    'span',
+                    { className: 'answerId' },
+                    masterPrompt._id
                 )
             );
         } else if (masterPrompt.category === "inspired") {
@@ -418,15 +431,14 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                         'Let us know.'
                                     )
                                 )
-                            ),
-                            '                                ',
-                            React.createElement(
-                                'span',
-                                { type: 'hidden', className: 'answerId' },
-                                masterPrompt._id
                             )
                         )
                     )
+                ),
+                React.createElement(
+                    'span',
+                    { className: 'answerId' },
+                    masterPrompt._id
                 )
             );
         } else if (masterPrompt.category === "love") {
@@ -556,15 +568,14 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                         'Let us know.'
                                     )
                                 )
-                            ),
-                            '                                ',
-                            React.createElement(
-                                'span',
-                                { type: 'hidden', className: 'answerId' },
-                                masterPrompt._id
                             )
                         )
                     )
+                ),
+                React.createElement(
+                    'span',
+                    { className: 'answerId' },
+                    masterPrompt._id
                 )
             );
         }
@@ -695,15 +706,14 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                         'Let us know.'
                                     )
                                 )
-                            ),
-                            '                                ',
-                            React.createElement(
-                                'span',
-                                { type: 'hidden', className: 'answerId' },
-                                masterPrompt._id
                             )
                         )
                     )
+                ),
+                React.createElement(
+                    'span',
+                    { className: 'answerId' },
+                    masterPrompt._id
                 )
             );
         }
@@ -834,15 +844,14 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                         'Let us know.'
                                     )
                                 )
-                            ),
-                            '                                ',
-                            React.createElement(
-                                'span',
-                                { type: 'hidden', className: 'answerId' },
-                                masterPrompt._id
                             )
                         )
                     )
+                ),
+                React.createElement(
+                    'span',
+                    { className: 'answerId' },
+                    masterPrompt._id
                 )
             );
         }
@@ -1249,7 +1258,10 @@ var moveLeaves = function moveLeaves() {
 };
 
 var reportAnswer = function reportAnswer(e) {
-    var id = e.target.parentElement.querySelector('.answerId').innerText;
+    console.log('entered report');
+    console.log(e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector('.answerId'));
+
+    var id = e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector('.answerId').innerText;
 
     sendAjax('DELETE', '/reportMaster', { id: id }, function (data) {
         loadExploreAnswers();

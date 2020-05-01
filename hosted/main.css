@@ -285,9 +285,6 @@ button:hover {
   .reportButton:hover {
     color: #ED7163; }
 
-.answerId {
-  display: none; }
-
 .closeModalBtn {
   background: white;
   border: 1px solid #070822;
