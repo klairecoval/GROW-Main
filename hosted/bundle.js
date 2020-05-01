@@ -41,7 +41,6 @@ var ExcitedTitle = function ExcitedTitle(props) {
         React.createElement(
             "button",
             { id: "excitedBackBtn", className: "playfair back2prompts" },
-            React.createElement("img", { src: "/assets/img/arrow.svg", className: "backArrow" }),
             "Back to prompts"
         ),
         React.createElement(
@@ -76,7 +75,7 @@ var ExcitedForm = function ExcitedForm(props) {
         ),
         React.createElement(BackModal, null),
         React.createElement(ExcitedSubmitModal, null),
-        React.createElement("img", { src: "/assets/img/PromptAnswerLeves/ExcitedLeaf.svg", className: "promptAnswerLeaf" })
+        React.createElement("img", { src: "/assets/img/PromptAnswerLeaves/ExcitedLeaf.svg", className: "promptAnswerLeaf" })
     );
 };
 
@@ -89,12 +88,12 @@ var ExcitedSubmitModal = function ExcitedSubmitModal() {
             { className: "excitedSubmitContent" },
             React.createElement(
                 "h1",
-                { className: "playfair" },
+                { className: "playfair submitModalTitle" },
                 "All finished?"
             ),
             React.createElement(
                 "p",
-                { className: "lato" },
+                { className: "lato submitModalSubtext" },
                 "This will submit your response to your card.",
                 React.createElement("br", null),
                 "Don\u2019t worry, they\u2019re all anonymous."
@@ -178,7 +177,6 @@ var HappiestTitle = function HappiestTitle(props) {
         React.createElement(
             "button",
             { className: "playfair back2prompts", id: "happiestBackBtn" },
-            React.createElement("img", { src: "/assets/img/arrow.svg", className: "backArrow" }),
             "Back to prompts"
         ),
         React.createElement(
@@ -226,12 +224,12 @@ var HappiestSubmitModal = function HappiestSubmitModal() {
             { className: "happiestSubmitContent" },
             React.createElement(
                 "h1",
-                { className: "playfair" },
+                { className: "playfair submitModalTitle" },
                 "All finished?"
             ),
             React.createElement(
                 "p",
-                { className: "lato" },
+                { className: "lato submitModalSubtext" },
                 "This will submit your response to your card.",
                 React.createElement("br", null),
                 "Don\u2019t worry, they\u2019re all anonymous."
@@ -315,7 +313,6 @@ var InspiredTitle = function InspiredTitle(props) {
         React.createElement(
             "button",
             { className: "playfair back2prompts", id: "inspiredBackBtn" },
-            React.createElement("img", { src: "/assets/img/arrow.svg", className: "backArrow" }),
             "Back to prompts"
         ),
         React.createElement(
@@ -363,12 +360,12 @@ var InspiredSubmitModal = function InspiredSubmitModal() {
             { className: "inspiredSubmitContent" },
             React.createElement(
                 "h1",
-                { className: "playfair" },
+                { className: "playfair submitModalTitle" },
                 "All finished?"
             ),
             React.createElement(
                 "p",
-                { className: "lato" },
+                { className: "lato submitModalSubtext" },
                 "This will submit your response to your card.",
                 React.createElement("br", null),
                 "Don\u2019t worry, they\u2019re all anonymous."
@@ -452,7 +449,6 @@ var LoveTitle = function LoveTitle(props) {
         React.createElement(
             "button",
             { className: "playfair back2prompts", id: "loveBackBtn" },
-            React.createElement("img", { src: "/assets/img/arrow.svg", className: "backArrow" }),
             "Back to prompts"
         ),
         React.createElement(
@@ -500,12 +496,12 @@ var LoveSubmitModal = function LoveSubmitModal() {
             { className: "loveSubmitContent" },
             React.createElement(
                 "h1",
-                { className: "playfair" },
+                { className: "playfair submitModalTitle" },
                 "All finished?"
             ),
             React.createElement(
                 "p",
-                { className: "lato" },
+                { className: "lato submitModalSubtext" },
                 "This will submit your response to your card.",
                 React.createElement("br", null),
                 "Don\u2019t worry, they\u2019re all anonymous."
@@ -560,19 +556,22 @@ var PromptTitle = function PromptTitle(props) {
             React.createElement(
                 "button",
                 { className: "back2explore playfair" },
-                React.createElement("img", { src: "/assets/img/arrow.svg", className: "backArrow" }),
                 "Back to explore"
             )
         ),
         React.createElement(
-            "h3",
-            { className: "lato", id: "promptPageTitle" },
-            "THOUGHT SUBMISSION"
-        ),
-        React.createElement(
-            "h1",
-            { className: "playfair", id: "promptPageSubtitle" },
-            "Choose your prompt"
+            "div",
+            { id: "selectPromptPageTitleText" },
+            React.createElement(
+                "h3",
+                { className: "lato", id: "promptPageTitle" },
+                "THOUGHT SUBMISSION"
+            ),
+            React.createElement(
+                "h1",
+                { className: "playfair", id: "promptPageSubtitle" },
+                "Choose your prompt"
+            )
         )
     );
 };
@@ -586,14 +585,14 @@ var BackModal = function BackModal() {
             { className: "backModalContent" },
             React.createElement(
                 "h1",
-                { className: "playfair" },
+                { className: "playfair backModalTitle" },
                 "Are you sure you ",
                 React.createElement("br", null),
                 "want to go back?"
             ),
             React.createElement(
                 "p",
-                { className: "lato" },
+                { className: "lato backModalSubtext" },
                 "Going back now will lose your progress."
             ),
             React.createElement(
@@ -819,7 +818,6 @@ var ProudTitle = function ProudTitle(props) {
         React.createElement(
             "button",
             { className: "playfair back2prompts", id: "proudBackBtn" },
-            React.createElement("img", { src: "/assets/img/arrow.svg", className: "backArrow" }),
             "Back to prompts"
         ),
         React.createElement(
@@ -867,12 +865,12 @@ var ProudSubmitModal = function ProudSubmitModal() {
             { className: "proudSubmitContent" },
             React.createElement(
                 "h1",
-                { className: "playfair" },
+                { className: "playfair submitModalTitle" },
                 "All finished?"
             ),
             React.createElement(
                 "p",
-                { className: "lato" },
+                { className: "lato submitModalSubtext" },
                 "This will submit your response to your card.",
                 React.createElement("br", null),
                 "Don\u2019t worry, they\u2019re all anonymous."
@@ -956,7 +954,6 @@ var ThankfulTitle = function ThankfulTitle(props) {
         React.createElement(
             "button",
             { className: "playfair back2prompts", id: "thankfulBackBtn" },
-            React.createElement("img", { src: "/assets/img/arrow.svg", className: "backArrow" }),
             "Back to prompts"
         ),
         React.createElement(
@@ -1004,12 +1001,12 @@ var ThankfulSubmitModal = function ThankfulSubmitModal() {
             { className: "thankfulSubmitContent" },
             React.createElement(
                 "h1",
-                { className: "playfair" },
+                { className: "playfair submitModalTitle" },
                 "All finished?"
             ),
             React.createElement(
                 "p",
-                { className: "lato" },
+                { className: "lato submitModalSubtext" },
                 "This will submit your response to your card.",
                 React.createElement("br", null),
                 "Don\u2019t worry, they\u2019re all anonymous."

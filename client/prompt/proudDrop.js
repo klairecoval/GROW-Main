@@ -37,7 +37,7 @@ const handleProudCount = (e) => {
 const ProudTitle = (props) => {
     return (
         <div>
-            <button className="playfair back2prompts" id="proudBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
+            <button className="playfair back2prompts" id="proudBackBtn">Back to prompts</button>
             <h2  className="lato promptTitle" id="proudTitle">I'M PROUD OF:</h2>
         </div>
     );
@@ -68,8 +68,8 @@ const ProudSubmitModal = () => {
     return (
         <div className="proudSubmitModal" id="proudSubmitModal">
             <div className="proudSubmitContent">
-                <h1 className="playfair">All finished?</h1>
-                <p className="lato">This will submit your response to your card.<br/>
+                <h1 className="playfair submitModalTitle">All finished?</h1>
+                <p className="lato submitModalSubtext">This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
                 <button id="dismissProudSubmit" className="playfair closeModalBtn">Go back</button>
                 <button id="submitProudBtn" className="playfair modalSubmitBtn">Submit</button>

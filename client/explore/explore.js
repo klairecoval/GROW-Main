@@ -53,20 +53,20 @@ const ExploreAnswers = function(props) {
                             <h3 className="lato exploreModalTitle">I'M EXCITED FORM <img src="/assets/img/PromptLine.svg"/></h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="exploreColorModal" id="excitedExploreColorModal">
+                                <p className="lato shareText">Help spread the positivity by sharing this thought.</p>
                                 <div className="socialMediaShareBtns">
-                                    <p className="lato">Help spread the positivity by sharing this thought.</p>
-                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am excited for " + masterPrompt.answer} target="_blank">
-                                        Twitter
+                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am excited for " + masterPrompt.answer} target="_blank" >
+                                        <i className="fa fa-twitter-square fa-lg" ></i>
                                     </a>
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
-                                        Facebook
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank" >
+                                        <i className="fa fa-facebook-square fa-lg"></i>
                                     </a>
-                                    <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
-                                        LinkedIn
+                                    <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank" >
+                                        <i className="fa fa-linkedin-square fa-lg"></i>
                                     </a>
                                 </div>
-                                <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
-                                <p className="lato">
+                                <p className="lato submittedDate">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
+                                <p className="lato report">
                                     Inappropriate submission?
                                     <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
                                 </p>
@@ -121,20 +121,20 @@ const ExploreAnswers = function(props) {
                             <h3 className="lato exploreModalTitle">I'M THANKFUL FOR <img src="/assets/img/PromptLine.svg"/></h3>
                             <h3 className='promptAnswer'>{masterPrompt.answer}</h3>
                             <div className="exploreColorModal" id="thankfulExploreColorModal">
+                                <p className="lato shareText">Help spread the positivity by sharing this thought.</p>
                                 <div className="socialMediaShareBtns">
-                                    <p className="lato">Help spread the positivity by sharing this thought.</p>
-                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am thankful for " + masterPrompt.answer} target="_blank">
-                                        Twitter
+                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am thankful for " + masterPrompt.answer} target="_blank" >
+                                        <i className="fa fa-twitter-square fa-lg" ></i>
                                     </a>
                                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
-                                        Facebook
+                                        <i className="fa fa-facebook-square fa-lg"></i>
                                     </a>
-                                    <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
-                                        LinkedIn
+                                    <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank" >
+                                        <i className="fa fa-linkedin-square fa-lg"></i>
                                     </a>
                                 </div>
-                                <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
-                                <p className="lato">
+                                <p className="lato submittedDate">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
+                                <p className="lato report">
                                     Inappropriate submission?
                                     <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
                                 </p>                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
@@ -188,20 +188,20 @@ const ExploreAnswers = function(props) {
                             <h3 className="lato exploreModalTitle">I'M INSPIRED BY <img src="/assets/img/PromptLine.svg"/></h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="exploreColorModal" id="inspiredExploreColorModal">
+                                <p className="lato shareText">Help spread the positivity by sharing this thought.</p>
                                 <div className="socialMediaShareBtns">
-                                    <p className="lato">Help spread the positivity by sharing this thought.</p>
-                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am inspired by " + masterPrompt.answer} target="_blank">
-                                        Twitter
+                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am inspired by " + masterPrompt.answer} target="_blank" >
+                                        <i className="fa fa-twitter-square fa-lg" ></i>
                                     </a>
                                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
-                                        Facebook
+                                        <i className="fa fa-facebook-square fa-lg"></i>
                                     </a>
                                     <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
-                                        LinkedIn
+                                        <i className="fa fa-linkedin-square fa-lg"></i>
                                     </a>
                                 </div>
-                                <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
-                                <p className="lato">
+                                <p className="lato submittedDate">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
+                                <p className="lato report">
                                     Inappropriate submission?
                                     <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
                                 </p>                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
@@ -255,20 +255,20 @@ const ExploreAnswers = function(props) {
                             <h3 className="lato exploreModalTitle">I LOVE <img src="/assets/img/PromptLine.svg"/></h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="exploreColorModal" id="loveExploreColorModal">
+                                <p className="lato shareText">Help spread the positivity by sharing this thought.</p>
                                 <div className="socialMediaShareBtns">
-                                    <p className="lato">Help spread the positivity by sharing this thought.</p>
                                     <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I love " + masterPrompt.answer} target="_blank">
-                                        Twitter
+                                        <i className="fa fa-twitter-square fa-lg" ></i>
                                     </a>
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
-                                        Facebook
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank" >
+                                        <i className="fa fa-facebook-square fa-lg"></i>
                                     </a>
-                                    <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
-                                        LinkedIn
+                                    <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank" >
+                                        <i className="fa fa-linkedin-square fa-lg"></i>
                                     </a>
                                 </div>
-                                <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
-                                <p className="lato">
+                                <p className="lato submittedDate">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
+                                <p className="lato report">
                                     Inappropriate submission?
                                     <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
                                 </p>                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
@@ -323,20 +323,20 @@ const ExploreAnswers = function(props) {
                             <h3 className="lato exploreModalTitle">I'M HAPPIEST WHEN <img src="/assets/img/PromptLine.svg"/></h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="exploreColorModal" id="happiestExploreColorModal">
+                                <p className="lato shareText">Help spread the positivity by sharing this thought.</p>
                                 <div className="socialMediaShareBtns">
-                                    <p className="lato">Help spread the positivity by sharing this thought.</p>
-                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am happiest when " + masterPrompt.answer} target="_blank">
-                                        Twitter
+                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am happiest when " + masterPrompt.answer} target="_blank" >
+                                        <i className="fa fa-twitter-square fa-lg" ></i>
                                     </a>
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
-                                        Facebook
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank" >
+                                        <i className="fa fa-facebook-square fa-lg"></i>
                                     </a>
                                     <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
-                                        LinkedIn
+                                        <i className="fa fa-linkedin-square fa-lg"></i>                                   
                                     </a>
                                 </div>
-                                <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
-                                <p className="lato">
+                                <p className="lato submittedDate">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
+                                <p className="lato report">
                                     Inappropriate submission?
                                     <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
                                 </p>                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
@@ -391,20 +391,20 @@ const ExploreAnswers = function(props) {
                             <h3 className="lato exploreModalTitle">I'M PROUD OF <img src="/assets/img/PromptLine.svg"/></h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="exploreColorModal" id="proudExploreColorModal">
+                                <p className="lato shareText">Help spread the positivity by sharing this thought.</p>
                                 <div className="socialMediaShareBtns">
-                                    <p className="lato">Help spread the positivity by sharing this thought.</p>
-                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am proud of " + masterPrompt.answer} target="_blank">
-                                        Twitter
+                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am proud of " + masterPrompt.answer} target="_blank" >
+                                        <i className="fa fa-twitter-square fa-lg" ></i>
                                     </a>
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
-                                        Facebook
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank" >
+                                        <img src="/assets/img/socialMediaIcons/facebook.svg" alt="share to facebook" className="shareBtn"/>
                                     </a>
                                     <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
-                                        LinkedIn
+                                        <i className="fa fa-facebook-square fa-lg"></i>
                                     </a>
                                 </div>
-                                <p className="lato">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
-                                <p className="lato">
+                                <p className="lato submittedDate">Submitted: {calcDate(masterPrompt.createdData.slice(0,10))}</p>
+                                <p className="lato report">
                                     Inappropriate submission?
                                     <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
                                 </p>                                <span type="hidden" className="answerId">{masterPrompt._id}</span>

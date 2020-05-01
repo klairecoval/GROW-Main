@@ -38,7 +38,7 @@ const handleThankfulCount = (e) => {
 const ThankfulTitle = (props) => {
     return (
         <div>
-            <button className="playfair back2prompts" id="thankfulBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
+            <button className="playfair back2prompts" id="thankfulBackBtn">Back to prompts</button>
             <h2  className="lato promptTitle" id="thankfulTitle">I'M THANKFUL FOR:</h2>
         </div>
     );
@@ -69,8 +69,8 @@ const ThankfulSubmitModal = () => {
     return (
         <div className="thankfulSubmitModal" id="thankfulSubmitModal">
             <div className="thankfulSubmitContent">
-                <h1 className="playfair">All finished?</h1>
-                <p className="lato">This will submit your response to your card.<br/>
+                <h1 className="playfair submitModalTitle">All finished?</h1>
+                <p className="lato submitModalSubtext">This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
                 <button id="dismissThankfulSubmit" className="playfair closeModalBtn">Go back</button>
                 <button id="submitThankfulBtn" className="playfair modalSubmitBtn">Submit</button>

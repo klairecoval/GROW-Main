@@ -143,9 +143,19 @@ button:hover {
 .happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent, .excitedSubmitContent {
   background-color: white;
   margin: auto;
-  padding: 20px;
-  width: 592px;
-  height: 377px; }
+  padding: 1rem 3rem;
+  width: 450px;
+  height: 300px;
+  border-radius: 6px; }
+
+.submitModalTitle, .backModalTitle {
+  font-size: 36px; }
+
+.submitModalSubtext {
+  padding-bottom: 3rem; }
+
+.backModalSubtext {
+  padding-bottom: 2rem; }
 
 .exploreThankfulModal, .exploreExcitedModal, .exploreInspiredModal, .exploreLoveModal, .exploreHappiestModal, .exploreProudModal {
   display: none;
@@ -167,13 +177,26 @@ button:hover {
   width: 690px;
   height: 525px; }
 
+.exploreModalPromptLeaf {
+  float: right;
+  margin-top: -3.1rem;
+  margin-right: -3.1rem; }
+
 .exploreModalTitle {
-  color: #585858; }
+  color: #585858;
+  padding-left: 2rem;
+  font-weight: normal; }
 
 .promptAnswer {
   color: #070822;
   font-family: 'Playfair Display', serif;
-  font-size: 48px; }
+  font-size: 48px;
+  padding-left: 2rem;
+  font-weight: normal;
+  margin-top: 0rem; }
+
+.exploreColorModal {
+  padding: 2rem; }
 
 #inspiredExploreColorModal {
   background: #FFF4EB; }
@@ -193,10 +216,32 @@ button:hover {
 #thankfulExploreColorModal {
   background: #E1FFF0; }
 
-.exploreModalPromptLeaf {
-  float: right;
-  margin-top: -3.1rem;
-  margin-right: -3.1rem; }
+.shareText {
+  display: inline; }
+
+.socialMediaShareBtns {
+  display: inline; }
+
+.fa {
+  border-radius: 50%;
+  border: 1px solid #070822;
+  color: #070822;
+  padding: 0.75rem;
+  background: none;
+  margin-left: 1rem;
+  float: right; }
+  .fa:hover {
+    background: #ED7163;
+    color: white;
+    border: 1px solid #ED7163; }
+
+.submittedDate {
+  font-size: 10px;
+  margin-bottom: 0rem;
+  margin-top: 3rem; }
+
+.report {
+  margin-top: 0.3rem; }
 
 .reportButton {
   text-decoration: underline;
@@ -212,7 +257,10 @@ button:hover {
 .closeModalBtn {
   background: white;
   border: 1px solid #070822;
-  color: #070822; }
+  color: #070822;
+  width: 216px;
+  height: 70px;
+  font-size: 18px; }
   .closeModalBtn:hover {
     border: 1px solid #ED7163;
     color: #ED7163; }
@@ -220,7 +268,11 @@ button:hover {
 .modalSubmitBtn {
   background: #070822;
   border: none;
-  color: white; }
+  color: white;
+  width: 216px;
+  height: 70px;
+  font-size: 18px;
+  float: right; }
   .modalSubmitBtn:hover {
     background: #ED7163; }
 
@@ -272,26 +324,35 @@ button:hover {
 
 #selectPromptPageTitle {
   float: left;
-  width: 35%; }
+  width: 30%;
+  padding-left: 2rem;
+  padding-top: 2rem; }
+
+#selectPromptPageTitleText {
+  margin-top: 40%; }
 
 #promptPageTitle {
-  color: white;
-  font-size: 24px; }
+  color: #AAAAAA;
+  font-size: 24px;
+  font-weight: normal; }
 
 #promptPageSubtitle {
   color: white;
   font-size: 48px;
-  width: 310px; }
+  width: 310px;
+  font-weight: normal;
+  margin-top: -1rem; }
 
 .promptNumbers {
   color: #AAAAAA;
   font-size: 24px;
-  display: inline-block; }
+  display: inline-block;
+  padding-right: 1rem; }
 
 #promptBtns {
   float: right;
   padding-top: 2rem;
-  margin-right: 4rem; }
+  margin-right: 15%; }
 
 #inspiredPrompt, #excitedPrompt, #thankfulPrompt, #proudPrompt, #happiestPrompt, #lovePrompt {
   background: none;
@@ -371,7 +432,9 @@ button:hover {
 .dismissExploreModal {
   color: #070822;
   background: none;
-  border: none; }
+  border: none;
+  margin-top: 1rem;
+  margin-left: 2rem; }
   .dismissExploreModal:hover {
     color: #ED7163; }
 

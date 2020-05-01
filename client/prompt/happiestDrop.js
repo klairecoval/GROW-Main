@@ -37,7 +37,7 @@ const handleHappiestCount = (e) => {
 const HappiestTitle = (props) => {
     return (
         <div>
-            <button className="playfair back2prompts" id="happiestBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
+            <button className="playfair back2prompts" id="happiestBackBtn">Back to prompts</button>
             <h2  className="lato promptTitle" id="happiestTitle">I'M HAPPIEST WHEN:</h2>
         </div>
     );
@@ -68,8 +68,8 @@ const HappiestSubmitModal = () => {
     return (
         <div className="happiestSubmitModal" id="happiestSubmitModal">
             <div className="happiestSubmitContent">
-                <h1 className="playfair">All finished?</h1>
-                <p className="lato">This will submit your response to your card.<br/>
+                <h1 className="playfair submitModalTitle">All finished?</h1>
+                <p className="lato submitModalSubtext">This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
                 <button id="dismissHappiestSubmit" className="playfair closeModalBtn">Go back</button>
                 <button id="submitHappiestBtn" className="playfair modalSubmitBtn">Submit</button>
