@@ -601,6 +601,7 @@ button:hover {
     stroke-opacity:"100%";
     display: block;
     margin: 20px auto;
+    cursor: pointer;
 }
 
 .motionPath {
@@ -616,4 +617,29 @@ button:hover {
 
 .reverse{
     transform: translate(-10vw) scale(-1,1);
-} // end explore page leaves
+} 
+#mp1{
+    top: 10vh;
+}
+
+#mp2{
+    top: 20vh;
+}
+
+#mp3{
+    top: 40vh;
+}
+
+#mp4{
+    top: 35vh;
+}
+
+#mp5{
+    top: 30vh;
+}
+
+#mp6{
+    top: 25vh;
+}
+
+// end explore page leaves

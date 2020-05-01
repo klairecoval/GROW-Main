@@ -514,7 +514,8 @@ button:hover {
   stroke-width: 3;
   stroke-opacity: "100%";
   display: block;
-  margin: 20px auto; }
+  margin: 20px auto;
+  cursor: pointer; }
 
 .motionPath {
   position: fixed;
@@ -528,3 +529,21 @@ button:hover {
 
 .reverse {
   transform: translate(-10vw) scale(-1, 1); }
+
+#mp1 {
+  top: 10vh; }
+
+#mp2 {
+  top: 20vh; }
+
+#mp3 {
+  top: 40vh; }
+
+#mp4 {
+  top: 35vh; }
+
+#mp5 {
+  top: 30vh; }
+
+#mp6 {
+  top: 25vh; }
