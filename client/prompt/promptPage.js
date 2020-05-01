@@ -2,7 +2,7 @@ let id;
 
 const PromptTitle = (props) => {
     return (
-        <div>
+        <div id="selectPromptPageTitle">
             <a href="/explorePage" target="_parent" id="startBtn"><button className="back2explore playfair"><img src="/assets/img/arrow.svg" className="backArrow" />Back to explore</button></a>
             <h3 className="lato" id="promptPageTitle">THOUGHT SUBMISSION</h3>
             <h1 className="playfair" id="promptPageSubtitle">Choose your prompt</h1>

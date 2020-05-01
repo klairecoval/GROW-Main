@@ -24,7 +24,11 @@ $thankfulGreen: #55D897;
 // backgrounds
 #exploreBody, #promptBody, #aboutBody, #dataVisBody, #loginBody {
     background-image: url("/assets/img/background.svg");
-    overflow: hidden;
+    // overflow: hidden;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 // about screen
@@ -253,10 +257,9 @@ $thankfulGreen: #55D897;
         color: $pinkBtnBackground;
     }
 }
-
 .answerId {
     display: none;
-}
+} // end explore modals content
 
 // modal elements
 .closeModalBtn {
@@ -277,7 +280,7 @@ $thankfulGreen: #55D897;
     &:hover {
         background: $pinkBtnBackground;
     }
-}
+} // end general modal elements (buttons)
 
 // individual prompt page
 .promptTitle {
@@ -289,6 +292,8 @@ $thankfulGreen: #55D897;
     border: none;
     color: white;
     font-size: 30px;
+    // width: 524px;
+    height: 250px;
 }
 
 .answerCharCount {
@@ -303,6 +308,11 @@ $thankfulGreen: #55D897;
     border: none;
     font-family: 'Playfair Display', serif;
     opacity: 75%;
+    color: white;
+    width: 254px;
+    height: 64px;
+    font-size: 18px;
+    display: block;
 
     &:hover {
         opacity: 100%;
@@ -325,12 +335,12 @@ $thankfulGreen: #55D897;
 }
 #logThankfulSubmit {
     background: $thankfulGreen;
-}
+} // end individual prompt page
 
 // choose prompt
-.promptNumbers {
-    color: $grey;
-    font-size: 24px;
+#selectPromptPageTitle {
+    float: left;
+    width:35%;
 }
 #promptPageTitle {
     color: white;
@@ -341,11 +351,21 @@ $thankfulGreen: #55D897;
     font-size: 48px;
     width: 310px;
 }
+.promptNumbers {
+    color: $grey;
+    font-size: 24px;
+    display: inline-block;
+}
+#promptBtns {
+    float: right;
+    padding-top:2rem;
+    margin-right:4rem;
+}
 #inspiredPrompt, #excitedPrompt, #thankfulPrompt, #proudPrompt, #happiestPrompt, #lovePrompt {
     background: none;
     border: none;
 	color: $blackBlue;
-    font-size: 96px;
+    font-size: 80px;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: $promptOutline;
 
@@ -353,7 +373,6 @@ $thankfulGreen: #55D897;
         -webkit-text-stroke-width: 0px;
     }
 }
-
 #inspiredPrompt:hover {
     color: $inspiredOrange;
 }
@@ -371,7 +390,8 @@ $thankfulGreen: #55D897;
 }
 #lovePrompt:hover {
     color: $lovePink;
-}
+} //end select prompt page
+
 
 // explore page
 #submitThoughtBtn, #totalSubBtn, #exploreThoughtsBtn {
@@ -385,6 +405,9 @@ $thankfulGreen: #55D897;
     background: white;
     border: 1px solid white;
     color: $blackBlue;
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
 
     &:hover {
         color: white;
@@ -395,12 +418,30 @@ $thankfulGreen: #55D897;
     background: none;
     border: 1px solid white;
     color: white;
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
 
     &:hover {
         border: 1px solid $pinkBtnBackground;
         color: $pinkBtnBackground;
     }
+} // end explore page
+
+// data vis
+.dataVisLeaf {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
 }
+.dataVisLeaf:not(:first-child) {
+    margin-left: -5.5rem;
+}
+.answerList {
+    width: 65%;
+    margin: 0 auto;
+    margin-top:4rem;
+} // end data vis page
 
 // back buttons
 .back2prompts, .back2explore, {
@@ -415,7 +456,7 @@ $thankfulGreen: #55D897;
     &:hover {
         color: $pinkBtnBackground;
     }
-}
+} // end back buttons
 
 // mobile screen
 .mobile {
@@ -426,25 +467,10 @@ $thankfulGreen: #55D897;
         background-image: url("/assets/img/mobileBg.svg");
         color: white;
         display: inline; 
-    } }
+    }
+} // end mobile css
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// explore page leaves
 .leaf{
     width: 10vw;
     opacity: 1;
@@ -468,28 +494,4 @@ $thankfulGreen: #55D897;
 
 .reverse{
     transform: translate(-10vw) scale(-1,1);
-}
-
-// #mp1{
-//     top: 10vh;
-// }
-
-// #mp2{
-//     top: 20vh;
-// }
-
-// #mp3{
-//     top: 85vh;
-// }
-
-// #mp4{
-//     top:76vh;
-// }
-
-// #mp5{
-//     top: 60vh;
-// }
-
-// #mp6{
-//     top: 35vh;
-// }
+} // end explore page leaves

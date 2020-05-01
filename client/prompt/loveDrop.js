@@ -53,10 +53,10 @@ const LoveForm = (props) => {
             method='POST'
             className='loveForm' >
                 <input id='loveText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "humanity"' onChange={handleLoveCount}/>
-                <input id='category' type='text' name='category' value='love' placeholder='love' onChange={handleLoveCount}/>        
+                <input id='category' type='text' name='category' value='love' placeholder='love' onChange={handleLoveCount}/>   
+                <p className="lato answerCharCount" id="loveCount">{props.loveCount} characters remaining</p>     
                 <input className='logThoughtSubmit' id="logLoveSubmit" type='submit' value='Submit' />
             </form>
-            <p className="lato answerCharCount" id="loveCount">{props.loveCount} characters remaining</p>
             <BackModal/>
             <LoveSubmitModal />
             <img src="/assets/img/PromptAnswerLeaves/LoveLeaf.svg" className="promptAnswerLeaf"/>

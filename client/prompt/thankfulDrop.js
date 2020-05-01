@@ -54,10 +54,10 @@ const ThankfulForm = (props) => {
             method='POST'
             className='thankfulForm' >
                 <input id='thankfulText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "essential workers"' onChange={handleThankfulCount}/>
-                <input id='category' type='text' name='category' value='thankful' placeholder='thankful' onChange={handleThankfulCount}/>        
+                <input id='category' type='text' name='category' value='thankful' placeholder='thankful' onChange={handleThankfulCount}/> 
+                <p id="thankfulCount" className="lato answerCharCount">{props.thankfulCount} characters remaining</p>       
                 <input className='logThoughtSubmit' id="logThankfulSubmit" type='submit' value='Submit' />
             </form>
-            <p id="thankfulCount" className="lato answerCharCount">{props.thankfulCount} characters remaining</p>
             <BackModal/>
             <ThankfulSubmitModal />
             <img src="/assets/img/PromptAnswerLeaves/ThankfulLeaf.svg" className="promptAnswerLeaf"/>

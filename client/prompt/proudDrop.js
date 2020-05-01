@@ -53,10 +53,10 @@ const ProudForm = (props) => {
             method='POST'
             className='proudForm' >
                 <input id='proudText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "medical workers"' onChange={handleProudCount}/>
-                <input id='category' type='text' name='category' value='proud' placeholder='proud' onChange={handleProudCount}/>        
+                <input id='category' type='text' name='category' value='proud' placeholder='proud' onChange={handleProudCount}/>
+                <p className="lato answerCharCount" id="proudCount">{props.proudCount} characters remaining</p>        
                 <input className='logThoughtSubmit' id="logProudSubmit" type='submit' value='Submit' />
             </form>
-            <p className="lato answerCharCount" id="proudCount">{props.proudCount} characters remaining</p>
             <BackModal/>
             <ProudSubmitModal />
             <img src="/assets/img/PromptAnswerLeaves/ProudLeaf.svg" className="promptAnswerLeaf"/>

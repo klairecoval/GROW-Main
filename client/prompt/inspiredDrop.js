@@ -53,10 +53,10 @@ const InspiredForm = (props) => {
             method='POST'
             className='inspiredForm' >
                 <input id='inspiredText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "the generosity of others"' onChange={handleInspiredCount}/>
-                <input id='category' type='text' name='category' value='inspired' placeholder='inspired' onChange={handleInspiredCount}/>        
+                <input id='category' type='text' name='category' value='inspired' placeholder='inspired' onChange={handleInspiredCount}/>   
+                <p id="inspiredCount" className="lato answerCharCount">{props.inspiredCount} characters remaining</p>     
                 <input className='logThoughtSubmit' id="logInspiredSubmit" type='submit' value='Submit response' />
             </form>
-            <p id="inspiredCount" className="lato answerCharCount">{props.inspiredCount} characters remaining</p>
             <BackModal/>
             <InspiredSubmitModal />
             <img src="/assets/img/PromptAnswerLeaves/InspiredLeaf.svg" className="promptAnswerLeaf"/>

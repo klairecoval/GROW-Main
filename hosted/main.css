@@ -5,8 +5,10 @@
   font-family: 'Lato', sans-serif; }
 
 #exploreBody, #promptBody, #aboutBody, #dataVisBody, #loginBody {
-  background-image: url("/assets/img/background.svg");
-  overflow: hidden; }
+  background-image: url("/assets/img/background.svg"); }
+
+button:hover {
+  cursor: pointer; }
 
 #introVid {
   position: fixed;
@@ -229,7 +231,8 @@
   background: none;
   border: none;
   color: white;
-  font-size: 30px; }
+  font-size: 30px;
+  height: 250px; }
 
 .answerCharCount {
   color: white; }
@@ -240,7 +243,12 @@
 .logThoughtSubmit {
   border: none;
   font-family: 'Playfair Display', serif;
-  opacity: 75%; }
+  opacity: 75%;
+  color: white;
+  width: 254px;
+  height: 64px;
+  font-size: 18px;
+  display: block; }
   .logThoughtSubmit:hover {
     opacity: 100%; }
 
@@ -262,9 +270,9 @@
 #logThankfulSubmit {
   background: #55D897; }
 
-.promptNumbers {
-  color: #AAAAAA;
-  font-size: 24px; }
+#selectPromptPageTitle {
+  float: left;
+  width: 35%; }
 
 #promptPageTitle {
   color: white;
@@ -275,11 +283,21 @@
   font-size: 48px;
   width: 310px; }
 
+.promptNumbers {
+  color: #AAAAAA;
+  font-size: 24px;
+  display: inline-block; }
+
+#promptBtns {
+  float: right;
+  padding-top: 2rem;
+  margin-right: 4rem; }
+
 #inspiredPrompt, #excitedPrompt, #thankfulPrompt, #proudPrompt, #happiestPrompt, #lovePrompt {
   background: none;
   border: none;
   color: #070822;
-  font-size: 96px;
+  font-size: 80px;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #E5E5E5; }
   #inspiredPrompt:hover, #excitedPrompt:hover, #thankfulPrompt:hover, #proudPrompt:hover, #happiestPrompt:hover, #lovePrompt:hover {
@@ -313,7 +331,10 @@
 #submitThoughtBtn {
   background: white;
   border: 1px solid white;
-  color: #070822; }
+  color: #070822;
+  position: absolute;
+  bottom: 8px;
+  right: 16px; }
   #submitThoughtBtn:hover {
     color: white;
     background: #ED7163; }
@@ -321,10 +342,26 @@
 #totalSubBtn, #exploreThoughtsBtn {
   background: none;
   border: 1px solid white;
-  color: white; }
+  color: white;
+  position: absolute;
+  bottom: 8px;
+  left: 16px; }
   #totalSubBtn:hover, #exploreThoughtsBtn:hover {
     border: 1px solid #ED7163;
     color: #ED7163; }
+
+.dataVisLeaf {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.dataVisLeaf:not(:first-child) {
+  margin-left: -5.5rem; }
+
+.answerList {
+  width: 65%;
+  margin: 0 auto;
+  margin-top: 4rem; }
 
 .back2prompts, .back2explore {
   background: none;

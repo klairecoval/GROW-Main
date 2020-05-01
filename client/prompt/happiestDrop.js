@@ -53,10 +53,10 @@ const HappiestForm = (props) => {
             method='POST'
             className='happiestForm' >
                 <input id='happiestText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "I am with loved ones"' onChange={handleHappiestCount}/>
-                <input id='category' type='text' name='category' value='happiest' placeholder='happiest' onChange={handleHappiestCount}/>        
+                <input id='category' type='text' name='category' value='happiest' placeholder='happiest' onChange={handleHappiestCount}/>  
+                <p className="lato answerCharCount" id="happiestCount">{props.happiestCount} characters remaining</p>      
                 <input className='logThoughtSubmit' id="logHappiestSubmit" type='submit' value='Submit response' />
             </form>
-            <p className="lato answerCharCount" id="happiestCount">{props.happiestCount} characters remaining</p>
             <BackModal/>
             <HappiestSubmitModal />
             <img src="/assets/img/PromptAnswerLeaves/HappiestLeaf.svg" className="promptAnswerLeaf" />

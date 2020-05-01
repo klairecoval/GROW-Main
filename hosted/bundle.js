@@ -66,13 +66,13 @@ var ExcitedForm = function ExcitedForm(props) {
                 className: "excitedForm" },
             React.createElement("input", { id: "excitedText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"social gatherings\"", onChange: handleExcitedCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "excited", placeholder: "excited", onChange: handleExcitedCount }),
+            React.createElement(
+                "p",
+                { id: "excitedCount", className: "lato answerCharCount" },
+                props.excitedCount,
+                " characters remaining"
+            ),
             React.createElement("input", { className: "logThoughtSubmit", id: "logExcitedSubmit", type: "submit", value: "Submit Response" })
-        ),
-        React.createElement(
-            "p",
-            { id: "excitedCount", className: "lato answerCharCount" },
-            props.excitedCount,
-            " characters remaining"
         ),
         React.createElement(BackModal, null),
         React.createElement(ExcitedSubmitModal, null),
@@ -203,13 +203,13 @@ var HappiestForm = function HappiestForm(props) {
                 className: "happiestForm" },
             React.createElement("input", { id: "happiestText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"I am with loved ones\"", onChange: handleHappiestCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "happiest", placeholder: "happiest", onChange: handleHappiestCount }),
+            React.createElement(
+                "p",
+                { className: "lato answerCharCount", id: "happiestCount" },
+                props.happiestCount,
+                " characters remaining"
+            ),
             React.createElement("input", { className: "logThoughtSubmit", id: "logHappiestSubmit", type: "submit", value: "Submit response" })
-        ),
-        React.createElement(
-            "p",
-            { className: "lato answerCharCount", id: "happiestCount" },
-            props.happiestCount,
-            " characters remaining"
         ),
         React.createElement(BackModal, null),
         React.createElement(HappiestSubmitModal, null),
@@ -340,13 +340,13 @@ var InspiredForm = function InspiredForm(props) {
                 className: "inspiredForm" },
             React.createElement("input", { id: "inspiredText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"the generosity of others\"", onChange: handleInspiredCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "inspired", placeholder: "inspired", onChange: handleInspiredCount }),
+            React.createElement(
+                "p",
+                { id: "inspiredCount", className: "lato answerCharCount" },
+                props.inspiredCount,
+                " characters remaining"
+            ),
             React.createElement("input", { className: "logThoughtSubmit", id: "logInspiredSubmit", type: "submit", value: "Submit response" })
-        ),
-        React.createElement(
-            "p",
-            { id: "inspiredCount", className: "lato answerCharCount" },
-            props.inspiredCount,
-            " characters remaining"
         ),
         React.createElement(BackModal, null),
         React.createElement(InspiredSubmitModal, null),
@@ -477,13 +477,13 @@ var LoveForm = function LoveForm(props) {
                 className: "loveForm" },
             React.createElement("input", { id: "loveText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"humanity\"", onChange: handleLoveCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "love", placeholder: "love", onChange: handleLoveCount }),
+            React.createElement(
+                "p",
+                { className: "lato answerCharCount", id: "loveCount" },
+                props.loveCount,
+                " characters remaining"
+            ),
             React.createElement("input", { className: "logThoughtSubmit", id: "logLoveSubmit", type: "submit", value: "Submit" })
-        ),
-        React.createElement(
-            "p",
-            { className: "lato answerCharCount", id: "loveCount" },
-            props.loveCount,
-            " characters remaining"
         ),
         React.createElement(BackModal, null),
         React.createElement(LoveSubmitModal, null),
@@ -553,7 +553,7 @@ var id = void 0;
 var PromptTitle = function PromptTitle(props) {
     return React.createElement(
         "div",
-        null,
+        { id: "selectPromptPageTitle" },
         React.createElement(
             "a",
             { href: "/explorePage", target: "_parent", id: "startBtn" },
@@ -844,13 +844,13 @@ var ProudForm = function ProudForm(props) {
                 className: "proudForm" },
             React.createElement("input", { id: "proudText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"medical workers\"", onChange: handleProudCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "proud", placeholder: "proud", onChange: handleProudCount }),
+            React.createElement(
+                "p",
+                { className: "lato answerCharCount", id: "proudCount" },
+                props.proudCount,
+                " characters remaining"
+            ),
             React.createElement("input", { className: "logThoughtSubmit", id: "logProudSubmit", type: "submit", value: "Submit" })
-        ),
-        React.createElement(
-            "p",
-            { className: "lato answerCharCount", id: "proudCount" },
-            props.proudCount,
-            " characters remaining"
         ),
         React.createElement(BackModal, null),
         React.createElement(ProudSubmitModal, null),
@@ -981,13 +981,13 @@ var ThankfulForm = function ThankfulForm(props) {
                 className: "thankfulForm" },
             React.createElement("input", { id: "thankfulText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"essential workers\"", onChange: handleThankfulCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "thankful", placeholder: "thankful", onChange: handleThankfulCount }),
+            React.createElement(
+                "p",
+                { id: "thankfulCount", className: "lato answerCharCount" },
+                props.thankfulCount,
+                " characters remaining"
+            ),
             React.createElement("input", { className: "logThoughtSubmit", id: "logThankfulSubmit", type: "submit", value: "Submit" })
-        ),
-        React.createElement(
-            "p",
-            { id: "thankfulCount", className: "lato answerCharCount" },
-            props.thankfulCount,
-            " characters remaining"
         ),
         React.createElement(BackModal, null),
         React.createElement(ThankfulSubmitModal, null),
