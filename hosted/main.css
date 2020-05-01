@@ -19,6 +19,16 @@
 #aboutContent {
   color: white; }
 
+#aboutHopeText {
+  float: right;
+  width: 35%; }
+
+.aboutPageText {
+  color: #AAAAAA; }
+
+.ourAboutText {
+  color: #AAAAAA; }
+
 #aboutStartBtn {
   background: none;
   border: none;
@@ -29,6 +39,9 @@
 #startBtn {
   width: 100%;
   text-align: center; }
+
+.loginLeaves {
+  margin-left: -7rem; }
 
 #loginAbout {
   width: 45%; }
@@ -45,32 +58,65 @@
   height: 100%;
   overflow: auto;
   background-color: black;
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden; }
 
 .userCodeModalContent {
   float: right;
-  width: 45%;
+  width: 35%;
   background: white;
   float: right;
   color: #070822;
   height: 100%;
-  margin-top: 0; }
+  margin-top: 0;
+  padding-left: 3rem;
+  padding-top: 1.5rem;
+  padding-right: 3rem; }
+
+.loginBackAboutBtn {
+  border: none;
+  background: none;
+  color: #070822; }
+  .loginBackAboutBtn:hover {
+    color: #ED7163; }
+
+#userCodeElements {
+  padding-bottom: 3rem; }
 
 #userCodeVal {
-  font-size: 64px; }
+  font-size: 64px;
+  display: inline-block;
+  vertical-align: middle; }
 
 #copyCodeBtn {
   background: #070822;
   color: white;
-  border: none; }
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+  height: 36px;
+  width: 68px;
+  font-size: 14px;
+  margin-top: 1rem;
+  margin-left: 2rem; }
   #copyCodeBtn:hover {
     background: #ED7163; }
+
+#user {
+  padding: 1rem;
+  width: 287px;
+  height: 72px;
+  font-size: 18px; }
 
 #submitSignup {
   background: #ED7163;
   border: none;
   color: white;
-  opacity: 75%; }
+  opacity: 75%;
+  height: 72px;
+  width: 150px;
+  font-size: 18px;
+  margin-left: 1rem; }
   #submitSignup:hover {
     opacity: 100%; }
 

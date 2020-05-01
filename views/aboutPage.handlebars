@@ -19,23 +19,25 @@
 
 <body id="aboutBody">
   <div id="aboutContent">
-    <h2 class="lato">OUR</h2>
+    <h2 class="lato ourAboutText">OUR</h2>
     <h1 class="playfair">MISSION</h1>
-    <h3 class="playfair">Hope and connectivity</h3>
-    <p class="lato">
-      We aim to  increase positive thought by encouraging you to reflect on what makes you happy. <br />
-      We are collecting submissions from all over the world, and showcasing them in an explorative digital experience.<br/>
-      We ask you to share any submissions that speak to you, and help spread the love during this time of isolation.<br/>
-      We are Grow. 
-    </p>
+    <div id="aboutHopeText">
+      <h3 class="playfair">Hope and connectivity</h3>
+      <p class="lato aboutPageText">
+        We aim to  increase positive thought by encouraging you to <br/> reflect on what makes you happy. <br /> <br/>
+        We are collecting submissions from all over the world, and <br/>showcasing them in an explorative digital experience.<br/> <br/>
+        We ask you to share any submissions that speak to you, and <br/> help spread the love during this time of isolation.<br/><br/>
+        We are Grow. 
+      </p>
+      <a href="/login" target="_parent" id="aboutNextBtn"><button class="playfair" id="aboutStartBtn">Start</button></a>
+    </div>
     <img src="/assets/img/introLeaves.svg" class="loginLeaves"/>
 
-    <a href="/login" target="_parent" id="aboutNextBtn"><button class="playfair" id="aboutStartBtn">Start</button></a>
   </div>
   
-  <video autoplay muted loop id="introVid">
+  {{!-- <video autoplay muted loop id="introVid">
       <source src="/assets/img/leaf-intro.mp4" type="video/mp4">
-  </video>
+  </video> --}}
 
   <div class="mobile">
     <h1 class="playfair">GROW</h1>
@@ -46,11 +48,11 @@
   <div class="error">
   </div>
 
-  <script>
+  {{!-- <script>
     setTimeout(function() {
       document.getElementById('introVid').style.display='none'
     }, 8000);
-  </script>
+  </script> --}}
 </body>
 
 </html>

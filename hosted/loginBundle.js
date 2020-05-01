@@ -92,7 +92,7 @@ var CodeModal = function CodeModal(props) {
                 { href: '/aboutPage', target: '_parent' },
                 React.createElement(
                     'button',
-                    { className: 'playfair' },
+                    { className: 'playfair loginBackAboutBtn' },
                     'Back'
                 )
             ),
@@ -104,17 +104,23 @@ var CodeModal = function CodeModal(props) {
             React.createElement(
                 'p',
                 { className: 'lato' },
-                'Please copy the code below and paste it in the text box to enter. Thank you for keeping the garden safe.'
+                'Please copy the code below and paste it in the text box to ',
+                React.createElement('br', null),
+                'enter. Thank you for keeping the garden safe.'
             ),
             React.createElement(
                 'div',
-                { id: 'userCodeVal', className: 'playfair' },
-                generateUserCode(4)
-            ),
-            React.createElement(
-                'button',
-                { onClick: copyDivToClipboard, className: 'playfair', id: 'copyCodeBtn' },
-                'Copy'
+                { id: 'userCodeElements' },
+                React.createElement(
+                    'div',
+                    { id: 'userCodeVal', className: 'playfair' },
+                    generateUserCode(4)
+                ),
+                React.createElement(
+                    'button',
+                    { onClick: copyDivToClipboard, className: 'playfair', id: 'copyCodeBtn' },
+                    'Copy'
+                )
             ),
             React.createElement(SignupWindow, null)
         )
@@ -146,8 +152,8 @@ var createCodeModal = function createCodeModal() {
 
 // depending on if login or signup icon pressed, create corresponding view
 var setup = function setup() {
-    // createLoginWindow();
-    createCodeModal();
+    createLoginWindow();
+    // createCodeModal();
 };
 
 // load in csrf token

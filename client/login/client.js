@@ -76,11 +76,13 @@ const CodeModal = (props) => {
     return (
         <div className="userCodeModal" id="userCodeModal" >
             <div className="userCodeModalContent">
-                <a href="/aboutPage" target="_parent"><button className="playfair">Back</button></a>
+                <a href="/aboutPage" target="_parent"><button className="playfair loginBackAboutBtn">Back</button></a>
                 <h2 className="playfair">Enter Grow</h2>
-                <p className="lato">Please copy the code below and paste it in the text box to enter. Thank you for keeping the garden safe.</p>
-                <div id="userCodeVal" className="playfair">{generateUserCode(4)}</div>
-                <button onClick={copyDivToClipboard} className="playfair" id="copyCodeBtn">Copy</button>
+                <p className="lato">Please copy the code below and paste it in the text box to <br />enter. Thank you for keeping the garden safe.</p>
+                <div id="userCodeElements">
+                    <div id="userCodeVal" className="playfair">{generateUserCode(4)}</div>
+                    <button onClick={copyDivToClipboard} className="playfair" id="copyCodeBtn">Copy</button>
+                </div>
                 <SignupWindow />
             </div>
         </div>
@@ -121,8 +123,8 @@ const createCodeModal = () => {
 
 // depending on if login or signup icon pressed, create corresponding view
 const setup = () => {
-    // createLoginWindow();
-    createCodeModal();
+    createLoginWindow();
+    // createCodeModal();
 };
 
 // load in csrf token

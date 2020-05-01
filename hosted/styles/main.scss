@@ -39,6 +39,16 @@ $thankfulGreen: #55D897;
 #aboutContent {
     color: white;
 }
+#aboutHopeText {
+    float: right;
+    width: 35%;
+}
+.aboutPageText {
+    color: $grey;
+}
+.ourAboutText {
+    color: $grey;
+}
 #aboutStartBtn {
     background: none;
     border: none;
@@ -52,6 +62,10 @@ $thankfulGreen: #55D897;
 #startBtn {
     width: 100%;
     text-align: center;
+}
+
+.loginLeaves {
+    margin-left: -7rem;
 }
 
 //login page
@@ -71,33 +85,70 @@ $thankfulGreen: #55D897;
     overflow: auto; 
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4); 
+    overflow: hidden;
 }
 .userCodeModalContent {
     float: right;
-    width: 45%;
+    width: 35%;
     background: white;
     float: right;
     color: $blackBlue;
     height: 100%;
-    margin-top: 0;}
+    margin-top: 0;
+    padding-left: 3rem;
+    padding-top: 1.5rem;
+    padding-right: 3rem;
+}
+.loginBackAboutBtn {
+    border: none;
+    background: none;
+    color: $blackBlue;
+
+    &:hover {
+        color: $pinkBtnBackground;
+    }
+}
+#userCodeElements {
+    padding-bottom: 3rem;
+}
 #userCodeVal {
     font-size: 64px;
+    display: inline-block;
+    vertical-align: middle;
 }
 #copyCodeBtn {
     background: $blackBlue;
     color: white;
     border: none;
+    display: inline-block;
+    vertical-align: middle;
+    height: 36px;
+    width: 68px;
+    font-size: 14px;
+    margin-top: 1rem;
+    margin-left: 2rem;
 
     &:hover {
         background: $pinkBtnBackground;
     }
 };
 
+#user {
+    padding: 1rem;
+    width: 287px;
+    height: 72px;
+    font-size: 18px;
+}
+
 #submitSignup {
     background: $pinkBtnBackground;
     border: none;
     color: white;
     opacity: 75%;
+    height: 72px;
+    width: 150px;
+    font-size: 18px;
+    margin-left: 1rem;
 
     &:hover {
         opacity: 100%;
