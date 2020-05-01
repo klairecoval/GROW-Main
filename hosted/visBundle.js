@@ -44,7 +44,13 @@ var PromptAnswers = function PromptAnswers(props) {
     return React.createElement(
         "div",
         { className: "answerList" },
-        answerNodes
+        answerNodes,
+        React.createElement(
+            "p",
+            { className: "totalSubmissions lato" },
+            props.answers.length,
+            " thoughts have been submitted"
+        )
     );
 };
 

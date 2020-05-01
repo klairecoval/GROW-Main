@@ -397,7 +397,7 @@ const ExploreAnswers = function(props) {
                                         <i className="fa fa-twitter-square fa-lg" ></i>
                                     </a>
                                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank" >
-                                        <img src="/assets/img/socialMediaIcons/facebook.svg" alt="share to facebook" className="shareBtn"/>
+                                        <i className="fa fa-facebook-square fa-lg"></i>
                                     </a>
                                     <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
                                         <i className="fa fa-facebook-square fa-lg"></i>

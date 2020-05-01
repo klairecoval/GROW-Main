@@ -5,7 +5,8 @@
   font-family: 'Lato', sans-serif; }
 
 #exploreBody, #promptBody, #aboutBody, #dataVisBody, #loginBody {
-  background-image: url("/assets/img/background.svg"); }
+  background-image: url("/assets/img/background.svg");
+  overflow: hidden; }
 
 button:hover {
   cursor: pointer; }
@@ -18,23 +19,44 @@ button:hover {
   min-height: 100%;
   z-index: 1; }
 
-#aboutContent {
+#aboutContent, #loginAbout {
   color: white; }
 
 #aboutHopeText {
   float: right;
-  width: 35%; }
+  width: 45%;
+  margin-top: 12rem; }
 
 .aboutPageText {
   color: #AAAAAA; }
 
+.missionTitleText {
+  margin-top: 8rem;
+  float: left;
+  margin-left: 10rem; }
+
 .ourAboutText {
-  color: #AAAAAA; }
+  color: #AAAAAA;
+  font-weight: normal;
+  display: inline;
+  vertical-align: middle;
+  padding-right: 1rem; }
+
+.hopeTextTitle {
+  font-size: 32px;
+  font-weight: normal; }
+
+.missionAboutText {
+  font-weight: normal;
+  font-size: 96px;
+  margin-top: 0;
+  margin-bottom: 0; }
 
 #aboutStartBtn {
   background: none;
   border: none;
-  color: white; }
+  color: white;
+  font-size: 18px; }
   #aboutStartBtn:hover {
     color: #ED7163; }
 
@@ -43,7 +65,15 @@ button:hover {
   text-align: center; }
 
 .loginLeaves {
-  margin-left: -7rem; }
+  margin-left: -7rem;
+  margin-top: -7rem;
+  bottom: 0px; }
+
+#loginPageLeaves {
+  position: absolute;
+  bottom: 0;
+  left: 1;
+  margin-bottom: -9.5rem; }
 
 #loginAbout {
   width: 45%; }
@@ -65,7 +95,7 @@ button:hover {
 
 .userCodeModalContent {
   float: right;
-  width: 35%;
+  width: 45%;
   background: white;
   float: right;
   color: #070822;
@@ -118,7 +148,8 @@ button:hover {
   height: 72px;
   width: 150px;
   font-size: 18px;
-  margin-left: 1rem; }
+  margin-left: 1rem;
+  cursor: pointer; }
   #submitSignup:hover {
     opacity: 100%; }
 
@@ -174,8 +205,8 @@ button:hover {
   background-color: white;
   color: #070822;
   margin: auto;
-  width: 690px;
-  height: 525px; }
+  width: 38rem;
+  height: 24rem; }
 
 .exploreModalPromptLeaf {
   float: right;
@@ -196,7 +227,10 @@ button:hover {
   margin-top: 0rem; }
 
 .exploreColorModal {
-  padding: 2rem; }
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem; }
 
 #inspiredExploreColorModal {
   background: #FFF4EB; }
@@ -272,12 +306,25 @@ button:hover {
   width: 216px;
   height: 70px;
   font-size: 18px;
-  float: right; }
+  float: right;
+  cursor: pointer; }
   .modalSubmitBtn:hover {
     background: #ED7163; }
 
+#promptTitle {
+  margin-top: 2rem;
+  margin-left: 2rem; }
+
 .promptTitle {
-  color: white; }
+  color: white;
+  margin-top: 4.5rem;
+  font-weight: normal; }
+
+#logThought {
+  margin-left: 2rem; }
+
+#excitedForm, #happiestForm, #loveForm, #inspiredForm, #thankfulForm, #proudForm {
+  float: left; }
 
 .promptTextArea {
   background: none;
@@ -287,10 +334,15 @@ button:hover {
   height: 250px; }
 
 .answerCharCount {
-  color: white; }
+  color: #B0B0B0;
+  padding-bottom: 1rem;
+  margin-top: 3.5rem; }
 
 .promptAnswerLeaf {
-  float: right; }
+  float: right;
+  margin-right: -6rem;
+  height: 50rem;
+  margin-top: -8rem; }
 
 .logThoughtSubmit {
   border: none;
@@ -300,7 +352,8 @@ button:hover {
   width: 254px;
   height: 64px;
   font-size: 18px;
-  display: block; }
+  display: block;
+  cursor: pointer; }
   .logThoughtSubmit:hover {
     opacity: 100%; }
 
@@ -324,12 +377,10 @@ button:hover {
 
 #selectPromptPageTitle {
   float: left;
-  width: 30%;
-  padding-left: 2rem;
-  padding-top: 2rem; }
+  width: 30%; }
 
 #selectPromptPageTitleText {
-  margin-top: 40%; }
+  margin-top: 14rem; }
 
 #promptPageTitle {
   color: #AAAAAA;
@@ -351,7 +402,6 @@ button:hover {
 
 #promptBtns {
   float: right;
-  padding-top: 2rem;
   margin-right: 15%; }
 
 #inspiredPrompt, #excitedPrompt, #thankfulPrompt, #proudPrompt, #happiestPrompt, #lovePrompt {
@@ -394,8 +444,8 @@ button:hover {
   border: 1px solid white;
   color: #070822;
   position: absolute;
-  bottom: 8px;
-  right: 16px; }
+  bottom: 2rem;
+  right: 2rem; }
   #submitThoughtBtn:hover {
     color: white;
     background: #ED7163; }
@@ -405,8 +455,8 @@ button:hover {
   border: 1px solid white;
   color: white;
   position: absolute;
-  bottom: 8px;
-  left: 16px; }
+  bottom: 2rem;
+  left: 2rem; }
   #totalSubBtn:hover, #exploreThoughtsBtn:hover {
     border: 1px solid #ED7163;
     color: #ED7163; }
@@ -424,10 +474,20 @@ button:hover {
   margin: 0 auto;
   margin-top: 4rem; }
 
+.totalSubmissions {
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  right: 25%;
+  left: 50%;
+  margin-left: -150px; }
+
 .back2prompts, .back2explore {
   background: none;
   border: none;
   color: white; }
+  .back2prompts:hover, .back2explore:hover {
+    color: #ED7163; }
 
 .dismissExploreModal {
   color: #070822;

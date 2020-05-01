@@ -807,7 +807,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 React.createElement(
                                     'a',
                                     { href: 'https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore', target: '_blank' },
-                                    React.createElement('img', { src: '/assets/img/socialMediaIcons/facebook.svg', alt: 'share to facebook', className: 'shareBtn' })
+                                    React.createElement('i', { className: 'fa fa-facebook-square fa-lg' })
                                 ),
                                 React.createElement(
                                     'a',

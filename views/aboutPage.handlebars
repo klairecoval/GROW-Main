@@ -19,10 +19,16 @@
 
 <body id="aboutBody">
   <div id="aboutContent">
-    <h2 class="lato ourAboutText">OUR</h2>
-    <h1 class="playfair">MISSION</h1>
+    <div class="missionTitleText">
+      <h2 class="lato ourAboutText">OUR</h2>
+        <svg height="1" width="100">
+          <line x1="0" y1="0" x2="92" y2="0" style="stroke:rgba(170, 170, 170, 1);stroke-width:2" />
+          Sorry, your browser does not support inline SVG.
+        </svg>   
+      <h1 class="playfair missionAboutText">MISSION</h1>
+    </div>
     <div id="aboutHopeText">
-      <h3 class="playfair">Hope and connectivity</h3>
+      <h3 class="playfair hopeTextTitle">Hope and connectivity</h3>
       <p class="lato aboutPageText">
         We aim to  increase positive thought by encouraging you to <br/> reflect on what makes you happy. <br /> <br/>
         We are collecting submissions from all over the world, and <br/>showcasing them in an explorative digital experience.<br/> <br/>
@@ -31,9 +37,8 @@
       </p>
       <a href="/login" target="_parent" id="aboutNextBtn"><button class="playfair" id="aboutStartBtn">Start</button></a>
     </div>
-    <img src="/assets/img/introLeaves.svg" class="loginLeaves"/>
-
   </div>
+  <img src="/assets/img/introLeaves.svg" class="loginLeaves"/>
   
   <video autoplay muted loop id="introVid">
       <source src="/assets/img/leaf-intro.mp4" type="video/mp4">
@@ -45,13 +50,10 @@
     <a href="https://www.grow-main.herokuapp.com"><strong class="lato">www.grow-main.herokuapp.com</strong></a>
   </div>
 
-  <div class="error">
-  </div>
-
   <script>
     setTimeout(function() {
       document.getElementById('introVid').style.display='none'
-    }, 8000);
+    }, 8100);
   </script>
 </body>
 

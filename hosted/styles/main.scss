@@ -24,7 +24,7 @@ $thankfulGreen: #55D897;
 // backgrounds
 #exploreBody, #promptBody, #aboutBody, #dataVisBody, #loginBody {
     background-image: url("/assets/img/background.svg");
-    // overflow: hidden;
+    overflow: hidden;
 }
 
 button:hover {
@@ -40,23 +40,44 @@ button:hover {
     min-height: 100%;
     z-index: 1;
 }
-#aboutContent {
+#aboutContent, #loginAbout {
     color: white;
 }
 #aboutHopeText {
     float: right;
-    width: 35%;
+    width: 45%;
+    margin-top: 12rem;
 }
 .aboutPageText {
     color: $grey;
 }
+.missionTitleText {
+    margin-top:8rem;
+    float:left;
+    margin-left:10rem;
+}
 .ourAboutText {
     color: $grey;
+    font-weight: normal;
+    display: inline;
+    vertical-align: middle;
+    padding-right:1rem;
+}
+.hopeTextTitle {
+    font-size: 32px;
+    font-weight: normal;
+}
+.missionAboutText {
+    font-weight: normal;
+    font-size: 96px;
+    margin-top:0;
+    margin-bottom: 0;
 }
 #aboutStartBtn {
     background: none;
     border: none;
     color: white;
+    font-size: 18px;
 
     &:hover {
         color: $pinkBtnBackground;
@@ -70,6 +91,14 @@ button:hover {
 
 .loginLeaves {
     margin-left: -7rem;
+    margin-top:-7rem;
+    bottom:0px;
+}
+#loginPageLeaves {
+    position: absolute;
+    bottom: 0;
+    left: 1;
+    margin-bottom: -9.5rem;
 }
 
 //login page
@@ -93,7 +122,7 @@ button:hover {
 }
 .userCodeModalContent {
     float: right;
-    width: 35%;
+    width: 45%;
     background: white;
     float: right;
     color: $blackBlue;
@@ -153,6 +182,7 @@ button:hover {
     width: 150px;
     font-size: 18px;
     margin-left: 1rem;
+    cursor: pointer;
 
     &:hover {
         opacity: 100%;
@@ -219,8 +249,8 @@ button:hover {
     background-color: white;
     color: $blackBlue;
     margin: auto;
-    width: 690px;
-    height: 525px;
+    width: 38rem;
+    height: 24rem;
 }
 .exploreModalPromptLeaf {
     float: right;
@@ -241,7 +271,10 @@ button:hover {
     margin-top: 0rem;
 }
 .exploreColorModal{
-    padding: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
 }
 #inspiredExploreColorModal {
     background: #FFF4EB;
@@ -326,6 +359,7 @@ button:hover {
     height:70px;
     font-size: 18px;
     float:right;
+    cursor: pointer;
 
     &:hover {
         background: $pinkBtnBackground;
@@ -333,8 +367,20 @@ button:hover {
 } // end general modal elements (buttons)
 
 // individual prompt page
+#promptTitle {
+    margin-top:2rem;
+    margin-left:2rem;
+}
 .promptTitle {
     color: white;
+    margin-top:4.5rem;
+    font-weight: normal;
+}
+#logThought {
+    margin-left: 2rem;
+}
+#excitedForm, #happiestForm, #loveForm, #inspiredForm, #thankfulForm, #proudForm {
+    float:left;
 }
 
 .promptTextArea {
@@ -342,16 +388,20 @@ button:hover {
     border: none;
     color: white;
     font-size: 30px;
-    // width: 524px;
     height: 250px;
 }
 
 .answerCharCount {
-    color: white;
+    color: #B0B0B0;
+    padding-bottom: 1rem;
+    margin-top:3.5rem;
 }
 
 .promptAnswerLeaf {
     float: right;
+    margin-right: -6rem;
+    height:50rem;
+    margin-top:-8rem;
 }
 
 .logThoughtSubmit {
@@ -363,6 +413,7 @@ button:hover {
     height: 64px;
     font-size: 18px;
     display: block;
+    cursor: pointer;
 
     &:hover {
         opacity: 100%;
@@ -391,11 +442,9 @@ button:hover {
 #selectPromptPageTitle {
     float: left;
     width:30%;
-    padding-left:2rem;
-    padding-top:2rem;
 }
 #selectPromptPageTitleText {
-    margin-top:40%;
+    margin-top:14rem;
 }
 #promptPageTitle {
     color: $grey;
@@ -417,7 +466,6 @@ button:hover {
 }
 #promptBtns {
     float: right;
-    padding-top:2rem;
     margin-right:15%;
 }
 #inspiredPrompt, #excitedPrompt, #thankfulPrompt, #proudPrompt, #happiestPrompt, #lovePrompt {
@@ -465,8 +513,8 @@ button:hover {
     border: 1px solid white;
     color: $blackBlue;
     position: absolute;
-    bottom: 8px;
-    right: 16px;
+    bottom: 2rem;
+    right: 2rem;
 
     &:hover {
         color: white;
@@ -478,8 +526,8 @@ button:hover {
     border: 1px solid white;
     color: white;
     position: absolute;
-    bottom: 8px;
-    left: 16px;
+    bottom: 2rem;
+    left: 2rem;
 
     &:hover {
         border: 1px solid $pinkBtnBackground;
@@ -500,13 +548,25 @@ button:hover {
     width: 65%;
     margin: 0 auto;
     margin-top:4rem;
-} // end data vis page
+} 
+.totalSubmissions {
+    color: white;
+    position:absolute;
+    bottom:0px;
+    right:25%;
+    left:50%;
+    margin-left:-150px;
+}// end data vis page
 
 // back buttons
 .back2prompts, .back2explore, {
     background: none;
     border: none;
     color: white;
+
+    &:hover {
+        color: $pinkBtnBackground;
+    }
 }
 .dismissExploreModal {
     color: $blackBlue;

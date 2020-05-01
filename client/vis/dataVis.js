@@ -42,6 +42,7 @@ const PromptAnswers = function(props) {
     return(
         <div className='answerList'>
             {answerNodes}
+            <p className="totalSubmissions lato">{props.answers.length} thoughts have been submitted</p>
         </div>
     );
 };
