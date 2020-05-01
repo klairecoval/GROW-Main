@@ -45,7 +45,7 @@ const app = express();
 app.use('/assets', express.static(path.resolve(`${__dirname}/../hosted/`)));
 
 // set favicon to beer icon
-// app.use(favicon(`${__dirname}/../hosted/img/beerIcon.png`));
+app.use(favicon(`${__dirname}/../hosted/img/faviconGreen.png`));
 app.disable('x-powered-by');
 app.use(compression());
 app.use(bodyParser.urlencoded({
