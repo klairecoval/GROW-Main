@@ -88,6 +88,15 @@ var CodeModal = function CodeModal(props) {
             'div',
             { className: 'userCodeModalContent' },
             React.createElement(
+                'a',
+                { href: '/aboutPage', target: '_parent' },
+                React.createElement(
+                    'button',
+                    { className: 'playfair loginBackAboutBtn' },
+                    'Back'
+                )
+            ),
+            React.createElement(
                 'h2',
                 { className: 'playfair' },
                 'Enter Grow'
@@ -95,17 +104,23 @@ var CodeModal = function CodeModal(props) {
             React.createElement(
                 'p',
                 { className: 'lato' },
-                'Please copy the code below and paste it in the text box to enter. Thank you for keeping the garden safe.'
+                'Please copy the code below and paste it in the text box to ',
+                React.createElement('br', null),
+                'enter. Thank you for keeping the garden safe.'
             ),
             React.createElement(
                 'div',
-                { id: 'userCodeVal', className: 'playfair' },
-                generateUserCode(4)
-            ),
-            React.createElement(
-                'button',
-                { onClick: copyDivToClipboard, className: 'playfair', id: 'copyCodeBtn' },
-                'Copy'
+                { id: 'userCodeElements' },
+                React.createElement(
+                    'div',
+                    { id: 'userCodeVal', className: 'playfair' },
+                    generateUserCode(4)
+                ),
+                React.createElement(
+                    'button',
+                    { onClick: copyDivToClipboard, className: 'playfair', id: 'copyCodeBtn' },
+                    'Copy'
+                )
             ),
             React.createElement(SignupWindow, null)
         )
@@ -123,16 +138,16 @@ var copyDivToClipboard = function copyDivToClipboard() {
 
 // create login view in center of page
 var createLoginWindow = function createLoginWindow() {
-    ReactDOM.render(React.createElement(LoginWindow, null), document.querySelector('#content'));
+    ReactDOM.render(React.createElement(LoginWindow, null), document.querySelector('#loginContent'));
 };
 
 // create signup view in center of page
 var createSignupWindow = function createSignupWindow() {
-    ReactDOM.render(React.createElement(SignupWindow, null), document.querySelector('#content'));
+    ReactDOM.render(React.createElement(SignupWindow, null), document.querySelector('#loginContent'));
 };
 
 var createCodeModal = function createCodeModal() {
-    ReactDOM.render(React.createElement(CodeModal, null), document.querySelector('#content'));
+    ReactDOM.render(React.createElement(CodeModal, null), document.querySelector('#loginContent'));
 };
 
 // depending on if login or signup icon pressed, create corresponding view

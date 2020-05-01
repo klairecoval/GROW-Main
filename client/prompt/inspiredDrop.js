@@ -37,7 +37,7 @@ const handleInspiredCount = (e) => {
 const InspiredTitle = (props) => {
     return (
         <div>
-            <button className="playfair back2prompts" id="inspiredBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
+            <button className="playfair back2prompts" id="inspiredBackBtn">Back to prompts</button>
             <h2  className="lato promptTitle" id="inspiredTitle">I'M INSPIRED BY:</h2>
         </div>
     );
@@ -53,10 +53,10 @@ const InspiredForm = (props) => {
             method='POST'
             className='inspiredForm' >
                 <input id='inspiredText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "the generosity of others"' onChange={handleInspiredCount}/>
-                <input id='category' type='text' name='category' value='inspired' placeholder='inspired' onChange={handleInspiredCount}/>        
+                <input id='category' type='text' name='category' value='inspired' placeholder='inspired' onChange={handleInspiredCount}/>   
+                <p id="inspiredCount" className="lato answerCharCount">{props.inspiredCount} characters remaining</p>     
                 <input className='logThoughtSubmit' id="logInspiredSubmit" type='submit' value='Submit response' />
             </form>
-            <p id="inspiredCount" className="lato answerCharCount">{props.inspiredCount} characters remaining</p>
             <BackModal/>
             <InspiredSubmitModal />
             <img src="/assets/img/PromptAnswerLeaves/InspiredLeaf.svg" className="promptAnswerLeaf"/>
@@ -68,8 +68,8 @@ const InspiredSubmitModal = () => {
     return (
         <div className="inspiredSubmitModal" id="inspiredSubmitModal">
             <div className="inspiredSubmitContent">
-                <h1 className="playfair">All finished?</h1>
-                <p className="lato">This will submit your response to your card.<br/>
+                <h1 className="playfair submitModalTitle">All finished?</h1>
+                <p className="lato submitModalSubtext">This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
                 <button id="dismissInspiredSubmit" className="playfair closeModalBtn">Go back</button>
                 <button id="submitInspiredBtn" className="playfair modalSubmitBtn">Submit</button>

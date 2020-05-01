@@ -5,7 +5,11 @@
   font-family: 'Lato', sans-serif; }
 
 #exploreBody, #promptBody, #aboutBody, #dataVisBody, #loginBody {
-  background-image: url("/assets/img/background.svg"); }
+  background-image: url("/assets/img/background.svg");
+  overflow: hidden; }
+
+button:hover {
+  cursor: pointer; }
 
 #introVid {
   position: fixed;
@@ -15,13 +19,44 @@
   min-height: 100%;
   z-index: 1; }
 
-#aboutContent {
+#aboutContent, #loginAbout {
   color: white; }
+
+#aboutHopeText {
+  float: right;
+  width: 45%;
+  margin-top: 12rem; }
+
+.aboutPageText {
+  color: #AAAAAA; }
+
+.missionTitleText {
+  margin-top: 8rem;
+  float: left;
+  margin-left: 10rem; }
+
+.ourAboutText {
+  color: #AAAAAA;
+  font-weight: normal;
+  display: inline;
+  vertical-align: middle;
+  padding-right: 1rem; }
+
+.hopeTextTitle {
+  font-size: 32px;
+  font-weight: normal; }
+
+.missionAboutText {
+  font-weight: normal;
+  font-size: 96px;
+  margin-top: 0;
+  margin-bottom: 0; }
 
 #aboutStartBtn {
   background: none;
   border: none;
-  color: white; }
+  color: white;
+  font-size: 18px; }
   #aboutStartBtn:hover {
     color: #ED7163; }
 
@@ -29,18 +64,92 @@
   width: 100%;
   text-align: center; }
 
+.loginLeaves {
+  margin-left: -7rem;
+  margin-top: -7rem;
+  bottom: 0px; }
+
+#loginPageLeaves {
+  position: absolute;
+  bottom: 0;
+  left: 1;
+  margin-bottom: -9.5rem; }
+
+#loginAbout {
+  width: 45%; }
+
+#loginAboutText {
+  color: white; }
+
+.userCodeModal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden; }
+
+.userCodeModalContent {
+  float: right;
+  width: 45%;
+  background: white;
+  float: right;
+  color: #070822;
+  height: 100%;
+  margin-top: 0;
+  padding-left: 3rem;
+  padding-top: 1.5rem;
+  padding-right: 3rem; }
+
+.loginBackAboutBtn {
+  border: none;
+  background: none;
+  color: #070822; }
+  .loginBackAboutBtn:hover {
+    color: #ED7163; }
+
+#userCodeElements {
+  padding-bottom: 3rem; }
+
+#userCodeVal {
+  font-size: 64px;
+  display: inline-block;
+  vertical-align: middle; }
+
 #copyCodeBtn {
   background: #070822;
   color: white;
-  border: none; }
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+  height: 36px;
+  width: 68px;
+  font-size: 14px;
+  margin-top: 1rem;
+  margin-left: 2rem; }
   #copyCodeBtn:hover {
     background: #ED7163; }
+
+#user {
+  padding: 1rem;
+  width: 287px;
+  height: 72px;
+  font-size: 18px; }
 
 #submitSignup {
   background: #ED7163;
   border: none;
   color: white;
-  opacity: 75%; }
+  opacity: 75%;
+  height: 72px;
+  width: 150px;
+  font-size: 18px;
+  margin-left: 1rem;
+  cursor: pointer; }
   #submitSignup:hover {
     opacity: 100%; }
 
@@ -65,9 +174,19 @@
 .happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent, .excitedSubmitContent {
   background-color: white;
   margin: auto;
-  padding: 20px;
-  width: 592px;
-  height: 377px; }
+  padding: 1rem 3rem;
+  width: 450px;
+  height: 300px;
+  border-radius: 6px; }
+
+.submitModalTitle, .backModalTitle {
+  font-size: 36px; }
+
+.submitModalSubtext {
+  padding-bottom: 3rem; }
+
+.backModalSubtext {
+  padding-bottom: 2rem; }
 
 .exploreThankfulModal, .exploreExcitedModal, .exploreInspiredModal, .exploreLoveModal, .exploreHappiestModal, .exploreProudModal {
   display: none;
@@ -86,14 +205,32 @@
   background-color: white;
   color: #070822;
   margin: auto;
-  padding: 20px;
-  width: 690px;
-  height: 525px; }
+  width: 38rem;
+  height: 24rem; }
+
+.exploreModalPromptLeaf {
+  float: right;
+  margin-top: -3.1rem;
+  margin-right: -3.1rem; }
+
+.exploreModalTitle {
+  color: #585858;
+  padding-left: 2rem;
+  font-weight: normal; }
 
 .promptAnswer {
   color: #070822;
   font-family: 'Playfair Display', serif;
-  font-size: 48px; }
+  font-size: 48px;
+  padding-left: 2rem;
+  font-weight: normal;
+  margin-top: 0rem; }
+
+.exploreColorModal {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem; }
 
 #inspiredExploreColorModal {
   background: #FFF4EB; }
@@ -113,13 +250,51 @@
 #thankfulExploreColorModal {
   background: #E1FFF0; }
 
+.shareText {
+  display: inline; }
+
+.socialMediaShareBtns {
+  display: inline; }
+
+.fa {
+  border-radius: 50%;
+  border: 1px solid #070822;
+  color: #070822;
+  padding: 0.75rem;
+  background: none;
+  margin-left: 1rem;
+  float: right; }
+  .fa:hover {
+    background: #ED7163;
+    color: white;
+    border: 1px solid #ED7163; }
+
+.submittedDate {
+  font-size: 10px;
+  margin-bottom: 0rem;
+  margin-top: 3rem; }
+
+.report {
+  margin-top: 0.3rem; }
+
+.reportButton {
+  text-decoration: underline;
+  background: none;
+  border: none;
+  color: #070822; }
+  .reportButton:hover {
+    color: #ED7163; }
+
 .answerId {
   display: none; }
 
 .closeModalBtn {
   background: white;
   border: 1px solid #070822;
-  color: #070822; }
+  color: #070822;
+  width: 216px;
+  height: 70px;
+  font-size: 18px; }
   .closeModalBtn:hover {
     border: 1px solid #ED7163;
     color: #ED7163; }
@@ -127,29 +302,58 @@
 .modalSubmitBtn {
   background: #070822;
   border: none;
-  color: white; }
+  color: white;
+  width: 216px;
+  height: 70px;
+  font-size: 18px;
+  float: right;
+  cursor: pointer; }
   .modalSubmitBtn:hover {
     background: #ED7163; }
 
+#promptTitle {
+  margin-top: 2rem;
+  margin-left: 2rem; }
+
 .promptTitle {
-  color: white; }
+  color: white;
+  margin-top: 4.5rem;
+  font-weight: normal; }
+
+#logThought {
+  margin-left: 2rem; }
+
+#excitedForm, #happiestForm, #loveForm, #inspiredForm, #thankfulForm, #proudForm {
+  float: left; }
 
 .promptTextArea {
   background: none;
   border: none;
   color: white;
-  font-size: 30px; }
+  font-size: 30px;
+  height: 250px; }
 
 .answerCharCount {
-  color: white; }
+  color: #B0B0B0;
+  padding-bottom: 1rem;
+  margin-top: 3.5rem; }
 
 .promptAnswerLeaf {
-  float: right; }
+  float: right;
+  margin-right: -6rem;
+  height: 50rem;
+  margin-top: -8rem; }
 
 .logThoughtSubmit {
   border: none;
   font-family: 'Playfair Display', serif;
-  opacity: 75%; }
+  opacity: 75%;
+  color: white;
+  width: 254px;
+  height: 64px;
+  font-size: 18px;
+  display: block;
+  cursor: pointer; }
   .logThoughtSubmit:hover {
     opacity: 100%; }
 
@@ -171,24 +375,40 @@
 #logThankfulSubmit {
   background: #55D897; }
 
-.promptNumbers {
-  color: #AAAAAA;
-  font-size: 24px; }
+#selectPromptPageTitle {
+  float: left;
+  width: 30%; }
+
+#selectPromptPageTitleText {
+  margin-top: 14rem; }
 
 #promptPageTitle {
-  color: white;
-  font-size: 24px; }
+  color: #AAAAAA;
+  font-size: 24px;
+  font-weight: normal; }
 
 #promptPageSubtitle {
   color: white;
   font-size: 48px;
-  width: 310px; }
+  width: 310px;
+  font-weight: normal;
+  margin-top: -1rem; }
+
+.promptNumbers {
+  color: #AAAAAA;
+  font-size: 24px;
+  display: inline-block;
+  padding-right: 1rem; }
+
+#promptBtns {
+  float: right;
+  margin-right: 15%; }
 
 #inspiredPrompt, #excitedPrompt, #thankfulPrompt, #proudPrompt, #happiestPrompt, #lovePrompt {
   background: none;
   border: none;
   color: #070822;
-  font-size: 96px;
+  font-size: 80px;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #E5E5E5; }
   #inspiredPrompt:hover, #excitedPrompt:hover, #thankfulPrompt:hover, #proudPrompt:hover, #happiestPrompt:hover, #lovePrompt:hover {
@@ -222,7 +442,10 @@
 #submitThoughtBtn {
   background: white;
   border: 1px solid white;
-  color: #070822; }
+  color: #070822;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem; }
   #submitThoughtBtn:hover {
     color: white;
     background: #ED7163; }
@@ -230,15 +453,50 @@
 #totalSubBtn, #exploreThoughtsBtn {
   background: none;
   border: 1px solid white;
-  color: white; }
+  color: white;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem; }
   #totalSubBtn:hover, #exploreThoughtsBtn:hover {
     border: 1px solid #ED7163;
     color: #ED7163; }
 
-.back2prompts, .back2explore, .dismissExploreModal {
+.dataVisLeaf {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.dataVisLeaf:not(:first-child) {
+  margin-left: -5.5rem; }
+
+.answerList {
+  width: 65%;
+  margin: 0 auto;
+  margin-top: 4rem; }
+
+.totalSubmissions {
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  right: 25%;
+  left: 50%;
+  margin-left: -150px; }
+
+.back2prompts, .back2explore {
   background: none;
   border: none;
   color: white; }
+  .back2prompts:hover, .back2explore:hover {
+    color: #ED7163; }
+
+.dismissExploreModal {
+  color: #070822;
+  background: none;
+  border: none;
+  margin-top: 1rem;
+  margin-left: 2rem; }
+  .dismissExploreModal:hover {
+    color: #ED7163; }
 
 .mobile {
   display: none; }
@@ -270,21 +528,3 @@
 
 .reverse {
   transform: translate(-10vw) scale(-1, 1); }
-
-#mp1 {
-  top: 10vh; }
-
-#mp2 {
-  top: 20vh; }
-
-#mp3 {
-  top: 85vh; }
-
-#mp4 {
-  top: 76vh; }
-
-#mp5 {
-  top: 60vh; }
-
-#mp6 {
-  top: 35vh; }

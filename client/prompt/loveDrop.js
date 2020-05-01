@@ -37,7 +37,7 @@ const handleLoveCount = (e) => {
 const LoveTitle = (props) => {
     return (
         <div>
-            <button className="playfair back2prompts" id="loveBackBtn"><img src="/assets/img/arrow.svg" className="backArrow" />Back to prompts</button>
+            <button className="playfair back2prompts" id="loveBackBtn">Back to prompts</button>
             <h2  className="lato promptTitle" id="loveTitle">I LOVE:</h2>
         </div>
     );
@@ -53,10 +53,10 @@ const LoveForm = (props) => {
             method='POST'
             className='loveForm' >
                 <input id='loveText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "humanity"' onChange={handleLoveCount}/>
-                <input id='category' type='text' name='category' value='love' placeholder='love' onChange={handleLoveCount}/>        
+                <input id='category' type='text' name='category' value='love' placeholder='love' onChange={handleLoveCount}/>   
+                <p className="lato answerCharCount" id="loveCount">{props.loveCount} characters remaining</p>     
                 <input className='logThoughtSubmit' id="logLoveSubmit" type='submit' value='Submit' />
             </form>
-            <p className="lato answerCharCount" id="loveCount">{props.loveCount} characters remaining</p>
             <BackModal/>
             <LoveSubmitModal />
             <img src="/assets/img/PromptAnswerLeaves/LoveLeaf.svg" className="promptAnswerLeaf"/>
@@ -68,8 +68,8 @@ const LoveSubmitModal = () => {
     return (
         <div className="loveSubmitModal" id="loveSubmitModal">
             <div className="loveSubmitContent">
-                <h1 className="playfair">All finished?</h1>
-                <p className="lato">This will submit your response to your card.<br/>
+                <h1 className="playfair submitModalTitle">All finished?</h1>
+                <p className="lato submitModalSubtext">This will submit your response to your card.<br/>
                     Don’t worry, they’re all anonymous.</p>
                 <button id="dismissLoveSubmit" className="playfair closeModalBtn">Go back</button>
                 <button id="submitLoveBtn" className="playfair modalSubmitBtn">Submit</button>

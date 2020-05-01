@@ -2,37 +2,37 @@ const PromptAnswers = function(props) {
     const answerNodes = props.answers.map(function(masterPrompt) {
         if((masterPrompt.category === "excited") || (masterPrompt.viewable === "true")){
             return (
-                <div className='answer'>
+                <div className='answer dataVisLeaf'>
                     <img src='/assets/img/LeafVariation1/Excited1.svg' alt='excited leaf'/>
                 </div>
             );
         } else if(masterPrompt.category === "thankful"){
             return(
-                <div className='answer'>
+                <div className='answer dataVisLeaf'>
                     <img src='/assets/img/LeafVariation2/Thankful2.svg' alt='thankful leaf'/>
                 </div>
             );
         } else if(masterPrompt.category === "inspired"){
             return (
-                <div className='answer'>
+                <div className='answer dataVisLeaf'>
                     <img src='/assets/img/LeafVariation3/Inspired3.svg' alt='inspired leaf'/>
                 </div>
             );
         } else if(masterPrompt.category === "love"){
             return (
-                <div className='answer'>
+                <div className='answer dataVisLeaf'>
                     <img src='/assets/img/LeafVariation1/Love1.svg' alt='love leaf'/>
                 </div>
             );
         } else if(masterPrompt.category === "happiest"){
             return (
-                <div className='answer'>
+                <div className='answer dataVisLeaf'>
                     <img src='/assets/img/LeafVariation2/Happiest2.svg' alt='happiest leaf'/>
                 </div>
             );
         } else if(masterPrompt.category === "proud"){
             return (
-                <div className='answer'>
+                <div className='answer dataVisLeaf'>
                     <img src='/assets/img/LeafVariation3/Proud3.svg' alt='proud leaf'/>
                 </div>
             );
@@ -42,16 +42,9 @@ const PromptAnswers = function(props) {
     return(
         <div className='answerList'>
             {answerNodes}
+            <p className="totalSubmissions lato">{props.answers.length} thoughts have been submitted</p>
         </div>
     );
-};
-
-const reportAnswer = (e) => {
-    const id = e.target.parentElement.querySelector('.answerId').innerText;
-    
-    sendAjax('DELETE', '/reportMaster', {id}, data => {
-        loadAnswers();
-    });
 };
 
 const loadAnswers = () => {
@@ -69,14 +62,6 @@ const setupDataVis = function() {
     console.log("set has been read through");
     loadAnswers();
 };
-
-const handleReportBtn = e => {
-    e.preventDefault();
-    
-    sendAjax('POST', '/reportMaster', null, data => { createMasterMessage("reportSuccess", data.message); }); 
-};
-
-
 
 $(document).ready(function() {
     if(document.querySelector('#answers')){

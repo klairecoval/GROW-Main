@@ -2,10 +2,12 @@ let id;
 
 const PromptTitle = (props) => {
     return (
-        <div>
-            <a href="/explorePage" target="_parent" id="startBtn"><button className="back2explore playfair"><img src="/assets/img/arrow.svg" className="backArrow" />Back to explore</button></a>
-            <h3 className="lato" id="promptPageTitle">THOUGHT SUBMISSION</h3>
-            <h1 className="playfair" id="promptPageSubtitle">Choose your prompt</h1>
+        <div id="selectPromptPageTitle">
+            <a href="/explorePage" target="_parent" id="startBtn"><button className="back2explore playfair">Back to explore</button></a>
+            <div id="selectPromptPageTitleText">
+                <h3 className="lato" id="promptPageTitle">THOUGHT SUBMISSION</h3>
+                <h1 className="playfair" id="promptPageSubtitle">Choose your prompt</h1>
+            </div>
         </div>
     );
 };
@@ -14,8 +16,8 @@ const BackModal = () => {
     return (
         <div id="backModal" className="backModal">
             <div className="backModalContent">
-                <h1 className="playfair">Are you sure you <br/>want to go back?</h1>
-                <p className="lato">Going back now will lose your progress.</p>
+                <h1 className="playfair backModalTitle">Are you sure you <br/>want to go back?</h1>
+                <p className="lato backModalSubtext">Going back now will lose your progress.</p>
                 <button id="stayBtn"className="playfair closeModalBtn">Stay</button>
                 <a href="/promptPage" target="_parent" id="continueBtn"><button className="playfair modalSubmitBtn">Go back</button></a>
             </div>

@@ -88,8 +88,9 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         React.createElement('img', { src: '/assets/img/LeafVariation1/Excited1.svg', className: 'exploreModalPromptLeaf' }),
                         React.createElement(
                             'h3',
-                            { className: 'lato' },
-                            'I\'M EXCITED FOR'
+                            { className: 'lato exploreModalTitle' },
+                            'I\'M EXCITED FORM ',
+                            React.createElement('img', { src: '/assets/img/PromptLine.svg' })
                         ),
                         React.createElement(
                             'h3',
@@ -101,39 +102,48 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             'div',
                             { className: 'exploreColorModal', id: 'excitedExploreColorModal' },
                             React.createElement(
+                                'p',
+                                { className: 'lato shareText' },
+                                'Help spread the positivity by sharing this thought.'
+                            ),
+                            React.createElement(
                                 'div',
                                 { className: 'socialMediaShareBtns' },
                                 React.createElement(
-                                    'p',
-                                    { className: 'lato' },
-                                    'Help spread the positivity by sharing this thought.'
-                                ),
-                                React.createElement(
                                     'a',
                                     { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am excited for " + masterPrompt.answer, target: '_blank' },
-                                    'Twitter'
+                                    React.createElement('i', { className: 'fa fa-twitter-square fa-lg' })
                                 ),
                                 React.createElement(
                                     'a',
                                     { href: 'https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore', target: '_blank' },
-                                    'Facebook'
+                                    React.createElement('i', { className: 'fa fa-facebook-square fa-lg' })
                                 ),
                                 React.createElement(
                                     'a',
                                     { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
-                                    'LinkedIn'
+                                    React.createElement('i', { className: 'fa fa-linkedin-square fa-lg' })
                                 )
                             ),
                             React.createElement(
                                 'p',
-                                { className: 'lato' },
+                                { className: 'lato submittedDate' },
                                 'Submitted: ',
                                 calcDate(masterPrompt.createdData.slice(0, 10))
                             ),
                             React.createElement(
-                                'button',
-                                { className: 'reportButton', onClick: reportAnswer },
-                                'Report'
+                                'p',
+                                { className: 'lato report' },
+                                'Inappropriate submission?',
+                                React.createElement(
+                                    'button',
+                                    { className: 'reportButton', onClick: reportAnswer },
+                                    React.createElement(
+                                        'strong',
+                                        null,
+                                        'Let us know.'
+                                    )
+                                )
                             ),
                             React.createElement(
                                 'span',
@@ -215,8 +225,9 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         React.createElement('img', { src: '/assets/img/LeafVariation1/Thankful1.svg', className: 'exploreModalPromptLeaf' }),
                         React.createElement(
                             'h3',
-                            { className: 'lato' },
-                            'I\'M THANKFUL FOR'
+                            { className: 'lato exploreModalTitle' },
+                            'I\'M THANKFUL FOR ',
+                            React.createElement('img', { src: '/assets/img/PromptLine.svg' })
                         ),
                         React.createElement(
                             'h3',
@@ -227,40 +238,50 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             'div',
                             { className: 'exploreColorModal', id: 'thankfulExploreColorModal' },
                             React.createElement(
+                                'p',
+                                { className: 'lato shareText' },
+                                'Help spread the positivity by sharing this thought.'
+                            ),
+                            React.createElement(
                                 'div',
                                 { className: 'socialMediaShareBtns' },
                                 React.createElement(
-                                    'p',
-                                    { className: 'lato' },
-                                    'Help spread the positivity by sharing this thought.'
-                                ),
-                                React.createElement(
                                     'a',
                                     { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am thankful for " + masterPrompt.answer, target: '_blank' },
-                                    'Twitter'
+                                    React.createElement('i', { className: 'fa fa-twitter-square fa-lg' })
                                 ),
                                 React.createElement(
                                     'a',
                                     { href: 'https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore', target: '_blank' },
-                                    'Facebook'
+                                    React.createElement('i', { className: 'fa fa-facebook-square fa-lg' })
                                 ),
                                 React.createElement(
                                     'a',
                                     { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
-                                    'LinkedIn'
+                                    React.createElement('i', { className: 'fa fa-linkedin-square fa-lg' })
                                 )
                             ),
                             React.createElement(
                                 'p',
-                                { className: 'lato' },
+                                { className: 'lato submittedDate' },
                                 'Submitted: ',
                                 calcDate(masterPrompt.createdData.slice(0, 10))
                             ),
                             React.createElement(
-                                'button',
-                                { className: 'reportButton', onClick: reportAnswer },
-                                'Report'
+                                'p',
+                                { className: 'lato report' },
+                                'Inappropriate submission?',
+                                React.createElement(
+                                    'button',
+                                    { className: 'reportButton', onClick: reportAnswer },
+                                    React.createElement(
+                                        'strong',
+                                        null,
+                                        'Let us know.'
+                                    )
+                                )
                             ),
+                            '                                ',
                             React.createElement(
                                 'span',
                                 { type: 'hidden', className: 'answerId' },
@@ -341,8 +362,9 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         React.createElement('img', { src: '/assets/img/LeafVariation1/Inspired1.svg', className: 'exploreModalPromptLeaf' }),
                         React.createElement(
                             'h3',
-                            { className: 'lato' },
-                            'I\'M INSPIRED BY'
+                            { className: 'lato exploreModalTitle' },
+                            'I\'M INSPIRED BY ',
+                            React.createElement('img', { src: '/assets/img/PromptLine.svg' })
                         ),
                         React.createElement(
                             'h3',
@@ -354,40 +376,50 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             'div',
                             { className: 'exploreColorModal', id: 'inspiredExploreColorModal' },
                             React.createElement(
+                                'p',
+                                { className: 'lato shareText' },
+                                'Help spread the positivity by sharing this thought.'
+                            ),
+                            React.createElement(
                                 'div',
                                 { className: 'socialMediaShareBtns' },
                                 React.createElement(
-                                    'p',
-                                    { className: 'lato' },
-                                    'Help spread the positivity by sharing this thought.'
-                                ),
-                                React.createElement(
                                     'a',
                                     { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am inspired by " + masterPrompt.answer, target: '_blank' },
-                                    'Twitter'
+                                    React.createElement('i', { className: 'fa fa-twitter-square fa-lg' })
                                 ),
                                 React.createElement(
                                     'a',
                                     { href: 'https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore', target: '_blank' },
-                                    'Facebook'
+                                    React.createElement('i', { className: 'fa fa-facebook-square fa-lg' })
                                 ),
                                 React.createElement(
                                     'a',
                                     { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
-                                    'LinkedIn'
+                                    React.createElement('i', { className: 'fa fa-linkedin-square fa-lg' })
                                 )
                             ),
                             React.createElement(
                                 'p',
-                                { className: 'lato' },
+                                { className: 'lato submittedDate' },
                                 'Submitted: ',
                                 calcDate(masterPrompt.createdData.slice(0, 10))
                             ),
                             React.createElement(
-                                'button',
-                                { className: 'reportButton', onClick: reportAnswer },
-                                'Report'
+                                'p',
+                                { className: 'lato report' },
+                                'Inappropriate submission?',
+                                React.createElement(
+                                    'button',
+                                    { className: 'reportButton', onClick: reportAnswer },
+                                    React.createElement(
+                                        'strong',
+                                        null,
+                                        'Let us know.'
+                                    )
+                                )
                             ),
+                            '                                ',
                             React.createElement(
                                 'span',
                                 { type: 'hidden', className: 'answerId' },
@@ -468,8 +500,9 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         React.createElement('img', { src: '/assets/img/LeafVariation1/Love1.svg', className: 'exploreModalPromptLeaf' }),
                         React.createElement(
                             'h3',
-                            { className: 'lato' },
-                            'I LOVE'
+                            { className: 'lato exploreModalTitle' },
+                            'I LOVE ',
+                            React.createElement('img', { src: '/assets/img/PromptLine.svg' })
                         ),
                         React.createElement(
                             'h3',
@@ -481,40 +514,50 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             'div',
                             { className: 'exploreColorModal', id: 'loveExploreColorModal' },
                             React.createElement(
+                                'p',
+                                { className: 'lato shareText' },
+                                'Help spread the positivity by sharing this thought.'
+                            ),
+                            React.createElement(
                                 'div',
                                 { className: 'socialMediaShareBtns' },
                                 React.createElement(
-                                    'p',
-                                    { className: 'lato' },
-                                    'Help spread the positivity by sharing this thought.'
-                                ),
-                                React.createElement(
                                     'a',
                                     { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I love " + masterPrompt.answer, target: '_blank' },
-                                    'Twitter'
+                                    React.createElement('i', { className: 'fa fa-twitter-square fa-lg' })
                                 ),
                                 React.createElement(
                                     'a',
                                     { href: 'https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore', target: '_blank' },
-                                    'Facebook'
+                                    React.createElement('i', { className: 'fa fa-facebook-square fa-lg' })
                                 ),
                                 React.createElement(
                                     'a',
                                     { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
-                                    'LinkedIn'
+                                    React.createElement('i', { className: 'fa fa-linkedin-square fa-lg' })
                                 )
                             ),
                             React.createElement(
                                 'p',
-                                { className: 'lato' },
+                                { className: 'lato submittedDate' },
                                 'Submitted: ',
                                 calcDate(masterPrompt.createdData.slice(0, 10))
                             ),
                             React.createElement(
-                                'button',
-                                { className: 'reportButton', onClick: reportAnswer },
-                                'Report'
+                                'p',
+                                { className: 'lato report' },
+                                'Inappropriate submission?',
+                                React.createElement(
+                                    'button',
+                                    { className: 'reportButton', onClick: reportAnswer },
+                                    React.createElement(
+                                        'strong',
+                                        null,
+                                        'Let us know.'
+                                    )
+                                )
                             ),
+                            '                                ',
                             React.createElement(
                                 'span',
                                 { type: 'hidden', className: 'answerId' },
@@ -596,8 +639,9 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         React.createElement('img', { src: '/assets/img/LeafVariation1/Happiest1.svg', className: 'exploreModalPromptLeaf' }),
                         React.createElement(
                             'h3',
-                            { className: 'lato' },
-                            'I\'M HAPPIEST WHEN'
+                            { className: 'lato exploreModalTitle' },
+                            'I\'M HAPPIEST WHEN ',
+                            React.createElement('img', { src: '/assets/img/PromptLine.svg' })
                         ),
                         React.createElement(
                             'h3',
@@ -609,40 +653,50 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             'div',
                             { className: 'exploreColorModal', id: 'happiestExploreColorModal' },
                             React.createElement(
+                                'p',
+                                { className: 'lato shareText' },
+                                'Help spread the positivity by sharing this thought.'
+                            ),
+                            React.createElement(
                                 'div',
                                 { className: 'socialMediaShareBtns' },
                                 React.createElement(
-                                    'p',
-                                    { className: 'lato' },
-                                    'Help spread the positivity by sharing this thought.'
-                                ),
-                                React.createElement(
                                     'a',
                                     { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am happiest when " + masterPrompt.answer, target: '_blank' },
-                                    'Twitter'
+                                    React.createElement('i', { className: 'fa fa-twitter-square fa-lg' })
                                 ),
                                 React.createElement(
                                     'a',
                                     { href: 'https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore', target: '_blank' },
-                                    'Facebook'
+                                    React.createElement('i', { className: 'fa fa-facebook-square fa-lg' })
                                 ),
                                 React.createElement(
                                     'a',
                                     { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
-                                    'LinkedIn'
+                                    React.createElement('i', { className: 'fa fa-linkedin-square fa-lg' })
                                 )
                             ),
                             React.createElement(
                                 'p',
-                                { className: 'lato' },
+                                { className: 'lato submittedDate' },
                                 'Submitted: ',
                                 calcDate(masterPrompt.createdData.slice(0, 10))
                             ),
                             React.createElement(
-                                'button',
-                                { className: 'reportButton', onClick: reportAnswer },
-                                'Report'
+                                'p',
+                                { className: 'lato report' },
+                                'Inappropriate submission?',
+                                React.createElement(
+                                    'button',
+                                    { className: 'reportButton', onClick: reportAnswer },
+                                    React.createElement(
+                                        'strong',
+                                        null,
+                                        'Let us know.'
+                                    )
+                                )
                             ),
+                            '                                ',
                             React.createElement(
                                 'span',
                                 { type: 'hidden', className: 'answerId' },
@@ -724,8 +778,9 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         React.createElement('img', { src: '/assets/img/LeafVariation1/Proud1.svg', className: 'exploreModalPromptLeaf' }),
                         React.createElement(
                             'h3',
-                            { className: 'lato' },
-                            'I\'M PROUD OF'
+                            { className: 'lato exploreModalTitle' },
+                            'I\'M PROUD OF ',
+                            React.createElement('img', { src: '/assets/img/PromptLine.svg' })
                         ),
                         React.createElement(
                             'h3',
@@ -737,40 +792,50 @@ var ExploreAnswers = function ExploreAnswers(props) {
                             'div',
                             { className: 'exploreColorModal', id: 'proudExploreColorModal' },
                             React.createElement(
+                                'p',
+                                { className: 'lato shareText' },
+                                'Help spread the positivity by sharing this thought.'
+                            ),
+                            React.createElement(
                                 'div',
                                 { className: 'socialMediaShareBtns' },
                                 React.createElement(
-                                    'p',
-                                    { className: 'lato' },
-                                    'Help spread the positivity by sharing this thought.'
-                                ),
-                                React.createElement(
                                     'a',
                                     { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am proud of " + masterPrompt.answer, target: '_blank' },
-                                    'Twitter'
+                                    React.createElement('i', { className: 'fa fa-twitter-square fa-lg' })
                                 ),
                                 React.createElement(
                                     'a',
                                     { href: 'https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore', target: '_blank' },
-                                    'Facebook'
+                                    React.createElement('i', { className: 'fa fa-facebook-square fa-lg' })
                                 ),
                                 React.createElement(
                                     'a',
                                     { href: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts", target: '_blank' },
-                                    'LinkedIn'
+                                    React.createElement('i', { className: 'fa fa-facebook-square fa-lg' })
                                 )
                             ),
                             React.createElement(
                                 'p',
-                                { className: 'lato' },
+                                { className: 'lato submittedDate' },
                                 'Submitted: ',
                                 calcDate(masterPrompt.createdData.slice(0, 10))
                             ),
                             React.createElement(
-                                'button',
-                                { className: 'reportButton', onClick: reportAnswer },
-                                'Report'
+                                'p',
+                                { className: 'lato report' },
+                                'Inappropriate submission?',
+                                React.createElement(
+                                    'button',
+                                    { className: 'reportButton', onClick: reportAnswer },
+                                    React.createElement(
+                                        'strong',
+                                        null,
+                                        'Let us know.'
+                                    )
+                                )
                             ),
+                            '                                ',
                             React.createElement(
                                 'span',
                                 { type: 'hidden', className: 'answerId' },
@@ -797,9 +862,11 @@ var ExploreThankfulModal = function ExploreThankfulModal(e) {
         exploreThankfulModal.style.display = "block";
     }
 
-    dismissThankfulExplore.onclick = function () {
-        exploreThankfulModal.style.display = "none";
-    };
+    if (dismissThankfulExplore) {
+        dismissThankfulExplore.onclick = function () {
+            exploreThankfulModal.style.display = "none";
+        };
+    }
 
     window.onclick = function (event) {
         if (event.target === exploreThankfulModal) {
@@ -816,9 +883,11 @@ var ExploreExcitedModal = function ExploreExcitedModal(e) {
         exploreExcitedModal.style.display = "block";
     }
 
-    dismissExcitedExplore.onclick = function () {
-        exploreExcitedModal.style.display = "none";
-    };
+    if (dismissExcitedExplore) {
+        dismissExcitedExplore.onclick = function () {
+            exploreExcitedModal.style.display = "none";
+        };
+    }
 
     window.onclick = function (event) {
         if (event.target === exploreExcitedModal) {
@@ -835,9 +904,11 @@ var ExploreInspiredModal = function ExploreInspiredModal(e) {
         exploreInspiredModal.style.display = "block";
     }
 
-    dismissInspiredExplore.onclick = function () {
-        exploreInspiredModal.style.display = "none";
-    };
+    if (dismissInspiredExplore) {
+        dismissInspiredExplore.onclick = function () {
+            exploreInspiredModal.style.display = "none";
+        };
+    }
 
     window.onclick = function (event) {
         if (event.target === exploreInspiredModal) {
@@ -854,9 +925,11 @@ var ExploreLoveModal = function ExploreLoveModal(e) {
         exploreLoveModal.style.display = "block";
     }
 
-    dismissLoveExplore.onclick = function () {
-        exploreLoveModal.style.display = "none";
-    };
+    if (dismissLoveExplore) {
+        dismissLoveExplore.onclick = function () {
+            exploreLoveModal.style.display = "none";
+        };
+    }
 
     window.onclick = function (event) {
         if (event.target === exploreLoveModal) {
@@ -873,9 +946,11 @@ var ExploreHappiestModal = function ExploreHappiestModal(e) {
         exploreHappiestModal.style.display = "block";
     }
 
-    dismissHappiestExplore.onclick = function () {
-        exploreHappiestModal.style.display = "none";
-    };
+    if (dismissHappiestExplore) {
+        dismissHappiestExplore.onclick = function () {
+            exploreHappiestModal.style.display = "none";
+        };
+    }
 
     window.onclick = function (event) {
         if (event.target === exploreHappiestModal) {
@@ -892,9 +967,11 @@ var ExploreProudModal = function ExploreProudModal(e) {
         exploreProudModal.style.display = "block";
     }
 
-    dismissProudExplore.onclick = function () {
-        exploreProudModal.style.display = "none";
-    };
+    if (dismissProudExplore) {
+        dismissProudExplore.onclick = function () {
+            exploreProudModal.style.display = "none";
+        };
+    }
 
     window.onclick = function (event) {
         if (event.target === exploreProudModal) {
