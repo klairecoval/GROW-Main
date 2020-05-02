@@ -583,16 +583,24 @@ button:hover {
 
 // mobile screen
 .mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("/assets/img/mobileBg.svg");
+    z-index: 100001;
+    color: #fff;
+    text-align: center;
     display: none;
-}
-@media only screen and (min-width: 320px) and (max-width: 568px) and 
-   (orientation: portrait) { .mobile { 
-        background-image: url("/assets/img/mobileBg.svg");
-        color: white;
-        display: inline; 
-        z-index: 1;
+ }
+ 
+ @media all and (max-width: 1023px) {
+    .mobile {
+        display: block;
     }
-} // end mobile css
+ }
+// end mobile css
 
 // explore page leaves
 .leaf{
