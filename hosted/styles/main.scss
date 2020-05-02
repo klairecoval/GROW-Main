@@ -24,7 +24,9 @@ $thankfulGreen: #55D897;
 // backgrounds
 #exploreBody, #promptBody, #aboutBody, #dataVisBody, #loginBody {
     background-image: url("/assets/img/background.svg");
-    overflow: hidden;
+}
+#exploreBody, #aboutBody, #dataVisBody, #loginBody {
+    overflow:hidden;
 }
 
 button:hover {
