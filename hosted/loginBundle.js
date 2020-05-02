@@ -152,8 +152,8 @@ var createCodeModal = function createCodeModal() {
 
 // depending on if login or signup icon pressed, create corresponding view
 var setup = function setup() {
-    createLoginWindow();
-    // createCodeModal();
+    // createLoginWindow();
+    createCodeModal();
 };
 
 // load in csrf token
