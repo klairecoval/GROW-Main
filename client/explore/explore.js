@@ -70,10 +70,14 @@ const ExploreAnswers = function(props) {
                                     Inappropriate submission?
                                     <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
                                 </p>
-                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
                             </div>
                         </div>
                     </div>
+                    <p className="lato report">
+                                    Inappropriate submission?
+                                    <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
+                                </p>
+                    <span className="answerId">{masterPrompt._id}</span>
                 </div>
             );
         } else if(masterPrompt.category === "thankful"){
@@ -137,10 +141,11 @@ const ExploreAnswers = function(props) {
                                 <p className="lato report">
                                     Inappropriate submission?
                                     <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
-                                </p>                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
+                                </p>                              
                             </div>
                         </div>
                     </div>
+                    <span className="answerId">{masterPrompt._id}</span>
                 </div>
             );
         } else if(masterPrompt.category === "inspired"){
@@ -204,10 +209,11 @@ const ExploreAnswers = function(props) {
                                 <p className="lato report">
                                     Inappropriate submission?
                                     <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
-                                </p>                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
+                                </p>                                
                             </div>
                         </div>
                     </div>
+                    <span className="answerId">{masterPrompt._id}</span>
                 </div>
             );
         } else if(masterPrompt.category === "love"){
@@ -271,10 +277,11 @@ const ExploreAnswers = function(props) {
                                 <p className="lato report">
                                     Inappropriate submission?
                                     <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
-                                </p>                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
+                                </p>                                
                             </div>
                         </div>
                     </div>
+                    <span className="answerId">{masterPrompt._id}</span>
                 </div>
                 );
         }
@@ -339,10 +346,11 @@ const ExploreAnswers = function(props) {
                                 <p className="lato report">
                                     Inappropriate submission?
                                     <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
-                                </p>                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
+                                </p>                               
                             </div>
                         </div>
                     </div>
+                    <span className="answerId">{masterPrompt._id}</span>
                 </div>
             );
         }
@@ -407,10 +415,11 @@ const ExploreAnswers = function(props) {
                                 <p className="lato report">
                                     Inappropriate submission?
                                     <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
-                                </p>                                <span type="hidden" className="answerId">{masterPrompt._id}</span>
+                                </p>                                
                             </div>
                         </div>
                     </div>
+                    <span className="answerId">{masterPrompt._id}</span>
                 </div>
             );
         }
@@ -835,7 +844,10 @@ const moveLeaves =() => {
 };
 
 const reportAnswer = (e) => {
-    const id = e.target.parentElement.querySelector('.answerId').innerText;
+    console.log('entered report');
+    console.log(e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector('.answerId'));
+
+    const id = e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector('.answerId').innerText;
     
     sendAjax('DELETE', '/reportMaster', {id}, data => {
         loadExploreAnswers();

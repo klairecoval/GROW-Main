@@ -123,8 +123,8 @@ const createCodeModal = () => {
 
 // depending on if login or signup icon pressed, create corresponding view
 const setup = () => {
-    createLoginWindow();
-    // createCodeModal();
+    // createLoginWindow();
+    createCodeModal();
 };
 
 // load in csrf token
