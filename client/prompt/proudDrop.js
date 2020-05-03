@@ -52,7 +52,7 @@ const ProudForm = (props) => {
             action='/logMaster'
             method='POST'
             className='proudForm' >
-                <input id='proudText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "medical workers"' onChange={handleProudCount}/>
+                <textarea id='proudText' className="playfair promptTextArea" type='text' name='answer' rows="4" cols="50" maxLength="90" placeholder='ex: "medical workers"' onChange={handleProudCount}></textarea>
                 <input id='category' type='text' name='category' value='proud' placeholder='proud' onChange={handleProudCount}/>
                 <p className="lato answerCharCount" id="proudCount">{props.proudCount} characters remaining</p>        
                 <input className='logThoughtSubmit' id="logProudSubmit" type='submit' value='Submit' />

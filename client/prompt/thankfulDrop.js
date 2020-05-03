@@ -53,7 +53,7 @@ const ThankfulForm = (props) => {
             action='/logMaster'
             method='POST'
             className='thankfulForm' >
-                <input id='thankfulText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "essential workers"' onChange={handleThankfulCount}/>
+                <textarea id='thankfulText' className="playfair promptTextArea" type='text' name='answer' rows="4" cols="50" maxLength="90" placeholder='ex: "essential workers"' onChange={handleThankfulCount}></textarea>
                 <input id='category' type='text' name='category' value='thankful' placeholder='thankful' onChange={handleThankfulCount}/> 
                 <p id="thankfulCount" className="lato answerCharCount">{props.thankfulCount} characters remaining</p>       
                 <input className='logThoughtSubmit' id="logThankfulSubmit" type='submit' value='Submit' />
