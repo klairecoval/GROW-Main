@@ -11,6 +11,10 @@
 button:hover {
   cursor: pointer; }
 
+p {
+  line-height: 1.5em;
+  font-size: 14px; }
+
 #introVid {
   position: fixed;
   right: 0;
@@ -57,7 +61,7 @@ button:hover {
   background: none;
   border: none;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   padding-left: 0px; }
   #aboutStartBtn:hover {
     color: #ED7163; }
@@ -134,7 +138,7 @@ button:hover {
   vertical-align: middle;
   height: 36px;
   width: 68px;
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 1rem;
   margin-left: 2rem; }
   #copyCodeBtn:hover {
@@ -144,20 +148,17 @@ button:hover {
   padding: 1rem;
   width: 287px;
   height: 50px;
-  font-size: 18px; }
+  font-size: 16px; }
 
 #submitSignup {
   background: #ED7163;
   border: none;
   color: white;
-  opacity: 75%;
   height: 50px;
   width: 150px;
-  font-size: 18px;
+  font-size: 16px;
   margin-left: 1rem;
   cursor: pointer; }
-  #submitSignup:hover {
-    opacity: 100%; }
 
 #category {
   display: none; }
@@ -174,14 +175,14 @@ button:hover {
   height: 100%;
   overflow: auto;
   background-color: black;
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: rgba(0, 0, 0, 0.5); }
 
 .backModalContent,
 .happiestSubmitContent, .inspiredSubmitContent, .loveSubmitContent, .proudSubmitContent, .thankfulSubmitContent, .excitedSubmitContent {
   background-color: white;
   margin: auto;
   padding: 1rem 3rem;
-  width: 250px;
+  width: 350px;
   height: 220px;
   border-radius: 6px; }
 
@@ -361,15 +362,12 @@ button:hover {
 .logThoughtSubmit {
   border: none;
   font-family: 'Playfair Display', serif;
-  opacity: 75%;
   color: white;
   width: 200px;
   height: 50px;
-  font-size: 18px;
+  font-size: 16px;
   display: block;
   cursor: pointer; }
-  .logThoughtSubmit:hover {
-    opacity: 100%; }
 
 #logExcitedSubmit {
   background: #4FD4FE; }
@@ -412,7 +410,10 @@ button:hover {
   color: #AAAAAA;
   font-size: 24px;
   display: inline-block;
-  padding-right: 1rem; }
+  padding-right: 1rem;
+  vertical-align: top;
+  padding-top: 0;
+  margin-top: 1rem; }
 
 #promptBtns {
   float: right;
@@ -450,7 +451,7 @@ button:hover {
 #submitThoughtBtn, #totalSubBtn, #exploreThoughtsBtn {
   border-radius: 50%;
   font-family: 'Playfair Display', serif;
-  font-size: 18px;
+  font-size: 16px;
   height: 175px;
   width: 175px; }
 
