@@ -5,7 +5,9 @@
   font-family: 'Lato', sans-serif; }
 
 #exploreBody, #promptBody, #aboutBody, #dataVisBody, #loginBody {
-  background-image: url("/assets/img/background.svg");
+  background-image: url("/assets/img/background.svg"); }
+
+#exploreBody, #aboutBody, #dataVisBody, #loginBody {
   overflow: hidden; }
 
 button:hover {
