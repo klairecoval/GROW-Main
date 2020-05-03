@@ -75,7 +75,7 @@ var SignupWindow = function SignupWindow(props) {
             action: '/signup',
             method: 'POST',
             className: 'mainForm' },
-        React.createElement('input', { id: 'user', className: 'lato', type: 'text', name: 'username', placeholder: 'Paste code here!' }),
+        React.createElement('input', { id: 'user', className: 'lato', type: 'text', name: 'username', placeholder: 'Paste code here' }),
         React.createElement('input', { className: 'formSubmit playfair', id: 'submitSignup', type: 'submit', value: 'Enter Grow' })
     );
 };
@@ -98,7 +98,7 @@ var CodeModal = function CodeModal(props) {
             ),
             React.createElement(
                 'h2',
-                { className: 'playfair' },
+                { className: 'playfair enterGrow' },
                 'Enter Grow'
             ),
             React.createElement(
