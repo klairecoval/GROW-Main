@@ -89,7 +89,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                         React.createElement(
                             'h3',
                             { className: 'lato exploreModalTitle' },
-                            'I\'M EXCITED FORM ',
+                            'I\'M EXCITED FOR ',
                             React.createElement('img', { src: '/assets/img/PromptLine.svg' })
                         ),
                         React.createElement(

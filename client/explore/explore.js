@@ -50,7 +50,7 @@ const ExploreAnswers = function(props) {
                         <div className="exploreExcitedModalContent answer">
                             <button className="playfair dismissExploreModal" id="dismissExcitedExplore">Back</button>
                             <img src="/assets/img/LeafVariation1/Excited1.svg" className="exploreModalPromptLeaf"/>
-                            <h3 className="lato exploreModalTitle">I'M EXCITED FORM <img src="/assets/img/PromptLine.svg"/></h3>
+                            <h3 className="lato exploreModalTitle">I'M EXCITED FOR <img src="/assets/img/PromptLine.svg"/></h3>
                             <h3 className='promptAnswer'> {masterPrompt.answer}</h3>
                             <div className="exploreColorModal" id="excitedExploreColorModal">
                                 <p className="lato shareText">Help spread the positivity by sharing this thought.</p>
