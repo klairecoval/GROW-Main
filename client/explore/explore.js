@@ -55,10 +55,10 @@ const ExploreAnswers = function(props) {
                             <div className="exploreColorModal" id="excitedExploreColorModal">
                                 <p className="lato shareText">Help spread the positivity by sharing this thought.</p>
                                 <div className="socialMediaShareBtns">
-                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am excited for " + masterPrompt.answer} target="_blank" >
+                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explorePage/&text=I am excited for " + masterPrompt.answer} target="_blank" >
                                         <i className="fa fa-twitter-square fa-lg" ></i>
                                     </a>
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank" >
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explorePage" target="_blank" >
                                         <i className="fa fa-facebook-square fa-lg"></i>
                                     </a>
                                     <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank" >
@@ -130,7 +130,7 @@ const ExploreAnswers = function(props) {
                                     <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am thankful for " + masterPrompt.answer} target="_blank" >
                                         <i className="fa fa-twitter-square fa-lg" ></i>
                                     </a>
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explorePage" target="_blank">
                                         <i className="fa fa-facebook-square fa-lg"></i>
                                     </a>
                                     <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank" >
@@ -195,10 +195,10 @@ const ExploreAnswers = function(props) {
                             <div className="exploreColorModal" id="inspiredExploreColorModal">
                                 <p className="lato shareText">Help spread the positivity by sharing this thought.</p>
                                 <div className="socialMediaShareBtns">
-                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am inspired by " + masterPrompt.answer} target="_blank" >
+                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explorePage/&text=I am inspired by " + masterPrompt.answer} target="_blank" >
                                         <i className="fa fa-twitter-square fa-lg" ></i>
                                     </a>
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank">
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explorePage" target="_blank">
                                         <i className="fa fa-facebook-square fa-lg"></i>
                                     </a>
                                     <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
@@ -263,10 +263,10 @@ const ExploreAnswers = function(props) {
                             <div className="exploreColorModal" id="loveExploreColorModal">
                                 <p className="lato shareText">Help spread the positivity by sharing this thought.</p>
                                 <div className="socialMediaShareBtns">
-                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I love " + masterPrompt.answer} target="_blank">
+                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explorePage/&text=I love " + masterPrompt.answer} target="_blank">
                                         <i className="fa fa-twitter-square fa-lg" ></i>
                                     </a>
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank" >
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explorePage" target="_blank" >
                                         <i className="fa fa-facebook-square fa-lg"></i>
                                     </a>
                                     <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank" >
@@ -332,10 +332,10 @@ const ExploreAnswers = function(props) {
                             <div className="exploreColorModal" id="happiestExploreColorModal">
                                 <p className="lato shareText">Help spread the positivity by sharing this thought.</p>
                                 <div className="socialMediaShareBtns">
-                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am happiest when " + masterPrompt.answer} target="_blank" >
+                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explorePage/&text=I am happiest when " + masterPrompt.answer} target="_blank" >
                                         <i className="fa fa-twitter-square fa-lg" ></i>
                                     </a>
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank" >
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explorePage" target="_blank" >
                                         <i className="fa fa-facebook-square fa-lg"></i>
                                     </a>
                                     <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
@@ -401,10 +401,10 @@ const ExploreAnswers = function(props) {
                             <div className="exploreColorModal" id="proudExploreColorModal">
                                 <p className="lato shareText">Help spread the positivity by sharing this thought.</p>
                                 <div className="socialMediaShareBtns">
-                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am proud of " + masterPrompt.answer} target="_blank" >
+                                    <a href={"https://twitter.com/share?url=https://grow-main.herokuapp.com/explorePage/&text=I am proud of " + masterPrompt.answer} target="_blank" >
                                         <i className="fa fa-twitter-square fa-lg" ></i>
                                     </a>
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explore" target="_blank" >
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://grow-main.herokuapp.com/explorePage" target="_blank" >
                                         <i className="fa fa-facebook-square fa-lg"></i>
                                     </a>
                                     <a href={"https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.grow-main.herokuapp.com%2F&title=GROW&summary=Grow%2C+Positive%2C+Thoughts&source=GROW-Thoughts"} target="_blank">
