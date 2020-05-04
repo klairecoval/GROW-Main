@@ -30,9 +30,15 @@ const handleThankfulDrop = (e) => {
 };
   
 const handleThankfulCount = (e) => {
-    ReactDOM.render(
-    <ThankfulForm thankfulCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
-    );
+    if(!e) {
+        ReactDOM.render(
+            <ThankfulForm thankfulCount={90}/>, document.querySelector('#logThought')
+        );
+    } else {
+        ReactDOM.render(
+            <ThankfulForm thankfulCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
+        );
+    }
 };
 
 const ThankfulTitle = (props) => {
@@ -87,6 +93,8 @@ const createThankfulView = function() {
     ReactDOM.render(
         <ThankfulForm />, document.querySelector('#logThought')
     );
+
+    handleThankfulCount();
 
     const logThankfulSubmit = document.getElementById("logThankfulSubmit");
     const dismissThankfulModal = document.getElementById("dismissThankfulSubmit");

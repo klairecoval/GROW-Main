@@ -29,9 +29,15 @@ const handleProudDrop = (e) => {
 };
   
 const handleProudCount = (e) => {
-    ReactDOM.render(
-    <ProudForm proudCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
-    );
+    if(!e) {
+        ReactDOM.render(
+            <ProudForm proudCount={90}/>, document.querySelector('#logThought')
+        );
+    } else {
+        ReactDOM.render(
+            <ProudForm proudCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
+        );
+    }
 };
 
 const ProudTitle = (props) => {
@@ -86,6 +92,8 @@ const createProudView = function() {
     ReactDOM.render(
         <ProudForm />, document.querySelector('#logThought')
     );
+
+    handleProudCount();
 
     const logProudSubmit = document.getElementById("logProudSubmit");
     const dismissProudModal = document.getElementById("dismissProudSubmit");

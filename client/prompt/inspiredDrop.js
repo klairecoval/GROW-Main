@@ -29,9 +29,15 @@ const handleInspiredDrop = (e) => {
 };
   
 const handleInspiredCount = (e) => {
-    ReactDOM.render(
-        <InspiredForm inspiredCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
-    );
+    if(!e) {
+        ReactDOM.render(
+            <InspiredForm inspiredCount={90}/>, document.querySelector('#logThought')
+        );
+    } else {
+        ReactDOM.render(
+            <InspiredForm inspiredCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
+        );
+    }
 };
 
 const InspiredTitle = (props) => {
@@ -86,6 +92,7 @@ const createInspiredView = function() {
     ReactDOM.render(
         <InspiredForm />, document.querySelector('#logThought')
     );
+    handleInspiredCount();
 
     const logInspiredSubmit = document.getElementById("logInspiredSubmit");
     const dismissInspiredModal = document.getElementById("dismissInspiredSubmit");
