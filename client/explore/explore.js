@@ -73,10 +73,6 @@ const ExploreAnswers = function(props) {
                             </div>
                         </div>
                     </div>
-                    <p className="lato report">
-                                    Inappropriate submission?
-                                    <button className='reportButton' onClick={reportAnswer}><strong>Let us know.</strong></button>
-                                </p>
                     <span className="answerId">{masterPrompt._id}</span>
                 </div>
             );

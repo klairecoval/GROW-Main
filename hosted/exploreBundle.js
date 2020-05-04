@@ -149,20 +149,6 @@ var ExploreAnswers = function ExploreAnswers(props) {
                     )
                 ),
                 React.createElement(
-                    'p',
-                    { className: 'lato report' },
-                    'Inappropriate submission?',
-                    React.createElement(
-                        'button',
-                        { className: 'reportButton', onClick: reportAnswer },
-                        React.createElement(
-                            'strong',
-                            null,
-                            'Let us know.'
-                        )
-                    )
-                ),
-                React.createElement(
                     'span',
                     { className: 'answerId' },
                     masterPrompt._id
