@@ -37,8 +37,13 @@ var handleSignup = function handleSignup(e) {
         return false;
     }
 
-    sendAjax('POST', $('#signupForm').attr('action'), $('#signupForm').serialize(), redirect);
-
+    if (document.getElementById('userCodeVal').innerText !== $('#user').val()) {
+        4;
+        alert("Codes do not match.");
+        return false;
+    } else {
+        sendAjax('POST', $('#signupForm').attr('action'), $('#signupForm').serialize(), redirect);
+    }
     return false;
 };
 
