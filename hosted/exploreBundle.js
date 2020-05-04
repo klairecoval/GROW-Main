@@ -111,7 +111,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 { className: 'socialMediaShareBtns' },
                                 React.createElement(
                                     'a',
-                                    { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explorePage/&text=I am excited for " + masterPrompt.answer, target: '_blank' },
+                                    { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explorePage/&text=I am excited for " + masterPrompt.answer + " %23RITGROW", target: '_blank' },
                                     React.createElement('i', { className: 'fa fa-twitter-square fa-lg' })
                                 ),
                                 React.createElement(
@@ -261,7 +261,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 { className: 'socialMediaShareBtns' },
                                 React.createElement(
                                     'a',
-                                    { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am thankful for " + masterPrompt.answer, target: '_blank' },
+                                    { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explore/&text=I am thankful for " + masterPrompt.answer + " %23RITGROW", target: '_blank' },
                                     React.createElement('i', { className: 'fa fa-twitter-square fa-lg' })
                                 ),
                                 React.createElement(
@@ -398,7 +398,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 { className: 'socialMediaShareBtns' },
                                 React.createElement(
                                     'a',
-                                    { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explorePage/&text=I am inspired by " + masterPrompt.answer, target: '_blank' },
+                                    { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explorePage/&text=I am inspired by " + masterPrompt.answer + " %23RITGROW", target: '_blank' },
                                     React.createElement('i', { className: 'fa fa-twitter-square fa-lg' })
                                 ),
                                 React.createElement(
@@ -535,7 +535,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 { className: 'socialMediaShareBtns' },
                                 React.createElement(
                                     'a',
-                                    { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explorePage/&text=I love " + masterPrompt.answer, target: '_blank' },
+                                    { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explorePage/&text=I love " + masterPrompt.answer + " %23RITGROW", target: '_blank' },
                                     React.createElement('i', { className: 'fa fa-twitter-square fa-lg' })
                                 ),
                                 React.createElement(
@@ -673,7 +673,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 { className: 'socialMediaShareBtns' },
                                 React.createElement(
                                     'a',
-                                    { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explorePage/&text=I am happiest when " + masterPrompt.answer, target: '_blank' },
+                                    { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explorePage/&text=I am happiest when " + masterPrompt.answer + " %23RITGROW", target: '_blank' },
                                     React.createElement('i', { className: 'fa fa-twitter-square fa-lg' })
                                 ),
                                 React.createElement(
@@ -811,7 +811,7 @@ var ExploreAnswers = function ExploreAnswers(props) {
                                 { className: 'socialMediaShareBtns' },
                                 React.createElement(
                                     'a',
-                                    { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explorePage/&text=I am proud of " + masterPrompt.answer, target: '_blank' },
+                                    { href: "https://twitter.com/share?url=https://grow-main.herokuapp.com/explorePage/&text=I am proud of " + masterPrompt.answer + " %23RITGROW", target: '_blank' },
                                     React.createElement('i', { className: 'fa fa-twitter-square fa-lg' })
                                 ),
                                 React.createElement(
