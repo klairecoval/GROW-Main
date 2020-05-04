@@ -29,9 +29,15 @@ const handleHappiestDrop = (e) => {
 };
   
 const handleHappiestCount = (e) => {
-    ReactDOM.render(
-        <HappiestForm happiestCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
-    );
+    if(!e) {
+        ReactDOM.render(
+            <HappiestForm happiestCount={90}/>, document.querySelector('#logThought')
+        );
+    } else {
+        ReactDOM.render(
+            <HappiestForm happiestCount={90-e.target.value.length}/>, document.querySelector('#logThought')
+        );
+    }
 };
 
 const HappiestTitle = (props) => {
@@ -87,6 +93,7 @@ const createHappiestView = function() {
         <HappiestForm />, document.querySelector('#logThought')
     );
 
+    handleHappiestCount();
     const logHappiestSubmit = document.getElementById("logHappiestSubmit");
     const dismissHappiestModal = document.getElementById("dismissHappiestSubmit");
 

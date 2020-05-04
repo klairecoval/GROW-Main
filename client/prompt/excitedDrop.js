@@ -33,10 +33,11 @@ const handleExcitedCount = (e) => {
         ReactDOM.render(
             <ExcitedForm excitedCount={90}/>, document.querySelector('#logThought')
         );
+    } else {
+        ReactDOM.render(
+            <ExcitedForm excitedCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
+        );
     }
-    ReactDOM.render(
-        <ExcitedForm excitedCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
-    );
 };
 
 const ExcitedTitle = (props) => {

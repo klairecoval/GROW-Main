@@ -33,8 +33,9 @@ var handleExcitedDrop = function handleExcitedDrop(e) {
 var handleExcitedCount = function handleExcitedCount(e) {
     if (!e) {
         ReactDOM.render(React.createElement(ExcitedForm, { excitedCount: 90 }), document.querySelector('#logThought'));
+    } else {
+        ReactDOM.render(React.createElement(ExcitedForm, { excitedCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
     }
-    ReactDOM.render(React.createElement(ExcitedForm, { excitedCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
 };
 
 var ExcitedTitle = function ExcitedTitle(props) {
@@ -171,7 +172,11 @@ var handleHappiestDrop = function handleHappiestDrop(e) {
 };
 
 var handleHappiestCount = function handleHappiestCount(e) {
-    ReactDOM.render(React.createElement(HappiestForm, { happiestCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
+    if (!e) {
+        ReactDOM.render(React.createElement(HappiestForm, { happiestCount: 90 }), document.querySelector('#logThought'));
+    } else {
+        ReactDOM.render(React.createElement(HappiestForm, { happiestCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
+    }
 };
 
 var HappiestTitle = function HappiestTitle(props) {
@@ -257,6 +262,7 @@ var createHappiestView = function createHappiestView() {
 
     ReactDOM.render(React.createElement(HappiestForm, null), document.querySelector('#logThought'));
 
+    handleHappiestCount();
     var logHappiestSubmit = document.getElementById("logHappiestSubmit");
     var dismissHappiestModal = document.getElementById("dismissHappiestSubmit");
 
@@ -307,7 +313,11 @@ var handleInspiredDrop = function handleInspiredDrop(e) {
 };
 
 var handleInspiredCount = function handleInspiredCount(e) {
-    ReactDOM.render(React.createElement(InspiredForm, { inspiredCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
+    if (!e) {
+        ReactDOM.render(React.createElement(InspiredForm, { inspiredCount: 90 }), document.querySelector('#logThought'));
+    } else {
+        ReactDOM.render(React.createElement(InspiredForm, { inspiredCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
+    }
 };
 
 var InspiredTitle = function InspiredTitle(props) {
@@ -392,6 +402,7 @@ var createInspiredView = function createInspiredView() {
     ReactDOM.render(React.createElement(InspiredTitle, null), document.querySelector('#promptTitle'));
 
     ReactDOM.render(React.createElement(InspiredForm, null), document.querySelector('#logThought'));
+    handleInspiredCount();
 
     var logInspiredSubmit = document.getElementById("logInspiredSubmit");
     var dismissInspiredModal = document.getElementById("dismissInspiredSubmit");
@@ -443,7 +454,11 @@ var handleLoveDrop = function handleLoveDrop(e) {
 };
 
 var handleLoveCount = function handleLoveCount(e) {
-    ReactDOM.render(React.createElement(LoveForm, { loveCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
+    if (!e) {
+        ReactDOM.render(React.createElement(LoveForm, { loveCount: 90 }), document.querySelector('#logThought'));
+    } else {
+        ReactDOM.render(React.createElement(LoveForm, { loveCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
+    }
 };
 
 var LoveTitle = function LoveTitle(props) {
@@ -528,6 +543,7 @@ var createLoveView = function createLoveView() {
     ReactDOM.render(React.createElement(LoveTitle, null), document.querySelector('#promptTitle'));
 
     ReactDOM.render(React.createElement(LoveForm, null), document.querySelector('#logThought'));
+    handleLoveCount();
 
     var logLoveSubmit = document.getElementById("logLoveSubmit");
     var dismissLoveModal = document.getElementById("dismissLoveSubmit");
@@ -812,7 +828,11 @@ var handleProudDrop = function handleProudDrop(e) {
 };
 
 var handleProudCount = function handleProudCount(e) {
-    ReactDOM.render(React.createElement(ProudForm, { proudCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
+    if (!e) {
+        ReactDOM.render(React.createElement(ProudForm, { proudCount: 90 }), document.querySelector('#logThought'));
+    } else {
+        ReactDOM.render(React.createElement(ProudForm, { proudCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
+    }
 };
 
 var ProudTitle = function ProudTitle(props) {
@@ -898,6 +918,8 @@ var createProudView = function createProudView() {
 
     ReactDOM.render(React.createElement(ProudForm, null), document.querySelector('#logThought'));
 
+    handleProudCount();
+
     var logProudSubmit = document.getElementById("logProudSubmit");
     var dismissProudModal = document.getElementById("dismissProudSubmit");
 
@@ -948,7 +970,11 @@ var handleThankfulDrop = function handleThankfulDrop(e) {
 };
 
 var handleThankfulCount = function handleThankfulCount(e) {
-    ReactDOM.render(React.createElement(ThankfulForm, { thankfulCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
+    if (!e) {
+        ReactDOM.render(React.createElement(ThankfulForm, { thankfulCount: 90 }), document.querySelector('#logThought'));
+    } else {
+        ReactDOM.render(React.createElement(ThankfulForm, { thankfulCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
+    }
 };
 
 var ThankfulTitle = function ThankfulTitle(props) {
@@ -1033,6 +1059,8 @@ var createThankfulView = function createThankfulView() {
     ReactDOM.render(React.createElement(ThankfulTitle, null), document.querySelector('#promptTitle'));
 
     ReactDOM.render(React.createElement(ThankfulForm, null), document.querySelector('#logThought'));
+
+    handleThankfulCount();
 
     var logThankfulSubmit = document.getElementById("logThankfulSubmit");
     var dismissThankfulModal = document.getElementById("dismissThankfulSubmit");

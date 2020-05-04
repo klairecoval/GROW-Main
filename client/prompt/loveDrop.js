@@ -29,9 +29,15 @@ const handleLoveDrop = (e) => {
 };
   
 const handleLoveCount = (e) => {
-    ReactDOM.render(
-    <LoveForm loveCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
-    );
+    if(!e) {
+        ReactDOM.render(
+            <LoveForm loveCount={90}/>, document.querySelector('#logThought')
+        );
+    } else {
+        ReactDOM.render(
+            <LoveForm loveCount={90-e.target.value.length}/>, document.querySelector('#logThought')
+        );
+    }
 };
 
 const LoveTitle = (props) => {
@@ -86,6 +92,7 @@ const createLoveView = function() {
     ReactDOM.render(
         <LoveForm />, document.querySelector('#logThought')
     );
+    handleLoveCount();
 
     const logLoveSubmit = document.getElementById("logLoveSubmit");
     const dismissLoveModal = document.getElementById("dismissLoveSubmit");

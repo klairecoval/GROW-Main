@@ -530,12 +530,33 @@ p {
   background-image: url("/assets/img/mobileBg.svg");
   z-index: 100001;
   color: #fff;
-  text-align: center;
   display: none; }
 
 @media all and (max-width: 1023px) {
   .mobile {
-    display: block; } }
+    display: block; }
+    .mobile .mobileLeavesTop {
+      transform: rotate(180deg);
+      top: 0;
+      right: 0;
+      position: fixed;
+      width: 500px; }
+    .mobile .mobileLeavesBottom {
+      bottom: 0;
+      left: 0;
+      position: fixed; }
+  .mobileContent {
+    padding: 25% 15%;
+    text-align: left; }
+    .mobileContent h1 {
+      display: inline-block;
+      vertical-align: middle;
+      padding-right: 1.5rem;
+      font-size: 18px;
+      font-weight: normal; }
+    .mobileContent p {
+      font-size: 16px;
+      color: #A4A4A4; } }
 
 .leaf {
   width: 10vw;
