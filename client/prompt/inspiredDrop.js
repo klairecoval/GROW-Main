@@ -52,7 +52,7 @@ const InspiredForm = (props) => {
             action='/logMaster'
             method='POST'
             className='inspiredForm' >
-                <input id='inspiredText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "the generosity of others"' onChange={handleInspiredCount}/>
+                <textarea id='inspiredText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" rows="4" cols="50" placeholder='ex: "the generosity of others"' onChange={handleInspiredCount}></textarea>
                 <input id='category' type='text' name='category' value='inspired' placeholder='inspired' onChange={handleInspiredCount}/>   
                 <p id="inspiredCount" className="lato answerCharCount">{props.inspiredCount} characters remaining</p>     
                 <input className='logThoughtSubmit' id="logInspiredSubmit" type='submit' value='Submit response' />

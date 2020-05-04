@@ -32,6 +32,10 @@ $thankfulGreen: #55D897;
 button:hover {
     cursor: pointer;
 }
+p {
+    line-height: 1.5em;
+    font-size: 14px;
+}
 
 // about screen
 #introVid {
@@ -72,7 +76,7 @@ button:hover {
 }
 .missionAboutText {
     font-weight: normal;
-    font-size: 96px;
+    font-size: 72px;
     margin-top:0;
     margin-bottom: 0;
 }
@@ -80,7 +84,8 @@ button:hover {
     background: none;
     border: none;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
+    padding-left: 0px;
 
     &:hover {
         color: $pinkBtnBackground;
@@ -111,6 +116,9 @@ button:hover {
 #loginAboutText {
     color: white;
 }
+#enterGrowContent {
+    margin-top: 20%;
+}
 .userCodeModal {
     position: fixed; 
     z-index: 1; 
@@ -125,7 +133,7 @@ button:hover {
 }
 .userCodeModalContent {
     float: right;
-    width: 45%;
+    width: 40%;
     background: white;
     float: right;
     color: $blackBlue;
@@ -139,10 +147,14 @@ button:hover {
     border: none;
     background: none;
     color: $blackBlue;
+    padding-left: 0px;
 
     &:hover {
         color: $pinkBtnBackground;
     }
+}
+.enterGrow {
+    font-size: 32px;
 }
 #userCodeElements {
     padding-bottom: 3rem;
@@ -160,7 +172,7 @@ button:hover {
     vertical-align: middle;
     height: 36px;
     width: 68px;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 1rem;
     margin-left: 2rem;
 
@@ -172,24 +184,19 @@ button:hover {
 #user {
     padding: 1rem;
     width: 287px;
-    height: 72px;
-    font-size: 18px;
+    height: 50px;
+    font-size: 16px;
 }
 
 #submitSignup {
     background: $pinkBtnBackground;
     border: none;
     color: white;
-    opacity: 75%;
-    height: 72px;
+    height: 50px;
     width: 150px;
-    font-size: 18px;
+    font-size: 16px;
     margin-left: 1rem;
     cursor: pointer;
-
-    &:hover {
-        opacity: 100%;
-    }
 }
 
 #category {
@@ -209,7 +216,7 @@ button:hover {
     height: 100%;
     overflow: auto; 
     background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
+    background-color: rgba(0,0,0,0.5); 
 }
   
 // modal content
@@ -218,18 +225,22 @@ button:hover {
     background-color: white;
     margin: auto;
     padding: 1rem 3rem;
-    width: 450px;;
-    height: 300px;
+    width: 350px;;
+    height: 220px;
     border-radius: 6px;
 } 
 .submitModalTitle, .backModalTitle {
-    font-size: 36px;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 .submitModalSubtext {
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
+    font-size: 16px;
 }
 .backModalSubtext {
-    padding-bottom: 2rem;
+    font-size: 16px;
+    padding-bottom: 1rem;
 }
 
 // explore modals
@@ -264,6 +275,7 @@ button:hover {
     color: $greySubtext;
     padding-left:2rem;
     font-weight: normal;
+    font-size: 16px;
 }
 .promptAnswer {
     color: $blackBlue;
@@ -344,9 +356,9 @@ button:hover {
     background: white;
     border: 1px solid $blackBlue;
     color: $blackBlue;
-    width: 216px;
-    height:70px;
-    font-size: 18px;
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
     
 
     &:hover {
@@ -358,9 +370,9 @@ button:hover {
     background: $blackBlue;
     border: none;
     color: white;
-    width: 216px;
-    height:70px;
-    font-size: 18px;
+    width: 150px;
+    height:50px;
+    font-size: 16px;
     float:right;
     cursor: pointer;
 
@@ -378,6 +390,7 @@ button:hover {
     color: white;
     margin-top:4.5rem;
     font-weight: normal;
+    font-size: 18px;
 }
 #logThought {
     margin-left: 2rem;
@@ -390,37 +403,34 @@ button:hover {
     background: none;
     border: none;
     color: white;
-    font-size: 30px;
+    font-size: 24px;
     height: 250px;
+    width: 450px;
 }
 
 .answerCharCount {
     color: #B0B0B0;
     padding-bottom: 1rem;
     margin-top:3.5rem;
+    font-size: 12px;
 }
 
 .promptAnswerLeaf {
     float: right;
-    margin-right: -6rem;
-    height:50rem;
+    margin-right: 0rem;
+    height: 40rem;
     margin-top:-8rem;
 }
 
 .logThoughtSubmit {
     border: none;
     font-family: 'Playfair Display', serif;
-    opacity: 75%;
     color: white;
-    width: 254px;
-    height: 64px;
-    font-size: 18px;
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
     display: block;
     cursor: pointer;
-
-    &:hover {
-        opacity: 100%;
-    }
 }
 #logExcitedSubmit {
     background: $excitedBlue;
@@ -451,12 +461,12 @@ button:hover {
 }
 #promptPageTitle {
     color: $grey;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: normal;
 }
 #promptPageSubtitle {
     color: white;
-    font-size: 48px;
+    font-size: 36px;
     width: 310px;
     font-weight: normal;
     margin-top:-1rem;
@@ -466,10 +476,14 @@ button:hover {
     font-size: 24px;
     display: inline-block;
     padding-right: 1rem;
+    vertical-align: top;
+    padding-top: 0;
+    margin-top: 1rem;
 }
 #promptBtns {
     float: right;
-    margin-right:15%;
+    margin-right:5%;
+    margin-top:0;
 }
 #inspiredPrompt, #excitedPrompt, #thankfulPrompt, #proudPrompt, #happiestPrompt, #lovePrompt {
     background: none;
@@ -507,9 +521,9 @@ button:hover {
 #submitThoughtBtn, #totalSubBtn, #exploreThoughtsBtn {
     border-radius: 50%;
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    height: 216px;
-    width: 216px;
+    font-size: 16px;
+    height: 175px;
+    width: 175px;
 }
 #submitThoughtBtn {
     background: white;
@@ -566,6 +580,7 @@ button:hover {
     background: none;
     border: none;
     color: white;
+    padding-left: 0px;
 
     &:hover {
         color: $pinkBtnBackground;
@@ -577,6 +592,7 @@ button:hover {
     border: none;
     margin-top:1rem;
     margin-left: 2rem;
+    padding-left: 0px;
 
     &:hover {
         color: $pinkBtnBackground;

@@ -31,6 +31,9 @@ var handleExcitedDrop = function handleExcitedDrop(e) {
 };
 
 var handleExcitedCount = function handleExcitedCount(e) {
+    if (!e) {
+        ReactDOM.render(React.createElement(ExcitedForm, { excitedCount: 90 }), document.querySelector('#logThought'));
+    }
     ReactDOM.render(React.createElement(ExcitedForm, { excitedCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
 };
 
@@ -63,7 +66,7 @@ var ExcitedForm = function ExcitedForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "excitedForm" },
-            React.createElement("input", { id: "excitedText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"social gatherings\"", onChange: handleExcitedCount }),
+            React.createElement("textarea", { id: "excitedText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", rows: "4", cols: "50", placeholder: "ex: \"social gatherings\"", onChange: handleExcitedCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "excited", placeholder: "excited", onChange: handleExcitedCount }),
             React.createElement(
                 "p",
@@ -116,6 +119,7 @@ var createExcitedView = function createExcitedView() {
     ReactDOM.render(React.createElement(ExcitedTitle, null), document.querySelector('#promptTitle'));
 
     ReactDOM.render(React.createElement(ExcitedForm, null), document.querySelector('#logThought'));
+    handleExcitedCount();
 
     var logExcitedSubmit = document.getElementById("logExcitedSubmit");
     var dismissExcitedModal = document.getElementById("dismissExcitedSubmit");
@@ -199,7 +203,7 @@ var HappiestForm = function HappiestForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "happiestForm" },
-            React.createElement("input", { id: "happiestText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"I am with loved ones\"", onChange: handleHappiestCount }),
+            React.createElement("textarea", { id: "happiestText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", rows: "4", cols: "50", placeholder: "ex: \"I am with loved ones\"", onChange: handleHappiestCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "happiest", placeholder: "happiest", onChange: handleHappiestCount }),
             React.createElement(
                 "p",
@@ -335,7 +339,7 @@ var InspiredForm = function InspiredForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "inspiredForm" },
-            React.createElement("input", { id: "inspiredText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"the generosity of others\"", onChange: handleInspiredCount }),
+            React.createElement("textarea", { id: "inspiredText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", rows: "4", cols: "50", placeholder: "ex: \"the generosity of others\"", onChange: handleInspiredCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "inspired", placeholder: "inspired", onChange: handleInspiredCount }),
             React.createElement(
                 "p",
@@ -471,7 +475,7 @@ var LoveForm = function LoveForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "loveForm" },
-            React.createElement("input", { id: "loveText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"humanity\"", onChange: handleLoveCount }),
+            React.createElement("textarea", { id: "loveText", className: "playfair promptTextArea", type: "text", name: "answer", rows: "4", cols: "50", maxLength: "90", placeholder: "ex: \"humanity\"", onChange: handleLoveCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "love", placeholder: "love", onChange: handleLoveCount }),
             React.createElement(
                 "p",
@@ -840,7 +844,7 @@ var ProudForm = function ProudForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "proudForm" },
-            React.createElement("input", { id: "proudText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"medical workers\"", onChange: handleProudCount }),
+            React.createElement("textarea", { id: "proudText", className: "playfair promptTextArea", type: "text", name: "answer", rows: "4", cols: "50", maxLength: "90", placeholder: "ex: \"medical workers\"", onChange: handleProudCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "proud", placeholder: "proud", onChange: handleProudCount }),
             React.createElement(
                 "p",
@@ -976,7 +980,7 @@ var ThankfulForm = function ThankfulForm(props) {
                 action: "/logMaster",
                 method: "POST",
                 className: "thankfulForm" },
-            React.createElement("input", { id: "thankfulText", className: "playfair promptTextArea", type: "text", name: "answer", maxLength: "90", placeholder: "ex: \"essential workers\"", onChange: handleThankfulCount }),
+            React.createElement("textarea", { id: "thankfulText", className: "playfair promptTextArea", type: "text", name: "answer", rows: "4", cols: "50", maxLength: "90", placeholder: "ex: \"essential workers\"", onChange: handleThankfulCount }),
             React.createElement("input", { id: "category", type: "text", name: "category", value: "thankful", placeholder: "thankful", onChange: handleThankfulCount }),
             React.createElement(
                 "p",

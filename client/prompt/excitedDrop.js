@@ -29,6 +29,11 @@ const handleExcitedDrop = (e) => {
 };
   
 const handleExcitedCount = (e) => {
+    if(!e) {
+        ReactDOM.render(
+            <ExcitedForm excitedCount={90}/>, document.querySelector('#logThought')
+        );
+    }
     ReactDOM.render(
         <ExcitedForm excitedCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
     );
@@ -52,7 +57,7 @@ const ExcitedForm = (props) => {
             action='/logMaster'
             method='POST'
             className='excitedForm' >
-                <input id='excitedText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "social gatherings"' onChange={handleExcitedCount}/>
+                <textarea id='excitedText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" rows="4" cols="50" placeholder='ex: "social gatherings"' onChange={handleExcitedCount}></textarea>
                 <input id='category' type='text' name='category' value='excited' placeholder='excited' onChange={handleExcitedCount}/> 
                 <p id="excitedCount" className="lato answerCharCount">{props.excitedCount} characters remaining</p>       
                 <input className='logThoughtSubmit' id="logExcitedSubmit" type='submit' value='Submit Response' />
@@ -86,6 +91,7 @@ const createExcitedView = function() {
     ReactDOM.render(
         <ExcitedForm />, document.querySelector('#logThought')
     );
+    handleExcitedCount();
 
     const logExcitedSubmit = document.getElementById("logExcitedSubmit");
     const dismissExcitedModal = document.getElementById("dismissExcitedSubmit");

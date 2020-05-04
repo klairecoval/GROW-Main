@@ -37,8 +37,13 @@ var handleSignup = function handleSignup(e) {
         return false;
     }
 
-    sendAjax('POST', $('#signupForm').attr('action'), $('#signupForm').serialize(), redirect);
-
+    if (document.getElementById('userCodeVal').innerText !== $('#user').val()) {
+        4;
+        alert("Codes do not match.");
+        return false;
+    } else {
+        sendAjax('POST', $('#signupForm').attr('action'), $('#signupForm').serialize(), redirect);
+    }
     return false;
 };
 
@@ -75,7 +80,7 @@ var SignupWindow = function SignupWindow(props) {
             action: '/signup',
             method: 'POST',
             className: 'mainForm' },
-        React.createElement('input', { id: 'user', className: 'lato', type: 'text', name: 'username', placeholder: 'Paste code here!' }),
+        React.createElement('input', { id: 'user', className: 'lato', type: 'text', maxLength: '4', name: 'username', placeholder: 'Paste code here' }),
         React.createElement('input', { className: 'formSubmit playfair', id: 'submitSignup', type: 'submit', value: 'Enter Grow' })
     );
 };
@@ -97,32 +102,36 @@ var CodeModal = function CodeModal(props) {
                 )
             ),
             React.createElement(
-                'h2',
-                { className: 'playfair' },
-                'Enter Grow'
-            ),
-            React.createElement(
-                'p',
-                { className: 'lato' },
-                'Please copy the code below and paste it in the text box to ',
-                React.createElement('br', null),
-                'enter. Thank you for keeping the garden safe.'
-            ),
-            React.createElement(
                 'div',
-                { id: 'userCodeElements' },
+                { id: 'enterGrowContent' },
                 React.createElement(
-                    'div',
-                    { id: 'userCodeVal', className: 'playfair' },
-                    generateUserCode(4)
+                    'h2',
+                    { className: 'playfair enterGrow' },
+                    'Enter Grow'
                 ),
                 React.createElement(
-                    'button',
-                    { onClick: copyDivToClipboard, className: 'playfair', id: 'copyCodeBtn' },
-                    'Copy'
-                )
-            ),
-            React.createElement(SignupWindow, null)
+                    'p',
+                    { className: 'lato' },
+                    'Please copy the code below and paste it in the text box to ',
+                    React.createElement('br', null),
+                    'enter. Thank you for keeping the garden safe.'
+                ),
+                React.createElement(
+                    'div',
+                    { id: 'userCodeElements' },
+                    React.createElement(
+                        'div',
+                        { id: 'userCodeVal', className: 'playfair' },
+                        generateUserCode(4)
+                    ),
+                    React.createElement(
+                        'button',
+                        { onClick: copyDivToClipboard, className: 'playfair', id: 'copyCodeBtn' },
+                        'Copy'
+                    )
+                ),
+                React.createElement(SignupWindow, null)
+            )
         )
     );
 };

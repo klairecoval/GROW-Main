@@ -52,7 +52,7 @@ const LoveForm = (props) => {
             action='/logMaster'
             method='POST'
             className='loveForm' >
-                <input id='loveText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "humanity"' onChange={handleLoveCount}/>
+                <textarea id='loveText' className="playfair promptTextArea" type='text' name='answer' rows="4" cols="50" maxLength="90" placeholder='ex: "humanity"' onChange={handleLoveCount}></textarea>
                 <input id='category' type='text' name='category' value='love' placeholder='love' onChange={handleLoveCount}/>   
                 <p className="lato answerCharCount" id="loveCount">{props.loveCount} characters remaining</p>     
                 <input className='logThoughtSubmit' id="logLoveSubmit" type='submit' value='Submit' />

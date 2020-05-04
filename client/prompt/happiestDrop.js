@@ -52,7 +52,7 @@ const HappiestForm = (props) => {
             action='/logMaster'
             method='POST'
             className='happiestForm' >
-                <input id='happiestText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" placeholder='ex: "I am with loved ones"' onChange={handleHappiestCount}/>
+                <textarea id='happiestText' className="playfair promptTextArea" type='text' name='answer' maxLength="90" rows="4" cols="50" placeholder='ex: "I am with loved ones"' onChange={handleHappiestCount}></textarea>
                 <input id='category' type='text' name='category' value='happiest' placeholder='happiest' onChange={handleHappiestCount}/>  
                 <p className="lato answerCharCount" id="happiestCount">{props.happiestCount} characters remaining</p>      
                 <input className='logThoughtSubmit' id="logHappiestSubmit" type='submit' value='Submit response' />
