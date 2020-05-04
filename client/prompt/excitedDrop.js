@@ -29,6 +29,11 @@ const handleExcitedDrop = (e) => {
 };
   
 const handleExcitedCount = (e) => {
+    if(!e) {
+        ReactDOM.render(
+            <ExcitedForm excitedCount={90}/>, document.querySelector('#logThought')
+        );
+    }
     ReactDOM.render(
         <ExcitedForm excitedCount={90-(e.target.value.length)}/>, document.querySelector('#logThought')
     );
@@ -86,6 +91,7 @@ const createExcitedView = function() {
     ReactDOM.render(
         <ExcitedForm />, document.querySelector('#logThought')
     );
+    handleExcitedCount();
 
     const logExcitedSubmit = document.getElementById("logExcitedSubmit");
     const dismissExcitedModal = document.getElementById("dismissExcitedSubmit");

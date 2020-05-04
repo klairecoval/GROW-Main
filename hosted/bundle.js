@@ -31,6 +31,9 @@ var handleExcitedDrop = function handleExcitedDrop(e) {
 };
 
 var handleExcitedCount = function handleExcitedCount(e) {
+    if (!e) {
+        ReactDOM.render(React.createElement(ExcitedForm, { excitedCount: 90 }), document.querySelector('#logThought'));
+    }
     ReactDOM.render(React.createElement(ExcitedForm, { excitedCount: 90 - e.target.value.length }), document.querySelector('#logThought'));
 };
 
@@ -116,6 +119,7 @@ var createExcitedView = function createExcitedView() {
     ReactDOM.render(React.createElement(ExcitedTitle, null), document.querySelector('#promptTitle'));
 
     ReactDOM.render(React.createElement(ExcitedForm, null), document.querySelector('#logThought'));
+    handleExcitedCount();
 
     var logExcitedSubmit = document.getElementById("logExcitedSubmit");
     var dismissExcitedModal = document.getElementById("dismissExcitedSubmit");
