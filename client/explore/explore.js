@@ -433,7 +433,13 @@ const ExploreAnswers = function(props) {
 };
 
 const thankfulModalSibling = (e) => {
-    const exploreThankfulModal = document.getElementById('leaf2').nextSibling;
+    let exploreThankfulModal;
+    let x = e.target;
+
+    while(x.tagName !== 'svg') {
+        x = x.parentElement;
+    }
+    exploreThankfulModal = x.nextSibling;
     const dismissThankfulExplore = document.querySelector('#dismissThankfulExplore');
 
     if(exploreThankfulModal) {
@@ -454,7 +460,13 @@ const thankfulModalSibling = (e) => {
 };
 
 const excitedModalSibling = (e) => {
-    const exploreExcitedModal = document.getElementById('leaf1').nextSibling;
+    let exploreExcitedModal;
+    let x = e.target;
+
+    while(x.tagName !== 'svg') {
+        x = x.parentElement;
+    }
+    exploreExcitedModal = x.nextSibling;
     const dismissExcitedExplore = document.querySelector('#dismissExcitedExplore');
 
     if(exploreExcitedModal) {
@@ -474,8 +486,14 @@ const excitedModalSibling = (e) => {
     }
 };
 
-const inspiredModalSibling = () => {
-    const exploreInspiredModal = document.getElementById('leaf3').nextSibling;
+const inspiredModalSibling = (e) => {
+    let exploreInspiredModal;
+    let x = e.target;
+
+    while(x.tagName !== 'svg') {
+        x = x.parentElement;
+    }
+    exploreInspiredModal = x.nextSibling;
     const dismissInspiredExplore = document.querySelector('#dismissInspiredExplore');
 
     if(exploreInspiredModal) {
@@ -495,8 +513,14 @@ const inspiredModalSibling = () => {
     }
 };
 
-const loveModalSibling = () => {
-    const exploreLoveModal =  document.getElementById('leaf4').nextSibling;
+const loveModalSibling = (e) => {
+    let exploreLoveModal;
+    let x = e.target;
+
+    while(x.tagName !== 'svg') {
+        x = x.parentElement;
+    }
+    exploreLoveModal = x.nextSibling;
     const dismissLoveExplore = document.querySelector('#dismissLoveExplore');
 
     if(exploreLoveModal) {
@@ -516,8 +540,14 @@ const loveModalSibling = () => {
     }
 };
 
-const happyModalSibling = () => {
-    const exploreHappiestModal = document.getElementById('leaf5').nextSibling;
+const happyModalSibling = (e) => {
+    let exploreHappiestModal;
+    let x = e.target;
+
+    while(x.tagName !== 'svg') {
+        x = x.parentElement;
+    }
+    exploreHappiestModal = x.nextSibling;
     const dismissHappiestExplore = document.querySelector('#dismissHappiestExplore');
 
     if(exploreHappiestModal) {
@@ -537,8 +567,14 @@ const happyModalSibling = () => {
     }
 }
 
-const proudModalSibling = () => {
-    const exploreProudModal = document.getElementById('leaf6').nextSibling;
+const proudModalSibling = (e) => {
+    let exploreProudModal;
+    let x = e.target;
+
+    while(x.tagName !== 'svg') {
+        x = x.parentElement;
+    }
+    exploreProudModal = x.nextSibling;
     const dismissProudExplore = document.querySelector('#dismissProudExplore');
 
     if(exploreProudModal) {
