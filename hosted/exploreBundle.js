@@ -864,7 +864,13 @@ var ExploreAnswers = function ExploreAnswers(props) {
 };
 
 var thankfulModalSibling = function thankfulModalSibling(e) {
-    var exploreThankfulModal = document.getElementById('leaf2').nextSibling;
+    var exploreThankfulModal = void 0;
+    var x = e.target;
+
+    while (x.tagName !== 'svg') {
+        x = x.parentElement;
+    }
+    exploreThankfulModal = x.nextSibling;
     var dismissThankfulExplore = document.querySelector('#dismissThankfulExplore');
 
     if (exploreThankfulModal) {
@@ -885,7 +891,13 @@ var thankfulModalSibling = function thankfulModalSibling(e) {
 };
 
 var excitedModalSibling = function excitedModalSibling(e) {
-    var exploreExcitedModal = document.getElementById('leaf1').nextSibling;
+    var exploreExcitedModal = void 0;
+    var x = e.target;
+
+    while (x.tagName !== 'svg') {
+        x = x.parentElement;
+    }
+    exploreExcitedModal = x.nextSibling;
     var dismissExcitedExplore = document.querySelector('#dismissExcitedExplore');
 
     if (exploreExcitedModal) {
@@ -905,8 +917,14 @@ var excitedModalSibling = function excitedModalSibling(e) {
     };
 };
 
-var inspiredModalSibling = function inspiredModalSibling() {
-    var exploreInspiredModal = document.getElementById('leaf3').nextSibling;
+var inspiredModalSibling = function inspiredModalSibling(e) {
+    var exploreInspiredModal = void 0;
+    var x = e.target;
+
+    while (x.tagName !== 'svg') {
+        x = x.parentElement;
+    }
+    exploreInspiredModal = x.nextSibling;
     var dismissInspiredExplore = document.querySelector('#dismissInspiredExplore');
 
     if (exploreInspiredModal) {
@@ -926,8 +944,14 @@ var inspiredModalSibling = function inspiredModalSibling() {
     };
 };
 
-var loveModalSibling = function loveModalSibling() {
-    var exploreLoveModal = document.getElementById('leaf4').nextSibling;
+var loveModalSibling = function loveModalSibling(e) {
+    var exploreLoveModal = void 0;
+    var x = e.target;
+
+    while (x.tagName !== 'svg') {
+        x = x.parentElement;
+    }
+    exploreLoveModal = x.nextSibling;
     var dismissLoveExplore = document.querySelector('#dismissLoveExplore');
 
     if (exploreLoveModal) {
@@ -947,8 +971,14 @@ var loveModalSibling = function loveModalSibling() {
     };
 };
 
-var happyModalSibling = function happyModalSibling() {
-    var exploreHappiestModal = document.getElementById('leaf5').nextSibling;
+var happyModalSibling = function happyModalSibling(e) {
+    var exploreHappiestModal = void 0;
+    var x = e.target;
+
+    while (x.tagName !== 'svg') {
+        x = x.parentElement;
+    }
+    exploreHappiestModal = x.nextSibling;
     var dismissHappiestExplore = document.querySelector('#dismissHappiestExplore');
 
     if (exploreHappiestModal) {
@@ -968,8 +998,14 @@ var happyModalSibling = function happyModalSibling() {
     };
 };
 
-var proudModalSibling = function proudModalSibling() {
-    var exploreProudModal = document.getElementById('leaf6').nextSibling;
+var proudModalSibling = function proudModalSibling(e) {
+    var exploreProudModal = void 0;
+    var x = e.target;
+
+    while (x.tagName !== 'svg') {
+        x = x.parentElement;
+    }
+    exploreProudModal = x.nextSibling;
     var dismissProudExplore = document.querySelector('#dismissProudExplore');
 
     if (exploreProudModal) {
