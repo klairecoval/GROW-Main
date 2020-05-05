@@ -662,7 +662,7 @@ var triggerBackModal = function triggerBackModal() {
             backModal.style.display = "block";
         };
     } else if (thankfulBtn) {
-        thankfulBtn.onlick = function () {
+        thankfulBtn.onclick = function () {
             backModal.style.display = "block";
         };
     } else if (excitedBtn) {

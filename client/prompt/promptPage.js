@@ -54,7 +54,7 @@ const triggerBackModal = () => {
             backModal.style.display = "block";
         };
     } else if (thankfulBtn) {
-        thankfulBtn.onlick = () => {
+        thankfulBtn.onclick = () => {
             backModal.style.display = "block";
         };
     } else if (excitedBtn) {
